@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 
-const index=()=>{
+const PrivateLayout=()=>{
 return(
     <div>
         <div style={{position: 'sticky', top: '0px', backgroundColor: 'white' }}>
@@ -15,4 +15,4 @@ return(
     </div>
 )
 }
-export default index;
+export default PrivateLayout;

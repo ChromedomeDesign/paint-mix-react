@@ -1,24 +1,19 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { useRoutes, Navigate } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
-
-export default function ThemeRoutes() {
+const ThemeRoutes: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-//   useMemo(() => {
-//     const token = localStorage.getItem("accessToken");
-//     const userType = localStorage.getItem("userType");
-//     setIsAuthenticated(!!token);
-//     setUserType(userType || "");
-//   }, []);
+  let routes = isAuthenticated? PrivateRoute : PublicRoute;
 
-  let routes = [];
-   routes = isAuthenticated? PrivateRoute : PublicRoute;
+  console.log("routes", routes);
 
   return useRoutes([
-    ...routes,
+   ...routes,
     { path: "*", element: <Navigate to="/" replace /> },
   ]);
-}
+};
+
+export default ThemeRoutes;

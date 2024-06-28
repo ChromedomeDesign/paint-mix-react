@@ -1,16 +1,25 @@
-
 import React from 'react';
-import Layout from '../Layout/index';
 import Homepage from '../pages/homepage/Homepage';
+import PrivateLayout from 'Layout/PrivateLayout';
+import CREATE_NEW_CUSTOMER_ACCOUNT from '@pages/New-Customer/CREATE_NEW_CUSTOMER_ACCOUNT';
 
 
-const PrivateRoute = [
-    {
-      path: "/",
-      element:  <Layout/> ,
-      children: [
-        { path: "/", element: <Homepage /> },
-      ],
-    },
-  ];
-  export default PrivateRoute;
+type RouteObject = {
+  path: string;
+  element: React.ReactElement;
+  children?: Array<RouteObject>;
+};
+
+type PrivateRouteType = Array<RouteObject>;
+const PrivateRoute: PrivateRouteType = [
+  {
+    path: "/",
+    element: <PrivateLayout />,
+    children: [
+      { path: "/", element: <Homepage /> },
+      { path: "/CREATE_NEW_CUSTOMER_ACCOUNT", element:<CREATE_NEW_CUSTOMER_ACCOUNT/>}
+    ],
+  },
+];
+
+export default PrivateRoute;

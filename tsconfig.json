@@ -9,8 +9,10 @@
 //             "@feature/*": ["feature/*"],
 //             "@pages/*": ["pages/*"],
 //             "@common/*": ["common/*"]
-//         }
+//         },
+//         "lib": ["dom", "es2020"]
 //     },
+
 //     "include": ["src/**/*"],
 //     "exclude": ["**/*.spec.ts", "**/*.css"]
 // }
@@ -18,7 +20,7 @@
 {
     "extends": "@tsconfig/node18/tsconfig.json",
     "compilerOptions": {
-      "jsx": "react-jsx", // use "react-jsx" if you are using React 17+ for the new JSX transform
+      "jsx": "react-jsx",
       "preserveConstEnums": true,
       "typeRoots": ["./node_modules/@types", "./src/types"],
       "baseUrl": "./src",
@@ -27,10 +29,9 @@
         "@pages/*": ["pages/*"],
         "@common/*": ["common/*"]
       },
-      "lib": ["dom", "es2020"] // Ensure 'dom' and 'es2020' are included in the libraries
+      "lib": ["dom", "es2020"]
     },
     "include": ["src/**/*"],
     "exclude": ["**/*.spec.ts", "**/*.css"]
   }
-  
   

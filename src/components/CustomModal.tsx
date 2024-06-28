@@ -32,11 +32,11 @@ const CustomModal: React.FC<Props> = ({ open, onClose, title, body, footer, anim
       <Box
         sx={{
           position: 'absolute',
+          border: 'none',
           top: centered ? '50%' : '20%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           bgcolor: 'background.paper',
-          border: '0px solid #000',
           borderRadius:'8px',
           boxShadow: 24,
           padding: '8px 0 8px 0',

@@ -12,14 +12,14 @@ interface CardComponentProps {
 const CardComponent: React.FC<CardComponentProps> = ({ width, height, children, radius, shadow }) => (
   <Card 
     style={{ 
-      width: width || "fit-content", 
+      minWidth: width || "fit-content", 
       height: height || "fit-content",
       borderRadius: radius || '5px',
       boxShadow: shadow || 'lightgray 0px 0px 5px 2px',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor:'#FBFBFB'
+      backgroundColor:'rgba(255, 255, 255, 1)'
     }}
   >
     {children}
