@@ -115,13 +115,16 @@ const Header = () => {
             >
                 <div style={{ padding: '8px' }}>
                     <p style={{ color: '#1266F1', paddingLeft: '16px', fontWeight: '600px', fontFamily: 'sans-serif', fontSize: '16px' }}>USER</p>
-                    <MenuItem onClick={handleClose}>Order</MenuItem>
-                    <MenuItem onClick={handleClose}>Job Queue</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={handleClose}>Order</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={handleClose}>Job Queue</MenuItem>
                 </div>
                 <div style={{ padding: '8px' }}>
                     <p style={{ color: '#1266F1', paddingLeft: '16px', fontWeight: '600px', fontFamily: 'sans-serif', fontSize: '16px' }}>ADMIN</p>
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My Account</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={handleClose}>Color Management</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={handleClose}>User Administration</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={handleClose}>Cost Calculator</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={handleClose}>Store Locations</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={handleClose}>Change Password</MenuItem>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>
                 </div>
             </Menu>

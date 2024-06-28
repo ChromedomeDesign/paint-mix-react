@@ -8,7 +8,7 @@ import React, { useState } from "react"
 // import head3 from "./img/head-3.png"
 // import head4 from "./img/head-4.png"
 import CardComponent from '../../components/CardComponent';
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid, Input, Typography, responsiveFontSizes } from "@mui/material";
 import CustomInputComponent from "components/CustomInputComponent";
 import CustomButton from "components/CustomButton";
 import CustomTable from "components/CustomTable";
@@ -16,53 +16,123 @@ import CustomRadioGroup from "components/CustomRadioGroup";
 import CustomModal from "components/CustomModal";
 
 
+
 const Homepage: React.FC = () => {
     const order=(
-        <div>
-            order
-        </div>
+        <div style={{margin:'5px'}}>
+          <div >
+              <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Order</Typography>
+            </div>
+
+          </div>
+           
+    
     )
+    const JobQueue=(
+      <div style={{margin:'5px'}}>
+        <div >
+            <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Job Queue</Typography>
+          </div>
 
-
-    const columns = [
-      { name: 'Colorant/Base', datan: 'colorant' },
-      { name: 'Amount 1', datan: 'amount1' },
-      { name: 'Amount 2', datan: 'amount2' },
-      { name: 'Amount 3', datan: 'amount3' },
-      { name: 'TOTAL', datan: 'total', Call: (data: any) => (data.amount1 + data.amount2 + data.amount3).toFixed(2) },
-      { name: '', datan: 'action', Call: (data: any) => <button>Amount</button> }
-    ];
-    
-    const rows = [
-      { colorant: 'Flat White', amount1: 1.10, amount2: 1.10, amount3: 1.10 },
-      { colorant: 'Color', amount1: 1.10, amount2: 1.10, amount3: 1.10 },
-      { colorant: 'Additive', amount1: 1.10, amount2: 1.10, amount3: 1.10 },
-    ];
-    const [selectedValue, setSelectedValue] = useState('');
-    const options = [
-      { label: 'Option 1', value: 'option1' },
-      { label: 'Option 2', value: 'option2' },
-      { label: 'Option 3', value: 'option3' },
-    ];
-    const handleValueChange = (value: string) => {
-      setSelectedValue(value);
-    };
-    
-    const [isModalOpen, setModalOpen] = useState(false);
-
-    const handleOpenModal = () => {
-      setModalOpen(true);
-    };
+        </div>
+         
   
-    const handleCloseModal = () => {
-      setModalOpen(false);
-    };
-    const [inputValue, setInputValue] = useState<string>('gdfgdfgdfgdf');
+  )
+  const ColorMgmt=(
+    <div style={{margin:'5px'}}>
+      <div style={{textAlign:"center",lineHeight:'0px'}}>
+        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Color </Typography>
+        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Management </Typography>
+      </div>
 
-    const handleInputChange = (value: string) => {
-      console.log('Input Change:', value);
-      setInputValue(value);
-    };
+      </div>
+  )
+  const UserAdmin=(
+    <div style={{margin:'5px'}}>
+      <div style={{textAlign:"center",lineHeight:'0px'}}>
+        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>User</Typography>
+        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Administration </Typography>
+      </div>
+
+      </div>
+  )
+  const CostCal=(
+    <div style={{margin:'5px'}}>
+      <div style={{textAlign:"center",lineHeight:'0px'}} >
+        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Cost</Typography>
+        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Calculator</Typography>
+        </div>
+
+      </div>
+  )
+  const StoreLoc =(
+    <div style={{margin:'5px'}}>
+      <div style={{textAlign:"center",lineHeight:'0px'}} >
+         <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Store </Typography>
+         <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Location</Typography>
+        </div>
+
+      </div>
+  )
+  const ChangePsswd=(
+    <div style={{margin:'5px'}}>
+      <div style={{textAlign:"center",lineHeight:'0px'}}>
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Change </Typography>
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Password</Typography>
+        </div>
+
+      </div>
+  )
+  const Logout=(
+    <div style={{margin:'5px'}}>
+      <div style={{textAlign:"center",lineHeight:'0px'}}>
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Logout</Typography>
+        </div>
+
+      </div>
+  )
+
+
+
+    // const columns = [
+    //   { name: 'Colorant/Base', datan: 'colorant' },
+    //   { name: 'Amount 1', datan: 'amount1' },
+    //   { name: 'Amount 2', datan: 'amount2' },
+    //   { name: 'Amount 3', datan: 'amount3' },
+    //   { name: 'TOTAL', datan: 'total', Call: (data: any) => (data.amount1 + data.amount2 + data.amount3).toFixed(2) },
+    //   { name: '', datan: 'action', Call: (data: any) => <button>Amount</button> }
+    // ];
+    
+    // const rows = [
+    //   { colorant: 'Flat White', amount1: 1.10, amount2: 1.10, amount3: 1.10 },
+    //   { colorant: 'Color', amount1: 1.10, amount2: 1.10, amount3: 1.10 },
+    //   { colorant: 'Additive', amount1: 1.10, amount2: 1.10, amount3: 1.10 },
+    // ];
+    // const [selectedValue, setSelectedValue] = useState('');
+    // const options = [
+    //   { label: 'Option 1', value: 'option1' },
+    //   { label: 'Option 2', value: 'option2' },
+    //   { label: 'Option 3', value: 'option3' },
+    // ];
+    // const handleValueChange = (value: string) => {
+    //   setSelectedValue(value);
+    // };
+    
+    // const [isModalOpen, setModalOpen] = useState(false);
+
+    // const handleOpenModal = () => {
+    //   setModalOpen(true);
+    // };
+  
+    // const handleCloseModal = () => {
+    //   setModalOpen(false);
+    // };
+    // const [inputValue, setInputValue] = useState<string>('gdfgdfgdfgdf');
+
+    // const handleInputChange = (value: string) => {
+    //   console.log('Input Change:', value);
+    //   setInputValue(value);
+    // };
     
     return (
         
@@ -70,7 +140,7 @@ const Homepage: React.FC = () => {
         <div style={{width:'100%'}}>
 
 
-<Button variant="contained" color="primary" onClick={handleOpenModal}>
+{/* <Button variant="contained" color="primary" onClick={handleOpenModal}>
         Open Modal
       </Button>
       <CustomModal
@@ -98,74 +168,89 @@ const Homepage: React.FC = () => {
       />
       <p>Input Value: {inputValue}</p>
             <p>{inputValue}</p>
-              <CustomTable columns={columns} data={rows} />
+              <CustomTable columns={columns} data={rows} /> */}
              
             <div>
-            <CustomRadioGroup
+            {/* <CustomRadioGroup
         options={options}
         selectedValue={selectedValue}
         onValueChange={handleValueChange}
         row={false}
-      />
-                <div>
-                <CustomButton children={"Sign"} />
-                    <p>USER</p>
+      /> */}
+                <div >
+                
+                    <Typography sx={{fontSize:'32px', color:'rgba(18, 102, 241, 1)'}}>USER</Typography>
                 </div>
-            <Grid container spacing={3}>
-      <Grid item xs={12} md={3} xl={3} lg={3}>
-        <CardComponent children={order} width="234px" height="195px" />
-      </Grid>
-      <Grid item xs={12} md={3} xl={3} lg={3}>
-        <CardComponent children={order} width="234px" height="195px" />
-      </Grid>
-      <Grid item xs={12} md={3} xl={3} lg={3}>
-        <CardComponent children={order} width="234px" height="195px" />
-      </Grid>
-    </Grid>
+              <Grid container spacing={3}>
+                  <Grid item xs={12} md={3} xl={3} lg={3}>
+                    <CardComponent children={order} width="234px" height="195px" />
+                  </Grid>
+                  <Grid item xs={12} md={3} xl={3} lg={3}>
+                    <CardComponent children={JobQueue} width="234px" height="195px" />
+                  </Grid>
+                  <Grid item xs={12} md={3} xl={3} lg={3}>
+                    <CardComponent children={JobQueue} width="234px" height="195px" />
+                  </Grid>
+              </Grid>
 
             </div>
+            <div style={{width:'100%',border:'1px solid #E0E0E0',marginTop:'80px',marginBottom:'20px'}}></div>
      
-            <div>
-                <div>
-                    <p>Admin</p>
+            <div >
+                <div >
+                  <Typography sx={{fontSize:'32px', color:'rgba(18, 102, 241, 1)'}}>ADMIN</Typography>
                 </div>
-            <Grid container spacing={3}>
-      <Grid item xs={12} md={3} xl={3} lg={3}>
-        <CardComponent children={order} width="234px" height="195px" />
-        <CardComponent children={order} width="234px" height="195px" />
-      </Grid>
-      <Grid item xs={12} md={3} xl={3} lg={3}>
-        <CardComponent children={order} width="234px" height="195px" />
-        <CardComponent children={order} width="234px" height="195px" />
-      </Grid>
-      <Grid item xs={12} md={3} xl={3} lg={3}>
-        <CardComponent children={order} width="234px" height="195px" />
-        <CardComponent children={order} width="234px" height="195px" />
-      </Grid>
-    </Grid>
+                <Grid container spacing={3}>
+                  
+                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>
+                    <CardComponent children={ColorMgmt} width="234px" height="195px" />                   
+                  </Grid>
+                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>
+                    <CardComponent children={UserAdmin} width="234px" height="195px" />
+                  </Grid>
+                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>
+                    <CardComponent children={CostCal} width="234px" height="195px" />
+                    
+                  
+                  </Grid>
+
+                  <Grid item xs={12} style={{ marginTop: '24px' }} />
+
+                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>                    
+                    <CardComponent children={StoreLoc} width="234px" height="195px" />
+                  </Grid>                  
+                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>                    
+                    <CardComponent children={ChangePsswd} width="234px" height="195px" />
+                  </Grid>
+                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>                    
+                    <CardComponent children={Logout} width="234px" height="195px" />
+                  </Grid>
+
+
+                </Grid>
 
             </div>  
 
 
 
             <div>
-                <div>
+                {/* <div>
                     <p>Admin</p>
-                </div>
-            <Grid container spacing={3}>
-      <Grid item xs={12} md={3} xl={3} lg={3}>
+                </div> */}
+            {/* <Grid container spacing={3}> */}
+      {/* <Grid item xs={12} md={3} xl={3} lg={3}>
         <CardComponent children={order} width="234px" height="195px" />
         <CardComponent children={order} width="234px" height="195px" />
-      </Grid>
-      <Grid item xs={12} md={3} xl={3} lg={3}>
+      </Grid> */}
+      {/* <Grid item xs={12} md={3} xl={3} lg={3}>
         <CardComponent children={order} width="234px" height="195px" />
         <CardComponent children={order} width="234px" height="195px" />
-      </Grid>
-      <Grid item xs={12} md={3} xl={3} lg={3}>
+      </Grid> */}
+      {/* <Grid item xs={12} md={3} xl={3} lg={3}>
         <CardComponent children={order} width="234px" height="195px" />
         <CardComponent children={order} width="234px" height="195px" />
-      </Grid>
-    </Grid>
+      </Grid> */}
+    {/* </Grid> */}
 
             </div> 
         </div>
