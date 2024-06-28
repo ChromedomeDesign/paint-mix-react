@@ -1,16 +1,36 @@
+// {
+//     "extends": "@tsconfig/node18/tsconfig.json",
+//     "compilerOptions": {
+//         "jsx": "react",
+//         "preserveConstEnums": true,
+//         "typeRoots": ["./node_modules/@types", "./src/types"],
+//         "baseUrl": "./src",
+//         "paths": {
+//             "@feature/*": ["feature/*"],
+//             "@pages/*": ["pages/*"],
+//             "@common/*": ["common/*"]
+//         }
+//     },
+//     "include": ["src/**/*"],
+//     "exclude": ["**/*.spec.ts", "**/*.css"]
+// }
+
 {
     "extends": "@tsconfig/node18/tsconfig.json",
     "compilerOptions": {
-        "jsx": "react",
-        "preserveConstEnums": true,
-        "typeRoots": ["./node_modules/@types", "./src/types"],
-        "baseUrl": "./src",
-        "paths": {
-            "@feature/*": ["feature/*"],
-            "@pages/*": ["pages/*"],
-            "@common/*": ["common/*"]
-        }
+      "jsx": "react-jsx", // use "react-jsx" if you are using React 17+ for the new JSX transform
+      "preserveConstEnums": true,
+      "typeRoots": ["./node_modules/@types", "./src/types"],
+      "baseUrl": "./src",
+      "paths": {
+        "@feature/*": ["feature/*"],
+        "@pages/*": ["pages/*"],
+        "@common/*": ["common/*"]
+      },
+      "lib": ["dom", "es2020"] // Ensure 'dom' and 'es2020' are included in the libraries
     },
     "include": ["src/**/*"],
     "exclude": ["**/*.spec.ts", "**/*.css"]
-}
+  }
+  
+  
