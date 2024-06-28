@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
 interface CustomButtonProps {
-    variant?: 'text' | 'outlined' | 'contained';
+    variant?: 'outlined';
     color?: string;
     fontSize?: string;
     width?:string;
@@ -17,18 +17,18 @@ const StyledButton = styled(Button)<{ customcolor?: string; customfontsize?: str
         height: '45px',
         fontWeight:600,
         width: width || "100%",
-        backgroundColor:'#1266F1',
+        // backgroundColor:'#1266F1',
         fontSize: customfontsize || '13px',
-        color: customcolor || 'white',
+        color: customcolor || '#1266F1',
     })
 );
 
-const CustomButton: React.FC<CustomButtonProps> = ({ variant = 'contained', fontSize, color, onClick,width, children }) => {
+const CustomOutLinedButton: React.FC<CustomButtonProps> = ({  fontSize, color, onClick,width, children }) => {
     return (
-        <StyledButton variant={variant} customcolor={color} width={width} customfontsize={fontSize} onClick={onClick}>
+        <StyledButton  customcolor={color} width={width} customfontsize={fontSize} onClick={onClick}>
             {children}
         </StyledButton>
     );
 };
 
-export default CustomButton;
+export default CustomOutLinedButton;

@@ -146,6 +146,7 @@ type Props = {
   label?: string;
   name?: string;
   value?: string;
+  width?: string;
   customInputChange?: (value: string) => void;
 };
 
@@ -187,7 +188,7 @@ const CssTextField = styled(TextField)({
   },
 });
 
-const CustomInputComponent: React.FC<Props> = ({ label, name, value, customInputChange }) => {
+const CustomInputComponent: React.FC<Props> = ({ label, name, value,width, customInputChange }) => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const data = e.target.value;
     customInputChange?.(data);
@@ -200,7 +201,7 @@ const CustomInputComponent: React.FC<Props> = ({ label, name, value, customInput
       value={value}
       onChange={handleInputChange}
       variant="outlined"
-      fullWidth
+      sx={{width:width ? width :'100%'}}
     />
   );
 };
