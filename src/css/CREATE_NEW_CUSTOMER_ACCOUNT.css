@@ -1,0 +1,22 @@
+/* createNew-inputDiv */
+.createNew-inputDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 700px) {
+    .createNew-inputDiv {
+      flex-direction: column;
+      width: 360px;
+      align-items: center;
+    }
+  
+    .createNew-inputDiv > div {
+      width: 360px;
+    }
+  }
+  

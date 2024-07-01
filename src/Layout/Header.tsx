@@ -84,9 +84,9 @@ const Header = () => {
     };
 
     return (
-        <div style={{ padding: '10px 10px 0px 10px' }}>
-            <CardComponent width="100%" radius="8px" height="60px">
-                <div style={{ display: 'flex', justifyContent: 'flex-end', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%', padding: '10px' }}>
+        <div style={{ padding: '10px 10px 0px 10px'}}>
+            <CardComponent width="100%" radius="8px" height="60px" customIndex={99999}>
+                <div style={{ display: 'flex',justifyContent: 'flex-end', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%', padding: '10px' }}>
                     <SearchBar />
                     <Button  onClick={handleClick}>
                     <MenuIcon sx={{ fontSize: '40px', color: '#1266F1', cursor: 'pointer' }}/>

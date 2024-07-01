@@ -1,7 +1,8 @@
 import React from 'react';
 import Homepage from '../pages/homepage/Homepage';
 import PrivateLayout from 'Layout/PrivateLayout';
-import CREATE_NEW_CUSTOMER_ACCOUNT from '@pages/New-Customer/CREATE_NEW_CUSTOMER_ACCOUNT';
+import CREATE_NEW_CUSTOMER_ACCOUNT from '@pages/New-Customer/CustomerAccount';
+import JobInformation from '@pages/New-Customer/JobInformation';
 
 
 type RouteObject = {
@@ -17,7 +18,8 @@ const PrivateRoute: PrivateRouteType = [
     element: <PrivateLayout />,
     children: [
       { path: "/", element: <Homepage /> },
-      { path: "/CREATE_NEW_CUSTOMER_ACCOUNT", element:<CREATE_NEW_CUSTOMER_ACCOUNT/>}
+      { path: "/CREATE_NEW_CUSTOMER_ACCOUNT", element:<CREATE_NEW_CUSTOMER_ACCOUNT/>},
+      { path: "/Job Information", element:<JobInformation/>}
     ],
   },
 ];
