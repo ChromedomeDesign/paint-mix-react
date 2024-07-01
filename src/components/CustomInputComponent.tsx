@@ -147,6 +147,7 @@ type Props = {
   name?: string;
   value?: string;
   width?: string;
+  type?: string;
   customInputChange?: (value: string) => void;
 };
 
@@ -172,7 +173,8 @@ const CssTextField = styled(TextField)({
             margin: '0 14px',
         },
   '& .MuiOutlinedInput-root': {
-    height: '46px', // Set height here
+    height: '46px',
+    backgroundColor: '#ffff',
     '& fieldset': {
       borderColor: '#E0E3E7',
       borderWidth:'1px'
@@ -188,7 +190,7 @@ const CssTextField = styled(TextField)({
   },
 });
 
-const CustomInputComponent: React.FC<Props> = ({ label, name, value,width, customInputChange }) => {
+const CustomInputComponent: React.FC<Props> = ({ label, name, value,width,type,customInputChange }) => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const data = e.target.value;
     customInputChange?.(data);
@@ -197,6 +199,7 @@ const CustomInputComponent: React.FC<Props> = ({ label, name, value,width, custo
   return (
     <CssTextField
       label={label}
+      type={type? type : "text"}
       name={name}
       value={value}
       onChange={handleInputChange}
