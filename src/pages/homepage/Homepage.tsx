@@ -14,10 +14,22 @@ import CustomButton from "components/CustomButton";
 import CustomTable from "components/CustomTable";
 import CustomRadioGroup from "components/CustomRadioGroup";
 import CustomModal from "components/CustomModal";
+import CustomOutLinedButton from "components/CustomOutLinedButton";
+import greenTick from "assets/green-tick.svg"
 
 
 
 const Homepage: React.FC = () => {
+
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
+
+
+
+
+
     const order=(
         <div style={{margin:'5px'}}>
           <div >
@@ -37,61 +49,137 @@ const Homepage: React.FC = () => {
         </div>
          
   
-  )
-  const ColorMgmt=(
-    <div style={{margin:'5px'}}>
-      <div style={{textAlign:"center",lineHeight:'0px'}}>
-        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Color </Typography>
-        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Management </Typography>
-      </div>
-
-      </div>
-  )
-  const UserAdmin=(
-    <div style={{margin:'5px'}}>
-      <div style={{textAlign:"center",lineHeight:'0px'}}>
-        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>User</Typography>
-        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Administration </Typography>
-      </div>
-
-      </div>
-  )
-  const CostCal=(
-    <div style={{margin:'5px'}}>
-      <div style={{textAlign:"center",lineHeight:'0px'}} >
-        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Cost</Typography>
-        <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Calculator</Typography>
+    )
+    const ColorMgmt=(
+      <div style={{margin:'5px'}}>
+        <div style={{textAlign:"center",lineHeight:'0px'}}>
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Color </Typography>
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Management </Typography>
         </div>
 
-      </div>
-  )
-  const StoreLoc =(
-    <div style={{margin:'5px'}}>
-      <div style={{textAlign:"center",lineHeight:'0px'}} >
-         <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Store </Typography>
-         <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Location</Typography>
+        </div>
+    )
+    const UserAdmin=(
+      <div style={{margin:'5px'}}>
+        <div style={{textAlign:"center",lineHeight:'0px'}}>
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>User</Typography>
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Administration </Typography>
         </div>
 
-      </div>
-  )
-  const ChangePsswd=(
-    <div style={{margin:'5px'}}>
-      <div style={{textAlign:"center",lineHeight:'0px'}}>
-          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Change </Typography>
-          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Password</Typography>
         </div>
+    )
+    const CostCal=(
+      <div style={{margin:'5px'}}>
+        <div style={{textAlign:"center",lineHeight:'0px'}} >
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Cost</Typography>
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Calculator</Typography>
+          </div>
 
-      </div>
-  )
-  const Logout=(
-    <div style={{margin:'5px'}}>
-      <div style={{textAlign:"center",lineHeight:'0px'}}>
-          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Logout</Typography>
         </div>
+    )
+    const StoreLoc =(
+      <div style={{margin:'5px'}}>
+        <div style={{textAlign:"center",lineHeight:'0px'}} >
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Store </Typography>
+          <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Location</Typography>
+          </div>
 
+        </div>
+    )
+    const ChangePsswd=(
+      <div style={{margin:'5px'}}>
+        <div style={{textAlign:"center",lineHeight:'0px'}}>
+            <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Change </Typography>
+            <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Password</Typography>
+          </div>
+
+        </div>
+    )
+    const Logout=(
+      <div style={{margin:'5px'}}>
+        <div style={{textAlign:"center",lineHeight:'0px'}}>
+            <Typography sx={{fontSize:'16px', fontWeight:'600', color:'rgba(66, 66, 66, 1)'}}>Logout</Typography>
+          </div>
+
+        </div>
+        
+    )
+
+      //-----------------------change password functions-------------------//
+       
+const forgot = () => {
+
+  setModalOpen(true);
+};
+
+const handleCloseModal = () => {
+setModalOpen(false);
+};
+
+const title =(
+  <Typography sx={{fontSize:'20',fontWeight:600,color:'#424242',textAlign:'center',lineHeight:'24px'}}>Change Password</Typography>
+)
+const handleChangePassword = () => {
+  if (newPassword === confirmPassword && newPassword !== '') {
+    // Here you would typically send the password change request to your server
+    console.log('Password change requested');
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsSuccess(true);
+      // Reset after showing success for a while
+      setTimeout(() => {
+        setIsSuccess(false);
+        setNewPassword('');
+        setConfirmPassword('');
+      }, 2000);
+    }, 1000);
+  } else {
+    alert('Passwords do not match or are empty');
+  }
+};
+
+const body =(
+
+
+   <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
+      {/* <Typography style={{marginBottom:'20px',marginTop:'10px',lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Enter email to send new password.</Typography> */}
+      <div>
+      <div style={{marginBottom: '15px', display: 'flex', alignItems: 'center'}}>
+        <CustomInputComponent 
+          label="Enter New Password"
+          value={newPassword}
+          // customInputChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewPassword(e.target.value)}
+          // type="password"
+        />
+        {isSuccess && <img src={greenTick} alt="Success" width="24px" height="24px" style={{marginLeft: '10px'}} />}
       </div>
-  )
+      
+      <div style={{marginBottom: '15px', display: 'flex', alignItems: 'center'}}>
+        <CustomInputComponent 
+          label="Confirm New Password"
+          value={confirmPassword}
+          // customInputChange={(e: React.ChangeEvent<HTMLInputElement>) => setConfirmPassword(e.target.value)}
+          // type="password"
+        />
+        {isSuccess && <img src={greenTick} alt="Success" width="24px" height="24px" style={{marginLeft: '10px'}} />}
+      </div>
+      
+      </div> 
+      
 
+      
+      
+   </div>
+)
+
+const footer=(
+  <div style={{display:'flex',flexDirection:'row'}}>
+      <CustomOutLinedButton children={"Cancel"} onClick={handleCloseModal}/>
+      <CustomButton  children={"Submit"}/>
+  </div>
+)
+//---------------------------------------------------------//
 
 
     // const columns = [
@@ -138,6 +226,16 @@ const Homepage: React.FC = () => {
         
 
         <div style={{width:'100%'}}>
+        <CustomModal
+        open={isModalOpen}
+        onClose={handleCloseModal}
+        title={()=>title}
+        body={() => body}
+        footer={() => footer}
+        animation={true}
+        size="medium"
+        centered={true}
+      />
 
 
 {/* <Button variant="contained" color="primary" onClick={handleOpenModal}>
@@ -182,15 +280,15 @@ const Homepage: React.FC = () => {
                     <Typography sx={{fontSize:'32px', color:'rgba(18, 102, 241, 1)'}}>USER</Typography>
                 </div>
               <Grid container spacing={3}>
-                  <Grid item xs={12} md={3} xl={3} lg={3}>
+                  <Grid item xs={12} sm={6} md={4} xl={3} lg={3}>
                     <CardComponent children={order} width="234px" height="195px" />
                   </Grid>
-                  <Grid item xs={12} md={3} xl={3} lg={3}>
+                  <Grid item xs={12} sm={6} md={4} xl={3} lg={3}>
                     <CardComponent children={JobQueue} width="234px" height="195px" />
                   </Grid>
-                  <Grid item xs={12} md={3} xl={3} lg={3}>
-                    <CardComponent children={JobQueue} width="234px" height="195px" />
-                  </Grid>
+                  {/* <Grid item xs={12} md={3} xl={3} lg={3}>
+                    <CardComponent  width="234px" height="195px" />
+                  </Grid> */}
               </Grid>
 
             </div>
@@ -202,13 +300,13 @@ const Homepage: React.FC = () => {
                 </div>
                 <Grid container spacing={3}>
                   
-                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>
+                  <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>
                     <CardComponent children={ColorMgmt} width="234px" height="195px" />                   
                   </Grid>
-                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>
+                  <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>
                     <CardComponent children={UserAdmin} width="234px" height="195px" />
                   </Grid>
-                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>
+                  <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>
                     <CardComponent children={CostCal} width="234px" height="195px" />
                     
                   
@@ -216,13 +314,14 @@ const Homepage: React.FC = () => {
 
                   <Grid item xs={12} style={{ marginTop: '24px' }} />
 
-                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>                    
+                  <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>                    
                     <CardComponent children={StoreLoc} width="234px" height="195px" />
                   </Grid>                  
-                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>                    
+                  <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>
+                  <button onClick={forgot}>hhg</button>                     
                     <CardComponent children={ChangePsswd} width="234px" height="195px" />
                   </Grid>
-                  <Grid item xs={12} md={3} xl={3} lg={3} spacing={3}>                    
+                  <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>                    
                     <CardComponent children={Logout} width="234px" height="195px" />
                   </Grid>
 
@@ -234,27 +333,13 @@ const Homepage: React.FC = () => {
 
 
             <div>
-                {/* <div>
-                    <p>Admin</p>
-                </div> */}
-            {/* <Grid container spacing={3}> */}
-      {/* <Grid item xs={12} md={3} xl={3} lg={3}>
-        <CardComponent children={order} width="234px" height="195px" />
-        <CardComponent children={order} width="234px" height="195px" />
-      </Grid> */}
-      {/* <Grid item xs={12} md={3} xl={3} lg={3}>
-        <CardComponent children={order} width="234px" height="195px" />
-        <CardComponent children={order} width="234px" height="195px" />
-      </Grid> */}
-      {/* <Grid item xs={12} md={3} xl={3} lg={3}>
-        <CardComponent children={order} width="234px" height="195px" />
-        <CardComponent children={order} width="234px" height="195px" />
-      </Grid> */}
-    {/* </Grid> */}
+    
 
             </div> 
         </div>
      );
+
+     
     };
     
     export default Homepage;
