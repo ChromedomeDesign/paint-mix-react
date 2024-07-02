@@ -25,9 +25,9 @@ type Props = {
 };
 
 const StyledTableContainer = styled(TableContainer)({
-  height: '60vh',
+  // height: '60vh',
   overflow: 'auto',
-  marginBottom: '1rem',
+  marginBottom: '10px',
   padding: '0px',
   width: '100%',
 });
