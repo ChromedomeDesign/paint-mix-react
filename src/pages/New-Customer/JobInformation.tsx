@@ -13,6 +13,7 @@ import '../../css/CREATE_NEW_CUSTOMER_ACCOUNT.css';
 import PickupDate from "components/PickupDate";
 import CustomSelect from "components/CustomSelect";
 import CustomSelectComponent from "components/CustomSelect";
+import CustomTextButton from "components/CustomTextButton";
 
 const JobInformation: FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -221,7 +222,7 @@ const JobInformation: FC = () => {
         <CardComponent width="100%" children={PRODUCTION} backgroundColor={"#fafcfc"} />
 
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginTop: '20px' }}>
-          <CustomOutLinedButton children={"Cancel"} width="80px" />
+          <CustomTextButton children={"Cancel"} width="80px" />
           <CustomButton children={"Save"} width="80px" onClick={saving} />
         </div>
       </div>

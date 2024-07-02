@@ -4,12 +4,14 @@ import CustomInputComponent from "components/CustomInputComponent";
 import CustomSelectComponent from "components/CustomSelect";
 import CustomButton from "components/CustomButton";
 import CustomTable from "components/CustomTable";
+import CustomOutLinedButton from "components/CustomOutLinedButton";
+import CustomTextButton from "components/CustomTextButton";
 
 const ColorManagement: React.FC = () => {
     const actions =(
         <div>
            <div style={{gap:'10px'}}>
-              <CustomButton width="Fixed (80px)" >View</CustomButton>
+              <CustomTextButton children={"View"} width="80px"/>
               <CustomButton width="Fixed (80px)" >Edit</CustomButton>
               <CustomButton width="Fixed (80px)" >Info</CustomButton>
            </div>
@@ -46,6 +48,21 @@ const ColorManagement: React.FC = () => {
       ];
 
 
+      const footer =(
+        <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
+            <div style={{ display: 'flex', flexDirection: 'row', width:'60px',  tabSize:'large' }}>
+                <CustomOutLinedButton>Back</CustomOutLinedButton>
+            </div>
+            <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
+                <CustomOutLinedButton>New Fan Deck</CustomOutLinedButton>
+            </div>
+           
+        </div>
+
+
+      )
+
+
     return (
         <div className="colorManagement">
               <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
@@ -76,8 +93,17 @@ const ColorManagement: React.FC = () => {
                  <div style={{ marginTop: '20px' }}>
                     <CustomTable columns={columns} data={rows} />
                 </div>
+                <div style={{display:'flex',flexDirection:'row',position:'absolute',right:0}}>
+                    {footer}
+                </div>
         </div>
+
+
     );
+  
+
+
+   
 };
 
 export default ColorManagement;

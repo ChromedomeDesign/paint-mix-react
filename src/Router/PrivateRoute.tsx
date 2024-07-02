@@ -7,6 +7,7 @@ import SearchExistingCustomer from '@pages/SearchExistingCustomer/SearchExisting
 import CustomerAccount from '@pages/New-Customer/CustomerAccount';
 import EditCustomerAccount from '@pages/New-Customer/EditCustomerAccount';
 import ColorManagement from '@pages/ColorManagement/ColorMangement';
+import JobQueInformation from '@pages/JOBQUEUE/JobInformation';
 
 type RouteObject = {
   path: string;
@@ -27,7 +28,9 @@ const PrivateRoute: PrivateRouteType = [
       { path: '/CustomerAccount', element: <CustomerAccount/> }, 
       { path: '/EditCustomerAccount', element: <EditCustomerAccount/> }, 
       { path: '/CustomerAccount', element: <CustomerAccount/> },
-      { path: '/ColorManagement', element: <ColorManagement/> }
+      { path: '/JobQueInformation', element: <JobQueInformation/> },
+      { path: '/ColorManagement', element: <ColorManagement/> },
+      
       
     ],
   },
