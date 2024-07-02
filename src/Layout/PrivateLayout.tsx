@@ -16,7 +16,7 @@ const PrivateLayout=()=>{
 return(
     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
       <div style={{ width: '100%', maxWidth: '1800px' }}>
-        <div style={{position: 'sticky', top: '0px', backgroundColor: 'white' ,zIndex:9999}}>
+        <div style={{position: 'sticky', top: '0px', backgroundColor: 'transparent' ,zIndex:999}}>
         <Header/>
         </div>
         <main style={{margin:'12px 15px 12px 15px',paddingBottom:'10px'}}>

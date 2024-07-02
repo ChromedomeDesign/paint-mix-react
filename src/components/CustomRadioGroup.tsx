@@ -29,7 +29,8 @@ const StyledBox = styled(Box)({
   border: '0.5px solid gray',
   marginBottom: '1rem',
   padding: '0px',
-  width: '100%',
+  // margin:'40px',
+  width: "200px",
 });
 
 const CustomRadioGroup: React.FC<Props> = ({ options, onValueChange, selectedValue, width,label,row}) => {
@@ -40,13 +41,14 @@ const CustomRadioGroup: React.FC<Props> = ({ options, onValueChange, selectedVal
 
   return (
    
-      <Box p={2}>
+      <Box >
         <Typography variant="h6" gutterBottom>
           {label}
         </Typography>
         <RadioGroup row={row} value={selectedValue} onChange={handleRadioChange}>
           {options.map((option) => (
             <FormControlLabel
+              sx={{width:'200px'}}
               key={option.value}
               value={option.value}
               control={<Radio />}
