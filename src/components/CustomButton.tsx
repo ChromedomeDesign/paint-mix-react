@@ -23,7 +23,7 @@ const StyledButton = styled(Button)<{ customcolor?: string; customfontsize?: str
     })
 );
 
-const CustomButton: React.FC<CustomButtonProps> = ({ variant = 'contained', fontSize, color, onClick,width, children }) => {
+const CustomButton: React.FC<CustomButtonProps> = ({ variant = 'contained', fontSize, color, onClick, width, children }) => {
     return (
         <StyledButton variant={variant} customcolor={color} width={width} customfontsize={fontSize} onClick={onClick}>
             {children}

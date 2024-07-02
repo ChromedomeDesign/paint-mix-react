@@ -1,9 +1,11 @@
 import React from 'react';
 import Homepage from '../pages/homepage/Homepage';
 import PrivateLayout from 'Layout/PrivateLayout';
-import CREATE_NEW_CUSTOMER_ACCOUNT from '@pages/New-Customer/CustomerAccount';
+import CREATE_NEW_CUSTOMER_ACCOUNT from '@pages/New-Customer/NewCustomerAccount';
 import JobInformation from '@pages/New-Customer/JobInformation';
-
+import SearchExistingCustomer from '@pages/SearchExistingCustomer/SearchExistingCustomer';
+import CustomerAccount from '@pages/New-Customer/CustomerAccount';
+import EditCustomerAccount from '@pages/New-Customer/EditCustomerAccount';
 
 type RouteObject = {
   path: string;
@@ -19,7 +21,12 @@ const PrivateRoute: PrivateRouteType = [
     children: [
       { path: "/", element: <Homepage /> },
       { path: "/CREATE_NEW_CUSTOMER_ACCOUNT", element:<CREATE_NEW_CUSTOMER_ACCOUNT/>},
-      { path: "/Job Information", element:<JobInformation/>}
+      { path: "/JobInformation", element:<JobInformation/>},
+      { path: '/SearchExistingCustomer', element: <SearchExistingCustomer/> }, 
+      { path: '/CustomerAccount', element: <CustomerAccount/> }, 
+      { path: '/EditCustomerAccount', element: <EditCustomerAccount/> }, 
+      { path: '/CustomerAccount', element: <CustomerAccount/> }
+      
     ],
   },
 ];

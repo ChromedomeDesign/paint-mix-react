@@ -1,131 +1,112 @@
-import React, { FC, useState } from "react"
-
-import CardComponent from '../../components/CardComponent';
-import { Button, Grid, Typography } from "@mui/material";
+import React, { FC, useState } from "react";
+import { Typography } from "@mui/material";
+import CustomTabs from "components/CustomTabs";
 import CustomInputComponent from "components/CustomInputComponent";
-import CustomButton from "components/CustomButton";
 import CustomTable from "components/CustomTable";
-import CustomRadioGroup from "components/CustomRadioGroup";
-import CustomModal from "components/CustomModal";
-import CustomCheckBox from "components/CustomCheckBox";
+import CustomButton from "components/CustomButton";
+import { Padding } from "@mui/icons-material";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
-import '../../css/CREATE_NEW_CUSTOMER_ACCOUNT.css';
 
-const CustomerAccount: FC = () => {
-    const [isModalOpen, setModalOpen] = useState(false);
-    const [isChecked, setIsChecked] = useState(false);
-    const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
-      businessName: '',
-      address: '',
-      city: '',
-      state: '',
-      postalCode: '',
-      phoneNumber: ''
-    });
-    //-----------------------Modal functions-------------------//
+const CustomerAccount: FC=()=>{
 
-const saving = () => {
-    // Handle forgot password logic here
-    setModalOpen(true);
-};
+    const [isJob, JobSearch] = useState('');
+    const actions =(
 
-const handleCloseModal = () => {
-  setModalOpen(false);
-};
+        <div>
+           <div>
+              <CustomButton width="Fixed (80px)" >Reproduce</CustomButton>
+              <CustomButton width="Fixed (80px)" >Modify</CustomButton>
+           </div>
+        </div>
 
-const title =(
-    <Typography sx={{fontSize:'20',fontWeight:600,color:'#424242',textAlign:'center',lineHeight:'24px'}}>Confirm Customer Information</Typography>
-)
-const body =(
-     <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
-         <Typography style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Contractor Home</Typography>
-          <Typography style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>{`${formData.firstName} ${formData.lastName}`}</Typography>
-          <Typography style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>{`${formData.address}`}</Typography>
-          <Typography style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>{`${formData.phoneNumber}`}</Typography>
-          <Typography style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Account #123456789</Typography>
-       
-     </div>
-)
+      );
+    const tab = [{value: "NEW"},{value:'IN PROGRESS'},{value:'COMPLETED'}];
 
-const footer=(
-    <div style={{display:'flex',flexDirection:'row'}}>
-        <CustomOutLinedButton children={"Back"} width="80px" onClick={handleCloseModal}/>
-        <CustomButton  children={"Create New Job"} width="155px"/>
-    </div>
-)
-//---------------------------------------------------------//
+    const columns = [
+        { name: 'Job Name', datan:'JobName' },
+        { name: 'Color Ref', datan: 'ColorRef' },
+        { name: 'Job Type', datan: 'JobType' },
+        { name: 'Date', datan: 'date' },
+        { name: 'Actions', datan: 'Actions', call:<div>{actions}</div>
+          
+        },
+        // { name: 'gdfgfd', datan: 'action', Call: (data: any) => <button>Amount</button> }
+      ];
 
+  
+     
+      
+      const rows = [
+        { JobName: 'Delivery Girl', ColorRef: 'purple', JobType: 'Modification', date: "01/02/2019", Actions:actions},
+        { JobName: 'Painter', ColorRef: 'voilet', JobType: 'Reproduce', date: "01/02/2019", Actions:actions},
+        { JobName: 'Engineer', ColorRef: 'blue', JobType: 'Modification', date: "01/02/2019", Actions:actions},
+        { JobName: 'Carpenter', ColorRef: 'Green', JobType: 'Custom', date: "01/02/2019",Actions:actions}
+      ];
+      
+      const options = [
+        { label: 'Option 1', value: 'option1' },
+        { label: 'Option 2', value: 'option2' },
+        { label: 'Option 3', value: 'option3' },
+      ];
 
-//-----------------Login Form----------------------------//
-
-
- const onCheck = (isChecked: boolean) => {
-   // Handle checkbox state
- };
-
- const handleInputChange = (name: string, value: string) => {
-   setFormData(prevState => ({
-     ...prevState,
-     [name]: value
-   }));
- };
-
-    const form =(
-      <div style={{ display: 'flex', width: '100%', margin: '40px 30px', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', alignItems: 'center' }}>
-      <div className="createNew-inputDiv">
-        <CustomInputComponent label="First Name" name="firstName" value={formData.firstName} customInputChange={(value) => handleInputChange('firstName', value)} />
-        <CustomInputComponent  label="Last Name" name="lastName" value={formData.lastName} customInputChange={(value) => handleInputChange('lastName', value)} />
-      </div>
-      <div className="createNew-inputDiv">
-        <CustomInputComponent width="100%" label="Business Name" name="businessName" value={formData.businessName} customInputChange={(value) => handleInputChange('businessName', value)} />
-      </div>
-      <div className="createNew-inputDiv">
-        <CustomInputComponent width="100%" label="Address" name="address" value={formData.address} customInputChange={(value) => handleInputChange('address', value)} />
-      </div>
-      <div className="createNew-inputDiv">
-        <CustomInputComponent label="City" name="city" value={formData.city} customInputChange={(value) => handleInputChange('city', value)} />
-        <CustomInputComponent label="State" name="state" value={formData.state} customInputChange={(value) => handleInputChange('state', value)} />
-      </div>
-      <div className="createNew-inputDiv">
-        <CustomInputComponent type="Number" label="Postal Code" name="postalCode" value={formData.postalCode} customInputChange={(value) => handleInputChange('postalCode', value)} />
-        <CustomInputComponent type="Number" label="Phone Number" name="phoneNumber" value={formData.phoneNumber} customInputChange={(value) => handleInputChange('phoneNumber', value)} />
-      </div>
-    </div>
-    )
-//--------------------------------------------------------------------------------//
-
-
-//----------------------Main return-------------------------------------------//
-    return (
-        <div style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:"center"}}>
-         <div style={{width:'100%'}}>
-               <CustomModal
-        open={isModalOpen}
-        onClose={handleCloseModal}
-        title={()=>title}
-        body={() => body}
-        footer={() => footer}
-        animation={true}
-        size="medium"
-        centered={true}
-      />
-            <CardComponent  width="100%"  children={form} backgroundColor={"#fafcfc"} />
-            <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',marginTop:'20px'}}>
-               <CustomOutLinedButton children={"Cancel"}  width="80px"/>
-               <CustomButton children={"Save"} width="80px" onClick={saving}/>
+      const footer =(
+        <div style={{display:'flex', flexDirection:'row'}}>
+            <div style={{ display: 'flex', flexDirection: 'row', width:'60px',  tabSize:'large' }}>
+                <CustomOutLinedButton>Back</CustomOutLinedButton>
+            </div>
+            <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
+                <CustomOutLinedButton>New Fan Deck</CustomOutLinedButton>
+            </div>
+            <div style={{display: 'flex', flexDirection:'row', width:'Fixed (175px)',  tabSize:'large'}}>
+                <CustomButton>New Custom</CustomButton>
+            </div>
+            <div style={{display: 'flex', flexDirection:'row', width:'Fixed (175px)',  tabSize:'large'}}>
+                <CustomButton> Job Queue</CustomButton>
             </div>
         </div>
+
+
+      )
+
+    return (
+        
+        <div>
+                 <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
+                    <Typography sx={{font:'Open Sans', fontSize:'32px', fontWeight:'600', color:'#1266F1', lineHeight:'38.4px'}}>CUSTOMER ACCOUNT</Typography>
+                 </div>
+                 <div>
+
+                    <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}} > Contractor Home</Typography>
+                    <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}} > address</Typography>
+                    <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}}> phoneNumber</Typography>
+                    <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}}> AccountNumber</Typography>
+                 </div>
+                
+                 <div>
+                    <CustomTabs tabOption={tab}/>
+
+                </div>
+                <div>
+
+                </div>
+                <div>
+
+                    <CustomInputComponent 
+                        label="Refined Job Search"
+                        value={isJob}
+                        // customInputChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewPassword(e.target.value)}
+                
+                    />
+                </div>
+                <div>
+                    <CustomTable columns={columns} data={rows} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent:'flex-end'}}>
+                    {footer}
+                </div>  
         </div>
-     );
-    };
-//---------------------------------------------------------------------------------//
-    export default CustomerAccount;
+       
+    )
 
-
-
-
-
-
-
+};
+export default CustomerAccount;

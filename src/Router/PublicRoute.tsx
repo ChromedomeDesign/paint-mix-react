@@ -3,6 +3,9 @@ import Layout from '../Layout/PrivateLayout';
 import Homepage from '../pages/homepage/Homepage';
 import Login from '../pages/Login/Login';
 import PublicLayout from 'Layout/publicLayout';
+import SearchExistingCustomer from '@pages/SearchExistingCustomer/SearchExistingCustomer';
+import CustomerAccount from '@pages/New-Customer/NewCustomerAccount';
+
 
 type RouteObject = {
   path: string;
@@ -19,7 +22,7 @@ const PublicRoute: PublicRouteType = [
     element: <PublicLayout />,
     children: [
       { path: '/', element: <Homepage /> },
-      { path: '/login', element: <Login /> }, 
+    
     ],
     
   },
