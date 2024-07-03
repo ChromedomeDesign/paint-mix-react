@@ -205,7 +205,7 @@ const JobInformation: FC = () => {
           size="medium"
           centered={true}
         />
-             <CustomModal
+             {/* <CustomModal
           open={isModalOpen}
           onClose={handleCloseModal}
           title={() => title}
@@ -214,7 +214,7 @@ const JobInformation: FC = () => {
           animation={true}
           size="medium"
           centered={true}
-        />
+        /> */}
         <div>{JobDaetail}</div>
         <CardComponent width="100%" children={form} backgroundColor={"#fafcfc"} />
         <CardComponent width="100%" children={MANUFACTURERINFO} backgroundColor={"#fafcfc"} />
