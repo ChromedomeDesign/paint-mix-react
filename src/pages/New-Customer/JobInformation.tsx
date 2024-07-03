@@ -62,12 +62,14 @@ const JobInformation: FC = () => {
     fontSize: '16px',
     fontWeight: 600,
     color: '#1266F1',
-    lineHeight: '19.2px'
+    lineHeight: '19.2px',
+    fontFamily:`"Open Sans", sans-serif`,
   };
   const haedingBorder ={
     borderBottom: '1px solid rgba(224, 224, 224, 1)', 
     marginBottom: '15px',
-     paddingBottom: '15px' 
+     paddingBottom: '15px',
+     fontFamily:`"Open Sans", sans-serif`,
   }
   const onRadio = (data: any) => {
     setJobType(data)
@@ -75,7 +77,7 @@ const JobInformation: FC = () => {
   const form = (
     <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
-        <Typography sx={headingStyle}>JOB TYPE</Typography>
+        <Typography sx={headingStyle} >JOB TYPE</Typography>
       </div>
       <CustomRadioGroup options={option} onValueChange={onRadio} row={true} selectedValue={jobType} />
     </div>
@@ -167,8 +169,9 @@ const JobInformation: FC = () => {
     fontSize: '12px',
     fontWeight: 700,
     color: '#424242',
-    lineHeight: '20px'
-  }
+    lineHeight: '20px',
+    fontFamily:`"Open Sans", sans-serif`
+    }
 
   const JobDaetail = (
     <div>
