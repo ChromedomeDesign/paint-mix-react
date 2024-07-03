@@ -9,6 +9,7 @@ import EditCustomerAccount from '@pages/New-Customer/EditCustomerAccount';
 import ColorManagement from '@pages/ColorManagement/ColorMangement';
 import JobQueInformation from '@pages/JOBQUEUE/JobInformation';
 import UserAdministration from '@pages/Admin/UserAdministration';
+import FormulaManagement from '@pages/ColorManagement/FormulaManagement';
 
 type RouteObject = {
   path: string;
@@ -32,6 +33,8 @@ const PrivateRoute: PrivateRouteType = [
       { path: '/JobQueInformation', element: <JobQueInformation/> },
       { path: '/UserAdministration', element: <UserAdministration/> },
       { path: '/ColorManagement', element: <ColorManagement/> },
+      { path: '/FormulaManagement', element: <FormulaManagement/> },
+      
       
       
     ],

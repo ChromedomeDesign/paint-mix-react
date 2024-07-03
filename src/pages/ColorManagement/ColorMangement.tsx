@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useCallback } from "react";
 import { Grid, Typography } from "@mui/material";
 import CustomInputComponent from "components/CustomInputComponent";
 import CustomSelectComponent from "components/CustomSelect";
@@ -8,16 +8,52 @@ import CustomOutLinedButton from "components/CustomOutLinedButton";
 import CustomTextButton from "components/CustomTextButton";
 import { ArrowRightIcon, } from "@mui/x-date-pickers";
 import { KeyboardArrowDown } from "@mui/icons-material";
+import CustomModal from "components/CustomModal";
+import { useDropzone } from "react-dropzone";
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 
 
   
 
-const ColorManagement: React.FC = () => {
+  const ColorManagement: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
   const [expandedRow, setExpandedRow] = useState<number | null>(null);
+  const [files, setFiles] = useState<File[]>([]);
+  
+
+  const onDrop = useCallback((acceptedFiles: File[]) => {
+    setFiles(acceptedFiles);
+    setUploaderText("Choose another file");
+  }, []);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+  
 
   const handleToggleInfo = (rowIndex: number) => {
     setExpandedRow(expandedRow === rowIndex ? null : rowIndex);
   };
+
+ 
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOpenSecondModal = () => {
+    setIsSecondModalOpen(true);
+  };
+
+  const handleCloseSecondModal = () => {
+    setIsSecondModalOpen(false);
+  };
+
+  const [uploaderText, setUploaderText] = useState("Drag 'n' drop some files here, or click to select files");
+
 
   const actions = (rowIndex: number) => (
     <div>
@@ -64,13 +100,13 @@ const ColorManagement: React.FC = () => {
       ];
 
 
-      const footer =(
+      const Pagefooter =(
         <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
-            <div style={{ display: 'flex', flexDirection: 'row', width:'60px',  tabSize:'large' }}>
-                <CustomOutLinedButton>Back</CustomOutLinedButton>
+            <div style={{ display: 'flex', flexDirection: 'row', width:'100px',  tabSize:'large' }}>
+                <CustomOutLinedButton>Add New</CustomOutLinedButton>
             </div>
             <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
-                <CustomOutLinedButton>New Fan Deck</CustomOutLinedButton>
+                <CustomOutLinedButton onClick={handleOpenModal}>Upload</CustomOutLinedButton>
             </div>
            
         </div>
@@ -78,6 +114,69 @@ const ColorManagement: React.FC = () => {
 
       )
 
+  
+
+      const title = (
+        <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>File Uploader</Typography>
+      )
+
+      const body = (
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+          <div
+            {...getRootProps()}
+            style={{
+              border: '2px solid #808080',
+              borderRadius: '8px',
+              padding: '20px',
+              textAlign: 'center',
+              width: '100%',
+              cursor: 'pointer'
+            }}
+          >
+            <CloudUploadIcon style={{ fontSize: '40px', color: '#808080' }} />
+            <input {...getInputProps()} />
+            {
+              isDragActive ?
+                <Typography variant="body1">Drop the files here ...</Typography> :
+                <Typography variant="body1">{uploaderText}</Typography>
+            }
+          </div>
+          <div style={{ marginTop: '10px' }}>
+            {files.map((file, index) => (
+              <div key={index} style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
+                <InsertDriveFileIcon style={{ marginRight: '10px' }} />
+                <Typography variant="body2">{file.name}</Typography>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    
+      const footer = (
+        <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
+          <CustomTextButton onClick={handleCloseModal}>Cancel</CustomTextButton>
+          <CustomButton>Upload File</CustomButton>
+        </div>
+      );
+    
+      const secondModalTitle = (
+        <Typography sx={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>
+          Second Modal Title
+        </Typography>
+      );
+    
+      const secondModalBody = (
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+          <Typography variant="body1">This is the content for the second modal.</Typography>
+        </div>
+      );
+    
+      const secondModalFooter = (
+        <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
+          <CustomButton onClick={handleCloseSecondModal}>Close</CustomButton>
+        </div>
+      );
+    
 
     return (
         <div className="colorManagement">
@@ -136,16 +235,22 @@ const ColorManagement: React.FC = () => {
                     )}
                 </div>
                 <div style={{display:'flex',flexDirection:'row',position:'absolute',right:0}}>
-                    {footer}
+                    {Pagefooter}
                 </div>
+
+                <CustomModal
+                  open={isModalOpen}
+                  onClose={handleCloseModal}
+                  title={() => title}
+                  body={() => body}
+                  footer={() => footer}
+                  animation={true}
+                  size="medium"
+                  centered={true}
+                />
+
         </div>
-
-
-    );
-  
-
-
-   
+       );
 };
 
 export default ColorManagement;
