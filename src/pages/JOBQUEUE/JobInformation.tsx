@@ -149,7 +149,6 @@ const JobQueInformation: FC = () => {
   };
 
   const Change = () => {
-    // Handle forgot password logic here
     setModalOpen(true);
   };
 
