@@ -6,18 +6,34 @@ import CustomButton from "components/CustomButton";
 import CustomTable from "components/CustomTable";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
 import CustomTextButton from "components/CustomTextButton";
+import { ArrowRightIcon, } from "@mui/x-date-pickers";
+import { KeyboardArrowDown } from "@mui/icons-material";
+
+
+  
 
 const ColorManagement: React.FC = () => {
-    const actions =(
-        <div>
-           <div style={{gap:'10px'}}>
-              <CustomTextButton children={"View"} width="80px"/>
-              <CustomButton width="Fixed (80px)" >Edit</CustomButton>
-              <CustomButton width="Fixed (80px)" >Info</CustomButton>
-           </div>
-        </div>
+  const [expandedRow, setExpandedRow] = useState<number | null>(null);
 
-      );
+  const handleToggleInfo = (rowIndex: number) => {
+    setExpandedRow(expandedRow === rowIndex ? null : rowIndex);
+  };
+
+  const actions = (rowIndex: number) => (
+    <div>
+      <div style={{gap:'10px'}}>
+        <CustomTextButton children={"View"} width="80px"/>
+        <CustomTextButton children={"Edit"} width="80px"/>
+        <CustomTextButton
+          width="80px"
+          onClick={() => handleToggleInfo(rowIndex)}
+        >
+          Info
+          {expandedRow === rowIndex ? <KeyboardArrowDown /> : <ArrowRightIcon />}
+        </CustomTextButton>
+      </div>
+    </div>
+  );
 
     const options = [
         { label: 'All', value: 'All' },
@@ -36,7 +52,7 @@ const ColorManagement: React.FC = () => {
         { name: 'Color Name', datan:'ColorName' },
         { name: 'Brand', datan: 'Brand' },
         { name: 'Type', datan: 'Type' },
-        { name: 'Actions', datan: 'Actions', call:<div>{actions}</div>}
+        { name: 'Actions', datan: 'Actions'}
       ];
 
         
@@ -91,7 +107,33 @@ const ColorManagement: React.FC = () => {
                 </div>
 
                  <div style={{ marginTop: '20px' }}>
-                    <CustomTable columns={columns} data={rows} />
+                 <CustomTable
+                      columns={columns}
+                      data={rows.map((row, index) => ({
+                        ...row,
+                        Actions: actions(index),
+                      }))}
+                    />
+                    {expandedRow !== null && (
+                      <div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px', marginLeft: '50px' }}>
+                      <div>
+                        <Typography variant="h6">Job Type:</Typography>
+                        <Typography>Reproduction</Typography>
+                      </div>
+                      <div>
+                        <Typography variant="h6">Manufacturer:</Typography>
+                        <Typography>Valspar</Typography>
+                      </div>
+                      <div>
+                        <Typography variant="h6">Color Name:</Typography>
+                        <Typography>Hunter Green</Typography>
+                      </div>
+                      <div>
+                        <Typography variant="h6">Painter Supply #:</Typography>
+                        <Typography>PS-123-XXXX</Typography>
+                      </div>
+                    </div>
+                    )}
                 </div>
                 <div style={{display:'flex',flexDirection:'row',position:'absolute',right:0}}>
                     {footer}
