@@ -6,6 +6,7 @@ import JobInformation from '@pages/New-Customer/JobInformation';
 import SearchExistingCustomer from '@pages/SearchExistingCustomer/SearchExistingCustomer';
 import CustomerAccount from '@pages/New-Customer/CustomerAccount';
 import EditCustomerAccount from '@pages/New-Customer/EditCustomerAccount';
+import ColorManagement from '@pages/ColorManagement/ColorMangement';
 import JobQueInformation from '@pages/JOBQUEUE/JobInformation';
 import UserAdministration from '@pages/Admin/UserAdministration';
 
@@ -30,6 +31,7 @@ const PrivateRoute: PrivateRouteType = [
       { path: '/CustomerAccount', element: <CustomerAccount/> },
       { path: '/JobQueInformation', element: <JobQueInformation/> },
       { path: '/UserAdministration', element: <UserAdministration/> },
+      { path: '/ColorManagement', element: <ColorManagement/> },
       
       
     ],
