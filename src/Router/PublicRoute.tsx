@@ -21,7 +21,8 @@ const PublicRoute: PublicRouteType = [
     path: '/',
     element: <PublicLayout />,
     children: [
-      { path: '/', element: <Homepage /> },
+      { path: '/', element: <Login /> },
+      
     
     ],
     
