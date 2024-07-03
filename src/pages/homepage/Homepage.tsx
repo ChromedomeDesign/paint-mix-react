@@ -16,6 +16,8 @@ import CustomRadioGroup from "components/CustomRadioGroup";
 import CustomModal from "components/CustomModal";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
 import greenTick from "assets/green-tick.svg"
+import CardButton from "components/CustomCardButton";
+import CustomTextButton from "components/CustomTextButton";
 
 
 
@@ -174,8 +176,8 @@ const body =(
 )
 
 const footer=(
-  <div style={{display:'flex',flexDirection:'row'}}>
-      <CustomOutLinedButton children={"Cancel"} onClick={handleCloseModal}/>
+  <div style={{display:'flex',flexDirection:'row', gap:'5px'}}>
+      <CustomTextButton children={"Cancel"} onClick={handleCloseModal}/>
       <CustomButton  children={"Submit"}/>
   </div>
 )
@@ -281,10 +283,10 @@ const footer=(
                 </div>
               <Grid container spacing={3}>
                   <Grid item xs={12} sm={6} md={4} xl={3} lg={3}>
-                    <CardComponent children={order} width="234px" height="195px" />
+                    <CardButton children={order} width="234px" height="195px" />
                   </Grid>
                   <Grid item xs={12} sm={6} md={4} xl={3} lg={3}>
-                    <CardComponent children={JobQueue} width="234px" height="195px" />
+                    <CardButton children={JobQueue} width="234px" height="195px" />
                   </Grid>
                   {/* <Grid item xs={12} md={3} xl={3} lg={3}>
                     <CardComponent  width="234px" height="195px" />
@@ -301,13 +303,13 @@ const footer=(
                 <Grid container spacing={3}>
                   
                   <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>
-                    <CardComponent children={ColorMgmt} width="234px" height="195px" />                   
+                    <CardButton children={ColorMgmt} width="234px" height="195px" />                   
                   </Grid>
                   <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>
-                    <CardComponent children={UserAdmin} width="234px" height="195px" />
+                    <CardButton children={UserAdmin} width="234px" height="195px" />
                   </Grid>
                   <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>
-                    <CardComponent children={CostCal} width="234px" height="195px" />
+                    <CardButton children={CostCal} width="234px" height="195px" />
                     
                   
                   </Grid>
@@ -315,14 +317,14 @@ const footer=(
                   <Grid item xs={12} style={{ marginTop: '24px' }} />
 
                   <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>                    
-                    <CardComponent children={StoreLoc} width="234px" height="195px" />
+                    <CardButton children={StoreLoc} width="234px" height="195px" />
                   </Grid>                  
                   <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>
-                  <button onClick={forgot}>hhg</button>                     
-                    <CardComponent children={ChangePsswd} width="234px" height="195px" />
+                  {/* <button onClick={forgot}>hhg</button>                      */}
+                    <CardButton children={ChangePsswd} width="234px" height="195px" onClick={forgot} />
                   </Grid>
                   <Grid item xs={12} md={6} xl={4} lg={3} spacing={3}>                    
-                    <CardComponent children={Logout} width="234px" height="195px" />
+                    <CardButton children={Logout} width="234px" height="195px" />
                   </Grid>
 
 
