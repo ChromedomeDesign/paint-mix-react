@@ -96,9 +96,19 @@ const PrivateLayout = () => {
           </div>
          
           <Outlet />
-          <div style={{ position: 'sticky', bottom: '0px', backgroundColor: 'transparent', zIndex: 999, padding: '10px', textAlign: 'center' }}>
-            <CustomTextButton>bjhg</CustomTextButton>
-          </div>
+          {/* <div style={{
+  position: 'fixed',
+  bottom: 0,
+  backgroundColor: 'transparent',
+  zIndex: 999,
+  display: 'flex',
+  alignItems: 'flex-end',
+  justifyContent: 'flex-end',
+  padding: '10px'
+}}>
+  <CustomTextButton width="60px">bjhg</CustomTextButton>
+</div> */}
+
         </main>
       </div>
     </div>
