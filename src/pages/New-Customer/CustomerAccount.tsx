@@ -6,32 +6,48 @@ import CustomTable from "components/CustomTable";
 import CustomButton from "components/CustomButton";
 import { Padding } from "@mui/icons-material";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
+import InfoButton from "components/showInfoButton";
 
 const CustomerAccount: FC=()=>{
 
     const [isJob, JobSearch] = useState('');
+
+    const infoData = {
+    Name: 'Example Name',
+    ColorRef: '#FFFFFF',
+    Type: 'Example Type',
+    date: '2024-07-02',
+  };
+    
     const actions =(
 
-        <div>
-           <div>
+        <div style={{display:'flex', flexDirection:'row'}}>
+           <div >
               <CustomButton width="Fixed (80px)" >Reproduce</CustomButton>
               <CustomButton width="Fixed (80px)" >Modify</CustomButton>
-           </div>
+            </div>
+            <div style={{display:'flex', flexDirection:'row', justifyContent:'right'}}>
+                {infoData && <InfoButton Info={infoData}></InfoButton>}
+            </div>
         </div>
 
       );
     const tab = [{value: "NEW"},{value:'IN PROGRESS'},{value:'COMPLETED'}];
+
+    
 
     const columns = [
         { name: 'Job Name', datan:'JobName' },
         { name: 'Color Ref', datan: 'ColorRef' },
         { name: 'Job Type', datan: 'JobType' },
         { name: 'Date', datan: 'date' },
-        { name: 'Actions', datan: 'Actions', call:<div>{actions}</div>
+        { name: 'Actions', datan: 'Actions', 
+            call:<div>{actions}</div>
           
         },
         // { name: 'gdfgfd', datan: 'action', Call: (data: any) => <button>Amount</button> }
       ];
+
 
   
      
@@ -82,7 +98,7 @@ const CustomerAccount: FC=()=>{
                     <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}}> AccountNumber</Typography>
                  </div>
                 
-                 <div>
+                 <div style={{display:'flex', flexDirection:'row'}}>
                     <CustomTabs tabOption={tab}/>
 
                 </div>
@@ -99,7 +115,7 @@ const CustomerAccount: FC=()=>{
                     />
                 </div>
                 <div>
-                    <CustomTable columns={columns} data={rows} />
+                    <CustomTable columns={columns} data={rows}/>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row', justifyContent:'flex-end'}}>
                     {footer}

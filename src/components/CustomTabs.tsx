@@ -5,10 +5,10 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 
 const AntTabs = styled(Tabs)({
-//   borderBottom: '1px solid #e8e8e8',
-//   '& .MuiTabs-indicator': {
-//     backgroundColor: '#1890ff',
-//   },
+  borderBottom: '1px solid #e8e8e8',
+  '& .MuiTabs-indicator': {
+    display: 'none',
+  },
 });
 
 const AntTab = styled((props: StyledTabProps) => <Tab disableRipple {...props} />)(
