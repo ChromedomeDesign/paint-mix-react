@@ -12,16 +12,21 @@ import CustomModal from "components/CustomModal";
 import { useDropzone } from "react-dropzone";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
-
+import CustomRadioGroup from "components/CustomRadioGroup";
+import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
 
   
 
   const ColorManagement: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
   const [expandedRow, setExpandedRow] = useState<number | null>(null);
   const [files, setFiles] = useState<File[]>([]);
+  const [modalStep, setModalStep] = useState(1);
+  const [mesurmentType, setMesurmentType]=useState('');
+ 
+
   
+
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     setFiles(acceptedFiles);
@@ -41,15 +46,14 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
   };
 
   const handleOpenModal = () => {
+    setModalStep(1); 
     setIsModalOpen(true);
   };
+  
 
-  const handleOpenSecondModal = () => {
-    setIsSecondModalOpen(true);
-  };
-
-  const handleCloseSecondModal = () => {
-    setIsSecondModalOpen(false);
+  const handleAddNew = () => {
+    setModalStep(2);
+    setIsModalOpen(true);
   };
 
   const [uploaderText, setUploaderText] = useState("Drag 'n' drop some files here, or click to select files");
@@ -100,27 +104,34 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
       ];
 
 
+      const  mesurment = [
+        {value:'Additive',label:"Additive"},
+        {value:'Base',label:"Base"},
+        {value:'Formula',label:"Formula"},
+       ]
+
+       const onRadio = (data: any) => {
+        setMesurmentType(data)
+      };
+
+
       const Pagefooter =(
         <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
             <div style={{ display: 'flex', flexDirection: 'row', width:'100px',  tabSize:'large' }}>
-                <CustomOutLinedButton>Add New</CustomOutLinedButton>
+                <CustomOutLinedButton onClick={handleAddNew}>Add New</CustomOutLinedButton>
             </div>
             <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
                 <CustomOutLinedButton onClick={handleOpenModal}>Upload</CustomOutLinedButton>
             </div>
            
         </div>
-
-
       )
 
-  
-
-      const title = (
+      const Initialtitle = (
         <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>File Uploader</Typography>
       )
 
-      const body = (
+      const Initialbody = (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <div
             {...getRootProps()}
@@ -152,7 +163,7 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
         </div>
       );
     
-      const footer = (
+      const Initialfooter = (
         <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
           <CustomTextButton onClick={handleCloseModal}>Cancel</CustomTextButton>
           <CustomButton>Upload File</CustomButton>
@@ -161,22 +172,27 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
     
       const secondModalTitle = (
         <Typography sx={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>
-          Second Modal Title
+         Add New Product
         </Typography>
       );
     
       const secondModalBody = (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-          <Typography variant="body1">This is the content for the second modal.</Typography>
+          <CustomRadioGroup row={true} options={mesurment} onValueChange={onRadio} selectedValue={mesurmentType}/>
         </div>
       );
+      
     
       const secondModalFooter = (
         <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
-          <CustomButton onClick={handleCloseSecondModal}>Close</CustomButton>
+          <CustomTextButton onClick={handleCloseModal}>Cancel</CustomTextButton>
+          <CustomButton>Next</CustomButton>
         </div>
       );
-    
+
+      const title = modalStep === 1 ? Initialtitle: secondModalTitle;
+      const body = modalStep === 1 ? Initialbody : secondModalBody;
+      const footer = modalStep === 1 ? Initialfooter : secondModalFooter;
 
     return (
         <div className="colorManagement">
