@@ -219,10 +219,10 @@ const JobInformation: FC = () => {
           centered={true}
         /> */}
         <div>{JobDaetail}</div>
-        <CardComponent width="100%" children={form} backgroundColor={"#fafcfc"} />
-        <CardComponent width="100%" children={MANUFACTURERINFO} backgroundColor={"#fafcfc"} />
-        <CardComponent width="100%" children={JOBINFO} backgroundColor={"#fafcfc"} />
-        <CardComponent width="100%" children={PRODUCTION} backgroundColor={"#fafcfc"} />
+        <CardComponent width="100%" children={form} backgroundColor={"#FBFBFB"} />
+        <CardComponent width="100%" children={MANUFACTURERINFO} backgroundColor={"#FBFBFB"} />
+        <CardComponent width="100%" children={JOBINFO} backgroundColor={"#FBFBFB"} />
+        <CardComponent width="100%" children={PRODUCTION} backgroundColor={"#FBFBFB"} />
 
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginTop: '20px' }}>
           <CustomTextButton children={"Cancel"} width="80px" />

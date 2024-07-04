@@ -193,7 +193,7 @@ const JobQueInformation: FC = () => {
             <div>
                 <Typography style={informationHead}>Measurement Type: <span style={informationdetail}>Weight</span> | <span style={{color:'#1266F1',fontSize:'13px',fontWeight:600,lineHeight:'28px'}} onClick={Change}>Change</span></Typography>
             </div>
-            <CustomTable columns={columns} data={data} />
+            <CustomTable columns={columns} data={data}/>
             <div style={{display:'flex',justifyContent:'flex-start'}}>
             <div><AddCircleIcon sx={{color:'#1266F1',backgroundColor:'white',borderRadius:'100%'}}/><span style={{color:'#1266F1',fontWeight:600,fontSize:'13px',lineHeight:'28px'}}>Colorant</span></div>
             </div>

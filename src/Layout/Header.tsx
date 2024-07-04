@@ -70,6 +70,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchBar from "components/SearchBar";
 import { Button } from "@mui/material";
+import CustomOutLinedButton from "components/CustomOutLinedButton";
 
 const Header = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -86,12 +87,17 @@ const Header = () => {
     return (
         <div style={{ padding: '10px 10px 0px 10px'}}>
             <CardComponent width="100%" radius="8px" height="60px" customIndex={99999}>
-                <div style={{ display: 'flex',justifyContent: 'flex-end', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%', padding: '10px' }}>
+                <div style={{display:'flex',width:"100%",flexDirection:'row',justifyContent:'space-between',height: '100%', padding: '10px'}}>
+                
+                    <button style={{height:'30px',backgroundColor:'transparent',borderRadius:'8px'}}>cbdkbczx</button>
+                
+                <div style={{ display: 'flex',justifyContent: 'flex-end', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%' }}>
                     <SearchBar />
                     <Button  onClick={handleClick}>
                     <MenuIcon sx={{ fontSize: '40px', color: '#1266F1', cursor: 'pointer' }}/>
 
                     </Button>
+                </div>
                 </div>
             </CardComponent>
             <Menu
