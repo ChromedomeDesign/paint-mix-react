@@ -13,6 +13,8 @@ import FormulaManagement from '@pages/ColorManagement/FormulaManagement';
 import EditUser from '@pages/Admin/EditUser';
 import CostCalculator from '@pages/Calculator/CostCalculator';
 import SearchResults from '@pages/SEARCHRESULTS/SearchResults';
+import JobQueue from '@pages/JOBQUEUE/JobQueue';
+import CreateNewUser from '@pages/Admin/CreateNewUser';
 
 type RouteObject = {
   path: string;
@@ -33,8 +35,11 @@ const PrivateRoute: PrivateRouteType = [
       { path: '/CustomerAccount', element: <CustomerAccount/> }, 
       { path: '/EditCustomerAccount', element: <EditCustomerAccount/> }, 
       { path: '/CustomerAccount', element: <CustomerAccount/> },
+      { path: '/JobQueue', element: <JobQueue/> },
       { path: '/JobQueInformation', element: <JobQueInformation/> },
       { path: '/UserAdministration', element: <UserAdministration/> },
+      { path: '/CreateNewUser', element: <CreateNewUser/>},
+      { path: '/EditUser', element: <EditUser/>},
       { path: '/ColorManagement', element: <ColorManagement/> },
       { path: '/FormulaManagement', element: <FormulaManagement/> },
       { path: '/EditUser', element: <EditUser/> },

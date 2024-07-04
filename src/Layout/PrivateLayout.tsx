@@ -54,10 +54,15 @@ import DynamicBreadcrumbs from "components/DynamicBreadcrumbs";
 import CustomTextButton from "components/CustomTextButton";
 import DynamicBreadcrumb from "components/DynamicBreadcrumb";
 const routeTitles: { [key: string]: string } = {
-  '/': 'Home',
   '/CREATE_NEW_CUSTOMER_ACCOUNT': 'Create New Customer Account',
   '/JobInformation': 'Job Information',
-  // Add more routes and their corresponding titles here
+  '/JobQueue':'JOB QUEUE',
+  '/JobQueInformation':'JOB INFORMATION',
+  '/UserAdministration':'USER ADMINISTRATION',
+  '/CreateNewUser':'USER ADMINISTRATION',
+  '/EditUser':'USER ADMINISTRATION',
+  '/CostCalculator':'COST CALCULATOR',
+  '/SearchResults':'SearchResults',
 };
 
 const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = {
@@ -66,17 +71,44 @@ const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = 
     { text: 'Home', href: '/' },
     { text: 'Create New Customer Account', href: '/CREATE_NEW_CUSTOMER_ACCOUNT' }
   ],
+  '/JobQueInformation':[
+    { text: 'Home', href: '/' },
+    {text: 'Job Queue', href:'/JobQueue'}
+  ],
   '/JobInformation': [
     { text: 'Home', href: '/' },
+    {text: 'Job Queue', href:'/JobQueue'},
     { text: 'Job Information', href: '/JobInformation' }
   ],
+  '/UserAdministration':[
+    { text: 'Home', href: '/' },
+    {text: 'User Administration', href:'/UserAdministration'},
+  ],
+  '/CreateNewUser':[
+    { text: 'Home', href: '/' },
+    {text: 'User Administration', href:'/UserAdministration'},
+    {text: 'Create New User', href:'/CreateNewUser'}
+  ],
+  '/EditUser':[
+    { text: 'Home', href: '/' },
+    {text: 'User Administration', href:'/UserAdministration'},
+    {text: 'Edit User', href:'/EditUser'},
+  ],
+  '/CostCalculator':[
+    { text: 'Home', href: '/' },
+    {text: 'Cost Calculator', href:'/CostCalculator'},
+  ],
+  '/SearchResults':[
+    { text: 'Home', href: '/' },
+    {text: 'Search Results', href:'/SearchResults'},
+  ]
 
 };
 
 const PrivateLayout = () => {
   const location = useLocation();
 
-  const pageTitle = routeTitles[location.pathname] || 'Default Title';
+  const pageTitle = routeTitles[location.pathname] || '';
   const breadcrumbData = breadcrumbMappings[location.pathname] || [
     { text: 'Home', href: '/' }
   ];
@@ -89,7 +121,7 @@ const PrivateLayout = () => {
         </div>
         <main style={{ margin: '12px 15px 12px 15px', paddingBottom: '10px' }}>
         <div style={{ margin: "12px 0px 0px 0px" }}>
-            <h1>{pageTitle}</h1>
+            <p style={{fontWeight:600,color:'#1266F1',fontSize:'32px',lineHeight:'38.4px'}}>{pageTitle}</p>
           </div>
           <div style={{ margin: "12px 0px 12px 0px" }}>
             <DynamicBreadcrumb breadcrumbs={breadcrumbData} />

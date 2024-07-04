@@ -87,10 +87,8 @@ const Header = () => {
     return (
         <div style={{ padding: '10px 10px 0px 10px'}}>
             <CardComponent width="100%" radius="8px" height="60px" customIndex={99999}>
-                <div style={{display:'flex',width:"100%",flexDirection:'row',justifyContent:'space-between',height: '100%', padding: '10px'}}>
-                
-                    <button style={{height:'30px',backgroundColor:'transparent',borderRadius:'8px'}}>cbdkbczx</button>
-                
+                <div style={{display:'flex',width:"100%",flexDirection:'row',justifyContent:'space-between',height: '100%',}}>
+                    <button style={{height:'44px',width:'100px',border:'1px solid #000000',backgroundColor:'transparent',borderRadius:'8px'}}>LOGO</button> 
                 <div style={{ display: 'flex',justifyContent: 'flex-end', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%' }}>
                     <SearchBar />
                     <Button  onClick={handleClick}>

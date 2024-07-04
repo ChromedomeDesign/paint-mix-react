@@ -26,15 +26,19 @@ const CustomerAccount: FC=()=>{
               <CustomButton width="Fixed (80px)" >Reproduce</CustomButton>
               <CustomButton width="Fixed (80px)" >Modify</CustomButton>
             </div>
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'right'}}>
+            {/* <div style={{display:'flex', flexDirection:'row', justifyContent:'right'}}>
                 {infoData && <InfoButton Info={infoData}></InfoButton>}
-            </div>
+            </div> */}
         </div>
 
       );
-    const tab = [{value: "NEW"},{value:'IN PROGRESS'},{value:'COMPLETED'}];
+ 
 
-    
+    const tab = [
+        { label: 'NEW', value: 'New',customWidth:'136px' },
+        { label: 'IN PROGRESS', value: 'InProgress',customWidth:'136px' },
+        { label: 'COMPLETED', value: 'Completed',customWidth:'136px' },
+      ];
 
     const columns = [
         { name: 'Job Name', datan:'JobName' },
@@ -99,7 +103,9 @@ const CustomerAccount: FC=()=>{
                  </div>
                 
                  <div style={{display:'flex', flexDirection:'row'}}>
-                    <CustomTabs tabOption={tab}/>
+                    <CustomTabs tabOption={tab} onSlects={function (tabValue: string): void {
+                    throw new Error("Function not implemented.");
+                } }/>
 
                 </div>
                 <div>

@@ -12,48 +12,25 @@ interface Info {
 }
 
 interface InfoButtonProps {
-  Info: Info;
+  Info: boolean;
+  toggleInfo?:() => void;
 }
 
-const InfoButton: React.FC<InfoButtonProps> = ({ Info }) => {
+const InfoButton: React.FC<InfoButtonProps> = ({ Info,toggleInfo }) => {
   const [showInfo, setShowInfo] = useState(false);
 
-  const toggleInfo = () => {
-    setShowInfo(!showInfo);
-  };
 
   return (
     <div>
       <Button
-        variant="text" // Change variant to 'text' to remove background
+        variant="text"
         // startIcon={<InfoIcon />}
-        endIcon={showInfo ? <ArrowRightIcon /> : <ArrowDropDownIcon />} // Use ArrowRightIcon when showInfo is true
+        endIcon={Info ?  <ArrowDropDownIcon /> : <ArrowRightIcon />}
         onClick={toggleInfo}
-        size="small"
-        sx={{ color: '#1266F1' }} // Set text color to black (or any color you prefer)
+        sx={{ color: '#1266F1',height:'46px',width:'50px',textTransform: 'none', }} 
       >
         Info
       </Button>
-      {showInfo && (
-        <Table size="small" style={{ marginTop: '10px' }}>
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Color Ref</TableCell>
-              <TableCell>Type</TableCell>
-              <TableCell>Date</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableCell>{Info.Name}</TableCell>
-              <TableCell>{Info.ColorRef}</TableCell>
-              <TableCell>{Info.Type}</TableCell>
-              <TableCell>{Info.date}</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      )}
     </div>
   );
 };

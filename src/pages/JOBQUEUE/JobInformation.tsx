@@ -204,7 +204,7 @@ const JobQueInformation: FC = () => {
                     <CustomButton children={"Mix"} width="100px"/>
                 </div>
             </div>
-            <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',right:5,bottom:0}}>
+            <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',position:'fixed',right:5,bottom:0}}>
             <div style={{display:'flex',justifyContent:'space-between',gap:'4px'}}>
                 <CustomTextButton children={"Cancel"} width="80px"/>
                 <CustomTextButton children={"Abandon"} width="80px"/>

@@ -45,14 +45,14 @@ const CardButton: React.FC<CardComponentProps> = ({
   return (
     <Card 
       style={{ 
-        minWidth: width || "fit-content", 
-        height: height || "fit-content",
+        width:"233.23px", 
+        height:"195.45px",
         borderRadius: radius || '5px',
-        boxShadow: shadow || "0px 2px 10px 0px rgba(0, 0, 0, 0.21)",
+        boxShadow: " 0px 2px 10px 0px rgba(0, 0, 0, 0.21)",
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: backgroundColor || 'rgba(255, 255, 255, 1)',
+        backgroundColor:'#FBFBFB',
         margin: '15px 0px 15px 0px',
         zIndex: customIndex !== undefined ? customIndex : 'auto',
         transition: 'transform 0.3s ease',

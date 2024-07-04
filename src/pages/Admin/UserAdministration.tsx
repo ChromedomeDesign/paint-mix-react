@@ -4,16 +4,34 @@ import CustomModal from "components/CustomModal";
 import CustomTable from "components/CustomTable";
 import CustomTextButton from "components/CustomTextButton";
 import { FC, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserAdministration  : FC=()=>{
     const [isModalOpen, setModalOpen] = useState(false);
+    const navigate = useNavigate();
       const ActiveColumns =[
         {name:"First Name", datan:"FirstName"},
         {name:"Last Name", datan:"LastName"},
         {name:"Email", datan:"Email"},
         {name:"Store", datan:"Store"},
         {name:"Type", datan:"Type"},
-        {name:"Actions", datan:"Actions",Call:()=><div style={{display:'flex',flexDirection:'row'}}><CustomTextButton onClick={removeFunction} width="60px" children={"Remove"}/><CustomTextButton width="60px" children={"Edit"}/></div>}
+        {name:"Actions", datan:"Actions",
+          Call: (row: any) => (
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <CustomTextButton onClick={removeFunction} width="60px">
+                Remove
+              </CustomTextButton>
+              <CustomTextButton
+                width="60px"
+                onClick={() => {
+                  navigate("/EditUser", { state: row });
+                }}
+              >
+                Edit
+              </CustomTextButton>
+            </div>
+          ),
+        }
       ]
      const Activedata = [
         {FirstName:'Jenny',LastName:"Morales",Email:"jennym@gmail.com",Store:"Store 1",Type:"Admin"},
@@ -68,8 +86,14 @@ const UserAdministration  : FC=()=>{
             <Typography style={{color:'#1266F1',marginBottom:'20px',fontWeight:600,fontSize:'16px',lineHeight:'19.2px'}}>Inactive</Typography>
             <CustomTable columns={ActiveColumns} data={Activedata}/>
             </div>
+            <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',gap:'2px'}}>
+              <div>
+                <CustomTextButton children={"Back"} width="31px"/>
+                <CustomButton children={"Create New User"} width="148px" onClick={()=>navigate('/CreateNewUser')}/>
+              </div>
             </div>
-        </div>
+            </div>
+            </div>
     )
 }
 export default UserAdministration;
