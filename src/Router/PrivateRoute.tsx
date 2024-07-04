@@ -13,6 +13,9 @@ import FormulaManagement from '@pages/ColorManagement/FormulaManagement';
 import EditUser from '@pages/Admin/EditUser';
 import CostCalculator from '@pages/Calculator/CostCalculator';
 import SearchResults from '@pages/SEARCHRESULTS/SearchResults';
+import NewAdditive from '@pages/ColorManagement/NewAdditive';
+import NewFormula from '@pages/ColorManagement/NewFormula';
+import StoreLocations from '@pages/StoreLocation/StoreLocations';
 
 type RouteObject = {
   path: string;
@@ -40,6 +43,9 @@ const PrivateRoute: PrivateRouteType = [
       { path: '/EditUser', element: <EditUser/> },
       { path: '/CostCalculator', element: <CostCalculator/> },
       { path: '/SearchResults', element: <SearchResults/> },
+      { path: '/NewAdditive', element: <NewAdditive/> },
+      { path: '/NewFormula', element: <NewFormula/> },
+      { path: '/StoreLocations', element: <StoreLocations/> },
       
       
       
