@@ -27,7 +27,7 @@ const JobQueue: FC = () => {
     <div style={{ display: 'flex', flexDirection: 'row',width:'280px'}}>
       <CustomButton width="80px">Start</CustomButton>
       <CustomTextButton width="80px" onClick={()=>navigate('/JobQueInformation')}>Edit</CustomTextButton>
-      {infoData && <InfoButton Info={showicon} toggleInfo={() => handleInfoClick(row)} ></InfoButton>}
+       <InfoButton Info={showicon} toggleInfo={() => handleInfoClick(row)} ></InfoButton>
     </div>
   );
 

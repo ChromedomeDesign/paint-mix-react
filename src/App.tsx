@@ -11,7 +11,7 @@ type AppProps = {
 const App = ({ message }: AppProps): JSX.Element => {
     const theme = createTheme({
         typography: {
-          fontFamily: 'Open Sans, Arial, sans-serif',
+          fontFamily: 'Open Sans, sans-serif',
         },
       });
     return (

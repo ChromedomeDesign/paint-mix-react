@@ -241,7 +241,7 @@ const Homepage: React.FC = () => {
             <CardButton children={order} onClick={orderClick}/>
           </Grid>
           <Grid item xs={12} sm={4} md={4} xl={3} lg={3}>
-            <CardButton children={JobQueue} onClick={()=>PageNavigate('/')}/>
+            <CardButton children={JobQueue} onClick={()=>PageNavigate('/JobQueue')}/>
           </Grid>
         </Grid>
 

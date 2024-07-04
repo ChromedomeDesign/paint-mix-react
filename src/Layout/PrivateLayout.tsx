@@ -66,20 +66,24 @@ const routeTitles: { [key: string]: string } = {
 };
 
 const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = {
-  '/': [{ text: 'Home', href: '/' }],
   '/CREATE_NEW_CUSTOMER_ACCOUNT': [
     { text: 'Home', href: '/' },
     { text: 'Create New Customer Account', href: '/CREATE_NEW_CUSTOMER_ACCOUNT' }
   ],
-  '/JobQueInformation':[
+  '/JobQueue':[
     { text: 'Home', href: '/' },
     {text: 'Job Queue', href:'/JobQueue'}
   ],
-  '/JobInformation': [
+  '/JobQueInformation':[
     { text: 'Home', href: '/' },
     {text: 'Job Queue', href:'/JobQueue'},
-    { text: 'Job Information', href: '/JobInformation' }
+    {text: 'Job Que Information', href:'/JobQueInformation'}
   ],
+  // '/JobInformation': [
+  //   { text: 'Home', href: '/' },
+  //   {text: 'Job Queue', href:'/JobQueue'},
+  //   { text: 'Job Information', href: '/JobInformation' }
+  // ],
   '/UserAdministration':[
     { text: 'Home', href: '/' },
     {text: 'User Administration', href:'/UserAdministration'},
