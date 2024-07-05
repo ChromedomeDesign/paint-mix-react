@@ -4,13 +4,15 @@ import CustomTable from "components/CustomTable";
 import CustomTextButton from "components/CustomTextButton";
 import CustomButton from "components/CustomButton";
 import CustomModal from "components/CustomModal";
+import { useNavigate } from "react-router-dom";
+import { Call } from "@mui/icons-material";
 
 
 const StoreLocations: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalStep, setModalStep] = useState(1);
-
+   const navigate = useNavigate();
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
@@ -31,29 +33,29 @@ const StoreLocations: React.FC = () => {
         <div>
           <div style={{gap:'10px'}}>
             <CustomTextButton children={"Remove"} onClick={handleOpenModal} width="80px"/>
-            <CustomTextButton children={"Edit"} width="80px"/>
+            <CustomTextButton children={"Edit"} width="80px" onClick={()=>navigate('/AddnewStore')}/>
           </div>
         </div>
       );
 
-      const inactiveActions = (rowIndex: number) => (
+      const inactiveActions = (rows:any) => (
         <div>
           <div style={{gap:'10px', display:'flex'}}>
             <CustomTextButton children={"Restore"} onClick={handleRestore} width="80px"/>
-            <CustomTextButton children={"Edit"} width="80px"/>
+            <CustomTextButton children={"Edit"} width="80px" onClick={()=>navigate('/AddnewStore')}/>
           </div>
         </div>
       );
 
      
     const rows = [
-        { Name: 'Store1', Address: '123 W Noon St., Ste 2, Pheonix, Az 85032', Phone: '602-544-3369',Actions:actions},
-        { Name: 'Store2', Address: '2999 N 38th St., Ste B, Phoenix, AZ 85026', Phone: '602-702-5678', Actions:actions},
-        { Name: 'Store3', Address: '589 S Washington St., Ste 3, Phoenix, AZ 85032', Phone: '602-281-7742', Actions:actions },
+        { Name: 'Store1', Address: '123 W Noon St., Ste 2, Pheonix, Az 85032', Phone: '602-544-3369'},
+        { Name: 'Store2', Address: '2999 N 38th St., Ste B, Phoenix, AZ 85026', Phone: '602-702-5678'},
+        { Name: 'Store3', Address: '589 S Washington St., Ste 3, Phoenix, AZ 85032', Phone: '602-281-7742'},
       ];
 
       const inactiveRows = [
-        { Name: 'Store 4', Address: '899 W Dale Drive, Chandler, AZ 85076', Phone: '602-544-3369', Actions: inactiveActions }
+        { Name: 'Store 4', Address: '899 W Dale Drive, Chandler, AZ 85076', Phone: '602-544-3369'}
     ];
 
 
@@ -61,7 +63,13 @@ const StoreLocations: React.FC = () => {
         { name: 'Name', datan:'Name' },
         { name: 'Address', datan: 'Address' },
         { name: 'Phone', datan: 'Phone' },
-        { name: 'Actions', datan: 'Actions'}
+        { name: 'Actions', datan: 'Actions',Call:(rows:any)=>actions(rows)}
+      ];
+      const inActivecolumns = [
+        { name: 'Name', datan:'Name' },
+        { name: 'Address', datan: 'Address' },
+        { name: 'Phone', datan: 'Phone' },
+        { name: 'Actions', datan: 'Actions',Call:(rows:any)=>inactiveActions(rows)}
       ];
 
       const Pagefooter =(
@@ -70,7 +78,7 @@ const StoreLocations: React.FC = () => {
                 <CustomTextButton >Back</CustomTextButton>
             </div>
             <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
-                <CustomButton >Add New Store</CustomButton>
+                <CustomButton width="133px" onClick={()=>navigate('/AddnewStore')}>Add New Store</CustomButton>
             </div>
            
         </div>
@@ -121,36 +129,23 @@ const StoreLocations: React.FC = () => {
 
   return (
     <div className="StoreLocations">
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'left', alignItems: 'flex-start' }}>
-        <Typography sx={{ font: 'Open Sans', fontSize: '32px', fontWeight: '600', color: '#1266F1', lineHeight: '38.4px' }}>
-          STORE LOCATIONS
-        </Typography>
-      </div>
-      <Typography>Home / Store Locations</Typography>
-
       <Typography sx={{ font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px' }}>
           ACTIVE
         </Typography>
           <CustomTable
                           columns={columns}
-                          data={rows.map((row, index) => ({
-                            ...row,
-                            Actions: actions(index),
-                          }))}
+                          data={rows}
             />
 
        <Typography sx={{ font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px' }}>
           INACTIVE
         </Typography>
         <CustomTable
-                columns={columns}
-                data={inactiveRows.map((row, index) => ({
-                    ...row,
-                    Actions: inactiveActions(index),
-                }))}
+                columns={inActivecolumns}
+                data={inactiveRows}
             />
 
-                <div style={{display:'flex',flexDirection:'row',position:'absolute',right:0}}>
+                <div style={{display:'flex',justifyContent:'flex-end'}}>
                     {Pagefooter}
                 </div>
 

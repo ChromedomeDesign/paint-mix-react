@@ -64,7 +64,8 @@ const routeTitles: { [key: string]: string } = {
   '/CostCalculator':'COST CALCULATOR',
   '/SearchResults':'Search Results',
   '/ColorManagement':'Color Management',
-  '/FormulaManagement':'Formula Management'
+  '/FormulaManagement':'Formula Management',
+  '/StoreLocations' : 'Store Locations'
 };
 
 const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = {
@@ -116,6 +117,15 @@ const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = 
     { text: 'Home', href: '/' },
     {text: 'Color Management', href:'/ColorManagement'},
     {text: 'Formula Management', href:'/FormulaManagement'}
+  ],
+  '/StoreLocations':[
+    { text: 'Home', href: '/' },
+    {text:'Store Locations', href:'/StoreLocations'}
+  ],
+  '/AddnewStore':[
+    { text: 'Home', href: '/' },
+    {text:'Store Locations', href:'/StoreLocations'},
+    {text:'Add New Store',href:'/AddnewStore'}
   ]
 
 };

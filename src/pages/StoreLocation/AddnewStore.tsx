@@ -4,11 +4,12 @@ import CardComponent from "components/CardComponent";
 import CustomInputComponent from "components/CustomInputComponent";
 import CustomTextButton from "components/CustomTextButton";
 import CustomButton from "components/CustomButton";
+import { useNavigate } from "react-router-dom";
 
 
 
 const AddnewStore: React.FC = () => {
-
+ const navigate = useNavigate();
     const haedingBorder = {
         borderBottom: '1px solid rgba(224, 224, 224, 1)',
         marginBottom: '15px',
@@ -55,15 +56,9 @@ const AddnewStore: React.FC = () => {
 
   return (
     <div className="AddnewStore">
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'left', alignItems: 'flex-start' }}>
-             <Typography sx={{ font: 'Open Sans', fontSize: '32px', fontWeight: '600', color: '#1266F1', lineHeight: '38.4px' }}>STORE LOCATIONS</Typography>
-       </div>
-       <Typography>Home / Store Locations / Add New Store</Typography>
-
        <CardComponent width="100%" children={NewStore} backgroundColor={"#FBFBFB"} />
-
        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginTop: '20px' }}>
-            <CustomTextButton children={"Cancel"} width="80px" />
+            <CustomTextButton children={"Cancel"} width="80px" onClick={()=>navigate(-1)}/>
             <CustomButton children={"Save"} width="80px" />
       </div>
 

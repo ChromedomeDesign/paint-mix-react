@@ -66,8 +66,8 @@ import InfoButton from "components/showInfoButton";
   const actions = (row:any) => (
     <div>
       <div style={{ display: 'flex', flexDirection: 'row',width:'280px'}}>
-        <CustomTextButton children={"View"} width="40px" onClick={()=>navigate('/FormulaManagement')}/>
-        <CustomTextButton children={"Edit"} width="80px"/>
+        <CustomTextButton children={"View"} width="40px" onClick={()=>navigate('/BaseManagement')}/>
+        <CustomTextButton children={"Edit"} width="80px" onClick={()=>navigate('/FormulaManagement')}/>
         <InfoButton Info={showicon} toggleInfo={() => handleInfoClick(row)} />
       </div>
     </div>
@@ -190,7 +190,7 @@ import InfoButton from "components/showInfoButton";
       const Initialfooter = (
         <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
           <CustomTextButton onClick={handleCloseModal}>Cancel</CustomTextButton>
-          <CustomButton>Upload File</CustomButton>
+          <CustomButton width="200px">Upload File</CustomButton>
         </div>
       );
     

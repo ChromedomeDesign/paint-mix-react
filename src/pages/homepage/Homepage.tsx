@@ -266,7 +266,7 @@ const Homepage: React.FC = () => {
           <Grid item xs={12} style={{ marginTop: '2px' }} />
 
           <Grid item xs={12} sm={4} md={4} xl={4} lg={3} >
-            <CardButton children={StoreLoc}  onClick={()=>PageNavigate('/')}/>
+            <CardButton children={StoreLoc}  onClick={()=>PageNavigate('/StoreLocations')}/>
           </Grid>
           <Grid item xs={12} sm={4} md={4} xl={4} lg={3} >
             <CardButton children={ChangePsswd}  onClick={forgot} />

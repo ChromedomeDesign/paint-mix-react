@@ -53,12 +53,14 @@ const DynamicBreadcrumb: React.FC<DynamicBreadcrumbsProps> = ({ breadcrumbs }) =
 
   const linkStyles: React.CSSProperties = {
     textDecoration: 'none',
-    color: '#007bff',
+    color: '#1266F1',
+    fontFamily:'"Open Sans", sans-serif'
   };
 
   const activeLinkStyles: React.CSSProperties = {
-    color: '#000',
+    color: '#757575',
     pointerEvents: 'none' as 'none',
+    fontFamily:'"Open Sans", sans-serif'
   };
 
   return (
