@@ -47,25 +47,47 @@ interface CheckboxProps {
   label?: string;
   width?: string;
   onChange?: (checked: boolean) => void;
+  labelColor?: string; 
+  fontSize?: string;
+  lineHeight?: string; 
+  fontWeight?: number; 
 }
 
-const CustomCheckBox: React.FC<CheckboxProps> = ({ checked, width, label, onChange }) => {
+const CustomCheckBox: React.FC<CheckboxProps> = ({
+  checked,
+  width,
+  label,
+  onChange,
+  labelColor = '#424242',
+  fontSize = '12px',
+  lineHeight = '24px',
+  fontWeight = 400,
+}) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.checked);
   };
 
   return (
-    <div>
+    <div className="form-check mb-0">
       <MDBCheckbox
+        className="form-check-input"
         checked={checked}
         onChange={handleChange}
-        label={label}
-        style={{ width: width || 'auto', fontSize: '12px', color: '#424242' }}
       />
-      <label style={{ fontSize: '12px', color: '#424242' }}>{label}</label>
+      <label
+        className="form-check-label"
+        style={{
+          color: labelColor,
+          fontSize,
+          lineHeight,
+          fontWeight,
+          width,
+        }}
+      >
+        {label}
+      </label>
     </div>
   );
 };
 
 export default CustomCheckBox;
-

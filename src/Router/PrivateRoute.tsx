@@ -19,6 +19,7 @@ import NewAdditive from '@pages/ColorManagement/NewAdditive';
 import NewFormula from '@pages/ColorManagement/NewFormula';
 import StoreLocations from '@pages/StoreLocation/StoreLocations';
 import AddnewStore from '@pages/StoreLocation/AddnewStore';
+import BaseManagement from '@pages/ColorManagement/BaseManagement';
 
 type RouteObject = {
   path: string;
@@ -53,6 +54,7 @@ const PrivateRoute: PrivateRouteType = [
       { path: '/NewFormula', element: <NewFormula/> },
       { path: '/StoreLocations', element: <StoreLocations/> },
       { path: '/AddnewStore', element: <AddnewStore/> },
+      { path: '/BaseManagement', element: <BaseManagement/> },
       
       
     ],
