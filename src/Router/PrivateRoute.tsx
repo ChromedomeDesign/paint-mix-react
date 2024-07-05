@@ -18,6 +18,7 @@ import CreateNewUser from '@pages/Admin/CreateNewUser';
 import NewAdditive from '@pages/ColorManagement/NewAdditive';
 import NewFormula from '@pages/ColorManagement/NewFormula';
 import StoreLocations from '@pages/StoreLocation/StoreLocations';
+import AddnewStore from '@pages/StoreLocation/AddnewStore';
 
 type RouteObject = {
   path: string;
@@ -51,7 +52,7 @@ const PrivateRoute: PrivateRouteType = [
       { path: '/NewAdditive', element: <NewAdditive/> },
       { path: '/NewFormula', element: <NewFormula/> },
       { path: '/StoreLocations', element: <StoreLocations/> },
-      
+      { path: '/AddnewStore', element: <AddnewStore/> },
       
       
     ],
