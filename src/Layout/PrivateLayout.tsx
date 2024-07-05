@@ -62,7 +62,9 @@ const routeTitles: { [key: string]: string } = {
   '/CreateNewUser':'USER ADMINISTRATION',
   '/EditUser':'USER ADMINISTRATION',
   '/CostCalculator':'COST CALCULATOR',
-  '/SearchResults':'SearchResults',
+  '/SearchResults':'Search Results',
+  '/ColorManagement':'Color Management',
+  '/FormulaManagement':'Formula Management'
 };
 
 const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = {
@@ -105,6 +107,15 @@ const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = 
   '/SearchResults':[
     { text: 'Home', href: '/' },
     {text: 'Search Results', href:'/SearchResults'},
+  ],
+  '/ColorManagement':[
+    { text: 'Home', href: '/' },
+    {text: 'Color Management', href:'/ColorManagement'}
+  ],
+  '/FormulaManagement':[
+    { text: 'Home', href: '/' },
+    {text: 'Color Management', href:'/ColorManagement'},
+    {text: 'Formula Management', href:'/FormulaManagement'}
   ]
 
 };

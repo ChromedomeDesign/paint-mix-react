@@ -254,7 +254,7 @@ const Homepage: React.FC = () => {
         </div>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={4} md={4} xl={4} lg={3} >
-            <CardButton children={ColorMgmt} onClick={()=>PageNavigate('/')}/>
+            <CardButton children={ColorMgmt} onClick={()=>PageNavigate('/ColorManagement')}/>
           </Grid>
           <Grid item xs={12} sm={4} md={4} xl={4} lg={3} >
             <CardButton children={UserAdmin} onClick={()=>PageNavigate('/UserAdministration')}/>

@@ -6,16 +6,15 @@ import CustomOutLinedButton from "components/CustomOutLinedButton";
 import CustomButton from "components/CustomButton";
 import CustomModal from "components/CustomModal";
 import CustomInputComponent from "components/CustomInputComponent";
+import { useNavigate } from "react-router-dom";
 
 
 
 const FormulaManagement: React.FC = () => {
-
-  
-    
     const [isEditable, setIsEditable] = useState(false);
     const [modalStep, setModalStep] = useState(1);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleSave = () => {
         setIsEditable(false);
@@ -29,7 +28,8 @@ const FormulaManagement: React.FC = () => {
         fontSize:'12px',
         fontWeight:700,
         lineHeght:'20px',
-        color:'#424242'
+        color:'#424242',
+        marginRight:'2px'
      }
      const informationdetail ={
          fontSize:'12px',
@@ -52,7 +52,7 @@ const FormulaManagement: React.FC = () => {
       };
 
      const information = (
-         <div style={{display:'flex',flexDirection:'row',gap:"40px",borderBottom:'1px solid #E0E0E0',margin:'10px 0px',paddingBottom:'10px'}}>
+         <div style={{display:'flex',flexDirection:'row',gap:"40px",margin:'10px 0px',paddingBottom:'10px'}}>
              <div>
              <div style={{display:'flex',flexDirection:'row'}}>
              <Typography style={informationHead}>Color Name: </Typography><Typography style={informationdetail}>Snow White</Typography>
@@ -66,6 +66,7 @@ const FormulaManagement: React.FC = () => {
              </div>
              <div>
              <div style={{display:'flex',flexDirection:'column'}}>
+              <Typography sx={{fontWeight:700,fontSize:'12px',lineHeight:'20px'}}>History:</Typography>
              <Typography style={informationdetail}>Edited: 11/14/22</Typography>
              <Typography style={informationdetail}>Added: 11/02/22</Typography>
              </div>
@@ -162,23 +163,11 @@ const FormulaManagement: React.FC = () => {
       const footer = modalStep === 1 ? initialFooter : secondFooter;
 
     return (
-
-      
-      
-      
         <div className="formulaManagement">
-        <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
-              <Typography sx={{font:'Open Sans', fontSize:'32px', fontWeight:'600', color:'#1266F1', lineHeight:'38.4px'}}>COLOR MANAGEMENT</Typography>
-        </div>
-        <Typography>Home / Color Management / Formula Management</Typography>
-
         <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
               <Typography sx={{font:'Open Sans', fontSize:'20px', fontWeight:'400', color:'#1266F1', lineHeight:'38.4px'}}>FORMULA MANAGEMENT</Typography>
         </div>
-
-        <div style={{ borderTop: '1px solid #E0E0E0', width: '100%', marginTop: '10px' }}></div>
-
-        <div>
+        <div style={{ borderTop: '1px solid #E0E0E0', width: '100%', marginTop: '10px' }}>
             {information}
         </div>
 
@@ -192,7 +181,7 @@ const FormulaManagement: React.FC = () => {
                     </div>
                 ) : (
                     <div style={{ display: 'flex', justifyContent: 'space-between', gap: '4px' }}>
-                        <CustomTextButton children={"Back"} width="100px" />
+                        <CustomTextButton children={"Back"} width="100px" onClick={()=>navigate(-1)}/>
                         <CustomOutLinedButton children={"Deprecate"} width="100px"  onClick={handleOpenModal}/>
                         <CustomButton children={"Edit"} width="100px" onClick={handleEdit} />
                     </div>

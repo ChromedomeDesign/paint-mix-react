@@ -20,7 +20,8 @@ const StyledButton = styled(Button)<{ customcolor?: string; customfontsize?: str
         variants:"outlined",
         fontSize: customfontsize || '13px',
         color: customcolor || '#1266F1',
-        textTransform: 'none', 
+        textTransform: 'none',
+        border:'2px solid'
         
     })
 );
