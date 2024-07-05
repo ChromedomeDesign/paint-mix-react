@@ -1,35 +1,37 @@
 import React from 'react';
-import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
+import { MDBBtn } from 'mdb-react-ui-kit'; // Import Button component from MDB React UI Kit
 
 interface CustomButtonProps {
-    variant?: 'text' | 'outlined' | 'contained';
     color?: string;
     fontSize?: string;
-    width?:string;
+    width?: string;
     onClick?: () => void;
     children: React.ReactNode;
 }
 
-const StyledButton = styled(Button)<{ customcolor?: string; customfontsize?: string ;width?:string}>(
-    ({ customcolor, customfontsize,width }) => ({
-        padding: '8.5px 15px',
-        height: '45px',
-        fontWeight:600,
-        width: width || "100%",
-        backgroundColor:'#1266F1',
-        fontSize: customfontsize || '13px',
-        color: customcolor || 'white',
-        textTransform: 'none', 
-    })
-);
-
-const CustomButton: React.FC<CustomButtonProps> = ({ variant = 'contained', fontSize, color, onClick, width, children }) => {
+const CustomButton: React.FC<CustomButtonProps> = ({ fontSize, color, onClick, width, children }) => {
     return (
-        <StyledButton variant={variant} customcolor={color} width={width} customfontsize={fontSize} onClick={onClick}>
+        <MDBBtn     color="blueviolet"
+        backgroundColor="chartreuse"
+        style={{
+            color:color || 'white',
+            backgroundColor:'#1266F1',
+            padding: '8.5px 15px',
+            height: '45px',
+            fontWeight: 600,
+            width: width || '100%',
+            textTransform: 'none',
+            fontSize:fontSize||"13px",
+            fontFamily:'"Open Sans", sans-serif',
+            border: 'none',
+        }}  role="button"
+        onClick={onClick}
+        >
+     
             {children}
-        </StyledButton>
+        </MDBBtn>
     );
 };
 
 export default CustomButton;
+

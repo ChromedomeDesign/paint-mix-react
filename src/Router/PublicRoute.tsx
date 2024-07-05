@@ -5,6 +5,7 @@ import Login from '../pages/Login/Login';
 import PublicLayout from 'Layout/publicLayout';
 import SearchExistingCustomer from '@pages/SearchExistingCustomer/SearchExistingCustomer';
 import CustomerAccount from '@pages/New-Customer/NewCustomerAccount';
+import CoverPage from '@pages/CoverPage/CoverPage';
 
 
 type RouteObject = {
@@ -21,7 +22,8 @@ const PublicRoute: PublicRouteType = [
     path: '/',
     element: <PublicLayout />,
     children: [
-      { path: '/', element: <Login /> },
+      { path :'/', element:<CoverPage/>},
+      { path: '/Login', element: <Login /> },
       
     
     ],
