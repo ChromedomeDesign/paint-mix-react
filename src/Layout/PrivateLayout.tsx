@@ -114,7 +114,7 @@ const PrivateLayout = () => {
 
   const pageTitle = routeTitles[location.pathname] || '';
   const breadcrumbData = breadcrumbMappings[location.pathname] || [
-    { text: 'Home', href: '/' }
+    
   ];
 
   return (
