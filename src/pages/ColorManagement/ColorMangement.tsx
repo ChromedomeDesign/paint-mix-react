@@ -14,6 +14,8 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import CustomRadioGroup from "components/CustomRadioGroup";
 import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
+import { useNavigate } from "react-router-dom";
+import InfoButton from "components/showInfoButton";
 
   
 
@@ -22,8 +24,10 @@ import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
   const [expandedRow, setExpandedRow] = useState<number | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const [modalStep, setModalStep] = useState(1);
+  const [expandedRowIndex, setExpandedRowIndex] = useState<number | undefined>(undefined);
+  const [showicon, setShowicon]=useState(false);
   const [mesurmentType, setMesurmentType]=useState('');
- 
+ const navigate = useNavigate();
 
   
 
@@ -59,18 +63,12 @@ import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
   const [uploaderText, setUploaderText] = useState("Drag 'n' drop some files here, or click to select files");
 
 
-  const actions = (rowIndex: number) => (
+  const actions = (row:any) => (
     <div>
-      <div style={{gap:'10px'}}>
-        <CustomTextButton children={"View"} width="80px"/>
+      <div style={{ display: 'flex', flexDirection: 'row',width:'280px'}}>
+        <CustomTextButton children={"View"} width="40px" onClick={()=>navigate('/FormulaManagement')}/>
         <CustomTextButton children={"Edit"} width="80px"/>
-        <CustomTextButton
-          width="80px"
-          onClick={() => handleToggleInfo(rowIndex)}
-        >
-          Info
-          {expandedRow === rowIndex ? <KeyboardArrowDown /> : <ArrowRightIcon />}
-        </CustomTextButton>
+        <InfoButton Info={showicon} toggleInfo={() => handleInfoClick(row)} />
       </div>
     </div>
   );
@@ -92,17 +90,43 @@ import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
         { name: 'Color Name', datan:'ColorName' },
         { name: 'Brand', datan: 'Brand' },
         { name: 'Type', datan: 'Type' },
-        { name: 'Actions', datan: 'Actions'}
+        { name: 'Actions', datan: 'Actions', Call:(row:any)=>actions(row), cellWidth: "280px"}
       ];
 
         
       const rows = [
-        { ColorName: 'Eggshell White', Brand: 'Behr', Type: 'Additive', date: "01/02/2019",Actions:actions},
-        { ColorName: 'Off White', Brand: 'Royal', Type: 'Base', date: "01/02/2019",Actions:actions},
-        { ColorName: 'Pearl White', Brand: 'Kilz', Type: 'Additive', date: "01/02/2019",Actions:actions },
-        { ColorName: 'Snow White', Brand: 'Kilz', Type: 'Formula', date: "01/02/2019",Actions:actions}
+        { ColorName: 'Eggshell White', Brand: 'Behr', Type: 'Additive', date: "01/02/2019"},
+        { ColorName: 'Off White', Brand: 'Royal', Type: 'Base', date: "01/02/2019"},
+        { ColorName: 'Pearl White', Brand: 'Kilz', Type: 'Additive', date: "01/02/2019"},
+        { ColorName: 'Snow White', Brand: 'Kilz', Type: 'Formula', date: "01/02/2019"}
       ];
 
+      const handleInfoClick = (row: any) => {
+        setShowicon(!showicon);
+      setExpandedRowIndex(rows.indexOf(row) === expandedRowIndex ? undefined : rows.indexOf(row));
+    };
+
+
+    const expandedRowContent =(
+      <div style={{ display: 'flex', flexDirection: 'row',justifyContent:'space-between', marginTop: '20px' }}>
+      <div>
+        <Typography variant="h6">Job Type:</Typography>
+        <Typography>Reproduction</Typography>
+      </div>
+      <div>
+        <Typography variant="h6">Manufacturer:</Typography>
+        <Typography>Valspar</Typography>
+      </div>
+      <div>
+        <Typography variant="h6">Color Name:</Typography>
+        <Typography>Hunter Green</Typography>
+      </div>
+      <div>
+        <Typography variant="h6">Painter Supply #:</Typography>
+        <Typography>PS-123-XXXX</Typography>
+      </div>
+    </div>
+    )
 
       const  mesurment = [
         {value:'Additive',label:"Additive"},
@@ -196,26 +220,21 @@ import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
 
     return (
         <div className="colorManagement">
-              <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
-                    <Typography sx={{font:'Open Sans', fontSize:'32px', fontWeight:'600', color:'#1266F1', lineHeight:'38.4px'}}>COLOR MANAGEMENT</Typography>
-              </div>
-              <Typography>Home / Color Management</Typography>
-
               <div >
                 <Grid container  gap={1}>
-                    <Grid item xs={12} xl={2.7} lg={2.7} md={4} sm={6}>
+                    <Grid item xs={12} xl={3.8} lg={3.8} md={3.8} sm={3.8}>
                     <CustomInputComponent label="Search Color"/>
                     </Grid>
 
-                    <Grid item xs={12} xl={2.7} lg={2.7} md={4} sm={6}>
+                    <Grid item xs={12} xl={2.9} lg={2.9} md={2.9} sm={2.9}>
                     <CustomSelectComponent label="Type" options={options}  />
                     </Grid>
 
-                    <Grid item xs={12} xl={2.7} lg={2.7} md={4} sm={6}>
+                    <Grid item xs={12} xl={2.9} lg={2.9} md={2.9} sm={2.9}>
                     <CustomSelectComponent label="Additional Filter" options={optionsData}  />
                     </Grid>
 
-                    <Grid item xs={12} xl={2.7} lg={2.7} md={4} sm={6}>
+                    <Grid item xs={12} xl={2} lg={2} md={2} sm={2}>
                     <CustomButton children={"Search"}   />
                     </Grid>
                 </Grid>
@@ -224,33 +243,13 @@ import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
                  <div style={{ marginTop: '20px' }}>
                  <CustomTable
                       columns={columns}
-                      data={rows.map((row, index) => ({
-                        ...row,
-                        Actions: actions(index),
-                      }))}
+                      data={rows}
+                      expandedRowIndex={expandedRowIndex} 
+                      expandedRowContent={expandedRowContent} 
                     />
-                    {expandedRow !== null && (
-                      <div style={{ display: 'flex', flexDirection: 'row', marginTop: '20px', marginLeft: '50px' }}>
-                      <div>
-                        <Typography variant="h6">Job Type:</Typography>
-                        <Typography>Reproduction</Typography>
-                      </div>
-                      <div>
-                        <Typography variant="h6">Manufacturer:</Typography>
-                        <Typography>Valspar</Typography>
-                      </div>
-                      <div>
-                        <Typography variant="h6">Color Name:</Typography>
-                        <Typography>Hunter Green</Typography>
-                      </div>
-                      <div>
-                        <Typography variant="h6">Painter Supply #:</Typography>
-                        <Typography>PS-123-XXXX</Typography>
-                      </div>
-                    </div>
-                    )}
+             
                 </div>
-                <div style={{display:'flex',flexDirection:'row',position:'absolute',right:0}}>
+                <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end'}}>
                     {Pagefooter}
                 </div>
 
