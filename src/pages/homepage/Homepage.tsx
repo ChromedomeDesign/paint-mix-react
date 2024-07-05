@@ -236,7 +236,7 @@ const Homepage: React.FC = () => {
         <div>
           <Typography sx={{ fontSize: '32px', fontWeight:600,lineHeight:'38.4px',color: 'rgba(18, 102, 241, 1)',fontFamily:'"Open Sans", sans-serif'}}>USER</Typography>
         </div>
-        <Grid container >
+        <Grid container spacing={2}>
           <Grid item xs={12} sm={4} md={4} xl={3} lg={3}>
             <CardButton children={order} onClick={orderClick}/>
           </Grid>
@@ -252,7 +252,7 @@ const Homepage: React.FC = () => {
         <div >
           <Typography sx={{ fontSize: '32px', fontWeight:600,lineHeight:'38.4px',color: 'rgba(18, 102, 241, 1)',fontFamily:'"Open Sans", sans-serif'}}>ADMIN</Typography>
         </div>
-        <Grid container >
+        <Grid container spacing={2}>
           <Grid item xs={12} sm={4} md={4} xl={4} lg={3} >
             <CardButton children={ColorMgmt} onClick={()=>PageNavigate('/')}/>
           </Grid>

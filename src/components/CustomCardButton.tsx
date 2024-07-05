@@ -45,8 +45,10 @@ const CardButton: React.FC<CardComponentProps> = ({
   return (
     <Card 
       style={{ 
-        width:"233.23px", 
-        height:"195.45px",
+        minWidth:"233.23px", 
+        // maxWidth:'300px',
+        minHeight:"195.45px",
+        maxHeight:"230px",
         borderRadius: radius || '5px',
         boxShadow: " 0px 2px 10px 0px rgba(0, 0, 0, 0.21)",
         display: 'flex',
