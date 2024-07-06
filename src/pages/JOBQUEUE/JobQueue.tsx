@@ -8,6 +8,7 @@ import CustomOutLinedButton from "components/CustomOutLinedButton";
 import InfoButton from "components/showInfoButton";
 import CustomTextButton from "components/CustomTextButton";
 import { useNavigate } from "react-router-dom";
+import ErrorIcon from '@mui/icons-material/Error';
 
 const JobQueue: FC = () => {
   const [isJob, setJobSearch] = useState('');
@@ -25,9 +26,9 @@ const JobQueue: FC = () => {
 
   const getActions = (row: any) => (
     <div style={{ display: 'flex', flexDirection: 'row',width:'280px'}}>
-      <CustomButton width="80px">Start</CustomButton>
-      <CustomTextButton width="80px" onClick={()=>navigate('/JobQueInformation')}>Edit</CustomTextButton>
-       <InfoButton Info={showicon} toggleInfo={() => handleInfoClick(row)} ></InfoButton>
+      <CustomButton width="60px" onClick={()=>navigate('/JobInformation')}>Start</CustomButton>
+      <CustomTextButton width="60px" onClick={()=>navigate('/JobQueInformation')}>Edit</CustomTextButton>
+       <InfoButton Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} ></InfoButton>
     </div>
   );
 
@@ -45,7 +46,7 @@ const JobQueue: FC = () => {
       color: '#0A47A9'
     },
     reprod: {
-      width: "86px",
+      width: "92px",
       height: "20px",
       borderRadius: "100px",
       padding: "2px 5px",
@@ -57,7 +58,7 @@ const JobQueue: FC = () => {
       color: '#453008'
     },
     custom: {
-      width: "86px",
+      width: "58px",
       height: "20px",
       borderRadius: "100px",
       padding: "2px 5px",
@@ -96,7 +97,7 @@ const JobQueue: FC = () => {
   };
   
  const columns = [
-  { name: 'Job Name', datan: 'JobName' },
+  { name: 'Job Name', datan: 'JobName' , Call:(row:any)=><div>{expandedRowIndex === rows.indexOf(row) ? <p  style={{display:'flex'}}> <ErrorIcon sx={{color:'#FFA900'}}/> {row?.JobName} </p>:<p>{row?.JobName}</p>}</div>},
   { name: 'Color Ref', datan: 'ColorRef' },
   { name: 'Job Type', datan: 'JobType', Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span> },
   { name: 'Date', datan: 'date' },
@@ -111,6 +112,8 @@ const rows = [
 ];
 
 const handleInfoClick = (row: any) => {
+  console.log(row,rows.indexOf(row));
+  
     setShowicon(!showicon);
   setExpandedRowIndex(rows.indexOf(row) === expandedRowIndex ? undefined : rows.indexOf(row));
 };
@@ -158,7 +161,7 @@ const NewTable = (
 
   const footer = (
     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
-      <CustomTextButton width="31px">Back</CustomTextButton>
+      <CustomTextButton width="31px" onClick={()=>navigate(-1)}>Back</CustomTextButton>
     </div>
   );
 

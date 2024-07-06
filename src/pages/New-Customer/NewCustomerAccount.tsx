@@ -11,10 +11,12 @@ import CustomCheckBox from "components/CustomCheckBox";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
 import '../../css/CREATE_NEW_CUSTOMER_ACCOUNT.css';
 import CustomTextButton from "components/CustomTextButton";
+import { useNavigate } from "react-router-dom";
 
 const NewCustomerAccount: FC = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
       firstName: '',
       lastName: '',
@@ -51,9 +53,9 @@ const body =(
 )
 
 const footer=(
-    <div style={{display:'flex',flexDirection:'row'}}>
-        <CustomOutLinedButton children={"Back"} width="80px" onClick={handleCloseModal}/>
-        <CustomButton  children={"Create New Job"} width="155px"/>
+    <div style={{display:'flex',flexDirection:'row',gap:2}}>
+        <CustomTextButton children={"Back"} width="80px" onClick={handleCloseModal}/>
+        <CustomButton  children={"Create New Job"} width="137px" onClick={()=>navigate('/JobInformation')}/>
     </div>
 )
 //---------------------------------------------------------//

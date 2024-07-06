@@ -21,6 +21,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({ fontSize, color, onClick, w
             fontWeight: 600,
             width: width || '100%',
             textTransform: 'none',
+            lineHeight:'28px',
             fontSize:fontSize||"13px",
             fontFamily:'"Open Sans", sans-serif',
             border: 'none',

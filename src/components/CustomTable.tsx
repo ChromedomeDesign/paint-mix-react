@@ -132,8 +132,8 @@ type Props = {
 
 const CustomTable: React.FC<Props> = ({ columns, data = [], width, cellWidth, expandedRowIndex, expandedRowContent }) => {
   return (
-   
-          <MDBTable width="100%" style={{width:'100%'}}>
+      <div style={{ overflowX: 'auto' }}>
+          <MDBTable width="100%" style={{width:'100%', scrollY:'auto'}} >
             <MDBTableHead sticky>
               <tr style={{ backgroundColor: '#E9E9E9', position: 'sticky', top: 0, zIndex: 888 }}>
                 {columns.map((hdata, index) => (
@@ -150,15 +150,17 @@ const CustomTable: React.FC<Props> = ({ columns, data = [], width, cellWidth, ex
                     {columns.map((bhdata, colIndex) => (
                       <td
                         key={colIndex}
+                        
                         style={{
                           width: bhdata.cellWidth || 'auto',
-                          textAlign: 'left',
-                          fontSize: '12px',
-                          fontWeight: 500,
-                          // color: '#424242',
+                      height: '60px',
+                      alignContent: "center",
                         }}
                       >
+                        <div className='d-flex align-items-center'>
                         {bhdata.Call ? bhdata.Call(bdata) : bdata[bhdata.datan]}
+                        </div>
+
                       </td>
                     ))}
                   </tr>
@@ -171,6 +173,7 @@ const CustomTable: React.FC<Props> = ({ columns, data = [], width, cellWidth, ex
               ))}
             </MDBTableBody>
           </MDBTable>
+          </div>
        
   );
 };

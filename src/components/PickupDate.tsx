@@ -14,9 +14,9 @@ const CssTextField = styled(TextField)({
 
 
   '&.MuiInputLabel-root': {
-    top: 'calc(50% + 5px)', // Adjust the initial position of the label
+    top: 'calc(50% + 5px)', 
     transform: 'translateY(-50%)',
-    transition: 'top 0.2s ease-out', // Add transition for smooth movement
+    transition: 'top 0.2s ease-out', 
     margin: '0 14px',
     color: '#757575',
   },

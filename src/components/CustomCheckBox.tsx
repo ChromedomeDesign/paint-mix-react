@@ -68,11 +68,12 @@ const CustomCheckBox: React.FC<CheckboxProps> = ({
   };
 
   return (
-    <div className="form-check mb-0">
+    <div className="form-check mb-0" style={{textAlign:'left'}}>
       <MDBCheckbox
         className="form-check-input"
         checked={checked}
         onChange={handleChange}
+        
       />
       <label
         className="form-check-label"
@@ -82,6 +83,7 @@ const CustomCheckBox: React.FC<CheckboxProps> = ({
           lineHeight,
           fontWeight,
           width,
+             
         }}
       >
         {label}

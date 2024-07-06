@@ -6,6 +6,8 @@ import { Typography } from '@mui/material';
 import CustomModal from "components/CustomModal";
 import CustomInputComponent from "components/CustomInputComponent";
 import CustomerAccount from "@pages/New-Customer/NewCustomerAccount";
+import { useNavigate } from "react-router-dom";
+import CustomTextButton from "components/CustomTextButton";
 
 // import { useState } from 'react'
 
@@ -15,34 +17,7 @@ const SearchExistingCustomer: React.FC = () => {
     const [isCustomer, searchCustomer] = useState('');
     const [isModalOpen, setModalOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState('');
-
-
-  //   const title = (
-
-  //       <div style={{textAlign:"left",lineHeight:'0px'}}>
-  //         <div>
-  //         <Typography sx={{fontSize:'32px', fontWeight:'600', color:'#1266F1'}}>Search Existing Customer</Typography>
-  //         </div>
-
-
-  //       </div>
-  // )
-
-    // const ViewCustomerInfo = (
-
-    //   <div>
-    //     <Typography>Verify Customer Information</Typography>
-    //     <div>
-    //       <Typography> Contractor Home</Typography>
-    //       <p>CustomerAccount.firstname lastname</p>
-    //       <p>CustomerAccount.address</p>
-    //       <p>CustomerAccount.phoneNumber</p>
-    //       <p>CustomerAccount.AccountNumber</p>
-    //     </div>
-    //   </div>
-
-
-    // )
+    const navigate = useNavigate();
 
     const modelTitle = (
       <Typography sx={{fontWeight:'600', fontSize:'20px', color:'#424242'}}>Verify Customer Information</Typography>
@@ -52,10 +27,10 @@ const SearchExistingCustomer: React.FC = () => {
       
       <div style={{fontWeight:'400', fontSize:'12px', color:'#424242'}}>
       
-        <Typography > Contractor Home</Typography>
-        <Typography> address</Typography>
-        <Typography> phoneNumber</Typography>
-        <Typography> AccountNumber</Typography>
+        <Typography>Contractor Home</Typography>
+        <Typography>address</Typography>
+        <Typography>phoneNumber</Typography>
+        <Typography>AccountNumber</Typography>
       </div>
 
     )
@@ -65,24 +40,30 @@ const SearchExistingCustomer: React.FC = () => {
     };
 
     const modelfooter = (
-      <div style={{display:'flex',flexDirection:'row', fontWeight:'600', fontSize:'13px'}}>
-        <CustomOutLinedButton children={"Edit info"} onClick={handleCloseModal}/>
-        <CustomButton  children={"Continue"}/>
+      <div style={{display:'flex',flexDirection:'row', fontWeight:'600', fontSize:'13px',gap:2}}>
+        <CustomTextButton width="110px" children={"Edit info"} onClick={()=>navigate('/EditCustomerAccount')}/>
+        <CustomButton width="98px" children={"Continue"} onClick={()=>navigate('/CustomerAccount')}/>
       </div>
     )
     
+    const handleOpenModal = () => {
+      setModalOpen(true);
+    };
 
     
-    
+    const getActions =  (
+      <div style={{ display: 'flex', flexDirection: 'row',}}>
+        <CustomTextButton width="60px" onClick={handleOpenModal}>Select</CustomTextButton>
+        <CustomTextButton width="60px" onClick={()=>navigate('/EditCustomerAccount')}>Edit</CustomTextButton>
+      </div>
+    );
         
     
     const columns = [
       { name: 'Customer Name', datan:'Name' },
       { name: 'Business', datan: 'Business' },
       { name: 'Account Number', datan: 'AccountNumber' },
-      { name: 'Actions', datan: 'action' },
-      // { name: 'TOTAL', datan: 'total', Call: (data: any) => (data.amount1 + data.amount2 + data.amount3).toFixed(2) },
-      // { name: 'gdfgfd', datan: 'action', Call: (data: any) => <button>Amount</button> }
+      { name: 'Actions', datan: 'action',Call:()=>getActions,  cellWidth: "380px"},
     ];
     
     const rows = [
@@ -104,9 +85,7 @@ const SearchExistingCustomer: React.FC = () => {
     
     
 
-    const handleOpenModal = () => {
-      setModalOpen(true);
-    };
+    
   
   
     const [inputValue, setInputValue] = useState<string>('gdfgdfgdfgdf');
@@ -117,16 +96,11 @@ const SearchExistingCustomer: React.FC = () => {
     };
 
     const footer=(
-      <div style={{display:'flex', flexDirection:'row'}}>
-        <div style={{ display: 'flex', flexDirection: 'row', width:'60px',  tabSize:'large' }}>
-            <CustomOutLinedButton>Back</CustomOutLinedButton>
-        </div>
-        <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
-            <CustomOutLinedButton>Customer Not Found</CustomOutLinedButton>
-        </div>
-        <div style={{display: 'flex', flexDirection:'row', width:'Fixed (175px)',  tabSize:'large'}}>
-            <CustomButton>Create New Customer</CustomButton>
-        </div>
+      <div style={{display:'flex', flexDirection:'row',gap:4}}>
+            <CustomTextButton width="60px">Back</CustomTextButton>
+            <CustomOutLinedButton width={"181px"}>Customer Not Found</CustomOutLinedButton>
+            <CustomButton width={'175px'} onClick={()=>navigate('/CREATE_NEW_CUSTOMER_ACCOUNT')}>Create New Customer</CustomButton>
+     
   </div>
       )
     
@@ -145,21 +119,6 @@ const SearchExistingCustomer: React.FC = () => {
           size="medium"
           centered={true}
          />
-        <button onClick={handleOpenModal}>
-
-
-        fjasdlfjf
-        </button>
-       
-       
-       
-          <div style={{textAlign:"left",lineHeight:'0px'}}>
-                <div>
-                  <Typography sx={{fontSize:'32px', fontWeight:'600', color:'#1266F1'}}>Search Existing Customer</Typography>
-                </div>
-
-
-          </div>
 
           <div style={{marginBottom: '15px', display: 'flex', alignItems: 'left', tabSize:'large'}}>
           <CustomInputComponent 

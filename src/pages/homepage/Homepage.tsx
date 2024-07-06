@@ -18,6 +18,10 @@ const Homepage: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
   const [orderModal, setorderModal] = useState(false);
+  const [password, setPassword]=useState({
+    newPass:'',
+    confirmPass:''
+  })
   const navigate = useNavigate();
 
   const order = (
@@ -109,6 +113,16 @@ const Homepage: React.FC = () => {
   const title = (
     <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Password</Typography>
   )
+
+  const inputsChange = (name: string, value: string) => {
+      setPassword(prevState => ({
+        ...prevState,
+        [name]: value
+      }));
+    
+    };
+
+
   const handleChangePassword = () => {
     if (newPassword === confirmPassword && newPassword !== '') {
       console.log('Password change requested');
@@ -133,18 +147,26 @@ const Homepage: React.FC = () => {
         <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'center' }}>
           <CustomInputComponent
             label="Enter New Password"
-            value={newPassword}
+            value={password?.newPass}
+            customInputChange={(value) => inputsChange('newPass', value)}
 
           />
-          {isSuccess && <img src={greenTick} alt="Success" width="24px" height="24px" style={{ marginLeft: '10px' }} />}
+          {password?.newPass && password?.confirmPass && password?.newPass === password?.confirmPass && (
+  <img src={greenTick} alt="Success" width="24px" height="24px" style={{ marginLeft: '10px' }} />
+)}
+
         </div>
 
         <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'center' }}>
           <CustomInputComponent
             label="Confirm New Password"
-            value={confirmPassword}
+            value={password?.confirmPass}
+            customInputChange={(value) => inputsChange('confirmPass', value)}
           />
-          {isSuccess && <img src={greenTick} alt="Success" width="24px" height="24px" style={{ marginLeft: '10px' }} />}
+          {password?.newPass && password?.confirmPass && password?.newPass === password?.confirmPass && (
+  <img src={greenTick} alt="Success" width="24px" height="24px" style={{ marginLeft: '10px' }} />
+)}
+
         </div>
 
       </div>
@@ -200,8 +222,8 @@ const Homepage: React.FC = () => {
   const orderfooter = (
     <MDBContainer className="d-flex flex-row gap-2 justify-content-end">
       <CustomTextButton children={"Cancel"} onClick={orderCloseModal} width="100px"/>
-      <CustomOutLinedButton children={"No"} onClick={orderCloseModal} width="100px"/>
-      <CustomButton children={"Submit"} onClick={()=>navigate('/')} width="100px"/>
+      <CustomOutLinedButton children={"No"} onClick={()=>navigate('/SearchExistingCustomer')} width="100px" />
+      <CustomButton children={"Submit"} onClick={()=>navigate('/CREATE_NEW_CUSTOMER_ACCOUNT')} width="100px"/>
     </MDBContainer>
   )
   //----------------------------------------------------------------------------------------------//

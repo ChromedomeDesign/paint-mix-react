@@ -9,6 +9,8 @@ import CustomOutLinedButton from "components/CustomOutLinedButton";
 import InfoButton from "components/showInfoButton";
 import { MDBIcon } from "mdb-react-ui-kit";
 import CustomTextButton from "components/CustomTextButton";
+import { useNavigate } from "react-router-dom";
+import ErrorIcon from '@mui/icons-material/Error';
 
 const CustomerAccount: FC=()=>{
 
@@ -16,8 +18,7 @@ const CustomerAccount: FC=()=>{
     const [expandedRowIndex, setExpandedRowIndex] = useState<number | undefined>(undefined);
     const [showicon, setShowicon]=useState(false);
     const [currentTab, setCurrentTab] = useState("New");
-
-
+    const navigate = useNavigate();
  
     
 
@@ -29,12 +30,10 @@ const CustomerAccount: FC=()=>{
   };
     
      const getActions = (row: any) => (
-        <div style={{display:'flex', flexDirection:'row',gap:4,width:'260px'}}>
-              <CustomButton width="80px" >Reproduce</CustomButton>
-              <CustomButton width="80px" >Modify</CustomButton>
-         
-            <InfoButton Info={showicon} toggleInfo={() => handleInfoClick(row)} ></InfoButton>
-            
+        <div style={{display:'flex', flexDirection:'row',gap:4,width:'300px'}}>
+              <CustomButton width="95px" >Reproduce</CustomButton>
+              <CustomButton width="85px" >Modify</CustomButton>
+            <InfoButton Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} ></InfoButton>
         </div>
 
       );
@@ -52,8 +51,7 @@ const CustomerAccount: FC=()=>{
         color: '#424242',
       }
     const expandedRowContent=(
-       
-        <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
+        <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'4px'}}>
             <div>
                 <p style={textStyle}>
                 Job Type: 
@@ -95,6 +93,71 @@ const CustomerAccount: FC=()=>{
       ];
 
 
+
+  const styles = {
+    modify: {
+      width: "86px",
+      height: "20px",
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#CFE0FC",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#0A47A9'
+    },
+    reprod: {
+      width: "86px",
+      height: "20px",
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#FFEBC2",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#453008'
+    },
+    custom: {
+      width: "86px",
+      height: "20px",
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#EBCDFE",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#262626'
+    },
+    fanDeck: {
+      width: "86px",
+      height: "20px",
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#C7F5D9",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#0B4121'
+    }
+  };
+  
+  const getJobTypeStyle = (jobType: string) => {
+    switch (jobType) {
+      case "Modification":
+        return styles.modify;
+      case "Reproduction":
+        return styles.reprod;
+      case "Custom":
+        return styles.custom;
+      default:
+        return styles.fanDeck;
+    }
+  };
+
       const handleTabSelect = (tabValue: string) => {
         setCurrentTab(tabValue);
       };
@@ -134,9 +197,9 @@ const CustomerAccount: FC=()=>{
 
 
     const columns = [
-        { name: 'Job Name', datan:'JobName',Call:(row:any)=><p><span>{expandedRowIndex === rows.indexOf(row) ? <MDBIcon className='ms-1' icon='camera' size='80x' /> : null}</span>{row?.JobName}</p> },
+        { name: 'Job Name', datan:'JobName',Call:(row:any)=><p  style={{display:'flex',gap:2}}><span>{expandedRowIndex === rows.indexOf(row) ? <ErrorIcon sx={{color:'#FFA900'}}/>: null}</span>{row?.JobName}</p> },
         { name: 'Color Ref', datan: 'ColorRef' },
-        { name: 'Job Type', datan: 'JobType' },
+        { name: 'Job Type', datan: 'JobType',Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span>  },
         { name: 'Date', datan: 'date' },
         { name: 'Actions', datan: 'Actions', 
             Call:(row:any)=>getActions(row),
@@ -162,12 +225,12 @@ const CustomerAccount: FC=()=>{
       ];
 
       const footer =(
-        <div style={{display:'flex', flexDirection:'row',justifyContent:'flex-end'}}>
-            <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',gap:4}}>
+        <div style={{display:'flex', flexDirection:'row',justifyContent:'flex-end',marginTop:"10px"}}>
+            <div style={{display:'flex',flexDirection:'row',gap:4}}>
                 <CustomTextButton width="45px">Back</CustomTextButton>
                 <CustomOutLinedButton width="125px">New Fan Deck</CustomOutLinedButton>       
-                <CustomButton width="117px">New Custom</CustomButton>        
-                <CustomButton width="117px"> Job Queue</CustomButton>   
+                <CustomOutLinedButton width="117px">New Custom</CustomOutLinedButton>        
+                <CustomButton width="117px" onClick={()=>navigate("/JobQueue")}> Job Queue</CustomButton>   
                 </div>       
         </div>
       )
@@ -177,11 +240,7 @@ const CustomerAccount: FC=()=>{
     return (
         
         <div>
-                 <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
-                    <Typography sx={{font:'Open Sans', fontSize:'32px', fontWeight:'600', color:'#1266F1', lineHeight:'38.4px'}}>CUSTOMER ACCOUNT</Typography>
-                 </div>
-                 <div>
-
+              <div>
                     <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}} > Contractor Home</Typography>
                     <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}} > address</Typography>
                     <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}}> phoneNumber</Typography>

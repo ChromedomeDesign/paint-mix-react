@@ -10,6 +10,7 @@ import CustomModal from "components/CustomModal";
 import CustomCheckBox from "components/CustomCheckBox";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
 import { useNavigate } from "react-router-dom";
+import CustomTextButton from "components/CustomTextButton";
 
 
 const Login: FC = () => {
@@ -39,9 +40,9 @@ const body =(
 )
 
 const footer=(
-    <div style={{display:'flex',flexDirection:'row'}}>
-        <CustomOutLinedButton children={"Cancel"} onClick={handleCloseModal}/>
-        <CustomButton  children={"Submit"}/>
+    <div style={{display:'flex',flexDirection:'row',gap:1}}>
+        <CustomTextButton children={"Cancel"} onClick={handleCloseModal} width="72px"/>
+        <CustomButton  children={"Submit"} width="75px"/>
     </div>
 )
 //---------------------------------------------------------//

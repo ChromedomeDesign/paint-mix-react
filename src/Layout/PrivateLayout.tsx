@@ -65,13 +65,36 @@ const routeTitles: { [key: string]: string } = {
   '/SearchResults':'Search Results',
   '/ColorManagement':'Color Management',
   '/FormulaManagement':'Formula Management',
-  '/StoreLocations' : 'Store Locations'
+  '/StoreLocations' : 'Store Locations',
+  '/SearchExistingCustomer':'Search Existing Customer',
+  '/EditCustomerAccount': 'Edit Customer Account'
 };
 
 const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = {
   '/CREATE_NEW_CUSTOMER_ACCOUNT': [
     { text: 'Home', href: '/' },
     { text: 'Create New Customer Account', href: '/CREATE_NEW_CUSTOMER_ACCOUNT' }
+  ],
+  '/SearchExistingCustomer':[
+    { text: 'Home', href: '/' },
+    { text: 'Order', href: '/' },
+    { text: 'Search Customer', href: '/SearchExistingCustomer' }
+  ],
+  '/EditCustomerAccount':[
+    { text: 'Home', href: '/' },
+    { text: 'Order', href: '/' },
+    { text: 'Edit Customer', href: '/EditCustomer' }
+  ],
+  '/CustomerAccount':[
+    { text: 'Home', href: '/' },
+    { text: 'Order', href: '/' },
+    { text: 'Search Customer', href: '/SearchExistingCustomer' },
+    { text: 'Customer Account', href: '/CustomerAccount' }
+  ],
+    '/JobInformation': [
+    { text: 'Home', href: '/' },
+    { text: 'Create New Customer Account', href: '/CREATE_NEW_CUSTOMER_ACCOUNT' },
+    { text: 'Job Information', href: '/JobInformation' }
   ],
   '/JobQueue':[
     { text: 'Home', href: '/' },
@@ -82,11 +105,7 @@ const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = 
     {text: 'Job Queue', href:'/JobQueue'},
     {text: 'Job Que Information', href:'/JobQueInformation'}
   ],
-  // '/JobInformation': [
-  //   { text: 'Home', href: '/' },
-  //   {text: 'Job Queue', href:'/JobQueue'},
-  //   { text: 'Job Information', href: '/JobInformation' }
-  // ],
+
   '/UserAdministration':[
     { text: 'Home', href: '/' },
     {text: 'User Administration', href:'/UserAdministration'},
@@ -141,16 +160,19 @@ const PrivateLayout = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
       <div style={{ width: '100%', maxWidth: '1800px' }}>
-        <div style={{ position: 'sticky', top: '0px', backgroundColor: 'transparent', zIndex: 999 }}>
+        <div style={{ position: 'sticky',top: '0px', backgroundColor: 'white', zIndex: 999 }}>
           <Header />
-        </div>
-        <main style={{ margin: '12px 15px 12px 15px', paddingBottom: '10px' }}>
-        <div style={{ margin: "12px 0px 0px 0px" }}>
+          <div style={{margin: '0px 15px',}}>
+          <div style={{ margin: "30px 0px 0px 0px" }}>
             <p style={{fontWeight:600,color:'#1266F1',fontSize:'32px',lineHeight:'38.4px'}}>{pageTitle}</p>
           </div>
-          <div style={{ margin: "12px 0px 12px 0px" }}>
+          <div style={{ margin: "0px 0px 12px 0px" }}>
             <DynamicBreadcrumb breadcrumbs={breadcrumbData} />
           </div>
+          </div>
+        </div>
+        <main style={{ margin: '12px 15px 12px 15px', paddingBottom: '10px' }}>
+      
          
           <Outlet />
           {/* <div style={{

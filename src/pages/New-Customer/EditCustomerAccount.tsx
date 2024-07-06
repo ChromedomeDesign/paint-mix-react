@@ -10,6 +10,7 @@ import CustomModal from "components/CustomModal";
 import CustomCheckBox from "components/CustomCheckBox";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
 import '../../css/CREATE_NEW_CUSTOMER_ACCOUNT.css';
+import CustomTextButton from "components/CustomTextButton";
 
 const EditCustomerAccount: FC = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -100,12 +101,6 @@ const footer=(
 //----------------------Main return-------------------------------------------//
     return (
           <div>
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
-              <Typography sx={{fontSize:'32px', fontWeight:'600', color:'#1266F1'}}>EDIT CUSTOMER ACCOUNT</Typography>
-
-            </div>
-        
-        
         <div style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:"center"}}>
         
          <div style={{width:'100%'}}>
@@ -121,7 +116,7 @@ const footer=(
       />
             <CardComponent  width="100%"  children={form} backgroundColor={"#fafcfc"} />
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',marginTop:'20px'}}>
-               <CustomOutLinedButton children={"Cancel"}  width="80px"/>
+               <CustomTextButton children={"Cancel"}  width="80px"/>
                <CustomButton children={"Save"} width="80px" onClick={saving}/>
             </div>
         </div>

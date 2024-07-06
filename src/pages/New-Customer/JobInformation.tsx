@@ -10,15 +10,20 @@ import CustomModal from "components/CustomModal";
 import CustomCheckBox from "components/CustomCheckBox";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
 import '../../css/CREATE_NEW_CUSTOMER_ACCOUNT.css';
+import './Jobinformation.css';
 import PickupDate from "components/PickupDate";
 import CustomSelect from "components/CustomSelect";
 import CustomSelectComponent from "components/CustomSelect";
 import CustomTextButton from "components/CustomTextButton";
+import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
+import CustomTextArea from "components/CustomTextArea";
+import { useNavigate } from "react-router-dom";
 
 const JobInformation: FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
-  const [selectedValue, setSelectedValue] = useState<string>('');
+  const [selectedValue, setSelectedValue] = useState<string>('option1');
+  const navigate = useNavigate();
   const option = [
     { value: 'Fan Deck', label: 'Fan Deck' },
     { value: 'Custom', label: 'Custom' },
@@ -52,7 +57,7 @@ const JobInformation: FC = () => {
 
   const footer = (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <CustomButton children={"Go to Job Queue"} width="255px" />
+      <CustomButton children={"Go to Job Queue"} width="255px" onClick={()=>navigate('/JobQueue')}/>
     </div>
   )
   //---------------------------------------------------------//
@@ -119,7 +124,9 @@ const JobInformation: FC = () => {
         <CustomInputComponent label="Zip Code" name="Zip Code" />
       </div>
       <div className="createNew-inputDiv">
-        <CustomInputComponent width="100%" label="Job Notes" name="Job Notes" />
+        {/* <CustomInputComponent width="100%" label="Job Notes" name="Job Notes" /> */}
+        <CustomTextArea width="100%" label="Job Notes" name="Job Notes"/>
+
       </div>
     </div>
   )
@@ -147,7 +154,7 @@ const JobInformation: FC = () => {
       </div>
       <div className="createNew-inputDiv">
         {/* <CustomInputComponent type="date" label="City" name="city"   /> */}
-        <PickupDate label="State" name="state" />
+        <PickupDate label="Pick-up Date" name="state" />
         <CustomSelectComponent
         label="Quantity Units"
         options={options}
@@ -218,15 +225,15 @@ const JobInformation: FC = () => {
           size="medium"
           centered={true}
         /> */}
-        <div>{JobDaetail}</div>
+        <div style={{marginBottom:'5px'}}>{JobDaetail}</div>
         <CardComponent width="100%" children={form} backgroundColor={"#FBFBFB"} />
         <CardComponent width="100%" children={MANUFACTURERINFO} backgroundColor={"#FBFBFB"} />
         <CardComponent width="100%" children={JOBINFO} backgroundColor={"#FBFBFB"} />
         <CardComponent width="100%" children={PRODUCTION} backgroundColor={"#FBFBFB"} />
 
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginTop: '20px' }}>
-          <CustomTextButton children={"Cancel"} width="80px" />
-          <CustomButton children={"Save"} width="80px" onClick={saving} />
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginTop: '20px',gap:1}}>
+          <CustomTextButton children={"Abandon"} width="94px" />
+          <CustomButton children={"Create Job"} width="95px" onClick={saving} />
         </div>
       </div>
     </div>

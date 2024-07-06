@@ -83,8 +83,15 @@ const Header = () => {
       };
 
     const handleClose = (data:any) => {
+        console.log(data);
+        if(data === "logout"){
+            localStorage.removeItem("isLoggedIn");
+            navigate('/')
+        }
         navigate(data)
         setAnchorEl(null);
+  
+      
     };
 
     return (
@@ -105,7 +112,7 @@ const Header = () => {
                 id="basic-menu"
                 anchorEl={anchorEl}
                 open={open}
-                onClose={handleClose}
+                onClose={()=>handleClose('')}
                 anchorOrigin={{
                     vertical: 'bottom',
                     horizontal: 'right',
@@ -131,8 +138,8 @@ const Header = () => {
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/UserAdministration')}>User Administration</MenuItem>
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/CostCalculator')}>Cost Calculator</MenuItem>
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/StoreLocations')}>Store Locations</MenuItem>
-                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={handleClose}>Change Password</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('')}>Change Password</MenuItem>
+                    <MenuItem onClick={()=>handleClose('logout')}>Logout</MenuItem>
                 </div>
             </Menu>
         </div>

@@ -148,6 +148,7 @@ type Props = {
   value?: string;
   width?: string;
   type?: string;
+  Height? : string;
   customInputChange?: (value: string) => void;
 };
 
@@ -184,13 +185,13 @@ const CssTextField = styled(TextField)({
       borderWidth:'1px'
     },
     '&.Mui-focused fieldset': {
-      borderColor: '#6F7E8C',
+      borderColor: '#BDBDBD',
       borderWidth:'1px'
     },
   },
 });
 
-const CustomInputComponent: React.FC<Props> = ({ label, name, value,width,type,customInputChange }) => {
+const CustomInputComponent: React.FC<Props> = ({ label, name,Height, value,width,type,customInputChange }) => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const data = e.target.value;
     customInputChange?.(data);
@@ -200,6 +201,7 @@ const CustomInputComponent: React.FC<Props> = ({ label, name, value,width,type,c
     <CssTextField
       label={label}
       type={type? type : "text"}
+      focused
       name={name}
       value={value}
       onChange={handleInputChange}
