@@ -63,7 +63,7 @@
 // export default Header;
 
 
-import React from "react";
+import React, { useState } from "react";
 import CardComponent from "components/CardComponent";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -76,6 +76,8 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
+    const [pp, setPp] = useState(false); // State to manage pp
+
     const navigate = useNavigate();
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -90,9 +92,13 @@ const Header = () => {
         }
         navigate(data)
         setAnchorEl(null);
-  
-      
     };
+
+
+      const handleClose1 = () => {
+        navigate('/', { state: { pp: true } });
+        setAnchorEl(null);
+      };
 
     return (
         <div style={{ padding: '10px 10px 0px 10px'}}>
@@ -138,7 +144,7 @@ const Header = () => {
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/UserAdministration')}>User Administration</MenuItem>
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/CostCalculator')}>Cost Calculator</MenuItem>
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/StoreLocations')}>Store Locations</MenuItem>
-                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('')}>Change Password</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose1()}>Change Password</MenuItem>
                     <MenuItem onClick={()=>handleClose('logout')}>Logout</MenuItem>
                 </div>
             </Menu>

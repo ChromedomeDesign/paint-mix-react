@@ -22,7 +22,7 @@ const CostCalculator:FC=()=>{
            <CustomInputComponent label="Business Name" name="BusinessName" />
            <CustomInputComponent label="Job Name" name="JobName" />
            <PickupDate label="Date"/>
-           <CustomButton children={"Filter"} width="60px"/>
+           <CustomButton children={"Filter"} width="150px"/>
          </div>
        </div>
      )
