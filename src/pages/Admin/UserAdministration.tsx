@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 const UserAdministration  : FC=()=>{
     const [isModalOpen, setModalOpen] = useState(false);
     const navigate = useNavigate();
+
+    //----------------------------Active data ----------------------------------//
       const ActiveColumns =[
         {name:"First Name", datan:"FirstName"},
         {name:"Last Name", datan:"LastName"},
@@ -18,11 +20,11 @@ const UserAdministration  : FC=()=>{
         {name:"Actions", datan:"Actions",
           Call: (row: any) => (
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <CustomTextButton onClick={removeFunction} width="60px">
+              <CustomTextButton onClick={removeFunction} width="59px">
                 Remove
               </CustomTextButton>
               <CustomTextButton
-                width="60px"
+                
                 onClick={() => {
                   navigate("/EditUser", { state: row });
                 }}
@@ -42,6 +44,43 @@ const UserAdministration  : FC=()=>{
      const removeFunction=()=>{
         setModalOpen(true);
      }
+  //------------------------------------------------------------------------------------//
+
+
+  //-------------------------------------------InACtive Data------------------------------//
+  const InActiveColumns =[
+    {name:"First Name", datan:"FirstName"},
+    {name:"Last Name", datan:"LastName"},
+    {name:"Email", datan:"Email"},
+    {name:"Store", datan:"Store"},
+    {name:"Type", datan:"Type"},
+    {name:"Actions", datan:"Actions",
+      Call: (row: any) => (
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <CustomTextButton onClick={removeFunction} width="59px">
+            Restore
+          </CustomTextButton>
+          <CustomTextButton
+            
+            onClick={() => {
+              navigate("/EditUser", { state: row });
+            }}
+          >
+            Edit
+          </CustomTextButton>
+        </div>
+      ),
+    }
+  ]
+ const InActivedata = [
+    {FirstName:'Jenny',LastName:"Morales",Email:"jennym@gmail.com",Store:"Store 1",Type:"Admin"},
+    {FirstName:'Tom',LastName:"Johnson",Email:"tomj@gmail.com",Store:"Store 2",Type:"User"},
+    {FirstName:'Jamie',LastName:"King",Email:"jamieking@gmail.com",Store:"Store 3",Type:"Admin"}
+ ]
+
+
+ //---------------------------------------------------------------------------------------------//
+
      //-----------------------------------Remove Modal----------------------//
       const handleCloseModal = () => {
         setModalOpen(false);
@@ -59,7 +98,7 @@ const UserAdministration  : FC=()=>{
       const footer = (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
             <CustomTextButton children={"Cancel"} width="100px" onClick={handleCloseModal}/>
-            <CustomButton children={"Yes"} width="100" />
+            <CustomButton children={"Yes"} width="74px" />
         </div>
       )
      //----------------------------------------------------------------------//
@@ -84,11 +123,11 @@ const UserAdministration  : FC=()=>{
             </div>
             <div style={{marginTop:'50px'}}>
             <Typography style={{color:'#1266F1',marginBottom:'20px',fontWeight:600,fontSize:'16px',lineHeight:'19.2px'}}>Inactive</Typography>
-            <CustomTable columns={ActiveColumns} data={Activedata}/>
+            <CustomTable columns={InActiveColumns} data={InActivedata}/>
             </div>
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',gap:'2px'}}>
               <div>
-                <CustomTextButton children={"Back"} width="31px"/>
+                <CustomTextButton children={"Back"} width="61px"/>
                 <CustomButton children={"Create New User"} width="148px" onClick={()=>navigate('/CreateNewUser')}/>
               </div>
             </div>
