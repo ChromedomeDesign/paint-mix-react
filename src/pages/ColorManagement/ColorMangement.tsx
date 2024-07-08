@@ -141,13 +141,8 @@ import InfoButton from "components/showInfoButton";
 
       const Pagefooter =(
         <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
-            <div style={{ display: 'flex', flexDirection: 'row', width:'100px',  tabSize:'large' }}>
-                <CustomOutLinedButton onClick={handleAddNew}>Add New</CustomOutLinedButton>
-            </div>
-            <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
-                <CustomOutLinedButton onClick={handleOpenModal}>Upload</CustomOutLinedButton>
-            </div>
-           
+                <CustomOutLinedButton onClick={handleAddNew} width="100px">Add New</CustomOutLinedButton>
+                <CustomOutLinedButton onClick={handleOpenModal} width="100px">Upload</CustomOutLinedButton>
         </div>
       )
 
