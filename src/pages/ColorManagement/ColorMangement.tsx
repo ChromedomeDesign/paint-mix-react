@@ -66,7 +66,7 @@ import InfoButton from "components/showInfoButton";
   const actions = (row:any) => (
     <div>
       <div style={{ display: 'flex', flexDirection: 'row',width:'280px'}}>
-        <CustomTextButton children={"View"} width="40px" onClick={()=>navigate('/BaseManagement')}/>
+        <CustomTextButton children={"View"} width="80px" onClick={()=>navigate('/BaseManagement')}/>
         <CustomTextButton children={"Edit"} width="80px" onClick={()=>navigate('/FormulaManagement')}/>
         <InfoButton Info={showicon} toggleInfo={() => handleInfoClick(row)} />
       </div>
