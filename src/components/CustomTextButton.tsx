@@ -14,7 +14,7 @@ interface CustomButtonProps {
 
 const StyledButton = styled(Button)<{ customcolor?: string; customfontsize?: string ;width?:string}>(
     ({ customcolor, customfontsize,width }) => ({
-        padding: '8.5px 15px',
+        padding: '4.5px 8px',
         height: '45px',
         fontWeight:600,
         width: width || "100%",
