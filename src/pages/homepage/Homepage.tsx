@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Grid, Typography } from "@mui/material";
 import CustomInputComponent from "components/CustomInputComponent";
 import CustomButton from "components/CustomButton";
@@ -6,7 +6,7 @@ import CustomModal from "components/CustomModal";
 import greenTick from "assets/green-tick.svg"
 import CardButton from "components/CustomCardButton";
 import CustomTextButton from "components/CustomTextButton";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { MDBContainer } from "mdb-react-ui-kit";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
 
@@ -18,11 +18,24 @@ const Homepage: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
   const [orderModal, setorderModal] = useState(false);
+  const location = useLocation();
   const [password, setPassword]=useState({
     newPass:'',
     confirmPass:''
   })
   const navigate = useNavigate();
+  const [change, setChange]=useState(false);
+  useEffect(() => {
+    console.log("location?.state?.pp", location?.state?.pp);
+    
+    if (location?.state?.pp === true) {
+      setChange(true);
+      // Reset location state after processing
+      navigate('/', { state: { pp: false } });
+    }
+  }, [location?.state?.pp, navigate]);
+
+  console.log("location?.state?.pp", location?.state?.pp);
 
   const order = (
     <div style={{ margin: '5px' }}>
@@ -100,6 +113,7 @@ const Homepage: React.FC = () => {
   )
 
   //-----------------------change password functions-------------------//
+   
 
   const forgot = () => {
 
@@ -108,6 +122,7 @@ const Homepage: React.FC = () => {
 
   const handleCloseModal = () => {
     setModalOpen(false);
+    setChange(false);
   };
 
   const title = (
@@ -235,7 +250,7 @@ const Homepage: React.FC = () => {
 
     <div style={{ width: '100%' }}>
       <CustomModal
-        open={isModalOpen}
+        open={isModalOpen || change }
         onClose={handleCloseModal}
         title={() => title}
         body={() => body}
