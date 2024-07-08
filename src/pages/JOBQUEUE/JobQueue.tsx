@@ -97,7 +97,7 @@ const JobQueue: FC = () => {
   };
   
  const columns = [
-  { name: 'Job Name', datan: 'JobName' , Call:(row:any)=><div>{expandedRowIndex === rows.indexOf(row) ? <p  style={{display:'flex'}}> <ErrorIcon sx={{color:'#FFA900'}}/> {row?.JobName} </p>:<p>{row?.JobName}</p>}</div>},
+  { name: 'Job Name', datan: 'JobName' , Call:(row:any)=><div>{expandedRowIndex === rows.indexOf(row) ? <p  style={{display:'flex',gap:3}}> <ErrorIcon sx={{color:'#FFA900'}}/> {row?.JobName} </p>:<p>{row?.JobName}</p>}</div>},
   { name: 'Color Ref', datan: 'ColorRef' },
   { name: 'Job Type', datan: 'JobType', Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span> },
   { name: 'Date', datan: 'date' },

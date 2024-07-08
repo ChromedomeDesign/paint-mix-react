@@ -16,7 +16,7 @@ import CustomRadioGroup from "components/CustomRadioGroup";
 import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import InfoButton from "components/showInfoButton";
-
+import ErrorIcon from '@mui/icons-material/Error';
   
 
   const ColorManagement: React.FC = () => {
@@ -27,6 +27,8 @@ import InfoButton from "components/showInfoButton";
   const [expandedRowIndex, setExpandedRowIndex] = useState<number | undefined>(undefined);
   const [showicon, setShowicon]=useState(false);
   const [mesurmentType, setMesurmentType]=useState('');
+  const [colorType, setcolorType]=useState('All');
+  const [additionFilter, setadditionFilterType]=useState('Include Deprecated');
  const navigate = useNavigate();
 
   
@@ -53,6 +55,15 @@ import InfoButton from "components/showInfoButton";
     setModalStep(1); 
     setIsModalOpen(true);
   };
+
+  const onTypeChange=(data:any)=>{
+    setcolorType(data)
+  }
+
+  const onAdditionFilterType=(data:any)=>{
+    setadditionFilterType(data)
+  }
+  
   
 
   const handleAddNew = () => {
@@ -68,7 +79,7 @@ import InfoButton from "components/showInfoButton";
       <div style={{ display: 'flex', flexDirection: 'row',width:'280px'}}>
         <CustomTextButton children={"View"} width="80px" onClick={()=>navigate('/BaseManagement')}/>
         <CustomTextButton children={"Edit"} width="80px" onClick={()=>navigate('/FormulaManagement')}/>
-        <InfoButton Info={showicon} toggleInfo={() => handleInfoClick(row)} />
+        <InfoButton  Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} />
       </div>
     </div>
   );
@@ -87,7 +98,7 @@ import InfoButton from "components/showInfoButton";
 
 
       const columns = [
-        { name: 'Color Name', datan:'ColorName' },
+        { name: 'Color Name', datan:'ColorName',Call:(row:any)=><div>{expandedRowIndex === rows.indexOf(row) ? <p  style={{display:'flex',gap:3}}> <ErrorIcon sx={{color:'#FFA900'}}/> {row?.ColorName} </p>:<p>{row?.ColorName}</p>}</div>},
         { name: 'Brand', datan: 'Brand' },
         { name: 'Type', datan: 'Type' },
         { name: 'Actions', datan: 'Actions', Call:(row:any)=>actions(row), cellWidth: "280px"}
@@ -110,20 +121,20 @@ import InfoButton from "components/showInfoButton";
     const expandedRowContent =(
       <div style={{ display: 'flex', flexDirection: 'row',justifyContent:'space-between', marginTop: '20px' }}>
       <div>
-        <Typography variant="h6">Job Type:</Typography>
-        <Typography>Reproduction</Typography>
+        <p style={{fontWeight:600, fontSize:'12px',lineHeight:'24px',color:'#424242',fontFamily:'"Open Sans", sans-serif'}}>Job Type:</p>
+        <p style={{fontWeight:600, fontSize:'12px',lineHeight:'24px',color:'#424242',fontFamily:'"Open Sans", sans-serif'}}>Reproduction</p>
       </div>
       <div>
-        <Typography variant="h6">Manufacturer:</Typography>
-        <Typography>Valspar</Typography>
+      <p style={{fontWeight:600, fontSize:'12px',lineHeight:'24px',color:'#424242',fontFamily:'"Open Sans", sans-serif'}}>Manufacturer:</p>
+      <p style={{fontWeight:600, fontSize:'12px',lineHeight:'24px',color:'#424242',fontFamily:'"Open Sans", sans-serif'}}>Valspar</p>
       </div>
       <div>
-        <Typography variant="h6">Color Name:</Typography>
-        <Typography>Hunter Green</Typography>
+      <p style={{fontWeight:600, fontSize:'12px',lineHeight:'24px',color:'#424242',fontFamily:'"Open Sans", sans-serif'}}>Color Name:</p>
+      <p style={{fontWeight:600, fontSize:'12px',lineHeight:'24px',color:'#424242',fontFamily:'"Open Sans", sans-serif'}}>Hunter Green</p>
       </div>
       <div>
-        <Typography variant="h6">Painter Supply #:</Typography>
-        <Typography>PS-123-XXXX</Typography>
+      <p style={{fontWeight:600, fontSize:'12px',lineHeight:'24px',color:'#424242',fontFamily:'"Open Sans", sans-serif'}}>Painter Supply #:</p>
+      <p style={{fontWeight:600, fontSize:'12px',lineHeight:'24px',color:'#424242',fontFamily:'"Open Sans", sans-serif'}}>PS-123-XXXX</p>
       </div>
     </div>
     )
@@ -222,11 +233,11 @@ import InfoButton from "components/showInfoButton";
                     </Grid>
 
                     <Grid item xs={12} xl={2.9} lg={2.9} md={2.9} sm={2.9}>
-                    <CustomSelectComponent label="Type" options={options}  />
+                    <CustomSelectComponent label="Type" options={options}  selectedValue={colorType} customSelectChange={onTypeChange}/>
                     </Grid>
 
                     <Grid item xs={12} xl={2.9} lg={2.9} md={2.9} sm={2.9}>
-                    <CustomSelectComponent label="Additional Filter" options={optionsData}  />
+                    <CustomSelectComponent label="Additional Filter" options={optionsData} selectedValue={additionFilter} customSelectChange={onAdditionFilterType}  />
                     </Grid>
 
                     <Grid item xs={12} xl={2} lg={2} md={2} sm={2}>
