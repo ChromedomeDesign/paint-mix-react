@@ -35,6 +35,8 @@ const saving = () => {
 };
 
 const handleCloseModal = () => {
+  console.log("handle close");
+  
   setModalOpen(false);
 };
 
@@ -42,12 +44,12 @@ const title =(
     <p style={{fontSize:'20',fontWeight:600,color:'#424242',textAlign:'center',lineHeight:'24px'}}>Confirm Customer Information</p>
 )
 const body =(
-     <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Contractor Home</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>{`${formData.firstName} ${formData.lastName}`}</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>{`${formData.address}`}</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>{`${formData.phoneNumber}`}</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Account #123456789</p>
+     <div style={{display:'flex',flexDirection:'column',justifyContent:'center',textAlign:'center',height:'164px'}}>
+          <span style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Contractor Home</span>
+          <span style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Wendy Win</span>
+          <span style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>234 W Arizona St</span>
+          <span style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>602-487-0087</span>
+          <span style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Account #123456789</span>
        
      </div>
 )

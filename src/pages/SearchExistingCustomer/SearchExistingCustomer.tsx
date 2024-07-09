@@ -28,10 +28,11 @@ const SearchExistingCustomer: React.FC = () => {
       
       <div style={{fontWeight:'400', fontSize:'12px', color:'#424242'}}>
       
-        <p>Contractor Home</p>
-        <p>address</p>
-        <p>phoneNumber</p>
-        <p>AccountNumber</p>
+      <p>ontractor Home</p>
+<p >Wendy Win</p>
+<p>234 W Arizona St</p>
+<p>602-487-0087</p>
+<p>Account #123456789</p>
       </div>
 
     )
@@ -64,7 +65,7 @@ const SearchExistingCustomer: React.FC = () => {
       { name: 'Customer Name', datan:'Name' },
       { name: 'Business', datan: 'Business' },
       { name: 'Account Number', datan: 'AccountNumber' },
-      { name: 'Actions', datan: 'action',Call:()=>getActions,  cellWidth: "300px"},
+      { name: 'Actions', datan: 'action',Call:()=>getActions,  cellWidth: "180px"},
     ];
     
     const rows = [
