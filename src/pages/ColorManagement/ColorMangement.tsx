@@ -28,8 +28,8 @@ import TableTextButton from "components/TableTextButton";
   const [expandedRowIndex, setExpandedRowIndex] = useState<number | undefined>(undefined);
   const [showicon, setShowicon]=useState(false);
   const [mesurmentType, setMesurmentType]=useState('');
-  const [colorType, setcolorType]=useState('All');
-  const [additionFilter, setadditionFilterType]=useState('Include Deprecated');
+  const [colorType, setcolorType]=useState('Type');
+  const [additionFilter, setadditionFilterType]=useState('None');
  const navigate = useNavigate();
 
   
@@ -75,6 +75,23 @@ import TableTextButton from "components/TableTextButton";
   const [uploaderText, setUploaderText] = useState("Drag 'n' drop some files here, or click to select files");
 
 
+
+
+    const options = [
+        { label: 'Type', value: 'Type' },
+        { label: 'All', value: 'All' },
+        { label: 'Additive', value: 'Additive' },
+        { label: 'Base', value: 'Base' },
+        { label: 'Formula', value: 'Formula' }
+      ];
+
+      const optionsData = [
+        { label: 'None', value: 'None' },
+        { label: 'Include Deprecated', value: 'Include Deprecated' },
+        { label: 'Deprecated Only', value: 'Deprecated Only' }
+      ];
+
+//----------------------------------------
   const actions = (row:any) => (
       <div style={{ display: 'flex'}}>
         <TableTextButton children={"View"} width="42px" onClick={()=>navigate('/BaseManagement')}/>
@@ -83,20 +100,6 @@ import TableTextButton from "components/TableTextButton";
       </div>
 
   );
-
-    const options = [
-        { label: 'All', value: 'All' },
-        { label: 'Additive', value: 'Additive' },
-        { label: 'Base', value: 'Base' },
-        { label: 'Formula', value: 'Formula' }
-      ];
-
-      const optionsData = [
-        { label: 'Include Deprecated', value: 'Include Deprecated' },
-        { label: 'Deprecated Only', value: 'Deprecated Only' }
-      ];
-
-
       const columns = [
         {
           name: 'Color Name',
@@ -167,6 +170,8 @@ import TableTextButton from "components/TableTextButton";
 
       const Pagefooter =(
         <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
+
+                <CustomTextButton width="31px">Back</CustomTextButton>
                 <CustomOutLinedButton onClick={handleAddNew} width="100px">Add New</CustomOutLinedButton>
                 <CustomOutLinedButton onClick={handleOpenModal} width="100px">Upload</CustomOutLinedButton>
         </div>

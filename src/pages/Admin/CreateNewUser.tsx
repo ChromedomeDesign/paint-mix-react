@@ -16,7 +16,8 @@ const CreateNewUser:FC=()=>{
     const selects=(data:any)=>{
         setRole(data);
     }
-      //--------------------------Edit UserForm----------------------------------------//
+
+//--------------------------Edit UserForm----------------------------------------//
       const RoleOptions = [{label:'Admin',value:"Admin"},{label:'User',value:"User"}]
   const userForm = (
     <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
@@ -35,6 +36,7 @@ const CreateNewUser:FC=()=>{
     </div>
   )
   //------------------------------------------------------------------------//
+  
 return(
   <>
    <div>
