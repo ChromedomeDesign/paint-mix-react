@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 
 const AddnewStore: React.FC = () => {
  const navigate = useNavigate();
+
+//---------------------New Store Heading Style-------------------------------//
     const haedingBorder = {
         borderBottom: '1px solid rgba(224, 224, 224, 1)',
         marginBottom: '15px',
@@ -24,7 +26,10 @@ const AddnewStore: React.FC = () => {
         lineHeight: '19.2px',
         fontFamily: `"Open Sans", sans-serif`,
       };
+//---------------------------------------------------------------------------//
 
+
+//------------------------------------Add New Store Form------------------------------------------//
     const NewStore = (
         <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
           <div style={haedingBorder}>
@@ -53,6 +58,8 @@ const AddnewStore: React.FC = () => {
         </div>
       );
       
+//-----------------------------------------------------------------------------------//
+
 
   return (
     <div className="AddnewStore">

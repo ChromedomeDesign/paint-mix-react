@@ -19,7 +19,7 @@ const UserAdministration  : FC=()=>{
     };
   
 
-    //----------------------------Active data ----------------------------------//
+    //----------------------------Active Table data ----------------------------------//
       const ActiveColumns =[
         {name:"First Name", datan:"FirstName"},
         {name:"Last Name", datan:"LastName"},
@@ -56,7 +56,7 @@ const UserAdministration  : FC=()=>{
   //------------------------------------------------------------------------------------//
 
 
-  //-------------------------------------------InACtive Data------------------------------//
+  //-------------------------------------------InACtive Table Data------------------------------//
 
   const InActiveColumns =[
     {name:"First Name", datan:"FirstName"},
@@ -154,7 +154,7 @@ const UserAdministration  : FC=()=>{
           size="medium"
           centered={true}
         />
-            <div >
+            <div>
             <div>
             <p style={{color:'#1266F1',marginBottom:'20px',fontWeight:600,fontSize:'16px',lineHeight:'19.2px'}}>Active</p>
             <CustomTable columns={ActiveColumns} data={Activedata}/>

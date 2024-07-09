@@ -12,6 +12,7 @@ import TableTextButton from "components/TableTextButton";
 
 const CostCalculator:FC=()=>{
   const [costView,setCostView]=useState(false);
+
      //--------------------------costForm----------------------------------------//
      const costForm = (
        <div style={{ display: 'flex', width: '100%', flexDirection: 'column',justifyContent: 'center' }}>
@@ -27,8 +28,10 @@ const CostCalculator:FC=()=>{
          </div>
        </div>
      )
-     //------------------------------------------------------------------------//
-     //--------------------------------Completed jobList -----------------------//
+     //------------------------------------------------------------------------------//
+     
+
+     //--------------------------------Completed JobList Table-----------------------//
 
      const ViewDetail=()=>{
         setCostView(!costView);
@@ -46,7 +49,7 @@ const CostCalculator:FC=()=>{
             {CustomerName:"Antonio Razzo",BusinessName:"Tony’s Lounge",JobName:"Dining Room",Date:"01/21/23",Cost:"$800.00"},
             {CustomerName:"Antonio Razzo",BusinessName:"Tony’s Lounge",JobName:"Dining Room",Date:"01/21/23",Cost:"$800.00"},
         ]
-     //-------------------------------------------------------------------------//
+     //--------------------------------------------------------------------------------------//
 
     return(
         <div>

@@ -5,6 +5,8 @@ import TableTextButton from "components/TableTextButton";
 import { FC } from "react";
 
 const SearchResults:FC=()=>{
+
+//--------------------------------Search Data Table Data-----------------------------------//
     const searchData = [
        {CustomerName:'Wendy Win',JobID:'Pools and More',AccountNumber:"123456789"},
        {CustomerName:'Wendy Windorf',JobID:'SmartMart',AccountNumber:"213456788"}
@@ -19,6 +21,9 @@ const SearchResults:FC=()=>{
                 <TableTextButton children={"Edit"} width="37px"/>
             </div>},
     ]
+
+//----------------------------------------------------------------------------//
+
     return(
     <div>
         <CustomTable columns={columns} data={searchData}/>

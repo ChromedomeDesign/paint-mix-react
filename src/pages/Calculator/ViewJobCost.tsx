@@ -14,7 +14,7 @@ const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
         fontWeight:700,fontSize:'12px',lineHeight:'20px',color:'#424242'
     }
 
-
+//-------------------------------------Job Type Style-------------------------------------------//
     const styles = {
         modify: {
           width: "86px",
@@ -78,7 +78,9 @@ const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
             return styles.fanDeck;
         }
       };
+//---------------------------------------------------------------------------------------------------//
       
+//--------------------------------------------View Job Cost Details----------------------------------//
     const Detail=(
         <div>
         <div style={{paddingBottom:'20px'}}>
@@ -113,6 +115,10 @@ const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
         </div>
     )
 
+//------------------------------------------------------------------------------------------------------------//
+
+//------------------------------View Job Cost Table Data-----------------------------------------------------------//
+
     const columns = [
         { name: "Colorant/Base", datan: "Colorant/Base" },
         { name: "Amount 1", datan: "Amount1",},
@@ -135,6 +141,7 @@ const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
         {"Colorant/Base":"",Amount1:"",Amount2:"",Amount3:"",Amount4:a,Cost:"$800.00"},
     ]
 
+//-------------------------------------------------------------------------------------------------------//
 
     return(
         <div>
