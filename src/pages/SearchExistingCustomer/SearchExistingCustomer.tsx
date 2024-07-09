@@ -8,6 +8,7 @@ import CustomInputComponent from "components/CustomInputComponent";
 import CustomerAccount from "@pages/New-Customer/NewCustomerAccount";
 import { useNavigate } from "react-router-dom";
 import CustomTextButton from "components/CustomTextButton";
+import TableTextButton from "components/TableTextButton";
 
 // import { useState } from 'react'
 
@@ -53,8 +54,8 @@ const SearchExistingCustomer: React.FC = () => {
     
     const getActions =  (
       <div style={{ display: 'flex', flexDirection: 'row',}}>
-        <CustomTextButton width="60px" onClick={handleOpenModal}>Select</CustomTextButton>
-        <CustomTextButton width="60px" onClick={()=>navigate('/EditCustomerAccount')}>Edit</CustomTextButton>
+        <TableTextButton width="48px" onClick={handleOpenModal}>Select</TableTextButton>
+        <TableTextButton width="37px" onClick={()=>navigate('/EditCustomerAccount')}>Edit</TableTextButton>
       </div>
     );
         
@@ -63,7 +64,7 @@ const SearchExistingCustomer: React.FC = () => {
       { name: 'Customer Name', datan:'Name' },
       { name: 'Business', datan: 'Business' },
       { name: 'Account Number', datan: 'AccountNumber' },
-      { name: 'Actions', datan: 'action',Call:()=>getActions,  cellWidth: "380px"},
+      { name: 'Actions', datan: 'action',Call:()=>getActions,  cellWidth: "300px"},
     ];
     
     const rows = [

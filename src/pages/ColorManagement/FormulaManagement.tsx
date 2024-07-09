@@ -85,35 +85,35 @@ const FormulaManagement: React.FC = () => {
         { name: "Colorant/Base", datan: "Colorant/Base" },
         {
             name: "Amount 1", datan: "Amount1", Call: (row: any) => isEditable ? (
-                <OutlinedInput value={row?.Amount1} sx={{ width: '80px', textAlign: 'center' }} onChange={() => { }} />
+                <OutlinedInput value={row?.Amount1} sx={{ width: '92px',height:'45px',  textAlign: 'center' }} onChange={() => { }} />
             ) : (
                 <p>{row?.Amount1}</p>
             )
         },
          {
             name: "Amount 2", datan: "Amount2", Call: (row: any) => isEditable ? (
-                <OutlinedInput value={row?.Amount2} sx={{ width: '80px', textAlign: 'center' }} />
+                <OutlinedInput value={row?.Amount2} sx={{ width: '92px',height:'45px', textAlign: 'center' }} />
             ) : (
                 <p>{row?.Amount2}</p>
             )
         },
         {
             name: "Amount 3", datan: "Amount3", Call: (row: any) => isEditable ? (
-                <OutlinedInput value={row?.Amount3} sx={{ width: '80px', textAlign: 'center' }} />
+                <OutlinedInput value={row?.Amount3} sx={{ width: '92px',height:'45px',  textAlign: 'center' }} />
             ) : (
                 <p>{row?.Amount3}</p>
             )
         },
         {
             name: "Amount 4", datan: "Amount4", Call: (row: any) => isEditable ? (
-                <OutlinedInput value={row?.Amount4} sx={{ width: '80px', textAlign: 'center' }} />
+                <OutlinedInput value={row?.Amount4} sx={{ width: '92px',height:'45px', textAlign: 'center' }} />
             ) : (
                 <p>{row?.Amount4}</p>
             )
         },
         {
             name: "Amount 5", datan: "Amount5", Call: (row: any) => isEditable ? (
-                <OutlinedInput value={row?.Amount5} sx={{ width: '80px', textAlign: 'center' }} />
+                <OutlinedInput value={row?.Amount5} sx={{ width: '92px',height:'45px',  textAlign: 'center' }} />
             ) : (
                 <p>{row?.Amount5}</p>
             )

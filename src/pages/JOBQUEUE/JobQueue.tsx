@@ -27,7 +27,7 @@ const JobQueue: FC = () => {
   };
 
   const getActions = (row: any) => (
-    <div style={{ display: 'flex', flexDirection: 'row',width:'280px'}}>
+    <div style={{ display: 'flex', flexDirection: 'row'}}>
       <TableContainedButton width="65px" onClick={()=>navigate('/JobInformation')}>Start</TableContainedButton>
       <TableTextButton width="37px" onClick={()=>navigate('/JobQueInformation')}>Edit</TableTextButton>
        <InfoButton Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} ></InfoButton>

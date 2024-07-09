@@ -17,6 +17,7 @@ import { Radio, RadioGroup, FormControlLabel } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import InfoButton from "components/showInfoButton";
 import ErrorIcon from '@mui/icons-material/Error';
+import TableTextButton from "components/TableTextButton";
   
 
   const ColorManagement: React.FC = () => {
@@ -75,13 +76,12 @@ import ErrorIcon from '@mui/icons-material/Error';
 
 
   const actions = (row:any) => (
-    <div>
-      <div style={{ display: 'flex', flexDirection: 'row',width:'280px'}}>
-        <CustomTextButton children={"View"} width="80px" onClick={()=>navigate('/BaseManagement')}/>
-        <CustomTextButton children={"Edit"} width="80px" onClick={()=>navigate('/FormulaManagement')}/>
+      <div style={{ display: 'flex'}}>
+        <TableTextButton children={"View"} width="42px" onClick={()=>navigate('/BaseManagement')}/>
+        <TableTextButton children={"Edit"} width="37px" onClick={()=>navigate('/FormulaManagement')}/>
         <InfoButton  Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} />
       </div>
-    </div>
+
   );
 
     const options = [
@@ -98,10 +98,25 @@ import ErrorIcon from '@mui/icons-material/Error';
 
 
       const columns = [
-        { name: 'Color Name', datan:'ColorName',Call:(row:any)=><div>{expandedRowIndex === rows.indexOf(row) ? <p  style={{display:'flex',gap:3}}> <ErrorIcon sx={{color:'#FFA900'}}/> {row?.ColorName} </p>:<p>{row?.ColorName}</p>}</div>},
+        {
+          name: 'Color Name',
+          datan: 'ColorName',
+          Call: (row: any) => (
+            <span style={{ display: 'flex', gap: '3px',textAlign:'center',alignItems:'center'}}>
+              {expandedRowIndex === rows.indexOf(row) ? (
+                <>
+                  <ErrorIcon sx={{ color: '#FFA900' }} />
+                  {row?.ColorName}
+                </>
+              ) : (
+                row?.ColorName
+              )}
+            </span>
+          )
+        },        
         { name: 'Brand', datan: 'Brand' },
         { name: 'Type', datan: 'Type' },
-        { name: 'Actions', datan: 'Actions', Call:(row:any)=>actions(row), cellWidth: "280px"}
+        { name: 'Actions', datan: 'Actions', Call:(row:any)=>actions(row), cellWidth: "0px"}
       ];
 
         
