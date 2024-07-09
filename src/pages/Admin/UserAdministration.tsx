@@ -3,6 +3,7 @@ import CustomButton from "components/CustomButton";
 import CustomModal from "components/CustomModal";
 import CustomTable from "components/CustomTable";
 import CustomTextButton from "components/CustomTextButton";
+import TableTextButton from "components/TableTextButton";
 import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -28,17 +29,17 @@ const UserAdministration  : FC=()=>{
         {name:"Actions", datan:"Actions",
           Call: (row: any) => (
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <CustomTextButton onClick={removeFunction} width="59px">
+              <TableTextButton onClick={removeFunction} width="59px">
                 Remove
-              </CustomTextButton>
-              <CustomTextButton
+              </TableTextButton>
+              <TableTextButton
                 
                 onClick={() => {
                   navigate("/EditUser", { state: row });
                 }}
-              >
+                width="37px" >
                 Edit
-              </CustomTextButton>
+              </TableTextButton>
             </div>
           ),
         }
@@ -66,17 +67,17 @@ const UserAdministration  : FC=()=>{
     {name:"Actions", datan:"Actions",
       Call: (row: any) => (
         <div style={{ display: "flex", flexDirection: "row" }}>
-          <CustomTextButton onClick={handleRestore} width="59px">
+          <TableTextButton onClick={handleRestore} width="57px">
             Restore
-          </CustomTextButton>
-          <CustomTextButton
+          </TableTextButton>
+          {/* <TableTextButton
             
             onClick={() => {
               navigate("/EditUser", { state: row });
             }}
           >
             Edit
-          </CustomTextButton>
+          </TableTextButton> */}
         </div>
       ),
     }

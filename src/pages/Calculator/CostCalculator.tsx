@@ -8,6 +8,7 @@ import CustomTextButton from "components/CustomTextButton";
 import PickupDate from "components/PickupDate";
 import { FC, useState } from "react";
 import ViewJobCost from "./ViewJobCost";
+import TableTextButton from "components/TableTextButton";
 
 const CostCalculator:FC=()=>{
   const [costView,setCostView]=useState(false);
@@ -38,7 +39,7 @@ const CostCalculator:FC=()=>{
             {name:'Job Name',datan:'JobName'},
             {name:'Date',datan:'Date'},
             {name:'Cost',datan:'Cost'},
-            {name:'Action',datan:'Action',Call:()=><CustomTextButton children={"View"} width="60px" onClick={ViewDetail}/>},
+            {name:'Action',datan:'Action',Call:()=><TableTextButton children={"View"} width="42px" onClick={ViewDetail}/>},
         ]
         const jobListdata = [
             {CustomerName:"Antonio Razzo",BusinessName:"Tony’s Lounge",JobName:"Dining Room",Date:"01/21/23",Cost:"$800.00"},

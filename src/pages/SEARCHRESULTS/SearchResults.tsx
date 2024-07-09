@@ -1,6 +1,7 @@
 import { Call } from "@mui/icons-material";
 import CustomTable from "components/CustomTable";
 import CustomTextButton from "components/CustomTextButton";
+import TableTextButton from "components/TableTextButton";
 import { FC } from "react";
 
 const SearchResults:FC=()=>{
@@ -14,8 +15,8 @@ const SearchResults:FC=()=>{
         {name:'Account Number',datan:'AccountNumber'},
         {name:'Actions',datan:'Actions',
             Call:()=><div style={{display:'flex',flexDirection:'row'}}>
-                <CustomTextButton children={"Select"} width="50px"/>
-                <CustomTextButton children={"Edit"} width="50px"/>
+                <TableTextButton children={"Select"} width="48px"/>
+                <TableTextButton children={"Edit"} width="37px"/>
             </div>},
     ]
     return(

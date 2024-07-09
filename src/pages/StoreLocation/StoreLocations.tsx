@@ -6,6 +6,7 @@ import CustomButton from "components/CustomButton";
 import CustomModal from "components/CustomModal";
 import { useNavigate } from "react-router-dom";
 import { Call } from "@mui/icons-material";
+import TableTextButton from "components/TableTextButton";
 
 
 const StoreLocations: React.FC = () => {
@@ -32,8 +33,8 @@ const StoreLocations: React.FC = () => {
     const actions = (rowIndex: number) => (
         <div>
           <div style={{gap:'10px'}}>
-            <CustomTextButton children={"Remove"} onClick={handleOpenModal} width="80px"/>
-            <CustomTextButton children={"Edit"} width="80px" onClick={()=>navigate('/AddnewStore')}/>
+            <TableTextButton children={"Remove"} onClick={handleOpenModal} width="59px"/>
+            <TableTextButton children={"Edit"} width="37px" onClick={()=>navigate('/AddnewStore')}/>
           </div>
         </div>
       );
@@ -41,8 +42,8 @@ const StoreLocations: React.FC = () => {
       const inactiveActions = (rows:any) => (
         <div>
           <div style={{gap:'10px', display:'flex'}}>
-            <CustomTextButton children={"Restore"} onClick={handleRestore} width="80px"/>
-            <CustomTextButton children={"Edit"} width="80px" onClick={()=>navigate('/AddnewStore')}/>
+            <TableTextButton children={"Restore"} onClick={handleRestore} width="57px"/>
+            <TableTextButton children={"Edit"} width="37px" onClick={()=>navigate('/AddnewStore')}/>
           </div>
         </div>
       );
