@@ -38,7 +38,7 @@ const CostCalculator:FC=()=>{
             {name:'Job Name',datan:'JobName'},
             {name:'Date',datan:'Date'},
             {name:'Cost',datan:'Cost'},
-            {name:'Action',datan:'Action',Call:()=><CustomTextButton children={"View"} width="20px" onClick={ViewDetail}/>},
+            {name:'Action',datan:'Action',Call:()=><CustomTextButton children={"View"} width="60px" onClick={ViewDetail}/>},
         ]
         const jobListdata = [
             {CustomerName:"Antonio Razzo",BusinessName:"Tony’s Lounge",JobName:"Dining Room",Date:"01/21/23",Cost:"$800.00"},
