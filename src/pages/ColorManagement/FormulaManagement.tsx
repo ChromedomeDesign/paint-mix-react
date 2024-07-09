@@ -55,20 +55,20 @@ const FormulaManagement: React.FC = () => {
          <div style={{display:'flex',flexDirection:'row',gap:"40px",margin:'10px 0px',paddingBottom:'10px'}}>
              <div>
              <div style={{display:'flex',flexDirection:'row'}}>
-             <Typography style={informationHead}>Color Name: </Typography><Typography style={informationdetail}>Snow White</Typography>
+             <p style={informationHead}>Color Name: </p><p style={informationdetail}>Snow White</p>
              </div>
              <div style={{display:'flex',flexDirection:'row'}}>
-             <Typography style={informationHead}>Based on: </Typography><Typography style={informationdetail}>Valsper Snow Forest</Typography>
+             <p style={informationHead}>Based on: </p><p style={informationdetail}>Valsper Snow Forest</p>
              </div>
              <div style={{display:'flex',flexDirection:'row'}}>
-             <Typography style={informationHead}>Created On: </Typography><Typography style={informationdetail}>11/02/22</Typography>
+             <p style={informationHead}>Created On: </p><p style={informationdetail}>11/02/22</p>
              </div>
              </div>
              <div>
              <div style={{display:'flex',flexDirection:'column'}}>
-              <Typography sx={{fontWeight:700,fontSize:'12px',lineHeight:'20px'}}>History:</Typography>
-             <Typography style={informationdetail}>Edited: 11/14/22</Typography>
-             <Typography style={informationdetail}>Added: 11/02/22</Typography>
+             <p style={{fontWeight:700,fontSize:'12px',lineHeight:'20px'}}>History:</p>
+             <p style={informationdetail}>Edited: 11/14/22</p>
+             <p style={informationdetail}>Added: 11/02/22</p>
              </div>
              </div>
          </div>
@@ -87,35 +87,35 @@ const FormulaManagement: React.FC = () => {
             name: "Amount 1", datan: "Amount1", Call: (row: any) => isEditable ? (
                 <OutlinedInput value={row?.Amount1} sx={{ width: '80px', textAlign: 'center' }} onChange={() => { }} />
             ) : (
-                <Typography>{row?.Amount1}</Typography>
+                <p>{row?.Amount1}</p>
             )
         },
          {
             name: "Amount 2", datan: "Amount2", Call: (row: any) => isEditable ? (
                 <OutlinedInput value={row?.Amount2} sx={{ width: '80px', textAlign: 'center' }} />
             ) : (
-                <Typography>{row?.Amount2}</Typography>
+                <p>{row?.Amount2}</p>
             )
         },
         {
             name: "Amount 3", datan: "Amount3", Call: (row: any) => isEditable ? (
                 <OutlinedInput value={row?.Amount3} sx={{ width: '80px', textAlign: 'center' }} />
             ) : (
-                <Typography>{row?.Amount3}</Typography>
+                <p>{row?.Amount3}</p>
             )
         },
         {
             name: "Amount 4", datan: "Amount4", Call: (row: any) => isEditable ? (
                 <OutlinedInput value={row?.Amount4} sx={{ width: '80px', textAlign: 'center' }} />
             ) : (
-                <Typography>{row?.Amount4}</Typography>
+                <p>{row?.Amount4}</p>
             )
         },
         {
             name: "Amount 5", datan: "Amount5", Call: (row: any) => isEditable ? (
                 <OutlinedInput value={row?.Amount5} sx={{ width: '80px', textAlign: 'center' }} />
             ) : (
-                <Typography>{row?.Amount5}</Typography>
+                <p>{row?.Amount5}</p>
             )
         },
     ];
@@ -123,14 +123,14 @@ const FormulaManagement: React.FC = () => {
     
 
     const title = (
-        <Typography sx={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>
+        <p style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>
           Deprecate Formula
-        </Typography>
+        </p>
       );
     
       const initialBody = (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}>
-          <Typography>Snow White appears in 523 formulas. Would you like to replace it with an existing formula? If yes, enter the formula name and click continue.</Typography>
+          <p>Snow White appears in 523 formulas. Would you like to replace it with an existing formula? If yes, enter the formula name and click continue.</p>
           <div style={{ marginTop: '20px' }}>
             <CustomInputComponent label="Formula color name" />
           </div>
@@ -139,7 +139,7 @@ const FormulaManagement: React.FC = () => {
     
       const secondBody = (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}>
-          <Typography>Are you sure you want to deprecate Snow White with no replacement?</Typography>
+          <p>Are you sure you want to deprecate Snow White with no replacement?</p>
         </div>
       );
     
@@ -165,7 +165,7 @@ const FormulaManagement: React.FC = () => {
     return (
         <div className="formulaManagement">
         <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
-              <Typography sx={{font:'Open Sans', fontSize:'20px', fontWeight:'400', color:'#1266F1', lineHeight:'38.4px'}}>FORMULA MANAGEMENT</Typography>
+              <p style={{font:'Open Sans', fontSize:'20px', fontWeight:'400', color:'#1266F1', lineHeight:'38.4px'}}>FORMULA MANAGEMENT</p>
         </div>
         <div style={{ borderTop: '1px solid #E0E0E0', width: '100%', marginTop: '10px' }}>
             {information}

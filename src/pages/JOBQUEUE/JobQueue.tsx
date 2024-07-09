@@ -9,6 +9,8 @@ import InfoButton from "components/showInfoButton";
 import CustomTextButton from "components/CustomTextButton";
 import { useNavigate } from "react-router-dom";
 import ErrorIcon from '@mui/icons-material/Error';
+import TableTextButton from "components/TableTextButton";
+import TableContainedButton from "components/TableContainedButton";
 
 const JobQueue: FC = () => {
   const [isJob, setJobSearch] = useState('');
@@ -26,8 +28,8 @@ const JobQueue: FC = () => {
 
   const getActions = (row: any) => (
     <div style={{ display: 'flex', flexDirection: 'row',width:'280px'}}>
-      <CustomButton width="60px" onClick={()=>navigate('/JobInformation')}>Start</CustomButton>
-      <CustomTextButton width="60px" onClick={()=>navigate('/JobQueInformation')}>Edit</CustomTextButton>
+      <TableContainedButton width="65px" onClick={()=>navigate('/JobInformation')}>Start</TableContainedButton>
+      <TableTextButton width="37px" onClick={()=>navigate('/JobQueInformation')}>Edit</TableTextButton>
        <InfoButton Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} ></InfoButton>
     </div>
   );

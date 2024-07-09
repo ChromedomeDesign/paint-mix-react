@@ -241,10 +241,10 @@ const CustomerAccount: FC=()=>{
         
         <div>
               <div>
-                    <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}} > Contractor Home</Typography>
-                    <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}} > address</Typography>
-                    <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}}> phoneNumber</Typography>
-                    <Typography sx={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}}> AccountNumber</Typography>
+                    <p style={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}} > Contractor Home</p>
+                    <p style={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}} > address</p>
+                    <p style={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}}> phoneNumber</p>
+                    <p style={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}}> AccountNumber</p>
                  </div>
                 
                  <div style={{display:'flex', flexDirection:'row',marginTop:'20px'}}>

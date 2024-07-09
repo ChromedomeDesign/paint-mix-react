@@ -50,7 +50,7 @@ const NewAdditive: React.FC = () => {
   const NewAdditive = (
     <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
-        <Typography sx={headingStyle}>NEW ADDITIVE</Typography>
+        <p style={headingStyle}>NEW ADDITIVE</p>
       </div>
       <div className="createNew-inputDiv">
         <CustomInputComponent label="Additive Name" name="Additive Name" />
@@ -89,9 +89,9 @@ const NewAdditive: React.FC = () => {
   return (
     <div className="newAdditive">
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'left', alignItems: 'flex-start' }}>
-        <Typography sx={{ font: 'Open Sans', fontSize: '32px', fontWeight: '600', color: '#1266F1', lineHeight: '38.4px' }}>COLOR MANAGEMENT</Typography>
+        <p style={{ font: 'Open Sans', fontSize: '32px', fontWeight: '600', color: '#1266F1', lineHeight: '38.4px' }}>COLOR MANAGEMENT</p>
       </div>
-      <Typography>Home / Color Management / New Additive</Typography>
+      <p>Home / Color Management / New Additive</p>
 
       <CardComponent width="100%" children={NewAdditive} backgroundColor={"#FBFBFB"} />
 

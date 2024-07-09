@@ -45,13 +45,13 @@ const JobInformation: FC = () => {
   };
 
   const title = (
-    <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Confirm Customer Information</Typography>
+    <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Confirm Customer Information</p>
   )
   const body = (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-       <Typography>
+       <p>
       This job has been added to the job queue.
-    </Typography> 
+    </p> 
     </div>
   )
 
@@ -82,7 +82,7 @@ const JobInformation: FC = () => {
   const form = (
     <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
-        <Typography sx={headingStyle} >JOB TYPE</Typography>
+        <p style={headingStyle} >JOB TYPE</p>
       </div>
       <CustomRadioGroup options={option} onValueChange={onRadio} row={true} selectedValue={jobType} />
     </div>
@@ -92,7 +92,7 @@ const JobInformation: FC = () => {
   const MANUFACTURERINFO = (
     <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
-        <Typography sx={headingStyle}>MANUFACTURER INFO</Typography>
+        <p style={headingStyle}>MANUFACTURER INFO</p>
       </div>
       <div className="createNew-inputDiv">
         <CustomInputComponent width="100%" label="Manufacturer" name="Manufacturer" />
@@ -108,7 +108,7 @@ const JobInformation: FC = () => {
   const JOBINFO = (
     <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
-        <Typography sx={headingStyle}>JOB INFO</Typography>
+        <p style={headingStyle}>JOB INFO</p>
       </div>
       <div className="createNew-inputDiv">
         <CustomInputComponent label="Job Name" name="Job Name" />
@@ -150,7 +150,7 @@ const JobInformation: FC = () => {
   const PRODUCTION = (
     <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
-        <Typography sx={headingStyle}>PRODUCTION INFO</Typography>
+        <p style={headingStyle}>PRODUCTION INFO</p>
       </div>
       <div className="createNew-inputDiv">
         {/* <CustomInputComponent type="date" label="City" name="city"   /> */}
@@ -182,21 +182,21 @@ const JobInformation: FC = () => {
 
   const JobDaetail = (
     <div>
-      <Typography sx={jobStyle}>
+      <p style={jobStyle}>
         Wendy’s Paint Party
-      </Typography>
-      <Typography sx={jobStyle}>
+      </p>
+      <p style={jobStyle}>
         Wendy Win
-      </Typography>
-      <Typography sx={jobStyle}>
+      </p>
+      <p style={jobStyle}>
         234 W Arizona St
-      </Typography>
-      <Typography sx={jobStyle}>
+      </p>
+      <p style={jobStyle}>
         602-487-0087
-      </Typography>
-      <Typography sx={jobStyle}>
+      </p>
+      <p style={jobStyle}>
         Account #123456789
-      </Typography>
+      </p>
     </div>
   )
   //-----------------------------------------------------------------------------//

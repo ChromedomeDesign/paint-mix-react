@@ -8,7 +8,15 @@ import { useNavigate } from "react-router-dom";
 
 const UserAdministration  : FC=()=>{
     const [isModalOpen, setModalOpen] = useState(false);
+    const [modalStep, setModalStep] = useState(1);
     const navigate = useNavigate();
+
+
+    const handleRestore = () => {
+      setModalStep(2);
+      setModalOpen(true);
+    };
+  
 
     //----------------------------Active data ----------------------------------//
       const ActiveColumns =[
@@ -48,6 +56,7 @@ const UserAdministration  : FC=()=>{
 
 
   //-------------------------------------------InACtive Data------------------------------//
+
   const InActiveColumns =[
     {name:"First Name", datan:"FirstName"},
     {name:"Last Name", datan:"LastName"},
@@ -57,7 +66,7 @@ const UserAdministration  : FC=()=>{
     {name:"Actions", datan:"Actions",
       Call: (row: any) => (
         <div style={{ display: "flex", flexDirection: "row" }}>
-          <CustomTextButton onClick={removeFunction} width="59px">
+          <CustomTextButton onClick={handleRestore} width="59px">
             Restore
           </CustomTextButton>
           <CustomTextButton
@@ -81,27 +90,55 @@ const UserAdministration  : FC=()=>{
 
  //---------------------------------------------------------------------------------------------//
 
+
+
      //-----------------------------------Remove Modal----------------------//
       const handleCloseModal = () => {
         setModalOpen(false);
       };
     
-      const title = (
-        <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Remove User</Typography>
+      const RemoveModaltitle = (
+        <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Remove User</p>
       )
-      const body = (
+      const RemoveModalbody = (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <Typography sx={{color:'#424242'}}>Are you sure you want to remove user?</Typography>
+          <p style={{color:'#424242'}}>Are you sure you want to remove user?</p>
         </div>
       )
     
-      const footer = (
+      const RemoveModalfooter = (
         <div style={{ display: 'flex', flexDirection: 'row' }}>
             <CustomTextButton children={"Cancel"} width="100px" onClick={handleCloseModal}/>
             <CustomButton children={"Yes"} width="74px" />
         </div>
       )
      //----------------------------------------------------------------------//
+
+
+//-----------------------------------Restore Modal----------------------//
+     const RestoreModalTitle = (
+      <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Restore Store</p>
+    )
+
+    
+    const RestoreModalBody = (
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        <p>Are you sure you want to restore store?</p>
+      </div>
+    );
+
+    const RestoreModalFooter = (
+      <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
+        <CustomTextButton onClick={handleCloseModal}>Cancel</CustomTextButton>
+        <CustomButton>Yes</CustomButton>
+      </div>
+    );
+  //----------------------------------------------------------------------//
+
+
+  const title = modalStep === 1 ? RemoveModaltitle: RestoreModalTitle;
+  const body = modalStep === 1 ? RemoveModalbody : RestoreModalBody;
+  const footer = modalStep === 1 ? RemoveModalfooter : RestoreModalFooter;
 
 
     return(
@@ -118,11 +155,11 @@ const UserAdministration  : FC=()=>{
         />
             <div >
             <div>
-            <Typography style={{color:'#1266F1',marginBottom:'20px',fontWeight:600,fontSize:'16px',lineHeight:'19.2px'}}>Active</Typography>
+            <p style={{color:'#1266F1',marginBottom:'20px',fontWeight:600,fontSize:'16px',lineHeight:'19.2px'}}>Active</p>
             <CustomTable columns={ActiveColumns} data={Activedata}/>
             </div>
             <div style={{marginTop:'50px'}}>
-            <Typography style={{color:'#1266F1',marginBottom:'20px',fontWeight:600,fontSize:'16px',lineHeight:'19.2px'}}>Inactive</Typography>
+            <p style={{color:'#1266F1',marginBottom:'20px',fontWeight:600,fontSize:'16px',lineHeight:'19.2px'}}>Inactive</p>
             <CustomTable columns={InActiveColumns} data={InActivedata}/>
             </div>
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',gap:'2px'}}>

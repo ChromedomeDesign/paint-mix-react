@@ -12,7 +12,7 @@ const StoreLocations: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalStep, setModalStep] = useState(1);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
@@ -86,13 +86,13 @@ const StoreLocations: React.FC = () => {
 
       
      const RemoveModalTitle = (
-        <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Remove Store</Typography>
+        <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Remove Store</p>
       )
 
       
       const RemoveModalBody = (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-          <Typography>Are you sure you want to remove store?</Typography>
+          <p>Are you sure you want to remove store?</p>
         </div>
       );
 
@@ -105,13 +105,13 @@ const StoreLocations: React.FC = () => {
 
 
       const RestoreModalTitle = (
-        <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Restore Store</Typography>
+        <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Restore Store</p>
       )
 
       
       const RestoreModalBody = (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-          <Typography>Are you sure you want to restore store?</Typography>
+          <p>Are you sure you want to restore store?</p>
         </div>
       );
 
@@ -129,17 +129,17 @@ const StoreLocations: React.FC = () => {
 
   return (
     <div className="StoreLocations">
-      <Typography sx={{ font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px' }}>
+      <p style={{ font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px' }}>
           ACTIVE
-        </Typography>
+        </p>
           <CustomTable
                           columns={columns}
                           data={rows}
             />
 
-       <Typography sx={{ font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px' }}>
+       <p style={{ font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px' }}>
           INACTIVE
-        </Typography>
+        </p>
         <CustomTable
                 columns={inActivecolumns}
                 data={inactiveRows}

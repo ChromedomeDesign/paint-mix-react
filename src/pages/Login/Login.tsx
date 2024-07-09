@@ -29,12 +29,12 @@ const handleCloseModal = () => {
 };
 
 const title =(
-    <Typography sx={{fontSize:'20',fontWeight:600,color:'#424242',textAlign:'center',lineHeight:'24px'}}>Password Reset</Typography>
+    <p style={{fontSize:'20',fontWeight:600,color:'#424242',textAlign:'center',lineHeight:'24px'}}>Password Reset</p>
 )
 
 const body =(
      <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
-        <Typography style={{marginBottom:'20px',marginTop:'10px',lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Enter email to send new password.</Typography>
+        <p style={{marginBottom:'20px',marginTop:'10px',lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Enter email to send new password.</p>
         <CustomInputComponent label="Email:"/>
      </div>
 )
@@ -58,7 +58,7 @@ const signIn=()=>{
     }
     const form =(
         <div style={{display:'flex',flexDirection:'column',justifyContent:'center',textAlign:'center'}}>
-           <Typography style={{fontSize:'32px',fontWeight:600,color:'#1266F1'}}>LOGIN</Typography>
+           <p style={{fontSize:'32px',fontWeight:600,color:'#1266F1'}}>LOGIN</p>
            <div style={{margin:'20px 0px 20px 0px'}}>
            <CustomInputComponent width="300px" label="Email/Username:" />
            </div>

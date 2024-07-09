@@ -24,24 +24,24 @@ const BaseManagement: React.FC = () => {
         <div style={{display:'flex',flexDirection:'row',gap:"40px",borderBottom:'1px solid #E0E0E0',margin:'10px 0px',paddingBottom:'10px'}}>
             <div>
                 <div style={{display:'flex',flexDirection:'row'}}>
-                <Typography style={informationHead}>Color Name: </Typography><Typography style={informationdetail}>Off White</Typography>
+                <p style={informationHead}>Color Name: </p><p style={informationdetail}>Off White</p>
                 </div>
                 <div style={{display:'flex',flexDirection:'row'}}>
-                <Typography style={informationHead}>Brand: </Typography><Typography style={informationdetail}>Kilz</Typography>
+                <p style={informationHead}>Brand: </p><p style={informationdetail}>Kilz</p>
                 </div>
                 <div style={{display:'flex',flexDirection:'row'}}>
-                <Typography style={informationHead}>Volume: </Typography><Typography style={informationdetail}>Gallons</Typography>
+                <p style={informationHead}>Volume: </p><p style={informationdetail}>Gallons</p>
                 </div>
             </div>
             <div>
                 <div style={{display:'flex',flexDirection:'row'}}>
-                <Typography style={informationHead}>Specific Gravity : </Typography><Typography style={informationdetail}>5</Typography>
+                <p style={informationHead}>Specific Gravity : </p><p style={informationdetail}>5</p>
                 </div>
                 <div style={{display:'flex',flexDirection:'row'}}>
-                <Typography style={informationHead}>Cost: </Typography><Typography style={informationdetail}>$1.50</Typography>
+                <p style={informationHead}>Cost: </p><p style={informationdetail}>$1.50</p>
                 </div>
                 <div style={{display:'flex',flexDirection:'row'}}>
-                <Typography style={informationHead}>Quantity: </Typography><Typography style={informationdetail}>2</Typography>
+                <p style={informationHead}>Quantity: </p><p style={informationdetail}>2</p>
                 </div>
             </div>
         </div>
@@ -65,12 +65,12 @@ const BaseManagement: React.FC = () => {
     return (
          <div className="BaseManagement">
              <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
-              <Typography sx={{font:'Open Sans', fontSize:'32px', fontWeight:'600', color:'#1266F1', lineHeight:'38.4px'}}>COLOR MANAGEMENT</Typography>
+              <p style={{font:'Open Sans', fontSize:'32px', fontWeight:'600', color:'#1266F1', lineHeight:'38.4px'}}>COLOR MANAGEMENT</p>
             </div>
-            <Typography>Home / Color Management / Formula Management</Typography>
+            <p>Home / Color Management / Formula Management</p>
       
             <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
-              <Typography sx={{font:'Open Sans', fontSize:'20px', fontWeight:'400', color:'#1266F1', lineHeight:'38.4px'}}>BASE MANAGEMENT</Typography>
+              <p style={{font:'Open Sans', fontSize:'20px', fontWeight:'400', color:'#1266F1', lineHeight:'38.4px'}}>BASE MANAGEMENT</p>
             </div>
 
             <div>
