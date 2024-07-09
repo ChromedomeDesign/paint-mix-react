@@ -126,7 +126,9 @@ const Homepage: React.FC = () => {
   };
 
   const title = (
-    <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Password</Typography>
+    <div style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
+        <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Password</Typography>
+    </div>
   )
 
   const inputsChange = (name: string, value: string) => {
