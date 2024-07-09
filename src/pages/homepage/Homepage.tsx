@@ -163,8 +163,8 @@ const Homepage: React.FC = () => {
 
   const footer = (
     <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
-      <CustomTextButton children={"Cancel"} width="74px" onClick={handleCloseModal} />
-      <CustomButton children={"Confirm"} width="91px" onClick={handleCloseModal}/>
+      <CustomTextButton children={"Cancel"} onClick={handleCloseModal} />
+      <CustomButton children={"Submit"} />
     </div>
   )
 
@@ -247,10 +247,10 @@ const Homepage: React.FC = () => {
         <p style={{ fontSize: '32px', fontWeight: 600, lineHeight: '38.4px', color: 'rgba(18, 102, 241, 1)', fontFamily: '"Open Sans", sans-serif' }}>USER</p>
       </div>
       <MDBRow>
-        <MDBCol size="12" sm="4" md="4" xl="3" lg="3">
+        <MDBCol size="12" sm="6" md="4" xl="3" lg="4">
           <CardButton children={order} onClick={orderClick} />
         </MDBCol>
-        <MDBCol size="12" sm="4" md="4" xl="3" lg="3">
+        <MDBCol size="12" sm="6" md="4" xl="3" lg="4">
           <CardButton children={JobQueue} onClick={() => PageNavigate('/JobQueue')} />
         </MDBCol>
       </MDBRow>
@@ -262,23 +262,23 @@ const Homepage: React.FC = () => {
           <p style={{ fontSize: '32px', fontWeight: 600, lineHeight: '38.4px', color: 'rgba(18, 102, 241, 1)', fontFamily: '"Open Sans", sans-serif' }}>ADMIN</p>
         </div>
         <MDBRow>
-          <MDBCol size="12" sm="4" md="4" xl="4" lg="3">
+          <MDBCol size="12" sm="6" md="4" xl="4" lg="4">
             <CardButton children={ColorMgmt} onClick={() => PageNavigate('/ColorManagement')} />
           </MDBCol>
-          <MDBCol size="12" sm="4" md="4" xl="4" lg="3">
+          <MDBCol size="12" sm="6" md="4" xl="4" lg="4">
             <CardButton children={UserAdmin} onClick={() => PageNavigate('/UserAdministration')} />
           </MDBCol>
-          <MDBCol size="12" sm="4" md="4" xl="4" lg="3">
+          <MDBCol size="12" sm="6" md="4" xl="4" lg="4">
             <CardButton children={CostCal} onClick={() => PageNavigate('/CostCalculator')} />
           </MDBCol>
           <MDBCol size="12" style={{ marginTop: '2px' }}></MDBCol>
-          <MDBCol size="12" sm="4" md="4" xl="4" lg="3">
+          <MDBCol size="12" sm="6" md="4" xl="4" lg="4">
             <CardButton children={StoreLoc} onClick={() => PageNavigate('/StoreLocations')} />
           </MDBCol>
-          <MDBCol size="12" sm="4" md="4" xl="4" lg="3">
+          <MDBCol size="12" sm="6" md="4" xl="4" lg="4">
             <CardButton children={ChangePsswd} onClick={forgot} />
           </MDBCol>
-          <MDBCol size="12" sm="4" md="4" xl="4" lg="3">
+          <MDBCol size="12" sm="6" md="4" xl="4" lg="4">
             <CardButton children={Logout} onClick={() => PageNavigate('/')} />
           </MDBCol>
         </MDBRow>
