@@ -103,7 +103,7 @@ const JobQueue: FC = () => {
   { name: 'Color Ref', datan: 'ColorRef' },
   { name: 'Job Type', datan: 'JobType', Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span> },
   { name: 'Date', datan: 'date' },
-  { name: 'Actions', datan: 'Actions', Call: (row: any) => getActions(row), cellWidth: "280px" }
+  { name: 'Actions', datan: 'Actions', Call: (row: any) => getActions(row), cellWidth: "205px" }
 ];
 
 const rows = [
