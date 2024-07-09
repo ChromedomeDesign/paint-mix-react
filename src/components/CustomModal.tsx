@@ -100,11 +100,8 @@ const CustomModal: React.FC<Props> = ({ open, onClose, title, body, footer, anim
     <MDBModal show={open} backdrop={true} keyboard={true} onClose={onClose} animation={animation}>
       <MDBModalDialog centered={centered} size={size}>
         <MDBModalContent>
-          <MDBModalHeader>
+        <MDBModalHeader style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             {title()}
-            {/* <IconButton onClick={onClose}>
-              <CloseIcon />
-            </IconButton> */}
           </MDBModalHeader>
           <MDBModalBody style={{padding:'5% 8%'}}>
             {body()}
