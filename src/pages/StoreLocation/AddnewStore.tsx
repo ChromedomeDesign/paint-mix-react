@@ -28,7 +28,7 @@ const AddnewStore: React.FC = () => {
     const NewStore = (
         <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
           <div style={haedingBorder}>
-            <Typography sx={headingStyle}>NEW STORE</Typography>
+            <p style={headingStyle}>NEW STORE</p>
           </div>
 
           <div className="createNew-inputDiv">

@@ -15,7 +15,7 @@ const CostCalculator:FC=()=>{
      const costForm = (
        <div style={{ display: 'flex', width: '100%', flexDirection: 'column',justifyContent: 'center' }}>
          <div style={{paddingBottom:'20px'}}>
-            <Typography sx={{fontWeight:600,color:"#1266F1",fontSize:'16px'}}>COMPLETED JOBS</Typography>
+            <p style={{fontWeight:600,color:"#1266F1",fontSize:'16px'}}>COMPLETED JOBS</p>
          </div>
          <div className="createNew-inputDiv" style={{borderTop:"1px solid #E0E0E0",paddingTop:'30px'}}>
            <CustomInputComponent label="Customer Name" name="FirstName" />

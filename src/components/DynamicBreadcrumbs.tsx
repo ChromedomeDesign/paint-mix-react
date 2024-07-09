@@ -24,9 +24,9 @@ const DynamicBreadcrumbs: React.FC<DynamicBreadcrumbsProps> = ({ breadcrumbs }) 
         {breadcrumbs.map((breadcrumb, index) => {
           if (index === breadcrumbs.length - 1) {
             return (
-              <Typography style={{color:'#757575',fontSize:'12px',fontWeight:400,lineHeight:'24px'}} key={breadcrumb.text}>
+              <p style={{color:'#757575',fontSize:'12px',fontWeight:400,lineHeight:'24px'}} key={breadcrumb.text}>
                 {breadcrumb.text}
-              </Typography>
+              </p>
             );
           } else {
             return (

@@ -158,7 +158,7 @@ import ErrorIcon from '@mui/icons-material/Error';
       )
 
       const Initialtitle = (
-        <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>File Uploader</Typography>
+        <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>File Uploader</p>
       )
 
       const Initialbody = (
@@ -178,15 +178,15 @@ import ErrorIcon from '@mui/icons-material/Error';
             <input {...getInputProps()} />
             {
               isDragActive ?
-                <Typography variant="body1">Drop the files here ...</Typography> :
-                <Typography variant="body1">{uploaderText}</Typography>
+                <p>Drop the files here ...</p> :
+                <p>{uploaderText}</p>
             }
           </div>
           <div style={{ marginTop: '10px' }}>
             {files.map((file, index) => (
               <div key={index} style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
                 <InsertDriveFileIcon style={{ marginRight: '10px' }} />
-                <Typography variant="body2">{file.name}</Typography>
+                <p>{file.name}</p>
               </div>
             ))}
           </div>
@@ -201,9 +201,9 @@ import ErrorIcon from '@mui/icons-material/Error';
       );
     
       const secondModalTitle = (
-        <Typography sx={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>
+        <p style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>
          Add New Product
-        </Typography>
+        </p>
       );
     
       const secondModalBody = (

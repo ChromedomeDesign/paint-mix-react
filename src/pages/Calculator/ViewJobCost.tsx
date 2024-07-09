@@ -82,30 +82,30 @@ const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
     const Detail=(
         <div>
         <div style={{paddingBottom:'20px'}}>
-            <Typography sx={{fontWeight:600,color:"#1266F1",fontSize:'16px'}}>VIEW JOB COST</Typography>
+            <p style={{fontWeight:600,color:"#1266F1",fontSize:'16px'}}>VIEW JOB COST</p>
          </div>
             <Grid container  sx={{borderTop:"1px solid #E0E0E0",paddingTop:'30px',marginBottom:'30px'}}>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
                  <div>
-                    <Typography style={head}>Contractor Home</Typography>
-                    <Typography style={head}>Antonio Razzo</Typography>
-                    <Typography style={head}>234 W Arizona St</Typography>
-                    <Typography style={head}>602-487-0087</Typography>
-                    <Typography style={head}>Account #123456789</Typography>
+                    <p style={head}>Contractor Home</p>
+                    <p style={head}>Antonio Razzo</p>
+                    <p style={head}>234 W Arizona St</p>
+                    <p style={head}>602-487-0087</p>
+                    <p style={head}>Account #123456789</p>
                  </div>
                 </Grid>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
                 <div>
-                    <Typography style={head}>Job Type: <span style={getJobTypeStyle("Modification")}>Modification</span></Typography>
-                    <Typography style={head}>Color: <span style={{fontWeight:400}}>Tardis Blue</span></Typography>
-                    <Typography style={head}>Color Formula:  <span style={{fontWeight:400}}>123546</span></Typography>
-                    <Typography style={head}>Date Last Produced: <span style={{fontWeight:400}}>01/21/23</span></Typography>
+                    <p style={head}>Job Type: <span style={getJobTypeStyle("Modification")}>Modification</span></p>
+                    <p style={head}>Color: <span style={{fontWeight:400}}>Tardis Blue</span></p>
+                    <p style={head}>Color Formula:  <span style={{fontWeight:400}}>123546</span></p>
+                    <p style={head}>Date Last Produced: <span style={{fontWeight:400}}>01/21/23</span></p>
                  </div>
                 </Grid>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
                 <div>
-                    <Typography style={head}>Job Notes: </Typography>
-                    <Typography> Customer would like the paint a few shades darker, add .02 black</Typography>
+                    <p style={head}>Job Notes: </p>
+                    <p> Customer would like the paint a few shades darker, add .02 black</p>
                  </div>
 
                 </Grid>

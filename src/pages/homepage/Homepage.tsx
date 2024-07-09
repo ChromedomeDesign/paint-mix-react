@@ -40,7 +40,7 @@ const Homepage: React.FC = () => {
   const order = (
     <div style={{ margin: '5px' }}>
       <div >
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Order</Typography>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Order</p>
       </div>
 
     </div>
@@ -50,7 +50,7 @@ const Homepage: React.FC = () => {
   const JobQueue = (
     <div style={{ margin: '5px' }}>
       <div >
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Job Queue</Typography>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Job Queue</p>
       </div>
 
     </div>
@@ -60,8 +60,8 @@ const Homepage: React.FC = () => {
   const ColorMgmt = (
     <div style={{ margin: '5px' }}>
       <div style={{ textAlign: "center", lineHeight: '0px' }}>
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Color </Typography>
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Management </Typography>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Color </p>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Management </p>
       </div>
 
     </div>
@@ -69,8 +69,8 @@ const Homepage: React.FC = () => {
   const UserAdmin = (
     <div style={{ margin: '5px' }}>
       <div style={{ textAlign: "center", lineHeight: '0px' }}>
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>User</Typography>
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Administration </Typography>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>User</p>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Administration </p>
       </div>
 
     </div>
@@ -78,8 +78,8 @@ const Homepage: React.FC = () => {
   const CostCal = (
     <div style={{ margin: '5px' }}>
       <div style={{ textAlign: "center", lineHeight: '0px' }} >
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Cost</Typography>
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Calculator</Typography>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Cost</p>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Calculator</p>
       </div>
 
     </div>
@@ -87,8 +87,8 @@ const Homepage: React.FC = () => {
   const StoreLoc = (
     <div style={{ margin: '5px' }}>
       <div style={{ textAlign: "center", lineHeight: '0px' }} >
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Store </Typography>
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Location</Typography>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Store </p>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Location</p>
       </div>
 
     </div>
@@ -96,8 +96,8 @@ const Homepage: React.FC = () => {
   const ChangePsswd = (
     <div style={{ margin: '5px' }}>
       <div style={{ textAlign: "center", lineHeight: '0px' }}>
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Change </Typography>
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Password</Typography>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Change </p>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Password</p>
       </div>
 
     </div>
@@ -105,7 +105,7 @@ const Homepage: React.FC = () => {
   const Logout = (
     <div style={{ margin: '5px' }}>
       <div style={{ textAlign: "center", lineHeight: '0px' }}>
-        <Typography sx={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Logout</Typography>
+        <p style={{ fontSize: '16px', fontWeight: '600', color: 'rgba(66, 66, 66, 1)' }}>Logout</p>
       </div>
 
     </div>
@@ -126,9 +126,7 @@ const Homepage: React.FC = () => {
   };
 
   const title = (
-    <div style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
-        <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Password</Typography>
-    </div>
+    <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Password</p>
   )
 
   const inputsChange = (name: string, value: string) => {
@@ -273,7 +271,7 @@ const Homepage: React.FC = () => {
       />
       <div>
         <div>
-          <Typography sx={{ fontSize: '32px', fontWeight:600,lineHeight:'38.4px',color: 'rgba(18, 102, 241, 1)',fontFamily:'"Open Sans", sans-serif'}}>USER</Typography>
+          <p style={{ fontSize: '32px', fontWeight:600,lineHeight:'38.4px',color: 'rgba(18, 102, 241, 1)',fontFamily:'"Open Sans", sans-serif'}}>USER</p>
         </div>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={4} md={4} xl={3} lg={3}>
@@ -289,7 +287,7 @@ const Homepage: React.FC = () => {
 
       <div >
         <div >
-          <Typography sx={{ fontSize: '32px', fontWeight:600,lineHeight:'38.4px',color: 'rgba(18, 102, 241, 1)',fontFamily:'"Open Sans", sans-serif'}}>ADMIN</Typography>
+          <p style={{ fontSize: '32px', fontWeight:600,lineHeight:'38.4px',color: 'rgba(18, 102, 241, 1)',fontFamily:'"Open Sans", sans-serif'}}>ADMIN</p>
         </div>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={4} md={4} xl={4} lg={3} >

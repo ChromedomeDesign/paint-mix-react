@@ -77,17 +77,17 @@ const JobQueInformation: FC = () => {
  const JobDetail = (
      <div style={{display:'flex',flexDirection:'row',borderBottom:'1px solid #E0E0E0',margin:'10px 0px',paddingBottom:'10px',gap:"40px"}}>
          <div>
-         <Typography style={JobDetailHead}>Tom’s Shop</Typography>
-         <Typography style={JobDetailHead}>Thomas Jones</Typography>
-         <Typography style={JobDetailHead}>2556 W Crown St</Typography>
-         <Typography style={JobDetailHead}>602-487-0087</Typography>
-         <Typography style={JobDetailHead}>Account #123456788</Typography>
+         <p style={JobDetailHead}>Tom’s Shop</p>
+         <p style={JobDetailHead}>Thomas Jones</p>
+         <p style={JobDetailHead}>2556 W Crown St</p>
+         <p style={JobDetailHead}>602-487-0087</p>
+         <p style={JobDetailHead}>Account #123456788</p>
         
          </div>
          <div>
-         <Typography style={JobDetailHead}>Job Type: <span>Reproduction</span></Typography>
-         <Typography style={JobDetailHead}>Painter Supply #: <span>123456</span></Typography>
-         <Typography style={JobDetailHead}>Original Notes:  <span></span></Typography>
+         <p style={JobDetailHead}>Job Type: <span>Reproduction</span></p>
+         <p style={JobDetailHead}>Painter Supply #: <span>123456</span></p>
+         <p style={JobDetailHead}>Original Notes:  <span></span></p>
 
            
          </div>
@@ -115,24 +115,24 @@ const JobQueInformation: FC = () => {
         <div style={{display:'flex',flexDirection:'row',gap:"40px",borderBottom:'1px solid #E0E0E0',margin:'10px 0px',paddingBottom:'10px'}}>
             <div>
             <div style={{display:'flex',flexDirection:'row'}}>
-            <Typography style={informationHead}>Job Name: </Typography><Typography style={informationdetail}>Garage Door</Typography>
+            <p style={informationHead}>Job Name: </p><p style={informationdetail}>Garage Door</p>
             </div>
             <div style={{display:'flex',flexDirection:'row'}}>
-            <Typography style={informationHead}>Color Ref: </Typography><Typography style={informationdetail}>Hunter Green</Typography>
+            <p style={informationHead}>Color Ref: </p><p style={informationdetail}>Hunter Green</p>
             </div>
             <div style={{display:'flex',flexDirection:'row'}}>
-            <Typography style={informationHead}>Job Location: </Typography><Typography style={informationdetail}>234 W Arizona St</Typography>
+            <p style={informationHead}>Job Location: </p><p style={informationdetail}>234 W Arizona St</p>
             </div>
             <div style={{display:'flex',flexDirection:'row'}}>
-            <Typography style={informationHead}>Quantity: </Typography><Typography style={informationdetail}>1 Gallon</Typography>
+            <p style={informationHead}>Quantity: </p><p style={informationdetail}>1 Gallon</p>
             </div>
             <div style={{display:'flex',flexDirection:'row'}}>
-            <Typography style={informationHead}>Pick-up Date: </Typography><Typography style={informationdetail}>03/25/23</Typography>
+            <p style={informationHead}>Pick-up Date: </p><p style={informationdetail}>03/25/23</p>
             </div>
             </div>
             <div>
             <div style={{display:'flex',flexDirection:'row'}}>
-            <Typography style={informationHead}>Job Notes: : </Typography><Typography style={informationdetail}>Customer would like the exact same paint</Typography>
+            <p style={informationHead}>Job Notes: : </p><p style={informationdetail}>Customer would like the exact same paint</p>
             </div>
             </div>
         </div>
@@ -157,7 +157,7 @@ const JobQueInformation: FC = () => {
   };
 
   const title = (
-    <Typography sx={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Measurement Type</Typography>
+    <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Measurement Type</p>
   )
   const body = (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -191,7 +191,7 @@ const JobQueInformation: FC = () => {
             {information}
             </div>
             <div>
-                <Typography style={informationHead}>Measurement Type: <span style={informationdetail}>Weight</span> | <span style={{color:'#1266F1',fontSize:'13px',fontWeight:600,lineHeight:'28px'}} onClick={Change}>Change</span></Typography>
+                <p style={informationHead}>Measurement Type: <span style={informationdetail}>Weight</span> | <span style={{color:'#1266F1',fontSize:'13px',fontWeight:600,lineHeight:'28px'}} onClick={Change}>Change</span></p>
             </div>
             <CustomTable columns={columns} data={data}/>
             <div style={{display:'flex',justifyContent:'flex-start'}}>

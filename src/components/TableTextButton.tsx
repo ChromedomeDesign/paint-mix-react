@@ -14,18 +14,21 @@ interface CustomButtonProps {
 
 const StyledButton = styled(Button)<{ customcolor?: string; customfontsize?: string ;width?:string}>(
     ({ customcolor, customfontsize,width }) => ({
-        padding: '8.5px 15px',
-        height: '45px',
+        padding: '4.5px 8px',
+        gap:"5px",
+        height: '29px',
         fontWeight:600,
         width: width || "100%",
+        textAlign:'center',
         variants:"outlined",
-        fontSize: customfontsize || '13px',
+        fontSize: customfontsize || '11px',
+        lineHeight:'20px',
         color: customcolor || '#1266F1',
         textTransform: 'none', 
     })
 );
 
-const CustomTextButton: React.FC<CustomButtonProps> = ({  fontSize, color, onClick,width, children }) => {
+const TableTextButton: React.FC<CustomButtonProps> = ({  fontSize, color, onClick,width, children }) => {
     return (
         // <MDBBtn color='link' rippleColor='dark' onClick={onClick} className="shadow-none hover-none" 
         // style={{
@@ -46,4 +49,4 @@ const CustomTextButton: React.FC<CustomButtonProps> = ({  fontSize, color, onCli
     );
 };
 
-export default CustomTextButton;
+export default TableTextButton;

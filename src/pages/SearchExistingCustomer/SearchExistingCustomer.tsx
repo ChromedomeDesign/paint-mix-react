@@ -20,17 +20,17 @@ const SearchExistingCustomer: React.FC = () => {
     const navigate = useNavigate();
 
     const modelTitle = (
-      <Typography sx={{fontWeight:'600', fontSize:'20px', color:'#424242'}}>Verify Customer Information</Typography>
+      <p style={{fontWeight:'600', fontSize:'20px', color:'#424242'}}>Verify Customer Information</p>
     )
 
     const modelBody = (
       
       <div style={{fontWeight:'400', fontSize:'12px', color:'#424242'}}>
       
-        <Typography>Contractor Home</Typography>
-        <Typography>address</Typography>
-        <Typography>phoneNumber</Typography>
-        <Typography>AccountNumber</Typography>
+        <p>Contractor Home</p>
+        <p>address</p>
+        <p>phoneNumber</p>
+        <p>AccountNumber</p>
       </div>
 
     )

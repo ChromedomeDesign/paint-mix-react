@@ -27,7 +27,7 @@ const InfoButton: React.FC<InfoButtonProps> = ({ Info,toggleInfo }) => {
         // startIcon={<InfoIcon />}
         endIcon={Info ?  <ArrowDropDownIcon /> : <ArrowRightIcon />}
         onClick={toggleInfo}
-        sx={{ color: '#1266F1',height:'46px',width:'50px',textTransform: 'none', }} 
+        sx={{ color: '#1266F1',height:'29px',width:'45px',textTransform: 'none',lineHeight:'20px', fontFamily:'"Open Sans", sans-serif',fontSize:'11px',textAlign:'center',padding:'4.5px, 8px',gap:'5px'}} 
       >
         Info
       </Button>
