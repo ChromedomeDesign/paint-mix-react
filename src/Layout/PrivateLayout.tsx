@@ -162,7 +162,7 @@ const PrivateLayout = () => {
       <div style={{ width: '100%', maxWidth: '1800px' }}>
         <div style={{ position: 'sticky',top: '0px', backgroundColor: 'white', zIndex: 999 }}>
           <Header />
-          <div style={{margin: '0px 15px',}}>
+          <div style={{margin: '0px 27px',}}>
           <div style={{ margin: "30px 0px 0px 0px" }}>
             <p style={{fontWeight:600,color:'#1266F1',fontSize:'32px',lineHeight:'38.4px'}}>{pageTitle}</p>
           </div>
@@ -171,7 +171,7 @@ const PrivateLayout = () => {
           </div>
           </div>
         </div>
-        <main style={{ margin: '12px 15px 12px 15px', paddingBottom: '10px' }}>
+        <main style={{ margin: '12px 27px 12px 27px', paddingBottom: '10px' }}>
       
          
           <Outlet />

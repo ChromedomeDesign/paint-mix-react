@@ -9,6 +9,7 @@ import CustomButton from "components/CustomButton";
 import CustomModal from "components/CustomModal";
 import CustomRadioGroup from "components/CustomRadioGroup";
 import { Value } from "sass";
+import { MDBCol, MDBRow } from "mdb-react-ui-kit";
 
 const JobQueInformation: FC = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -20,14 +21,8 @@ const JobQueInformation: FC = () => {
             const vh = window.innerHeight; // Calculate 90% of viewport height
             setBottomPosition(`${vh}px`); // Set bottom position dynamically
         };
-
-        // Initial calculation on component mount
         handleResize();
-
-        // Event listener for window resize
         window.addEventListener('resize', handleResize);
-
-        // Clean up event listener
         return () => {
             window.removeEventListener('resize', handleResize);
         };
@@ -45,9 +40,9 @@ const JobQueInformation: FC = () => {
 
     const columns = [
         { name: "Colorant/Base", datan: "Colorant/Base" },
-        { name: "Amount 1", datan: "Amount1",Call: (row: any) => <OutlinedInput value={row?.Amount1} sx={{width:'80px',textAlign:'center'}} onChange={()=>{}}/>},
-        { name: "Amount 2", datan: "Amount2", Call: (row: any) => <OutlinedInput value={row?.Amount2} sx={{width:'80px',textAlign:'center'}}/>},
-        { name: "Amount 3", datan: "Amount3", Call: (row: any) => <OutlinedInput value={row?.Amount3} sx={{width:'80px',textAlign:'center'}}/> },
+        { name: "Amount 1", datan: "Amount1",Call: (row: any) => <OutlinedInput value={row?.Amount1} sx={{width:'92px',height:'45px',textAlign:'center'}} onChange={()=>{}}/>},
+        { name: "Amount 2", datan: "Amount2", Call: (row: any) => <OutlinedInput value={row?.Amount2} sx={{width:'92px',height:'45px',textAlign:'center'}}/>},
+        { name: "Amount 3", datan: "Amount3", Call: (row: any) => <OutlinedInput value={row?.Amount3} sx={{width:'92px',height:'45px',textAlign:'center'}}/> },
         {
             name: "TOTAL",
             datan: "TOTAL",
@@ -65,33 +60,90 @@ const JobQueInformation: FC = () => {
     fontSize:'12px',
     fontWeight:700,
     lineHeght:'20px',
-    color:'#424242'
+    color:'#424242',
+    margin:'0px'
  }
-//  const informationdetail ={
-//      fontSize:'12px',
-//      fontWeight:400,
-//      lineHeght:'20px',
-//      color:'#424242'
-//   }
 
+ const styles = {
+    modify: {
+      width: "86px",
+      height: "20px",
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#CFE0FC",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#0A47A9'
+    },
+    reprod: {
+      width: "92px",
+      height: "20px",
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#FFEBC2",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#453008'
+    },
+    custom: {
+      width: "58px",
+      height: "20px",
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#EBCDFE",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#262626'
+    },
+    fanDeck: {
+      width: "86px",
+      height: "20px",
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#C7F5D9",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#0B4121'
+    }
+  };
+  
+ const getJobTypeStyle = (jobType: string) => {
+    switch (jobType) {
+      case "Modification":
+        return styles.modify;
+      case "Reproduction":
+        return styles.reprod;
+      case "Custom":
+        return styles.custom;
+      default:
+        return styles.fanDeck;
+    }
+  };
  const JobDetail = (
-     <div style={{display:'flex',flexDirection:'row',borderBottom:'1px solid #E0E0E0',margin:'10px 0px',paddingBottom:'10px',gap:"40px"}}>
-         <div>
+    <>
+    <MDBRow style={{width:'100%',marginBottom:'21px',marginTop:'21px'}} >
+      <MDBCol size="12" sm="5">
          <p style={JobDetailHead}>Tom’s Shop</p>
          <p style={JobDetailHead}>Thomas Jones</p>
          <p style={JobDetailHead}>2556 W Crown St</p>
          <p style={JobDetailHead}>602-487-0087</p>
          <p style={JobDetailHead}>Account #123456788</p>
-        
-         </div>
-         <div>
-         <p style={JobDetailHead}>Job Type: <span>Reproduction</span></p>
+         </MDBCol>
+         <MDBCol size="12" sm="7">
+         <p style={JobDetailHead}>Job Type: <span style={getJobTypeStyle('Modification')}>Modification</span></p>
          <p style={JobDetailHead}>Painter Supply #: <span>123456</span></p>
          <p style={JobDetailHead}>Original Notes:  <span></span></p>
-
-           
-         </div>
-     </div>
+         </MDBCol>
+         </MDBRow>
+     </>
  )
 //--------------------------------------------------------------------------//
 
@@ -102,18 +154,21 @@ const JobQueInformation: FC = () => {
        fontSize:'12px',
        fontWeight:700,
        lineHeght:'20px',
-       color:'#424242'
+       color:'#424242',
+       margin:'0px'
     }
     const informationdetail ={
         fontSize:'12px',
         fontWeight:400,
         lineHeght:'20px',
-        color:'#424242'
+        color:'#424242',
+        margin:'0px'
      }
 
     const information = (
-        <div style={{display:'flex',flexDirection:'row',gap:"40px",borderBottom:'1px solid #E0E0E0',margin:'10px 0px',paddingBottom:'10px'}}>
-            <div>
+        <div style={{display:'flex',flexDirection:'row',borderBottom:'1px solid #E0E0E0',margin:'10px 0px',paddingBottom:'10px'}}>
+            <MDBRow style={{width:'100%',marginBottom:'21px',marginTop:'21px'}} >
+            <MDBCol size="12" sm="5">
             <div style={{display:'flex',flexDirection:'row'}}>
             <p style={informationHead}>Job Name: </p><p style={informationdetail}>Garage Door</p>
             </div>
@@ -129,12 +184,13 @@ const JobQueInformation: FC = () => {
             <div style={{display:'flex',flexDirection:'row'}}>
             <p style={informationHead}>Pick-up Date: </p><p style={informationdetail}>03/25/23</p>
             </div>
-            </div>
-            <div>
+            </MDBCol>
+      <MDBCol size="12" sm="7">
             <div style={{display:'flex',flexDirection:'row'}}>
-            <p style={informationHead}>Job Notes: : </p><p style={informationdetail}>Customer would like the exact same paint</p>
+            <p style={informationHead}>Job Notes: </p><p style={informationdetail}>Customer would like the exact same paint</p>
             </div>
-            </div>
+            </MDBCol>
+            </MDBRow>
         </div>
     )
    //--------------------------------------------------------------------------//
@@ -157,7 +213,7 @@ const JobQueInformation: FC = () => {
   };
 
   const title = (
-    <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Measurement Type</p>
+    <p style={{ fontSize: '20', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Measurement Type</p>
   )
   const body = (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -199,7 +255,7 @@ const JobQueInformation: FC = () => {
             </div>
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end'}}>
                 <div style={{display:'flex',justifyContent:'space-between',gap:'4px'}}>
-                    <CustomTextButton children={"Print Label"} width="150px"/>
+                    <CustomTextButton children={"Print Label"} width="100px"/>
                     <CustomOutLinedButton children={"Test"} width="100px"/>
                     <CustomButton children={"Mix"} width="100px"/>
                 </div>
@@ -211,15 +267,6 @@ const JobQueInformation: FC = () => {
                 <CustomTextButton children={"Save for later"} width="180px"/>
                 </div>
             </div>
-{/* <div style={{ position: 'sticky', bottom: '-100vh',marginTop:bottomPosition, backgroundColor: 'white', padding: '10px', borderTop: '1px solid #ccc', zIndex: 100 }}>
-        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
-            <p>{bottomPosition}</p>
-            <CustomTextButton children={"Cancel"} width="80px" />
-            <CustomTextButton children={"Abandon"} width="80px" />
-            <CustomTextButton children={"Save for later"} width="180px" />
-        </div>
-    </div> */}
-
         </div>
     );
 };

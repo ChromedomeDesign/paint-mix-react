@@ -99,18 +99,19 @@ const JobQueue: FC = () => {
   };
   
  const columns = [
-  { name: 'Job Name', datan: 'JobName' , Call:(row:any)=><div className="flex-center">{expandedRowIndex === rows.indexOf(row) ? <span  style={{display: 'flex', gap: 3, alignItems: 'center' }}> <ErrorIcon sx={{color:'#FFA900'}}/> {row?.JobName} </span>:<span>{row?.JobName}</span>}</div>},
-  { name: 'Color Ref', datan: 'ColorRef' },
-  { name: 'Job Type', datan: 'JobType', Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span> },
+  { name: 'Customer Name', datan: 'CustomerName' , Call:(row:any)=><div className="flex-center">{expandedRowIndex === rows.indexOf(row) ? <span  style={{display: 'flex', gap: 3, alignItems: 'center' }}> <ErrorIcon sx={{color:'#FFA900'}}/> {row?.CustomerName} </span>:<span>{row?.CustomerName}</span>}</div>},
+  { name: 'Business Name', datan: 'BusinessName' },
+  { name: 'Account Number', datan: 'AccountNumber'},
+  { name: 'Job Type', datan:'Job Type', Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span> },
   { name: 'Date', datan: 'date' },
   { name: 'Actions', datan: 'Actions', Call: (row: any) => getActions(row), cellWidth: "205px" }
 ];
 
 const rows = [
-  { JobName: 'Delivery Girl', ColorRef: 'purple', JobType: 'Modification', date: "01/02/2019" },
-  { JobName: 'Painter', ColorRef: 'voilet', JobType: 'Reproduce', date: "01/02/2019" },
-  { JobName: 'Engineer', ColorRef: 'blue', JobType: 'Modification', date: "01/02/2019" },
-  { JobName: 'Carpenter', ColorRef: 'Green', JobType: 'Custom', date: "01/02/2019" }
+  { CustomerName: 'Delivery Girl', BusinessName: 'purple',AccountNumber:"123456789", JobType: 'Modification', date: "01/02/2019" },
+  { CustomerName: 'Painter', BusinessName: 'voilet',AccountNumber:"123456789", JobType: 'Reproduce', date: "01/02/2019" },
+  { CustomerName: 'Engineer', BusinessName: 'blue',AccountNumber:"123456789", JobType: 'Modification', date: "01/02/2019" },
+  { CustomerName: 'Carpenter', BusinessName: 'Green',AccountNumber:"123456789", JobType: 'Custom', date: "01/02/2019" }
 ];
 
 const handleInfoClick = (row: any) => {
@@ -138,6 +139,58 @@ const NewTable = (
   />
 );
 
+
+//-----------------------Inprogress Column------------------------//
+const inprogressgetActions = (row: any) => (
+  <div style={{ display: 'flex', flexDirection: 'row'}}>
+    <TableContainedButton width="72px" onClick={()=>navigate('/JobInformation')}>Continue</TableContainedButton>
+    <TableTextButton width="37px" onClick={()=>navigate('/JobQueInformation')}>Edit</TableTextButton>
+     <InfoButton Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} ></InfoButton>
+  </div>
+);
+const inprogresscolumns = [
+  { name: 'Customer Name', datan: 'CustomerName' , Call:(row:any)=><div className="flex-center">{expandedRowIndex === rows.indexOf(row) ? <span  style={{display: 'flex', gap: 3, alignItems: 'center' }}> <ErrorIcon sx={{color:'#FFA900'}}/> {row?.CustomerName} </span>:<span>{row?.CustomerName}</span>}</div>},
+  { name: 'Business Name', datan: 'BusinessName' },
+  { name: 'Account Number', datan: 'AccountNumber'},
+  { name: 'Job Type', datan:'Job Type', Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span> },
+  { name: 'Date', datan: 'date' },
+  { name: 'Actions', datan: 'Actions', Call: (row: any) => inprogressgetActions(row), cellWidth: "205px" }
+];
+const Inprogress = (
+  <CustomTable 
+    columns={inprogresscolumns} 
+    data={rows} 
+    expandedRowIndex={expandedRowIndex} 
+    expandedRowContent={expandedRowContent} 
+  />
+);
+//--------------------------------------------------------------------//
+
+//-------------------------------Completed table---------------------//
+const completedgetActions = (row: any) => (
+  <div style={{ display: 'flex', flexDirection: 'row'}}>
+    <TableTextButton width="89px" >View Formula</TableTextButton>
+    <TableTextButton width="74px" onClick={()=>navigate('/JobQueInformation')}>Print Label</TableTextButton>
+     <InfoButton Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} ></InfoButton>
+  </div>
+);
+const completedcolumns = [
+  { name: 'Customer Name', datan: 'CustomerName' , Call:(row:any)=><div className="flex-center">{expandedRowIndex === rows.indexOf(row) ? <span  style={{display: 'flex', gap: 3, alignItems: 'center' }}> <ErrorIcon sx={{color:'#FFA900'}}/> {row?.CustomerName} </span>:<span>{row?.CustomerName}</span>}</div>},
+  { name: 'Business Name', datan: 'BusinessName' },
+  { name: 'Account Number', datan: 'AccountNumber'},
+  { name: 'Job Type', datan:'Job Type', Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span> },
+  { name: 'Date', datan: 'date' },
+  { name: 'Actions', datan: 'Actions', Call: (row: any) => completedgetActions(row), cellWidth: "205px" }
+];
+const Completed = (
+  <CustomTable 
+    columns={completedcolumns} 
+    data={rows} 
+    expandedRowIndex={expandedRowIndex} 
+    expandedRowContent={expandedRowContent} 
+  />
+);
+
   const tabOptions = [
     { label: 'NEW', value: 'New',customWidth:'136px' },
     { label: 'IN PROGRESS', value: 'InProgress',customWidth:'136px' },
@@ -153,9 +206,9 @@ const NewTable = (
       case 'New':
         return NewTable;
       case 'InProgress':
-        return NewTable;
+        return Inprogress;
       case 'Completed':
-        return NewTable; 
+        return Completed; 
       default:
         return NewTable;
     }

@@ -63,7 +63,7 @@ const CustomModal: React.FC<Props> = ({
         >
           {title()}
         </Box>
-        <hr style={{ height: '1px', backgroundColor: '#E0E0E0' }} />
+        <div style={{ border:'1px solid #E0E0E0'}} ></div>
         <Box
           mt={1}
           sx={{
@@ -75,7 +75,7 @@ const CustomModal: React.FC<Props> = ({
         >
           {body()}
         </Box>
-        <hr style={{ height: '1px', backgroundColor: '#E0E0E0' }} />
+        <div style={{ border:'1px solid #E0E0E0'}} ></div>
         <Box
           mt={1}
           sx={{

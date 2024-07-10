@@ -36,7 +36,6 @@ const JobInformation: FC = () => {
   
  //----------------Job added Modal function--------------------//
   const saving = () => {
-    // Handle forgot password logic here
     setModalOpen(true);
   };
 
@@ -45,19 +44,19 @@ const JobInformation: FC = () => {
   };
 
   const title = (
-    <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Confirm Customer Information</p>
+    <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px',margin:'0px'}}>Success!</p>
   )
   const body = (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-       <p>
-      This job has been added to the job queue.
+       <p style={{margin:'0px'}}>
+       This job has been added to the job queue.
     </p> 
     </div>
   )
 
   const footer = (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <CustomButton children={"Go to Job Queue"} width="255px" onClick={()=>navigate('/JobQueue')}/>
+      <CustomButton children={"Go to Job Queue"} width="143px" onClick={()=>navigate('/JobQueue')}/>
     </div>
   )
   //---------------------------------------------------------//
@@ -72,19 +71,19 @@ const JobInformation: FC = () => {
   };
   const haedingBorder ={
     borderBottom: '1px solid rgba(224, 224, 224, 1)', 
-    marginBottom: '15px',
-     paddingBottom: '15px',
      fontFamily:`"Open Sans", sans-serif`,
   }
   const onRadio = (data: any) => {
     setJobType(data)
   };
   const form = (
-    <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', width: '100%', padding:'20px 20px 0px 20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
         <p style={headingStyle} >JOB TYPE</p>
       </div>
+      <div style={{margin:'21px 0px 21px 0px'}}>
       <CustomRadioGroup options={option} onValueChange={onRadio} row={true} selectedValue={jobType} />
+    </div>
     </div>
   )
   //--------------------------------------------------------------------------------//
@@ -106,24 +105,24 @@ const JobInformation: FC = () => {
   //-------------------------------------------------------------------------//
   //--------------------------JOBINFO----------------------------------------//
   const JOBINFO = (
-    <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', width: '100%', padding:'20px 20px 0px 20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
         <p style={headingStyle}>JOB INFO</p>
       </div>
-      <div className="createNew-inputDiv">
+      <div className="createNew-inputDiv" style={{margin:'21px 0px 21px 0px'}}>
         <CustomInputComponent label="Job Name" name="Job Name" />
         <CustomInputComponent label="Color Ref" name="staColor Refte" />
         <CustomCheckBox width="200px" label="Use Customer Address" />
       </div>
-      <div className="createNew-inputDiv">
+      <div className="createNew-inputDiv" style={{marginBottom:'21px'}}>
         <CustomInputComponent label="Street Address" name="Street Address" />
         <CustomInputComponent label="City" name="City" />
       </div>
-      <div className="createNew-inputDiv">
+      <div className="createNew-inputDiv" style={{marginBottom:'21px'}}>
         <CustomInputComponent label="State" name="State" />
         <CustomInputComponent label="Zip Code" name="Zip Code" />
       </div>
-      <div className="createNew-inputDiv">
+      <div className="createNew-inputDiv" style={{marginBottom:'21px'}}>
         {/* <CustomInputComponent width="100%" label="Job Notes" name="Job Notes" /> */}
         <CustomTextArea width="100%" label="Job Notes" name="Job Notes"/>
 
@@ -139,7 +138,6 @@ const JobInformation: FC = () => {
     // Additional logic as needed
   };
 
-  // Define your options array
   const options = [
     { label: 'Option 1', value: 'option1' },
     { label: 'Option 2', value: 'option2' },
@@ -148,11 +146,11 @@ const JobInformation: FC = () => {
 
 
   const PRODUCTION = (
-    <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', width: '100%', padding:'20px 20px 0px 20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
         <p style={headingStyle}>PRODUCTION INFO</p>
       </div>
-      <div className="createNew-inputDiv">
+      <div className="createNew-inputDiv" style={{margin:'21px 0px 21px 0px'}}>
         {/* <CustomInputComponent type="date" label="City" name="city"   /> */}
         <PickupDate label="Pick-up Date" name="state" />
         <CustomSelectComponent
@@ -164,7 +162,7 @@ const JobInformation: FC = () => {
       />
         <CustomInputComponent type={"Number"} label="Production Quantity" name="Production Quantity" />
       </div>
-      <div className="createNew-inputDiv">
+      <div className="createNew-inputDiv" style={{marginBottom:'21px'}}>
         <CustomInputComponent width="100%" label="Notes" name="Notes" />
       </div>
     </div>
@@ -172,16 +170,18 @@ const JobInformation: FC = () => {
   //-------------------------------------------------------------------------//
 
   //--------------------------------//
-  const jobStyle = {
+  const jobStyle: React.CSSProperties = {
     fontSize: '12px',
     fontWeight: 700,
     color: '#424242',
-    lineHeight: '20px',
-    fontFamily:`"Open Sans", sans-serif`
-    }
 
-  const JobDaetail = (
-    <div>
+    lineHeight: '20px',
+    fontFamily: `"Open Sans", sans-serif`,
+    margin: 0, 
+  }
+  
+  const JobDetail: React.FC = () => (
+    <div style={{ display: 'flex', flexDirection: 'column'}}>
       <p style={jobStyle}>
         Wendy’s Paint Party
       </p>
@@ -198,7 +198,7 @@ const JobInformation: FC = () => {
         Account #123456789
       </p>
     </div>
-  )
+  );
   //-----------------------------------------------------------------------------//
 
   //----------------------Main return-------------------------------------------//
@@ -225,7 +225,7 @@ const JobInformation: FC = () => {
           size="medium"
           centered={true}
         /> */}
-        <div style={{marginBottom:'5px'}}>{JobDaetail}</div>
+        <div style={{marginBottom:'5px'}}>{<JobDetail/>}</div>
         <CardComponent width="100%" children={form} backgroundColor={"#FBFBFB"} />
         <CardComponent width="100%" children={MANUFACTURERINFO} backgroundColor={"#FBFBFB"} />
         <CardComponent width="100%" children={JOBINFO} backgroundColor={"#FBFBFB"} />
