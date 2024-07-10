@@ -122,7 +122,7 @@ const Homepage: React.FC = () => {
   };
 
   const title = (
-    <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Password</p>
+    <span style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Password</span>
   )
 
   const inputsChange = (name: string, value: string) => {
@@ -146,7 +146,7 @@ const Homepage: React.FC = () => {
             <img src={greenTick} alt="Success" width="24px" height="24px" style={{ marginLeft: '10px' }} />
           )}
         </div>
-        <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <CustomInputComponent
             label="Confirm New Password"
             width="282px"

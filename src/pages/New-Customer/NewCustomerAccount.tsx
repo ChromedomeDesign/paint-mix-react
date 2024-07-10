@@ -133,7 +133,7 @@ const footer=(
         size="medium"
         centered={true}
       />
-            <CardComponent  width="780px"  children={form} backgroundColor={"#fafcfc"} />
+            <CardComponent  width="100%"  children={form} backgroundColor={"#fafcfc"} />
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',marginTop:'20px'}}>
                <CustomTextButton children={"Cancel"}  width="80px"/>
                <CustomButton children={"Save"} width="80px" onClick={saving}/>

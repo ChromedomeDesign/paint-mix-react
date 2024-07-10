@@ -60,7 +60,7 @@ const CardComponent: React.FC<CardComponentProps> = ({ width, customIndex, heigh
       backgroundColor: backgroundColor || 'rgba(255, 255, 255, 1)',
       margin: '15px 0px 15px 0px',
       zIndex: customIndex !== undefined ? customIndex : 'auto',
-      padding:'10px'
+      // padding:'10px'
     }}
   >
     {children}
