@@ -200,8 +200,8 @@ const JobQueInformation: FC = () => {
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end'}}>
                 <div style={{display:'flex',justifyContent:'space-between',gap:'4px'}}>
                     <CustomTextButton children={"Print Label"} width="150px"/>
-                    <CustomOutLinedButton children={"Test"} width="100px"/>
-                    <CustomButton children={"Mix"} width="100px"/>
+                    <CustomOutLinedButton children={"Test"} width="100px"   />
+                    <CustomButton children={"Mix"} width="100px"  />
                 </div>
             </div>
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',position:'fixed',right:5,bottom:0}}>

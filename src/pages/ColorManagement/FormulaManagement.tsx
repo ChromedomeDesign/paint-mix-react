@@ -51,6 +51,7 @@ const FormulaManagement: React.FC = () => {
         setModalStep(2); 
       };
 
+//---------------------------------------Formula Management Information----------------------------------//
      const information = (
          <div style={{display:'flex',flexDirection:'row',gap:"40px",margin:'10px 0px',paddingBottom:'10px'}}>
              <div>
@@ -73,8 +74,10 @@ const FormulaManagement: React.FC = () => {
              </div>
          </div>
      )
+//-----------------------------------------------------------------------------------------------------//
 
 
+//-----------------------------------Table Data---------------------------------------------------------//
      const data = [
         { "Colorant/Base": "Flat White", Amount1: 0.01, Amount2: 0.01, Amount3: 0.01, Amount4: 0.01, Amount5: 0.01 },
         { "Colorant/Base": "Color", Amount1: 0.01, Amount2: 0.01, Amount3: 0.01, Amount4: 0.01, Amount5: 0.01 },
@@ -120,8 +123,10 @@ const FormulaManagement: React.FC = () => {
         },
     ];
 
-    
+//--------------------------------------------------------------------------------------------------//    
 
+
+//----------------------------------First Modal------------------------------------------------------//
     const title = (
         <p style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>
           Deprecate Formula
@@ -136,13 +141,7 @@ const FormulaManagement: React.FC = () => {
           </div>
         </div>
       );
-    
-      const secondBody = (
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}>
-          <p>Are you sure you want to deprecate Snow White with no replacement?</p>
-        </div>
-      );
-    
+
       const initialFooter = (
         <div style={{ display: 'flex', flexDirection: 'row', gap: '2%' }}>
           <CustomTextButton children={"Cancel"} width="100px"  />
@@ -150,14 +149,26 @@ const FormulaManagement: React.FC = () => {
           <CustomButton children={"Continue"} width="100px" onClick={handleContinue} />
         </div>
       );
+
+//------------------------------------------------------------------------------------------------------//
     
-      const secondFooter = (
+
+//-------------------------------------------Second Modal------------------------------------------------//
+      const secondBody = (
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}>
+          <p>Are you sure you want to deprecate Snow White with no replacement?</p>
+        </div>
+      );
+    
+     const secondFooter = (
         <div style={{ display: 'flex', flexDirection: 'row', gap: '2%' }}>
           <CustomTextButton children={"Cancel"} width="100px" onClick={handleCloseModal} />
           <CustomOutLinedButton children={"Back"} width="100px" />
           <CustomButton children={"Yes"} width="100px" onClick={handleContinue} />
         </div>
       );
+
+//------------------------------------------------------------------------------------------------------//
     
       const body = modalStep === 1 ? initialBody : secondBody;
       const footer = modalStep === 1 ? initialFooter : secondFooter;
@@ -177,13 +188,13 @@ const FormulaManagement: React.FC = () => {
                 {isEditable ? (
                     <div style={{ display: 'flex', justifyContent: 'space-between', gap: '4px' }}>
                         <CustomTextButton children={"Cancel"} width="150px" />
-                        <CustomButton children={"Save"} width="100px" onClick={handleSave} />
+                        <CustomButton children={"Save"} width="100px"  onClick={handleSave} />
                     </div>
                 ) : (
                     <div style={{ display: 'flex', justifyContent: 'space-between', gap: '4px' }}>
                         <CustomTextButton children={"Back"} width="100px" onClick={()=>navigate(-1)}/>
                         <CustomOutLinedButton children={"Deprecate"} width="100px"  onClick={handleOpenModal}/>
-                        <CustomButton children={"Edit"} width="100px" onClick={handleEdit} />
+                        <CustomButton children={"Edit"} width="100px"  onClick={handleEdit} />
                     </div>
                 )}
             </div>

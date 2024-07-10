@@ -76,7 +76,7 @@ import TableTextButton from "components/TableTextButton";
 
 
 
-
+//------------------------------Type drop down values-----------------------------//
     const options = [
         { label: 'Type', value: 'Type' },
         { label: 'All', value: 'All' },
@@ -85,21 +85,20 @@ import TableTextButton from "components/TableTextButton";
         { label: 'Formula', value: 'Formula' }
       ];
 
+//-----------------------------------------------------------------------------------//
+
+//-----------------------------Additional Filter values-----------------------------//
       const optionsData = [
         { label: 'None', value: 'None' },
         { label: 'Include Deprecated', value: 'Include Deprecated' },
         { label: 'Deprecated Only', value: 'Deprecated Only' }
       ];
 
-//----------------------------------------
-  const actions = (row:any) => (
-      <div style={{ display: 'flex'}}>
-        <TableTextButton children={"View"} width="42px" onClick={()=>navigate('/BaseManagement')}/>
-        <TableTextButton children={"Edit"} width="37px" onClick={()=>navigate('/FormulaManagement')}/>
-        <InfoButton  Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} />
-      </div>
+//------------------------------------------------------------------------------------//
 
-  );
+
+ 
+//--------------------------------------Table Data-----------------------------------//
       const columns = [
         {
           name: 'Color Name',
@@ -130,12 +129,26 @@ import TableTextButton from "components/TableTextButton";
         { ColorName: 'Snow White', Brand: 'Kilz', Type: 'Formula', date: "01/02/2019"}
       ];
 
+
+      const actions = (row:any) => (
+        <div style={{ display: 'flex'}}>
+          <TableTextButton children={"View"} width="42px" onClick={()=>navigate('/BaseManagement')}/>
+          <TableTextButton children={"Edit"} width="37px" onClick={()=>navigate('/FormulaManagement')}/>
+          <InfoButton  Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} />
+        </div>
+  
+    );
+  
+//-----------------------------------------------------------------------------------------------//
+
+
       const handleInfoClick = (row: any) => {
         setShowicon(!showicon);
       setExpandedRowIndex(rows.indexOf(row) === expandedRowIndex ? undefined : rows.indexOf(row));
     };
 
 
+//----------------------------------------Info Button Data-----------------------------------------//
     const expandedRowContent =(
       <div style={{ display: 'flex', flexDirection: 'row',justifyContent:'space-between', marginTop: '20px' }}>
       <div>
@@ -157,6 +170,8 @@ import TableTextButton from "components/TableTextButton";
     </div>
     )
 
+//-----------------------------------------------------------------------------------------------//
+
       const  mesurment = [
         {value:'Additive',label:"Additive"},
         {value:'Base',label:"Base"},
@@ -172,10 +187,11 @@ import TableTextButton from "components/TableTextButton";
         <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
 
                 <CustomTextButton width="31px">Back</CustomTextButton>
-                <CustomOutLinedButton onClick={handleAddNew} width="100px">Add New</CustomOutLinedButton>
-                <CustomOutLinedButton onClick={handleOpenModal} width="100px">Upload</CustomOutLinedButton>
+                <CustomOutLinedButton onClick={handleAddNew} width="100px" >Add New</CustomOutLinedButton>
+                <CustomOutLinedButton onClick={handleOpenModal} width="100px" >Upload</CustomOutLinedButton>
         </div>
       )
+//--------------------------------------------Upload File Modal----------------------------------------------//
 
       const Initialtitle = (
         <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>File Uploader</p>
@@ -216,10 +232,14 @@ import TableTextButton from "components/TableTextButton";
       const Initialfooter = (
         <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
           <CustomTextButton onClick={handleCloseModal}>Cancel</CustomTextButton>
-          <CustomButton width="200px">Upload File</CustomButton>
+          <CustomButton width="200px" >Upload File</CustomButton>
         </div>
       );
+
+//-------------------------------------------------------------------------------------------------//
     
+//-------------------------------------Add new product modal-------------------------------------------//
+
       const secondModalTitle = (
         <p style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>
          Add New Product
@@ -239,6 +259,8 @@ import TableTextButton from "components/TableTextButton";
           <CustomButton>Next</CustomButton>
         </div>
       );
+
+//--------------------------------------------------------------------------------------------------------//
 
       const title = modalStep === 1 ? Initialtitle: secondModalTitle;
       const body = modalStep === 1 ? Initialbody : secondModalBody;

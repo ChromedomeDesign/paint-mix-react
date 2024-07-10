@@ -32,6 +32,8 @@ const NewFormula: React.FC = () => {
         fontFamily: `"Open Sans", sans-serif`,
       };
 
+//--------------------------------------------Table Data-------------------------------------//
+
       const data = [
         { "Colorant/Base": "Flat White", Amount1: 0.01, Amount2: 0.01, Amount3: 0.01, Amount4: 0.01, Amount5: 0.01 },
         { "Colorant/Base": "Color", Amount1: 0.01, Amount2: 0.01, Amount3: 0.01, Amount4: 0.01, Amount5: 0.01 },
@@ -80,11 +82,12 @@ const NewFormula: React.FC = () => {
           },
     ];
 
+//---------------------------------------------------------------------------------------------//
 
     const NewFormula = (
         <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
           <div style={haedingBorder}>
-            <MDBTypography sx={headingStyle}>NEW FORMULA</MDBTypography>
+            <span style={headingStyle}>NEW FORMULA</span>
           </div>
 
         <div className="createNew-inputDiv">
@@ -102,10 +105,10 @@ const NewFormula: React.FC = () => {
 
   return (
     <div className="newFormula">
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'left', alignItems: 'flex-start' }}>
-        <MDBTypography sx={{ font: 'Open Sans', fontSize: '32px', fontWeight: '600', color: '#1266F1', lineHeight: '38.4px' }}>COLOR MANAGEMENT</MDBTypography>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'left', alignItems: 'flex-start' }}>
+        <p style={{ font: 'Open Sans', fontSize: '32px', fontWeight: '600', color: '#1266F1', lineHeight: '38.4px' }}>COLOR MANAGEMENT</p>
       </div>
-      <MDBTypography>Home / Color Management / New Formula</MDBTypography>
+      <p>Home / Color Management / New Formula</p>
 
       <CardComponent width="100%" children={NewFormula} backgroundColor={"#FBFBFB"} />
 

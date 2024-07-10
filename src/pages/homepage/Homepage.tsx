@@ -164,7 +164,7 @@ const Homepage: React.FC = () => {
   const footer = (
     <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
       <CustomTextButton children={"Cancel"} width="74px" onClick={handleCloseModal} />
-      <CustomButton children={"Confirm"} width="91px" onClick={handleCloseModal}/>
+      <CustomButton children={"Confirm"} width="91px"  onClick={handleCloseModal}/>
     </div>
   )
 

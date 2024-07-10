@@ -10,12 +10,11 @@ interface CustomButtonProps {
     width?:string;
     onClick?: () => void;
     children: React.ReactNode;
-    paddings?: string;
 }
 
-const StyledButton = styled(Button)<{ customcolor?: string; customfontsize?: string ;width?:string; paddings?:string}>(
-    ({ customcolor, customfontsize,width, paddings }) => ({
-        padding: paddings || '4.5px 8px',
+const StyledButton = styled(Button)<{ customcolor?: string; customfontsize?: string ;width?:string}>(
+    ({ customcolor, customfontsize,width }) => ({
+        padding: '4.5px 8px',
         gap:"5px",
         height: '29px',
         fontWeight:600,

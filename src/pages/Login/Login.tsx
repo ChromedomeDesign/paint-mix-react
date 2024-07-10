@@ -69,7 +69,7 @@ const Login: FC = () => {
             </div>
             <CustomCheckBox label="Sign In to Production" onChange={onCheck} checked={isChecked} />
             <div style={{ display: "flex", justifyContent: 'right' }}>
-                <CustomButton width="85px" fontSize="13px" children={"Sign In"} onClick={signIn} />
+                <CustomButton width="85px" fontSize="13px" children={"Sign In"}  onClick={signIn} />
             </div>
         </div>
     )

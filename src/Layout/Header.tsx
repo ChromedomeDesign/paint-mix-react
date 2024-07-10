@@ -39,7 +39,7 @@ const Header = () => {
         <div style={{ padding: '10px 10px 0px 10px'}}>
             <CardComponent width="100%" radius="8px" height="60px" customIndex={99999}>
                 <div style={{display:'flex',width:"100%",flexDirection:'row',justifyContent:'space-between',alignItems:'center',height: '100%',}}>
-                    <button style={{height:'44px',width:'100px',border:'1px solid #000000',backgroundColor:'transparent',borderRadius:'8px'}} onClick={()=>navigate('/')}>LOGO</button> 
+                    <button style={{height:'44px',width:'100px',border:'1px solid #000000',backgroundColor:'transparent',borderRadius:'8px',    fontWeight: 'bold'}} onClick={()=>navigate('/')}>LOGO</button> 
                 <div style={{ display: 'flex',justifyContent: 'flex-end',margin:'3px', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%' }}>
                     <SearchBar />
                     <Button  onClick={handleClick}>
@@ -78,7 +78,7 @@ const Header = () => {
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/ColorManagement')}>Color Management</MenuItem>
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/UserAdministration')}>User Administration</MenuItem>
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/CostCalculator')}>Cost Calculator</MenuItem>
-                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/StoreLocations')}>Store Locations</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/StoreLocations')}>Store Location</MenuItem>
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose1()}>Change Password</MenuItem>
                     <MenuItem onClick={()=>handleClose('logout')}>Logout</MenuItem>
                 </div>

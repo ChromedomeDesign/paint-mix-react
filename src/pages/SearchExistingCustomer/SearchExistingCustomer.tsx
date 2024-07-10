@@ -29,10 +29,10 @@ const SearchExistingCustomer: React.FC = () => {
       <div style={{fontWeight:'400', fontSize:'12px', color:'#424242'}}>
       
       <p>ontractor Home</p>
-<p >Wendy Win</p>
-<p>234 W Arizona St</p>
-<p>602-487-0087</p>
-<p>Account #123456789</p>
+      <p >Wendy Win</p>
+      <p>234 W Arizona St</p>
+      <p>602-487-0087</p>
+      <p>Account #123456789</p>
       </div>
 
     )

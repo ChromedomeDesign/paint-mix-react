@@ -229,7 +229,7 @@ const CustomerAccount: FC=()=>{
             <div style={{display:'flex',flexDirection:'row',gap:4}}>
                 <CustomTextButton width="45px">Back</CustomTextButton>
                 <CustomOutLinedButton width="125px">New Fan Deck</CustomOutLinedButton>       
-                <CustomOutLinedButton width="117px">New Custom</CustomOutLinedButton>        
+                <CustomOutLinedButton width="117px" >New Custom</CustomOutLinedButton>        
                 <CustomButton width="117px" onClick={()=>navigate("/JobQueue")}> Job Queue</CustomButton>   
                 </div>       
         </div>
