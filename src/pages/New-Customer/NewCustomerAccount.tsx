@@ -12,6 +12,7 @@ import CustomOutLinedButton from "components/CustomOutLinedButton";
 import '../../css/CREATE_NEW_CUSTOMER_ACCOUNT.css';
 import CustomTextButton from "components/CustomTextButton";
 import { useNavigate } from "react-router-dom";
+import { MDBCol, MDBRow } from "mdb-react-ui-kit";
 
 const NewCustomerAccount: FC = () => {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -78,25 +79,41 @@ const footer=(
  };
 
     const form =(
-      <div style={{ display: 'flex', width: '100%', margin: '40px 30px', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', alignItems: 'center' }}>
-      <div className="createNew-inputDiv">
-        <CustomInputComponent label="First Name" name="firstName" value={formData.firstName} customInputChange={(value) => handleInputChange('firstName', value)} />
+      <div style={{ display: 'flex', width: '100%',flexDirection: 'column',margin:'0px 21px',justifyContent: 'center', textAlign: 'center', alignItems: 'center' }}>
+      <MDBRow style={{width:'100%',marginBottom:'21px',marginTop:'21px'}} >
+      <MDBCol size="12" sm="6" md="6" xl="6" lg="6">
+      <CustomInputComponent  label="First Name" name="firstName" value={formData.firstName} customInputChange={(value) => handleInputChange('firstName', value)} />
+        </MDBCol>
+        <MDBCol size="12" sm="6" md="6" xl="6" lg="6">
         <CustomInputComponent  label="Last Name" name="lastName" value={formData.lastName} customInputChange={(value) => handleInputChange('lastName', value)} />
-      </div>
-      <div className="createNew-inputDiv">
+          </MDBCol>
+        </MDBRow>
+        <MDBRow style={{width:'100%',marginBottom:'21px'}} >
+        <MDBCol size="12">
         <CustomInputComponent width="100%" label="Business Name" name="businessName" value={formData.businessName} customInputChange={(value) => handleInputChange('businessName', value)} />
-      </div>
-      <div className="createNew-inputDiv">
+          </MDBCol>
+          </MDBRow>
+          <MDBRow style={{width:'100%',marginBottom:'21px'}} >
+        <MDBCol size="12">
         <CustomInputComponent width="100%" label="Address" name="address" value={formData.address} customInputChange={(value) => handleInputChange('address', value)} />
-      </div>
-      <div className="createNew-inputDiv">
-        <CustomInputComponent label="City" name="city" value={formData.city} customInputChange={(value) => handleInputChange('city', value)} />
+          </MDBCol>
+          </MDBRow>
+      <MDBRow style={{width:'100%',marginBottom:'21px'}} >
+      <MDBCol size="12" sm="6" md="6" xl="6" lg="6">
+      <CustomInputComponent label="City" name="city" value={formData.city} customInputChange={(value) => handleInputChange('city', value)} />
+      </MDBCol>
+        <MDBCol size="12" sm="6" md="6" xl="6" lg="6">
         <CustomInputComponent label="State" name="state" value={formData.state} customInputChange={(value) => handleInputChange('state', value)} />
-      </div>
-      <div className="createNew-inputDiv">
-        <CustomInputComponent type="Number" label="Postal Code" name="postalCode" value={formData.postalCode} customInputChange={(value) => handleInputChange('postalCode', value)} />
+          </MDBCol>
+        </MDBRow>
+        <MDBRow style={{width:'100%',marginBottom:'21px'}} >
+      <MDBCol size="12" sm="6" md="6" xl="6" lg="6">
+      <CustomInputComponent type="Number" label="Postal Code" name="postalCode" value={formData.postalCode} customInputChange={(value) => handleInputChange('postalCode', value)} />
+      </MDBCol>
+        <MDBCol size="12" sm="6" md="6" xl="6" lg="6">
         <CustomInputComponent type="Number" label="Phone Number" name="phoneNumber" value={formData.phoneNumber} customInputChange={(value) => handleInputChange('phoneNumber', value)} />
-      </div>
+          </MDBCol>
+        </MDBRow>
     </div>
     )
 //--------------------------------------------------------------------------------//
@@ -116,7 +133,7 @@ const footer=(
         size="medium"
         centered={true}
       />
-            <CardComponent  width="100%"  children={form} backgroundColor={"#fafcfc"} />
+            <CardComponent  width="780px"  children={form} backgroundColor={"#fafcfc"} />
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',marginTop:'20px'}}>
                <CustomTextButton children={"Cancel"}  width="80px"/>
                <CustomButton children={"Save"} width="80px" onClick={saving}/>
