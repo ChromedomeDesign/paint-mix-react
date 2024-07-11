@@ -132,7 +132,7 @@ import TableTextButton from "components/TableTextButton";
 
       const actions = (row:any) => (
         <div style={{ display: 'flex'}}>
-          <TableTextButton children={"View"} width="42px" onClick={()=>navigate('/BaseManagement')}/>
+          <TableTextButton children={"View"} width="42px" onClick={()=>navigate('/FormulaManagement',{state:{value:"BaseManagement"}})}/>
           <TableTextButton children={"Edit"} width="37px" onClick={()=>navigate('/FormulaManagement')}/>
           <InfoButton  Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} />
         </div>
@@ -266,6 +266,16 @@ import TableTextButton from "components/TableTextButton";
 
     return (
         <div className="colorManagement">
+                   <CustomModal
+                  open={isModalOpen}
+                  onClose={handleCloseModal}
+                  title={() => title}
+                  body={() => body}
+                  footer={() => footer}
+                  animation={true}
+                  size="medium"
+                  centered={true}
+                />
               <div >
                 <Grid container  gap={1}>
                     <Grid item xs={12} xl={3.8} lg={3.8} md={3.8} sm={3.8}>
@@ -295,21 +305,9 @@ import TableTextButton from "components/TableTextButton";
                     />
              
                 </div>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end'}}>
+                <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',position:'absolute',bottom:'15px',right:'27px'}}>
                     {Pagefooter}
                 </div>
-
-                <CustomModal
-                  open={isModalOpen}
-                  onClose={handleCloseModal}
-                  title={() => title}
-                  body={() => body}
-                  footer={() => footer}
-                  animation={true}
-                  size="medium"
-                  centered={true}
-                />
-
         </div>
        );
 };

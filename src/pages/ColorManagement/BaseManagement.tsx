@@ -3,25 +3,28 @@ import {Typography } from "@mui/material";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
 import CustomButton from "components/CustomButton";
 import CustomTextButton from "components/CustomTextButton";
+import { useNavigate } from "react-router-dom";
 
 const BaseManagement: React.FC = () => {
-
+  const navigate=useNavigate();
     const informationHead ={
         fontSize:'12px',
         fontWeight:700,
         lineHeght:'20px',
-        color:'#424242'
+        color:'#424242',
+        margin:'0px'
      }
      const informationdetail ={
          fontSize:'12px',
          fontWeight:400,
          lineHeght:'20px',
-         color:'#424242'
+         color:'#424242',
+         margin:'0px'
       }
  
 //-------------------------------------Base Management Information-----------------------------------//
     const information = (
-        <div style={{display:'flex',flexDirection:'row',gap:"40px",borderBottom:'1px solid #E0E0E0',margin:'10px 0px',paddingBottom:'10px'}}>
+        <div style={{display:'flex',flexDirection:'row',gap:"40px",borderTop:'1px solid #E0E0E0',margin:'10px 0px',paddingBottom:'10px',paddingTop:'23px'}}>
             <div>
                 <div style={{display:'flex',flexDirection:'row'}}>
                 <p style={informationHead}>Color Name: </p><p style={informationdetail}>Off White</p>
@@ -51,7 +54,7 @@ const BaseManagement: React.FC = () => {
 
    const Pagefooter =(
     <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
-        <CustomTextButton width="74px">Back</CustomTextButton>
+        <CustomTextButton width="74px" onClick={()=>navigate(-1)}>Back</CustomTextButton>
             <CustomOutLinedButton  width="100px">Deprecate</CustomOutLinedButton>
         <CustomButton width="100px"   >Edit</CustomButton>
         
@@ -60,19 +63,10 @@ const BaseManagement: React.FC = () => {
 
     return (
          <div className="BaseManagement">
-             <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
-              <p style={{font:'Open Sans', fontSize:'32px', fontWeight:'600', color:'#1266F1', lineHeight:'38.4px'}}>COLOR MANAGEMENT</p>
+            <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start',marginBottom:'14px'}}>
+              <p style={{margin:'0px',font:'Open Sans', fontSize:'20px', fontWeight:'400', color:'#1266F1', lineHeight:'38.4px'}}>BASE MANAGEMENT</p>
             </div>
-            <p>Home / Color Management / Formula Management</p>
-      
-            <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
-              <p style={{font:'Open Sans', fontSize:'20px', fontWeight:'400', color:'#1266F1', lineHeight:'38.4px'}}>BASE MANAGEMENT</p>
-            </div>
-
-            <div>
             {information}
-            </div>
-
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end'}}>
                     {Pagefooter}
             </div>

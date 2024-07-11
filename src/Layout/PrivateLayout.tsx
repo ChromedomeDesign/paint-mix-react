@@ -64,7 +64,7 @@ const routeTitles: { [key: string]: string } = {
   '/CostCalculator':'COST CALCULATOR',
   '/SearchResults':'Search Results',
   '/ColorManagement':'Color Management',
-  '/FormulaManagement':'Formula Management',
+  '/FormulaManagement':'COLOR MANAGEMENT',
   '/StoreLocations' : 'Store Locations',
   '/SearchExistingCustomer':'Search Existing Customer',
   '/EditCustomerAccount': 'Edit Customer Account',
@@ -74,6 +74,7 @@ const routeTitles: { [key: string]: string } = {
 const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = {
   '/CREATE_NEW_CUSTOMER_ACCOUNT': [
     { text: 'Home', href: '/' },
+    { text: 'Order', href: '/' },
     { text: 'Create New Customer Account', href: '/CREATE_NEW_CUSTOMER_ACCOUNT' }
   ],
   '/SearchExistingCustomer':[
@@ -94,6 +95,7 @@ const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = 
   ],
     '/JobInformation': [
     { text: 'Home', href: '/' },
+    { text: 'Order', href: '/' },
     { text: 'Create New Customer Account', href: '/CREATE_NEW_CUSTOMER_ACCOUNT' },
     { text: 'Job Information', href: '/JobInformation' }
   ],

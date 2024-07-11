@@ -6,7 +6,10 @@ import CustomOutLinedButton from "components/CustomOutLinedButton";
 import CustomButton from "components/CustomButton";
 import CustomModal from "components/CustomModal";
 import CustomInputComponent from "components/CustomInputComponent";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { MDBCol, MDBRow } from "mdb-react-ui-kit";
+import { Margin } from "@mui/icons-material";
+import BaseManagement from "./BaseManagement";
 
 
 
@@ -15,7 +18,8 @@ const FormulaManagement: React.FC = () => {
     const [modalStep, setModalStep] = useState(1);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate();
-
+    const location = useLocation();
+    const [base, setBase]=useState(location?.state?.value);
     const handleSave = () => {
         setIsEditable(false);
     };
@@ -29,13 +33,14 @@ const FormulaManagement: React.FC = () => {
         fontWeight:700,
         lineHeght:'20px',
         color:'#424242',
-        marginRight:'2px'
+        margin:'0px 2px 0px 0px'
      }
      const informationdetail ={
          fontSize:'12px',
          fontWeight:400,
          lineHeght:'20px',
-         color:'#424242'
+         color:'#424242',
+         margin:'0px'
       }
 
       const handleOpenModal = () => {
@@ -53,8 +58,8 @@ const FormulaManagement: React.FC = () => {
 
 //---------------------------------------Formula Management Information----------------------------------//
      const information = (
-         <div style={{display:'flex',flexDirection:'row',gap:"40px",margin:'10px 0px',paddingBottom:'10px'}}>
-             <div>
+      <MDBRow style={{width:'100%',margin:'23px 0px 32px 0px'}} >
+            <MDBCol size="12" sm="5">
              <div style={{display:'flex',flexDirection:'row'}}>
              <p style={informationHead}>Color Name: </p><p style={informationdetail}>Snow White</p>
              </div>
@@ -63,16 +68,16 @@ const FormulaManagement: React.FC = () => {
              </div>
              <div style={{display:'flex',flexDirection:'row'}}>
              <p style={informationHead}>Created On: </p><p style={informationdetail}>11/02/22</p>
-             </div>
-             </div>
-             <div>
+            </div>
+            </MDBCol>
+            <MDBCol size="12" sm="7">
              <div style={{display:'flex',flexDirection:'column'}}>
-             <p style={{fontWeight:700,fontSize:'12px',lineHeight:'20px'}}>History:</p>
+             <p style={{fontWeight:700,fontSize:'12px',lineHeight:'20px',margin:'0px'}}>History:</p>
              <p style={informationdetail}>Edited: 11/14/22</p>
              <p style={informationdetail}>Added: 11/02/22</p>
              </div>
-             </div>
-         </div>
+             </MDBCol>
+             </MDBRow>
      )
 //-----------------------------------------------------------------------------------------------------//
 
@@ -134,8 +139,8 @@ const FormulaManagement: React.FC = () => {
       );
     
       const initialBody = (
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}>
-          <p>Snow White appears in 523 formulas. Would you like to replace it with an existing formula? If yes, enter the formula name and click continue.</p>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '10%', marginRight: '10%',textAlign:'center' }}>
+          <p><span style={{fontWeight:700}}>Snow</span> White appears in <span style={{fontWeight:700}}>523</span> formulas. Would you like to replace it with an existing formula? If yes, enter the formula name and click continue.</p>
           <div style={{ marginTop: '20px' }}>
             <CustomInputComponent label="Formula color name" />
           </div>
@@ -144,7 +149,7 @@ const FormulaManagement: React.FC = () => {
 
       const initialFooter = (
         <div style={{ display: 'flex', flexDirection: 'row', gap: '2%' }}>
-          <CustomTextButton children={"Cancel"} width="100px"  />
+          <CustomTextButton children={"Cancel"} width="100px"  onClick={handleCloseModal}/>
           <CustomOutLinedButton children={"No"} width="100px" />
           <CustomButton children={"Continue"} width="100px" onClick={handleContinue} />
         </div>
@@ -156,14 +161,14 @@ const FormulaManagement: React.FC = () => {
 //-------------------------------------------Second Modal------------------------------------------------//
       const secondBody = (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}>
-          <p>Are you sure you want to deprecate Snow White with no replacement?</p>
+          <p>Are you sure you want to deprecate <span style={{fontWeight:700}}>Snow White</span> with no replacement?</p>
         </div>
       );
     
      const secondFooter = (
         <div style={{ display: 'flex', flexDirection: 'row', gap: '2%' }}>
           <CustomTextButton children={"Cancel"} width="100px" onClick={handleCloseModal} />
-          <CustomOutLinedButton children={"Back"} width="100px" />
+          <CustomOutLinedButton children={"Back"} onClick={()=>{setModalStep(1);}} width="100px" />
           <CustomButton children={"Yes"} width="100px" onClick={handleContinue} />
         </div>
       );
@@ -172,18 +177,18 @@ const FormulaManagement: React.FC = () => {
     
       const body = modalStep === 1 ? initialBody : secondBody;
       const footer = modalStep === 1 ? initialFooter : secondFooter;
-
     return (
         <div className="formulaManagement">
-        <div style={{display:'flex', flexDirection:'row', justifyContent:'left', alignItems:'flex-start'}}>
-              <p style={{font:'Open Sans', fontSize:'20px', fontWeight:'400', color:'#1266F1', lineHeight:'38.4px'}}>FORMULA MANAGEMENT</p>
+          { base === "BaseManagement" ? <BaseManagement/> 
+          :
+          <>
+        <div style={{display:'flex', flexDirection:'row', justifyContent:'left', marginBottom:'14px',alignItems:'flex-start'}}>
+              <p style={{margin:'0px',font:'Open Sans', fontSize:'20px', fontWeight:'400', color:'#1266F1', lineHeight:'38.4px'}}>FORMULA MANAGEMENT</p>
         </div>
-        <div style={{ borderTop: '1px solid #E0E0E0', width: '100%', marginTop: '10px' }}>
+        <div style={{ borderTop: '1px solid #E0E0E0', width: '100%'}}>
             {information}
         </div>
-
         <CustomTable columns={columns} data={data} />
-
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
                 {isEditable ? (
                     <div style={{ display: 'flex', justifyContent: 'space-between', gap: '4px' }}>
@@ -198,8 +203,9 @@ const FormulaManagement: React.FC = () => {
                     </div>
                 )}
             </div>
-
-          <div>
+            </>
+}
+            
           <CustomModal
           open={isModalOpen}
           onClose={handleCloseModal}
@@ -210,20 +216,8 @@ const FormulaManagement: React.FC = () => {
           size="medium"
           centered={true}
         />
-          </div>
-        
-
-         
-            
         </div>
-
-        
-
         );
-
-        
-  
-
 };
 
 export default FormulaManagement;
