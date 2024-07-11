@@ -57,7 +57,7 @@ const body =(
 
 const footer=(
     <div style={{display:'flex',flexDirection:'row',gap:2}}>
-        <CustomTextButton children={"Back"} width="80px" onClick={handleCloseModal}/>
+        <CustomTextButton children={"Back"}  width="80px" onClick={handleCloseModal}/>
         <CustomButton  children={"Create New Job"} width="137px"  onClick={()=>navigate('/JobInformation')}/>
     </div>
 )
@@ -135,7 +135,7 @@ const footer=(
       />
             <CardComponent  width="100%"  children={form} backgroundColor={"#fafcfc"} />
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',marginTop:'20px'}}>
-               <CustomTextButton children={"Back"}  width="72px"/>
+               <CustomTextButton children={"Back"} onClick={()=>{navigate('/')}} width="72px"/>
                <CustomButton children={"Save"} width="79px" onClick={saving}/>
             </div>
         </div>

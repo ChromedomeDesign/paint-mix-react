@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import CardComponent from "components/CardComponent";
 import CustomButton from "components/CustomButton";
 import CustomInputComponent from "components/CustomInputComponent";
@@ -20,24 +20,23 @@ const CostCalculator:FC=()=>{
          <div style={{paddingBottom:'20px'}}>
             <p style={{fontWeight:600,color:"#1266F1",fontSize:'16px'}}>COMPLETED JOBS</p>
          </div>
-         {/* <div  style={{display:'flex',borderTop:"1px solid #E0E0E0",margin:'27px 0px',gap:'5px'}}> */}
-         <MDBRow style={{display:'flex',borderTop:"1px solid #E0E0E0",margin:'27px 0px',gap:'5px'}} >
-         <MDBCol size="12" sm="3">
-             <CustomInputComponent label="Customer Name" name="FirstName" />
-          </MDBCol>
-          <MDBCol size="12" sm="3">
-             <CustomInputComponent label="Business Name" name="BusinessName" />
-          </MDBCol>
-          <MDBCol size="12" sm="3">
-            <CustomInputComponent label="Job Name" name="JobName" />
-          </MDBCol>
-          <MDBCol size="12" sm="3">
-            <PickupDate label="Date"/>
-          </MDBCol>
-          <MDBCol size="12" sm="3">
-            <CustomButton children={"Filter"} width="100px"/>
-          </MDBCol>
-          </MDBRow>
+         <Grid container gap={"15px"} sx={{display:'flex',borderTop:"1px solid #E0E0E0",padding:'24px 0px 29px 0px'}}>
+         <Grid  sm={2.4}>
+             <CustomInputComponent label="Customer Name" name="FirstName" width="155px"/>
+          </Grid>
+          <Grid  sm={2.4}>
+             <CustomInputComponent label="Business Name" name="BusinessName" width="155px"/>
+          </Grid>
+          <Grid  sm={2.4}>
+            <CustomInputComponent label="Job Name" name="JobName" width="155px"/>
+          </Grid>
+          <Grid sm={2.4}>
+            <PickupDate label="Date" width="155px"/>
+          </Grid>
+          <Grid  sm={1.3}>
+            <CustomButton children={"Filter"} width="90px"/>
+          </Grid>
+          </Grid>
        
        </div>
      )

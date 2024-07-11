@@ -135,7 +135,7 @@ const inactiveRows = [
       const Pagefooter =(
         <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
             <div style={{ display: 'flex', flexDirection: 'row', width:'100px',  tabSize:'large' }}>
-                <CustomTextButton >Back</CustomTextButton>
+                <CustomTextButton onClick={()=>{navigate('/')}}>Back</CustomTextButton>
             </div>
             <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
                 <CustomButton width="133px" onClick={()=>navigate('/AddnewStore')}>Add New Store</CustomButton>
@@ -147,7 +147,7 @@ const inactiveRows = [
 
   return (
     <div className="StoreLocations">
-      <p style={{ font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px' }}>
+      <p style={{ margin:'0px', font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px',marginBottom:'14px' }}>
           ACTIVE
         </p>
           <CustomTable
@@ -155,7 +155,7 @@ const inactiveRows = [
                           data={rows}
             />
 
-       <p style={{ font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px' }}>
+       <p style={{ font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px',margin:'48px 0px 14px 0px' }}>
           INACTIVE
         </p>
         <CustomTable
@@ -163,7 +163,7 @@ const inactiveRows = [
                 data={inactiveRows}
             />
 
-                <div style={{display:'flex',justifyContent:'flex-end'}}>
+                <div style={{display:'flex',justifyContent:'flex-end',position:'absolute',bottom:'15px',right:'27px'}}>
                     {Pagefooter}
                 </div>
 

@@ -11,7 +11,7 @@ interface CardComponentProps {
 const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
 
     const head = {
-        fontWeight:700,fontSize:'12px',lineHeight:'20px',color:'#424242'
+        fontWeight:700,fontSize:'12px',lineHeight:'20px',color:'#424242',margin:'0px'
     }
 
 //-------------------------------------Job Type Style-------------------------------------------//
@@ -82,11 +82,11 @@ const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
       
 //--------------------------------------------View Job Cost Details----------------------------------//
     const Detail=(
-        <div>
-        <div style={{paddingBottom:'20px'}}>
-            <p style={{fontWeight:600,color:"#1266F1",fontSize:'16px'}}>VIEW JOB COST</p>
+        <div style={{marginBottom:'30px'}}>
+        <div style={{paddingBottom:'13px'}}>
+            <p style={{margin:'0px',fontWeight:600,color:"#1266F1",fontSize:'16px'}}>VIEW JOB COST</p>
          </div>
-            <Grid container  sx={{borderTop:"1px solid #E0E0E0",paddingTop:'30px',marginBottom:'30px'}}>
+            <Grid container  sx={{borderTop:"1px solid #E0E0E0",paddingTop:'21px'}}>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
                  <div>
                     <p style={head}>Contractor Home</p>
