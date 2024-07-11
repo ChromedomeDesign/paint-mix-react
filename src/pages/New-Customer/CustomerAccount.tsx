@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import CustomTabs from "components/CustomTabs";
 import CustomInputComponent from "components/CustomInputComponent";
 import CustomTable from "components/CustomTable";
@@ -7,10 +7,11 @@ import CustomButton from "components/CustomButton";
 import { Call, Padding } from "@mui/icons-material";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
 import InfoButton from "components/showInfoButton";
-import { MDBIcon } from "mdb-react-ui-kit";
+import { MDBCol, MDBIcon, MDBRow } from "mdb-react-ui-kit";
 import CustomTextButton from "components/CustomTextButton";
 import { useNavigate } from "react-router-dom";
 import ErrorIcon from '@mui/icons-material/Error';
+import TableContainedButton from "components/TableContainedButton";
 
 const CustomerAccount: FC=()=>{
 
@@ -30,9 +31,9 @@ const CustomerAccount: FC=()=>{
   };
     
      const getActions = (row: any) => (
-        <div style={{display:'flex', flexDirection:'row',gap:4,width:'300px'}}>
-              <CustomButton width="95px" >Reproduce</CustomButton>
-              <CustomButton width="85px" >Modify</CustomButton>
+        <div style={{display:'flex', flexDirection:'row',gap:4}}>
+              <TableContainedButton width="95px" >Reproduce</TableContainedButton>
+              <TableContainedButton width="85px" >Modify</TableContainedButton>
             <InfoButton Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} ></InfoButton>
         </div>
 
@@ -49,42 +50,43 @@ const CustomerAccount: FC=()=>{
         fontSize: '12px',
         lineHeight: '24px',
         color: '#424242',
+        margin:'0px'
       }
     const expandedRowContent=(
-        <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'4px'}}>
-            <div>
+      <MDBRow container spacing={2}>
+      <MDBCol size="12" sm="3">
                 <p style={textStyle}>
                 Job Type: 
                 </p>
                 <p style={textStyle}>
                 Reproduction
                 </p>
-            </div>
-            <div>
+            </MDBCol>
+            <MDBCol size="12" sm="3">
                 <p style={textStyle}>
                 Manufacturer: 
                 </p>
                 <p style={textStyle}>
                 Valspar
                 </p>
-            </div>
-            <div>
+                </MDBCol>
+                <MDBCol size="12" sm="3">
                 <p style={textStyle}>
                 Color Name:
                 </p>
                 <p style={textStyle}>
                 Deep Green
                 </p>
-            </div>
-            <div>
+                </MDBCol>
+                <MDBCol size="12" sm="3">
                 <p style={textStyle}>
                 Painter Supply #:
                 </p>
                 <p style={textStyle}>
                 PS-123-XXXX
                 </p>
-            </div>
-        </div>
+            </MDBCol>
+        </MDBRow>
     );
     const tab = [
         { label: 'NEW', value: 'New',customWidth:'136px' },
@@ -203,7 +205,7 @@ const CustomerAccount: FC=()=>{
         { name: 'Date', datan: 'date' },
         { name: 'Actions', datan: 'Actions', 
             Call:(row:any)=>getActions(row),
-            cellWidth:'280px'
+            cellWidth:'290px'
         },
       ];
 
@@ -241,10 +243,10 @@ const CustomerAccount: FC=()=>{
         
         <div>
               <div>
-                    <p style={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}} > Contractor Home</p>
-                    <p style={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}} > address</p>
-                    <p style={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}}> phoneNumber</p>
-                    <p style={{fontSize:'12px', fontWeight:'700', color:'#424242', lineHeight:'20px'}}> AccountNumber</p>
+                    <p style={{fontSize:'12px',margin:'0px',fontWeight:'700', color:'#424242', lineHeight:'20px'}} > Contractor Home</p>
+                    <p style={{fontSize:'12px',margin:'0px',fontWeight:'700', color:'#424242', lineHeight:'20px'}} > address</p>
+                    <p style={{fontSize:'12px',margin:'0px',fontWeight:'700', color:'#424242', lineHeight:'20px'}}> phoneNumber</p>
+                    <p style={{fontSize:'12px',margin:'0px',fontWeight:'700', color:'#424242', lineHeight:'20px'}}> AccountNumber</p>
                  </div>
                 
                  <div style={{display:'flex', flexDirection:'row',marginTop:'20px'}}>
@@ -254,12 +256,13 @@ const CustomerAccount: FC=()=>{
                 <div>
 
                 </div>
-                <div style={{marginTop:'20px'}}>
+                <div style={{marginTop:'20px',display:'flex',justifyContent:'space-between',gap:'10px'}}>
 
                     <CustomInputComponent 
                         label="Refined Job Search"
                         value={isJob}
                     />
+                    <CustomOutLinedButton children={"Search"} width="87px"/>
                 </div>
                 <div style={{marginTop:'20px'}}>
                     {renderTableContent()}

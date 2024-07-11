@@ -42,18 +42,17 @@ const title =(
 )
 const body =(
      <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Contractor Home</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>{`${formData.firstName} ${formData.lastName}`}</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>{`${formData.address}`}</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>{`${formData.phoneNumber}`}</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Account #123456789</p>
-       
+          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242',margin:'0px'}}>Contractor Home</p>
+          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242',margin:'0px'}}>{`${formData.firstName} ${formData.lastName}`}</p>
+          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242',margin:'0px'}}>{`${formData.address}`}</p>
+          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242',margin:'0px'}}>{`${formData.phoneNumber}`}</p>
+          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242',margin:'0px'}}>Account #123456789</p>
      </div>
 )
 
 const footer=(
-    <div style={{display:'flex',flexDirection:'row'}}>
-        <CustomOutLinedButton children={"Back"} width="80px" onClick={handleCloseModal}/>
+    <div style={{display:'flex',flexDirection:'row',gap:"5px"}}>
+        <CustomTextButton children={"Edit Info"} width="74px" onClick={handleCloseModal}/>
         <CustomButton  children={"Create New Job"} width="155px"/>
     </div>
 )
@@ -133,8 +132,8 @@ const footer=(
       />
             <CardComponent  width="100%"  children={form} backgroundColor={"#fafcfc"} />
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',marginTop:'20px'}}>
-               <CustomTextButton children={"Cancel"}  width="80px"/>
-               <CustomButton children={"Save"} width="80px" onClick={saving}/>
+               <CustomTextButton children={"Back"}  width="72px"/>
+               <CustomButton children={"Save"} width="79px" onClick={saving}/>
             </div>
         </div>
         </div>

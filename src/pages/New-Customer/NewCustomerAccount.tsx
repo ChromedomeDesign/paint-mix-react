@@ -42,10 +42,10 @@ const handleCloseModal = () => {
 };
 
 const title =(
-    <p style={{fontSize:'20',fontWeight:600,color:'#424242',textAlign:'center',lineHeight:'24px'}}>Confirm Customer Information</p>
+    <span style={{fontSize:'20',fontWeight:600,color:'#424242',textAlign:'center',lineHeight:'24px'}}>Confirm Customer Information</span>
 )
 const body =(
-     <div style={{display:'flex',flexDirection:'column',justifyContent:'center',textAlign:'center',height:'164px'}}>
+     <div style={{display:'flex',flexDirection:'column',justifyContent:'center',textAlign:'center'}}>
           <span style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Contractor Home</span>
           <span style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>Wendy Win</span>
           <span style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242'}}>234 W Arizona St</span>
@@ -135,8 +135,8 @@ const footer=(
       />
             <CardComponent  width="100%"  children={form} backgroundColor={"#fafcfc"} />
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',marginTop:'20px'}}>
-               <CustomTextButton children={"Cancel"}  width="80px"/>
-               <CustomButton children={"Save"} width="80px" onClick={saving}/>
+               <CustomTextButton children={"Back"}  width="72px"/>
+               <CustomButton children={"Save"} width="79px" onClick={saving}/>
             </div>
         </div>
         </div>
