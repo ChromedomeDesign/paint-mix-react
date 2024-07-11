@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBBtn } from 'mdb-react-ui-kit'; // Import Button component from MDB React UI Kit
+import { MDBBtn } from 'mdb-react-ui-kit';
 
 interface CustomButtonProps {
     color?: string;
@@ -7,16 +7,17 @@ interface CustomButtonProps {
     width?: string;
     onClick?: () => void;
     children: React.ReactNode;
+    paddings?:string;
 }
 
-const CustomButton: React.FC<CustomButtonProps> = ({ fontSize, color, onClick, width, children }) => {
+const CustomButton: React.FC<CustomButtonProps> = ({ fontSize, color, onClick, width, children,paddings }) => {
     return (
         <MDBBtn     color="blueviolet"
         backgroundColor="chartreuse"
         style={{
             color:color || 'white',
             backgroundColor:'#1266F1',
-            padding: '8.5px 15px',
+            padding: paddings|| '8.5px 15px',
             height: '45px',
             fontWeight: 600,
             width: width || '100%',

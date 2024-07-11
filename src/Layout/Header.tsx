@@ -17,7 +17,7 @@ const Header = () => {
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
-      };
+      }; 
 
     const handleClose = (data:any) => {
         console.log(data);

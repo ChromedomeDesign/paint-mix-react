@@ -19,7 +19,7 @@ const BaseManagement: React.FC = () => {
          color:'#424242'
       }
  
-    
+//-------------------------------------Base Management Information-----------------------------------//
     const information = (
         <div style={{display:'flex',flexDirection:'row',gap:"40px",borderBottom:'1px solid #E0E0E0',margin:'10px 0px',paddingBottom:'10px'}}>
             <div>
@@ -46,19 +46,15 @@ const BaseManagement: React.FC = () => {
             </div>
         </div>
     )
+//----------------------------------------------------------------------------------------------//
 
 
    const Pagefooter =(
     <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
-         <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
-        <CustomTextButton >Back</CustomTextButton>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'row', width:'100px',  tabSize:'large' }}>
-            <CustomOutLinedButton >Deprecate</CustomOutLinedButton>
-        </div>
-        <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
-        <CustomButton >Edit</CustomButton>
-        </div>
+        <CustomTextButton width="74px">Back</CustomTextButton>
+            <CustomOutLinedButton  width="100px">Deprecate</CustomOutLinedButton>
+        <CustomButton width="100px"   >Edit</CustomButton>
+        
     </div>
   )
 
@@ -77,7 +73,7 @@ const BaseManagement: React.FC = () => {
             {information}
             </div>
 
-            <div style={{display:'flex',flexDirection:'row',position:'absolute',right:0}}>
+            <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end'}}>
                     {Pagefooter}
             </div>
             

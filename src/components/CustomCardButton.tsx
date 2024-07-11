@@ -94,6 +94,7 @@ const CardButton: React.FC<CardComponentProps> = ({
   backgroundColor,
   onClick,
   customIndex,
+
 }) => {
   const [clicked, setClicked] = useState(false);
 
@@ -128,7 +129,8 @@ const CardButton: React.FC<CardComponentProps> = ({
           margin: "15px 0px 15px 0px",
           zIndex: customIndex !== undefined ? customIndex : "auto",
           transition: "transform 0.3s ease",
-          transform: clicked ? "scale(1.1)" : "scale(1)", 
+          transform: clicked ? "scale(1.1)" : "scale(1)",
+        
         }}
         onClick={handleClick}
       >

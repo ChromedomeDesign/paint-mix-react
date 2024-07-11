@@ -58,7 +58,7 @@ const body =(
 const footer=(
     <div style={{display:'flex',flexDirection:'row',gap:2}}>
         <CustomTextButton children={"Back"} width="80px" onClick={handleCloseModal}/>
-        <CustomButton  children={"Create New Job"} width="137px" onClick={()=>navigate('/JobInformation')}/>
+        <CustomButton  children={"Create New Job"} width="137px"  onClick={()=>navigate('/JobInformation')}/>
     </div>
 )
 //---------------------------------------------------------//

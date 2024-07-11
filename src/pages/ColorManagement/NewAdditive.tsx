@@ -12,6 +12,8 @@ const NewAdditive: React.FC = () => {
   const [selectedValue, setSelectedValue] = useState<string>('');
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
+
+
   const haedingBorder = {
     borderBottom: '1px solid rgba(224, 224, 224, 1)',
     marginBottom: '15px',
@@ -27,17 +29,25 @@ const NewAdditive: React.FC = () => {
     fontFamily: `"Open Sans", sans-serif`,
   };
 
+
+//-----------------------Specific Gravity Dropdown Data--------------------------//
   const options = [
     { label: 'Option 1', value: 'option1' },
     { label: 'Option 2', value: 'option2' },
     { label: 'Option 3', value: 'option3' },
   ];
 
-  const options1 = [
+//-------------------------------------------------------------//
+
+  
+//-------------------------Quntity Units Dropdown Data----------------------//
+const options1 = [
     { label: 'Option 1', value: 'option1' },
     { label: 'Option 2', value: 'option2' },
     { label: 'Option 3', value: 'option3' },
   ];
+//----------------------------------------------------------------//
+
 
   const handleCustomSelectChange = (value: string) => {
     setSelectedValue(value);
@@ -47,6 +57,9 @@ const NewAdditive: React.FC = () => {
     setIsChecked(checked);
   };
 
+
+
+//--------------------------------------Input Fields-------------------------------------------------//
   const NewAdditive = (
     <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
@@ -85,6 +98,9 @@ const NewAdditive: React.FC = () => {
       </div>
     </div>
   );
+
+//-----------------------------------------------------------------------------------------------//
+
 
   return (
     <div className="newAdditive">
