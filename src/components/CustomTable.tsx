@@ -128,9 +128,10 @@ type Props = {
   cellWidth?: string;
   expandedRowIndex?: number | undefined;
   expandedRowContent?: React.ReactNode;
+  extrarow ?:string;
 };
 
-const CustomTable: React.FC<Props> = ({ columns, data = [], width, cellWidth, expandedRowIndex, expandedRowContent }) => {
+const CustomTable: React.FC<Props> = ({ columns, data = [], width,extrarow, cellWidth, expandedRowIndex, expandedRowContent }) => {
   return (
       <div style={{ overflowX: 'auto' }}>
           <MDBTable width="100%" style={{width:'100%', scrollY:'auto'}} >
@@ -171,6 +172,28 @@ const CustomTable: React.FC<Props> = ({ columns, data = [], width, cellWidth, ex
                   )}
                 </React.Fragment>
               ))}
+              {
+                    extrarow && (
+                      <tr style={{borderBottom:'1px solid white'}}>
+                        <td colSpan={4}></td>
+                        <td  align="left" style={{backgroundColor:'#E9E9E9'}}>
+                        <span
+                          style={{
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                            paddingRight: 2,
+                            color: '#424242',
+                          }}
+                        >
+                          Final Cost
+                        </span>
+                      </td>
+                         <td align="left" style={{backgroundColor:'#E9E9E9'}}>
+                          <span style={{  color: '#424242', whiteSpace: 'nowrap', textAlign: 'left' ,fontSize:'12px'}}>$275.00</span>
+                        </td>
+                        </tr>
+                    )
+                  }
             </MDBTableBody>
           </MDBTable>
           </div>

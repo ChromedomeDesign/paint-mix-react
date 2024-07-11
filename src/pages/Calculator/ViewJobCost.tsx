@@ -135,10 +135,10 @@ const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
         <span style={head}>Final Cost</span>
     )
     const costdata = [
-        {"Colorant/Base":"Flat White",Amount1:"0.01",Amount2:"0.01",Amount3:"0.01",Amount4:"",Cost:"$800.00"},
-        {"Colorant/Base":"Color",Amount1:"0.01",Amount2:"0.01",Amount3:"0.01",Amount4:"",Cost:"$800.00"},
-        {"Colorant/Base":"Additive",Amount1:"0.01",Amount2:"0.01",Amount3:"0.01",Amount4:"",Cost:"$800.00"},
-        {"Colorant/Base":"",Amount1:"",Amount2:"",Amount3:"",Amount4:a,Cost:"$800.00"},
+        {"Colorant/Base":"Flat White",Amount1:"0.01",Amount2:"0.01",Amount3:"0.01",Amount4:"0.01",Cost:"$800.00"},
+        {"Colorant/Base":"Color",Amount1:"0.01",Amount2:"0.01",Amount3:"0.01",Amount4:"0.01",Cost:"$800.00"},
+        {"Colorant/Base":"Additive",Amount1:"0.01",Amount2:"0.01",Amount3:"0.01",Amount4:"0.01",Cost:"$800.00"},
+       
     ]
 
 //-------------------------------------------------------------------------------------------------------//
@@ -146,7 +146,7 @@ const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
     return(
         <div>
           <div>{Detail}</div>
-          <CustomTable columns={columns} data={costdata} />
+          <CustomTable columns={columns} data={costdata} extrarow="ff"/>
           <div style={{display:'flex',flexDirection:'row',justifyContent:"flex-end"}}>
              <CustomTextButton children={"Back"} width="30px" onClick={onClicks}/>
           </div>

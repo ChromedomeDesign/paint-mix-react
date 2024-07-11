@@ -9,6 +9,7 @@ import PickupDate from "components/PickupDate";
 import { FC, useState } from "react";
 import ViewJobCost from "./ViewJobCost";
 import TableTextButton from "components/TableTextButton";
+import { MDBCol, MDBRow } from "mdb-react-ui-kit";
 
 const CostCalculator:FC=()=>{
   const [costView,setCostView]=useState(false);
@@ -19,13 +20,25 @@ const CostCalculator:FC=()=>{
          <div style={{paddingBottom:'20px'}}>
             <p style={{fontWeight:600,color:"#1266F1",fontSize:'16px'}}>COMPLETED JOBS</p>
          </div>
-         <div  style={{display:'flex',borderTop:"1px solid #E0E0E0",margin:'27px 0px',gap:'5px'}}>
-           <CustomInputComponent label="Customer Name" name="FirstName" />
-           <CustomInputComponent label="Business Name" name="BusinessName" />
-           <CustomInputComponent label="Job Name" name="JobName" />
-           <PickupDate label="Date"/>
-           <CustomButton children={"Filter"} width="150px"/>
-         </div>
+         {/* <div  style={{display:'flex',borderTop:"1px solid #E0E0E0",margin:'27px 0px',gap:'5px'}}> */}
+         <MDBRow style={{display:'flex',borderTop:"1px solid #E0E0E0",margin:'27px 0px',gap:'5px'}} >
+         <MDBCol size="12" sm="3">
+             <CustomInputComponent label="Customer Name" name="FirstName" />
+          </MDBCol>
+          <MDBCol size="12" sm="3">
+             <CustomInputComponent label="Business Name" name="BusinessName" />
+          </MDBCol>
+          <MDBCol size="12" sm="3">
+            <CustomInputComponent label="Job Name" name="JobName" />
+          </MDBCol>
+          <MDBCol size="12" sm="3">
+            <PickupDate label="Date"/>
+          </MDBCol>
+          <MDBCol size="12" sm="3">
+            <CustomButton children={"Filter"} width="100px"/>
+          </MDBCol>
+          </MDBRow>
+       
        </div>
      )
      //------------------------------------------------------------------------------//
