@@ -12,10 +12,12 @@ import CustomOutLinedButton from "components/CustomOutLinedButton";
 import '../../css/CREATE_NEW_CUSTOMER_ACCOUNT.css';
 import CustomTextButton from "components/CustomTextButton";
 import { MDBCol, MDBRow } from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
 
 const EditCustomerAccount: FC = () => {
     const [isModalOpen, setModalOpen] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
       firstName: '',
       lastName: '',
@@ -26,36 +28,38 @@ const EditCustomerAccount: FC = () => {
       postalCode: '',
       phoneNumber: ''
     });
-    //-----------------------Modal functions-------------------//
+//-----------------------Modal functions-------------------//
+const modelTitle = (
+  <p style={{ fontWeight: '600', margin: '0px', fontSize: '20px', color: '#424242' }}>Verify Customer Information</p>
+)
 
-const saving = () => {
-    // Handle forgot password logic here
-    setModalOpen(true);
-};
+const modelBody = (
+
+  <div style={{ fontWeight: '400', fontSize: '12px', color: '#424242',textAlign:'center' }}>
+    <p style={{ margin: '0px' }}>ontractor Home</p>
+    <p style={{ margin: '0px' }}>Wendy Win</p>
+    <p style={{ margin: '0px' }}>234 W Arizona St</p>
+    <p style={{ margin: '0px' }}>602-487-0087</p>
+    <p style={{ margin: '0px' }}>Account #123456789</p>
+  </div>
+
+)
 
 const handleCloseModal = () => {
   setModalOpen(false);
 };
 
-const title =(
-    <p style={{fontSize:'20',fontWeight:600,color:'#424242',textAlign:'center',lineHeight:'24px'}}>Confirm Customer Information</p>
-)
-const body =(
-     <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242',margin:'0px'}}>Contractor Home</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242',margin:'0px'}}>{`${formData.firstName} ${formData.lastName}`}</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242',margin:'0px'}}>{`${formData.address}`}</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242',margin:'0px'}}>{`${formData.phoneNumber}`}</p>
-          <p style={{lineHeight:'24px',fontWeight:400,fontSize:'12px',color:'#424242',margin:'0px'}}>Account #123456789</p>
-     </div>
+const modelfooter = (
+  <div style={{ display: 'flex', flexDirection: 'row', fontWeight: '600', fontSize: '13px', gap: 2 }}>
+    <CustomTextButton width="110px" children={"Edit Info"} onClick={() => navigate('/EditCustomerAccount')} />
+    <CustomButton width="98px" children={"Continue"} onClick={() => navigate('/CustomerAccount')} />
+  </div>
 )
 
-const footer=(
-    <div style={{display:'flex',flexDirection:'row',gap:"5px"}}>
-        <CustomTextButton children={"Edit Info"} width="74px" onClick={handleCloseModal}/>
-        <CustomButton  children={"Create New Job"} width="155px"/>
-    </div>
-)
+const handleOpenModal = () => {
+  setModalOpen(true);
+};
+
 //---------------------------------------------------------//
 
 
@@ -120,12 +124,12 @@ const footer=(
         <div style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:"center"}}>
         
          <div style={{width:'100%'}}>
-               <CustomModal
+         <CustomModal
         open={isModalOpen}
         onClose={handleCloseModal}
-        title={()=>title}
-        body={() => body}
-        footer={() => footer}
+        title={() => (modelTitle)}
+        body={() => (modelBody)}
+        footer={() => modelfooter}
         animation={true}
         size="medium"
         centered={true}
@@ -133,7 +137,7 @@ const footer=(
             <CardComponent  width="100%"  children={form} backgroundColor={"#fafcfc"} />
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',marginTop:'20px'}}>
                <CustomTextButton children={"Back"}  width="72px"/>
-               <CustomButton children={"Save"} width="79px" onClick={saving}/>
+               <CustomButton children={"Save"} width="79px" onClick={handleOpenModal}/>
             </div>
         </div>
         </div>

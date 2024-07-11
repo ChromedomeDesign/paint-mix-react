@@ -222,7 +222,7 @@ const Completed = (
 
   return (
     <div>
-      <div style={{marginBottom:'19px'}}>
+      <div style={{marginBottom:'21px'}}>
         <CustomInputComponent
           label="Search Job Queue"
           value={isJob}
@@ -235,7 +235,7 @@ const Completed = (
       <div>
         {renderTableContent()}
       </div>
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end',marginTop:'5px'}}>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end',marginTop:'20px'}}>
         {footer}
       </div>
     </div>

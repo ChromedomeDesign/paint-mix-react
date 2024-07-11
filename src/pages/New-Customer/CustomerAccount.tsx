@@ -227,8 +227,8 @@ const CustomerAccount: FC=()=>{
       ];
 
       const footer =(
-        <div style={{display:'flex', flexDirection:'row',justifyContent:'flex-end',marginTop:"10px"}}>
-            <div style={{display:'flex',flexDirection:'row',gap:4}}>
+        <div style={{display:'flex', flexDirection:'row',justifyContent:'flex-end'}}>
+            <div style={{display:'flex',flexDirection:'row',gap:'15px'}}>
                 <CustomTextButton width="45px">Back</CustomTextButton>
                 <CustomOutLinedButton width="125px">New Fan Deck</CustomOutLinedButton>       
                 <CustomOutLinedButton width="117px" >New Custom</CustomOutLinedButton>        
@@ -249,26 +249,20 @@ const CustomerAccount: FC=()=>{
                     <p style={{fontSize:'12px',margin:'0px',fontWeight:'700', color:'#424242', lineHeight:'20px'}}> AccountNumber</p>
                  </div>
                 
-                 <div style={{display:'flex', flexDirection:'row',marginTop:'20px'}}>
+                 <div style={{display:'flex', flexDirection:'row',marginTop:'28px'}}>
                     <CustomTabs tabOption={tab} onSlects={handleTabSelect}/>
-
                 </div>
-                <div>
-
-                </div>
-                <div style={{marginTop:'20px',display:'flex',justifyContent:'space-between',gap:'10px'}}>
-
+                <div style={{marginTop:'27px',display:'flex',justifyContent:'space-between',gap:'10px'}}>
                     <CustomInputComponent 
                         label="Refined Job Search"
                         value={isJob}
                     />
                     <CustomOutLinedButton children={"Search"} width="87px"/>
                 </div>
-                <div style={{marginTop:'20px'}}>
+                <div style={{marginTop:'27px'}}>
                     {renderTableContent()}
-                   
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'row', justifyContent:'flex-end'}}>
+                <div style={{ display: 'flex', flexDirection: 'row', justifyContent:'flex-end',position:'absolute',bottom:'15px',right:'26px'}}>
                
                     {footer}
                 </div>  

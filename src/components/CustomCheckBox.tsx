@@ -38,7 +38,6 @@
 
 // export default CustomCheckBox;
 
-
 import React from 'react';
 import { MDBCheckbox } from 'mdb-react-ui-kit';
 
@@ -47,10 +46,11 @@ interface CheckboxProps {
   label?: string;
   width?: string;
   onChange?: (checked: boolean) => void;
-  labelColor?: string; 
+  labelColor?: string;
   fontSize?: string;
-  lineHeight?: string; 
-  fontWeight?: number; 
+  lineHeight?: string;
+  fontWeight?: number;
+  labelPosition?: 'left' | 'right';
 }
 
 const CustomCheckBox: React.FC<CheckboxProps> = ({
@@ -62,32 +62,49 @@ const CustomCheckBox: React.FC<CheckboxProps> = ({
   fontSize = '12px',
   lineHeight = '24px',
   fontWeight = 400,
+  labelPosition = 'right', // default to 'right'
 }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.checked);
   };
 
   return (
-    <div className="form-check mb-0" style={{textAlign:'left'}}>
+    <div className="form-check mb-0" style={{ display: 'flex', alignItems: 'center', textAlign: 'left' }}>
+      {labelPosition === 'left' && (
+        <label
+          className="form-check-label"
+          style={{
+            color: labelColor,
+            fontSize,
+            lineHeight,
+            fontWeight,
+            width: width || '180px',
+            marginRight: '0.5rem',
+          }}
+        >
+          {label}
+        </label>
+      )}
       <MDBCheckbox
         className="form-check-input"
         checked={checked}
         onChange={handleChange}
-        
       />
-      <label
-        className="form-check-label"
-        style={{
-          color: labelColor,
-          fontSize,
-          lineHeight,
-          fontWeight,
-          width,
-             
-        }}
-      >
-        {label}
-      </label>
+      {labelPosition === 'right' && (
+        <label
+          className="form-check-label"
+          style={{
+            color: labelColor,
+            fontSize,
+            lineHeight,
+            fontWeight,
+            width,
+            marginLeft: '0.5rem',
+          }}
+        >
+          {label}
+        </label>
+      )}
     </div>
   );
 };

@@ -184,9 +184,7 @@ import TableTextButton from "components/TableTextButton";
 
 
       const Pagefooter =(
-        <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
-
-                <CustomTextButton width="31px">Back</CustomTextButton>
+        <div style={{display:'flex', flexDirection:'row',gap:'15px'}}>
                 <CustomOutLinedButton onClick={handleAddNew} width="100px" >Add New</CustomOutLinedButton>
                 <CustomOutLinedButton onClick={handleOpenModal} width="100px" >Upload</CustomOutLinedButton>
         </div>
@@ -283,12 +281,12 @@ import TableTextButton from "components/TableTextButton";
                     </Grid>
 
                     <Grid item xs={12} xl={2} lg={2} md={2} sm={2}>
-                    <CustomButton children={"Search"}   />
+                    <CustomButton children={"Search"} />
                     </Grid>
                 </Grid>
                 </div>
 
-                 <div style={{ marginTop: '20px' }}>
+                 <div style={{ marginTop: '25px' }}>
                  <CustomTable
                       columns={columns}
                       data={rows}

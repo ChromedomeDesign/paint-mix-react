@@ -58,7 +58,7 @@ const CustomModal: React.FC<Props> = ({
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
-            p: '15px 16px',
+            p: '21px 16px',
           }}
         >
           {title()}
@@ -70,7 +70,7 @@ const CustomModal: React.FC<Props> = ({
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
-            p: '15px 16px',
+            p: '20px',
           }}
         >
           {body()}
@@ -82,7 +82,7 @@ const CustomModal: React.FC<Props> = ({
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'flex-end',
-            p: '18px 16px',
+            p: '21px',
           }}
         >
           {footer()}

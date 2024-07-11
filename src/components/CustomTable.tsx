@@ -138,7 +138,7 @@ const CustomTable: React.FC<Props> = ({ columns, data = [], width,extrarow, cell
             <MDBTableHead sticky>
               <tr style={{ backgroundColor: '#E9E9E9', position: 'sticky', top: 0, zIndex: 888 }}>
                 {columns.map((hdata, index) => (
-                  <th scope='col' key={index} style={{ color: '#424242', whiteSpace: 'nowrap', textAlign: 'left' }}>
+                  <th scope='col' key={index} style={{ color: '#424242', whiteSpace: 'nowrap', textAlign: 'left',padding:'14px 19px' }}>
                     <strong style={{ fontSize: '12px', fontWeight: 700 }}>{hdata.name}</strong>
                   </th>
                 ))}
@@ -147,7 +147,7 @@ const CustomTable: React.FC<Props> = ({ columns, data = [], width,extrarow, cell
             <MDBTableBody>
               {data.map((bdata, rowIndex) => (
                 <React.Fragment key={rowIndex}>
-                  <tr style={{ backgroundColor: rowIndex % 2 === 0 ? '#FFFFFF' : '#E9E9E9' }}>
+                  <tr style={{ backgroundColor: rowIndex % 2 === 0 ? '#FFFFFF' : '#E9E9E9',padding:'14px 19px' }}>
                     {columns.map((bhdata, colIndex) => (
                       <td
                         key={colIndex}

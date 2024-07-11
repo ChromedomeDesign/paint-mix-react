@@ -80,7 +80,7 @@ const footer=(
 
     const form =(
       <div style={{ display: 'flex', width: '100%',flexDirection: 'column',margin:'0px 21px',justifyContent: 'center', textAlign: 'center', alignItems: 'center' }}>
-      <MDBRow style={{width:'100%',marginBottom:'21px',marginTop:'21px'}} >
+      <MDBRow style={{width:'100%',marginBottom:'26px',marginTop:'26px'}} >
       <MDBCol size="12" sm="6" md="6" xl="6" lg="6">
       <CustomInputComponent  label="First Name" name="firstName" value={formData.firstName} customInputChange={(value) => handleInputChange('firstName', value)} />
         </MDBCol>
@@ -88,17 +88,17 @@ const footer=(
         <CustomInputComponent  label="Last Name" name="lastName" value={formData.lastName} customInputChange={(value) => handleInputChange('lastName', value)} />
           </MDBCol>
         </MDBRow>
-        <MDBRow style={{width:'100%',marginBottom:'21px'}} >
+        <MDBRow style={{width:'100%',marginBottom:'26px'}} >
         <MDBCol size="12">
         <CustomInputComponent width="100%" label="Business Name" name="businessName" value={formData.businessName} customInputChange={(value) => handleInputChange('businessName', value)} />
           </MDBCol>
           </MDBRow>
-          <MDBRow style={{width:'100%',marginBottom:'21px'}} >
+          <MDBRow style={{width:'100%',marginBottom:'26px'}} >
         <MDBCol size="12">
         <CustomInputComponent width="100%" label="Address" name="address" value={formData.address} customInputChange={(value) => handleInputChange('address', value)} />
           </MDBCol>
           </MDBRow>
-      <MDBRow style={{width:'100%',marginBottom:'21px'}} >
+      <MDBRow style={{width:'100%',marginBottom:'26px'}} >
       <MDBCol size="12" sm="6" md="6" xl="6" lg="6">
       <CustomInputComponent label="City" name="city" value={formData.city} customInputChange={(value) => handleInputChange('city', value)} />
       </MDBCol>
@@ -106,7 +106,7 @@ const footer=(
         <CustomInputComponent label="State" name="state" value={formData.state} customInputChange={(value) => handleInputChange('state', value)} />
           </MDBCol>
         </MDBRow>
-        <MDBRow style={{width:'100%',marginBottom:'21px'}} >
+        <MDBRow style={{width:'100%',marginBottom:'26px'}} >
       <MDBCol size="12" sm="6" md="6" xl="6" lg="6">
       <CustomInputComponent type="Number" label="Postal Code" name="postalCode" value={formData.postalCode} customInputChange={(value) => handleInputChange('postalCode', value)} />
       </MDBCol>

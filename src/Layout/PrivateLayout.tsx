@@ -67,7 +67,8 @@ const routeTitles: { [key: string]: string } = {
   '/FormulaManagement':'Formula Management',
   '/StoreLocations' : 'Store Locations',
   '/SearchExistingCustomer':'Search Existing Customer',
-  '/EditCustomerAccount': 'Edit Customer Account'
+  '/EditCustomerAccount': 'Edit Customer Account',
+  '/CustomerAccount':'CUSTOMER ACCOUNT'
 };
 
 const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = {
@@ -160,18 +161,18 @@ const PrivateLayout = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
       <div style={{ width: '100%', maxWidth: '1800px' }}>
-        <div style={{ position: 'sticky',top: '0px', backgroundColor: 'white', zIndex: 999 }}>
+        <div style={{ position: 'sticky',top: '0px', backgroundColor: 'white', zIndex: 999,marginBottom:'32px'}}>
           <Header />
-          <div style={{margin: '0px 27px',}}>
-          <div style={{ margin: "30px 0px 0px 0px" }}>
+          <div style={{margin: '62px 27px 0px 27px',}}>
+          <div style={{ margin: "0px 0px 0px 0px" }}>
             <p style={{fontWeight:600,color:'#1266F1',fontSize:'32px',lineHeight:'38.4px'}}>{pageTitle}</p>
           </div>
-          <div style={{ margin: "0px 0px 12px 0px" }}>
+          <div style={{ margin: "11px 0px 0px 0px" }}>
             <DynamicBreadcrumb breadcrumbs={breadcrumbData} />
           </div>
           </div>
         </div>
-        <main style={{ margin: '12px 27px 12px 27px', paddingBottom: '10px' }}>
+        <main style={{ margin: '0px 27px 12px 27px', paddingBottom: '10px' }}>
       
          
           <Outlet />

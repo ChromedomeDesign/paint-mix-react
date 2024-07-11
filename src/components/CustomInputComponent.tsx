@@ -175,7 +175,7 @@ const CssTextField = styled(TextField)({
         },
   '& .MuiOutlinedInput-root': {
     height: '46px',
-    backgroundColor: '#ffff',
+    backgroundColor: '#FFFFFF',
     borderRadius:'4px',
     '& fieldset': {
       borderColor: '#E0E3E7',
@@ -187,6 +187,7 @@ const CssTextField = styled(TextField)({
     },
     '&.Mui-focused fieldset': {
       borderColor: '#BDBDBD',
+      // boxShadow: '0px 2px 10px 0px rgba(0, 0, 0, 0.1)',
       borderWidth:'1px'
     },
   },

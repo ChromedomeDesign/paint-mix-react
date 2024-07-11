@@ -18,6 +18,7 @@ import CustomTextButton from "components/CustomTextButton";
 import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
 import CustomTextArea from "components/CustomTextArea";
 import { useNavigate } from "react-router-dom";
+import { Margin } from "@mui/icons-material";
 
 const JobInformation: FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -68,6 +69,7 @@ const JobInformation: FC = () => {
     color: '#1266F1',
     lineHeight: '19.2px',
     fontFamily:`"Open Sans", sans-serif`,
+    margin:'0px 0px 0px 7px'
   };
   const haedingBorder ={
     borderBottom: '1px solid rgba(224, 224, 224, 1)', 
@@ -77,55 +79,59 @@ const JobInformation: FC = () => {
     setJobType(data)
   };
   const form = (
-    <div style={{ display: 'flex', width: '100%', padding:'20px 20px 0px 20px', flexDirection: 'column', justifyContent: 'center' }}>
-      <div style={haedingBorder}>
+    <div style={{ display: 'flex', width: '100%', padding:'12px 20px 23px 20px', flexDirection: 'column', justifyContent: 'center' }}>
+      <div style={{borderBottom: '1px solid rgba(224, 224, 224, 1)',paddingBottom:'11px'}} >
         <p style={headingStyle} >JOB TYPE</p>
       </div>
-      <div style={{margin:'21px 0px 21px 0px'}}>
+      <div style={{margin:"0px 7px"}}>
+      <div style={{margin:'12px 0px 0px 0px'}}>
       <CustomRadioGroup options={option} onValueChange={onRadio} row={true} selectedValue={jobType} />
+    </div>
     </div>
     </div>
   )
   //--------------------------------------------------------------------------------//
   //-------------------------MANUFACTURERINFO---------------------------------//
   const MANUFACTURERINFO = (
-    <div style={{ display: 'flex', width: '100%', padding:'20px 20px 0px 20px', flexDirection: 'column', justifyContent: 'center' }}>
-      <div style={haedingBorder}>
+    <div style={{ display: 'flex', width: '100%', padding:'12px 20px 23px 20px', flexDirection: 'column', justifyContent: 'center' }}>
+      <div style={{borderBottom: '1px solid rgba(224, 224, 224, 1)',paddingBottom:'11px'}} >
         <p style={headingStyle}>MANUFACTURER INFO</p>
       </div>
-      <div className="createNew-inputDiv" style={{margin:'21px 0px 21px 0px'}}>
+      <div style={{margin:"0px 7px"}}>
+      <div className="createNew-inputDiv" style={{margin:'20px 0px 26px 0px'}}>
         <CustomInputComponent width="100%" label="Manufacturer" name="Manufacturer" />
       </div>
-      <div className="createNew-inputDiv" style={{marginBottom:'21px'}}>
+      <div className="createNew-inputDiv" >
         <CustomInputComponent label="Color Number/Name" name="Color Number/Name" />
         <CustomInputComponent label="Painter Supply Number" name="Painter Supply Number" />
+      </div>
       </div>
     </div>
   )
   //-------------------------------------------------------------------------//
   //--------------------------JOBINFO----------------------------------------//
   const JOBINFO = (
-    <div style={{ display: 'flex', width: '100%', padding:'20px 20px 0px 20px', flexDirection: 'column', justifyContent: 'center' }}>
-      <div style={haedingBorder}>
+    <div style={{ display: 'flex', width: '100%', padding:'12px 20px 23px 20px', flexDirection: 'column', justifyContent: 'center' }}>
+      <div style={{borderBottom: '1px solid rgba(224, 224, 224, 1)',paddingBottom:'11px'}}>
         <p style={headingStyle}>JOB INFO</p>
       </div>
-      <div className="createNew-inputDiv" style={{margin:'21px 0px 21px 0px'}}>
+      <div style={{margin:"0px 7px"}}>
+      <div className="createNew-inputDiv" style={{margin:'21px 0px 26px 0px'}}>
         <CustomInputComponent label="Job Name" name="Job Name" />
         <CustomInputComponent label="Color Ref" name="staColor Refte" />
-        <CustomCheckBox width="200px" label="Use Customer Address" />
+        <CustomCheckBox width="180px" label="Use Customer Address" />
       </div>
-      <div className="createNew-inputDiv" style={{marginBottom:'21px'}}>
+      <div className="createNew-inputDiv" style={{marginBottom:'26px'}}>
         <CustomInputComponent label="Street Address" name="Street Address" />
         <CustomInputComponent label="City" name="City" />
       </div>
-      <div className="createNew-inputDiv" style={{marginBottom:'21px'}}>
+      <div className="createNew-inputDiv" style={{marginBottom:'26px'}}>
         <CustomInputComponent label="State" name="State" />
         <CustomInputComponent label="Zip Code" name="Zip Code" />
       </div>
-      <div className="createNew-inputDiv" style={{marginBottom:'21px'}}>
-        {/* <CustomInputComponent width="100%" label="Job Notes" name="Job Notes" /> */}
+      <div className="createNew-inputDiv" >
         <CustomTextArea width="100%" label="Job Notes" name="Job Notes"/>
-
+      </div>
       </div>
     </div>
   )
@@ -146,12 +152,12 @@ const JobInformation: FC = () => {
 
 
   const PRODUCTION = (
-    <div style={{ display: 'flex', width: '100%', padding:'20px 20px 0px 20px', flexDirection: 'column', justifyContent: 'center' }}>
-      <div style={haedingBorder}>
+    <div style={{ display: 'flex', width: '100%', padding:'12px 20px 23px 20px', flexDirection: 'column', justifyContent: 'center' }}>
+      <div style={{borderBottom: '1px solid rgba(224, 224, 224, 1)',paddingBottom:'11px'}}>
         <p style={headingStyle}>PRODUCTION INFO</p>
       </div>
-      <div className="createNew-inputDiv" style={{margin:'21px 0px 21px 0px'}}>
-        {/* <CustomInputComponent type="date" label="City" name="city"   /> */}
+      <div style={{margin:"0px 7px"}}>
+      <div className="createNew-inputDiv" style={{margin:'20px 0px 26px 0px'}}>
         <PickupDate label="Pick-up Date" name="state" />
         <CustomSelectComponent
         label="Quantity Units"
@@ -162,8 +168,9 @@ const JobInformation: FC = () => {
       />
         <CustomInputComponent type={"Number"} label="Production Quantity" name="Production Quantity" />
       </div>
-      <div className="createNew-inputDiv" style={{marginBottom:'21px'}}>
+      <div className="createNew-inputDiv">
         <CustomInputComponent width="100%" label="Notes" name="Notes" />
+      </div>
       </div>
     </div>
   )
@@ -215,23 +222,13 @@ const JobInformation: FC = () => {
           size="medium"
           centered={true}
         />
-             {/* <CustomModal
-          open={isModalOpen}
-          onClose={handleCloseModal}
-          title={() => title}
-          body={() => body}
-          footer={() => footer}
-          animation={true}
-          size="medium"
-          centered={true}
-        /> */}
-        <div style={{marginBottom:'5px'}}>{<JobDetail/>}</div>
-        <CardComponent width="100%" children={form} backgroundColor={"#FBFBFB"} />
-        <CardComponent width="100%" children={MANUFACTURERINFO} backgroundColor={"#FBFBFB"} />
-        <CardComponent width="100%" children={JOBINFO} backgroundColor={"#FBFBFB"} />
-        <CardComponent width="100%" children={PRODUCTION} backgroundColor={"#FBFBFB"} />
+        <div style={{marginBottom:'30px'}}>{<JobDetail/>}</div>
+        <CardComponent width="100%" children={form} backgroundColor={"var(--ThemeColors-Light, #FBFBFB)"}  shadow="0px 2px 10px 0px rgba(0, 0, 0, 0.21)"/>
+        <CardComponent width="100%" children={MANUFACTURERINFO} backgroundColor={"var(--ThemeColors-Light, #FBFBFB)"} shadow="0px 2px 10px 0px rgba(0, 0, 0, 0.21)"/>
+        <CardComponent width="100%" children={JOBINFO} backgroundColor={"#FBFBFB"} shadow="0px 2px 10px 0px rgba(0, 0, 0, 0.21)"/>
+        <CardComponent width="100%" children={PRODUCTION} backgroundColor={"#FBFBFB"} shadow="0px 2px 10px 0px rgba(0, 0, 0, 0.21)"/>
 
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginTop: '20px',gap:1}}>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginTop: '22px',gap:3}}>
           <CustomTextButton children={"Abandon"} width="94px" />
           <CustomButton children={"Create Job"} width="95px" onClick={saving} />
         </div>

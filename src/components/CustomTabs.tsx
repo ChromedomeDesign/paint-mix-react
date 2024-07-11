@@ -18,20 +18,7 @@ const AntTab = styled((props: TabProps) => <Tab disableRipple {...props} />)(
     [theme.breakpoints.up('sm')]: {
       minWidth: 0,
     },
-    fontWeight: theme.typography.fontWeightRegular,
     marginRight: theme.spacing(1),
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
     '&.Mui-selected': {
       color: '#FFFFFF',
       backgroundColor: '#39C0ED',
@@ -81,7 +68,16 @@ const CustomTabs: React.FC<CustomTabsProps> = ({ tabOption, onSlects}) => {
             <AntTab
               key={index}
               label={item.label}
-              style={{ backgroundColor: index === value ? getTabBackgroundColor(index) : '',width:item?.customWidth || '136px',borderTopRightRadius:'3px',borderTopLeftRadius:'3px'}}
+              style={{ 
+                backgroundColor: index === value ? getTabBackgroundColor(index) : '',
+                width:item?.customWidth || '136px',
+                borderTopRightRadius:'3px',
+                borderTopLeftRadius:'3px',
+                height:'40px',
+                fontSize:'16px',
+              fontWeight: 600,
+                  lineHeight: "19.2px",
+                  fontFamily:'Open Sans, sans-serif',}}
             />
           ))}
         </AntTabs>

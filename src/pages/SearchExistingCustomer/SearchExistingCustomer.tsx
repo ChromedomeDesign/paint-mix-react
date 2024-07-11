@@ -23,8 +23,7 @@ const SearchExistingCustomer: React.FC = () => {
 
   const modelBody = (
 
-    <div style={{ fontWeight: '400', fontSize: '12px', color: '#424242' }}>
-
+    <div style={{ fontWeight: '400', fontSize: '12px', color: '#424242',textAlign:'center' }}>
       <p style={{ margin: '0px' }}>ontractor Home</p>
       <p style={{ margin: '0px' }}>Wendy Win</p>
       <p style={{ margin: '0px' }}>234 W Arizona St</p>
@@ -85,7 +84,7 @@ const SearchExistingCustomer: React.FC = () => {
   };
 
   const footer = (
-    <div style={{ display: 'flex', flexDirection: 'row', gap: 4 }}>
+    <div style={{ display: 'flex', flexDirection: 'row', gap:'15px' }}>
       <CustomTextButton width="60px">Back</CustomTextButton>
       <CustomOutLinedButton width={"181px"}>Customer Not Found</CustomOutLinedButton>
       <CustomButton width={'175px'} onClick={() => navigate('/CREATE_NEW_CUSTOMER_ACCOUNT')}>Create New Customer</CustomButton>
@@ -103,7 +102,7 @@ const SearchExistingCustomer: React.FC = () => {
         size="medium"
         centered={true}
       />
-      <div style={{ marginBottom: '15px', display: 'flex', alignItems: 'left', tabSize: 'large' }}>
+      <div style={{ marginBottom: '20px', display: 'flex', alignItems: 'left', tabSize: 'large' }}>
         <CustomInputComponent
           label="Search Customer"
           value={isCustomer}
@@ -112,7 +111,7 @@ const SearchExistingCustomer: React.FC = () => {
 
       <CustomTable columns={columns} data={rows} />
 
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end',position:'absolute',bottom:'25px',right:'26px' }}>
         {footer}
       </div>
 
