@@ -37,6 +37,7 @@ const CustomOutLinedButton: React.FC<CustomButtonProps> = ({  fontSize, color, o
             padding: paddings || '8.5px 15px',
             height: '45px',
             fontWeight: 600,
+            fontFamily:'"Open Sans", sans-serif',
             width: width || '100%',
             fontSize: fontSize || '13px',
             color: color || '#1266F1',

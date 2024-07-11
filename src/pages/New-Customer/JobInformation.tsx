@@ -90,14 +90,14 @@ const JobInformation: FC = () => {
   //--------------------------------------------------------------------------------//
   //-------------------------MANUFACTURERINFO---------------------------------//
   const MANUFACTURERINFO = (
-    <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', width: '100%', padding:'20px 20px 0px 20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
         <p style={headingStyle}>MANUFACTURER INFO</p>
       </div>
-      <div className="createNew-inputDiv">
+      <div className="createNew-inputDiv" style={{margin:'21px 0px 21px 0px'}}>
         <CustomInputComponent width="100%" label="Manufacturer" name="Manufacturer" />
       </div>
-      <div className="createNew-inputDiv">
+      <div className="createNew-inputDiv" style={{marginBottom:'21px'}}>
         <CustomInputComponent label="Color Number/Name" name="Color Number/Name" />
         <CustomInputComponent label="Painter Supply Number" name="Painter Supply Number" />
       </div>

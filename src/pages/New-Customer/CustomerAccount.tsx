@@ -259,8 +259,6 @@ const CustomerAccount: FC=()=>{
                     <CustomInputComponent 
                         label="Refined Job Search"
                         value={isJob}
-                        // customInputChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewPassword(e.target.value)}
-                
                     />
                 </div>
                 <div style={{marginTop:'20px'}}>

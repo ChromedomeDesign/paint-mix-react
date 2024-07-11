@@ -21,6 +21,7 @@ const StyledButton = styled(Button)<{ customcolor?: string; customfontsize?: str
         width: width || "100%",
         variants:"outlined",
         fontSize: customfontsize || '13px',
+        fontFamily:'"Open Sans", sans-serif',
         color: customcolor || '#1266F1',
         textTransform: 'none', 
     })

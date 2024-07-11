@@ -19,7 +19,7 @@ const CostCalculator:FC=()=>{
          <div style={{paddingBottom:'20px'}}>
             <p style={{fontWeight:600,color:"#1266F1",fontSize:'16px'}}>COMPLETED JOBS</p>
          </div>
-         <div className="createNew-inputDiv" style={{borderTop:"1px solid #E0E0E0",paddingTop:'30px'}}>
+         <div  style={{borderTop:"1px solid #E0E0E0",margin:'27px 0px'}}>
            <CustomInputComponent label="Customer Name" name="FirstName" />
            <CustomInputComponent label="Business Name" name="BusinessName" />
            <CustomInputComponent label="Job Name" name="JobName" />

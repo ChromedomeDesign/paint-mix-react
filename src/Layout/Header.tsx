@@ -17,7 +17,7 @@ const Header = () => {
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
-      };
+      }; 
 
     const handleClose = (data:any) => {
         console.log(data);
@@ -37,15 +37,14 @@ const Header = () => {
 
     return (
         <div style={{ padding: '10px 10px 0px 10px'}}>
-            <CardComponent width="100%" radius="8px" height="60px" customIndex={99999}>
-                <div style={{display:'flex',width:"100%",flexDirection:'row',justifyContent:'space-between',alignItems:'center',height: '100%',}}>
-                    <button style={{height:'44px',width:'100px',border:'1px solid #000000',backgroundColor:'transparent',borderRadius:'8px',    fontWeight: 'bold'}} onClick={()=>navigate('/')}>LOGO</button> 
-                <div style={{ display: 'flex',justifyContent: 'flex-end',margin:'3px', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%' }}>
+            <CardComponent width="100%" radius="8px" height="60px" customIndex={99999} >
+                <div style={{display:'flex',width:"100%",flexDirection:'row',justifyContent:'space-between',padding:'10px',alignItems:'center',height: '100%',}}>
+                    <button style={{height:'44px',width:'100px',border:'1px solid #000000',backgroundColor:'transparent',borderRadius:'8px'}} onClick={()=>navigate('/')}>LOGO</button> 
+                <div style={{ display: 'flex',justifyContent: 'flex-end', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%' }}>
                     <SearchBar />
-                    <Button  onClick={handleClick}>
-                    <MenuIcon sx={{ fontSize: '40px', color: '#1266F1', cursor: 'pointer' }}/>
-
-                    </Button>
+                    <button onClick={handleClick}  style={{padding:'0px',marginLeft:'10px',width:'42px',background:'none',border:'none'}}>
+                    <MenuIcon sx={{ fontSize:'42px', color: '#1266F1', cursor: 'pointer' }} />
+                    </button>
                 </div>
                 </div>
             </CardComponent>
@@ -88,4 +87,3 @@ const Header = () => {
 };
 
 export default Header;
-
