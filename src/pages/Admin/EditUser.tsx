@@ -35,7 +35,7 @@ const EditUser: FC = () => {
         <CustomSelectComponent label="Role" selectedValue={role} options={RoleOptions} customSelectChange={selects}/>
       </div>
       <div style={{display:'flex',justifyContent:'flex-start'}}>
-        <div><AddCircleIcon sx={{color:'#1266F1',backgroundColor:'white',borderRadius:'100%'}}/><span style={{color:'#1266F1',fontWeight:600,fontSize:'13px',lineHeight:'28px'}}>Colorant</span></div>
+        <div><AddCircleIcon sx={{color:'#1266F1',backgroundColor:'white',borderRadius:'100%'}}/><span style={{color:'#1266F1',fontWeight:600,fontSize:'13px',lineHeight:'28px'}}>Add Another</span></div>
       </div>
       <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end'}}>
         <div style={{display:'flex',justifyContent:'space-between',gap:'4px'}}>
