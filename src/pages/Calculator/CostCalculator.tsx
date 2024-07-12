@@ -10,9 +10,11 @@ import { FC, useState } from "react";
 import ViewJobCost from "./ViewJobCost";
 import TableTextButton from "components/TableTextButton";
 import { MDBCol, MDBRow } from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
 
 const CostCalculator:FC=()=>{
   const [costView,setCostView]=useState(false);
+  const navigate =useNavigate();
 
      //--------------------------costForm----------------------------------------//
      const costForm = (
@@ -62,6 +64,15 @@ const CostCalculator:FC=()=>{
             {CustomerName:"Antonio Razzo",BusinessName:"Tony’s Lounge",JobName:"Dining Room",Date:"01/21/23",Cost:"$800.00"},
         ]
      //--------------------------------------------------------------------------------------//
+//---------------------------------Page Footer--------------------------------------------//     
+const Pagefooter =(
+  <div style={{display:'flex', flexDirection:'row',gap:'15px'}}>
+          <CustomTextButton width="60px" onClick={()=>{navigate('/')}}>Back</CustomTextButton>
+          <CustomButton width="100px" >Export</CustomButton>
+
+  </div>
+)
+//---------------------------------------------------------------------------------------------//
 
     return(
         <div>
@@ -76,7 +87,9 @@ const CostCalculator:FC=()=>{
           </>
             }
            
-            
+           <div style={{display:'flex',justifyContent:'flex-end',position:'absolute',bottom:'15px',right:'27px'}}>
+                    {Pagefooter}
+                </div>
         </div>
     )
 }

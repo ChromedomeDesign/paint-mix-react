@@ -115,10 +115,10 @@ const handleInfoClick = (row: any) => {
 
 const expandedRowContent = (
   <div>
-    <p>Name: {infoData.Name}</p>
-    <p>Color Ref: {infoData.ColorRef}</p>
-    <p>Type: {infoData.Type}</p>
-    <p>Date: {infoData.date}</p>
+    <p style={{margin:'0px'}}>Name: {infoData.Name}</p>
+    <p style={{margin:'0px'}}>Color Ref: {infoData.ColorRef}</p>
+    <p style={{margin:'0px'}}>Type: {infoData.Type}</p>
+    <p style={{margin:'0px'}}>Date: {infoData.date}</p>
   </div>
 );
 

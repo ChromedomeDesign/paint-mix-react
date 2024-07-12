@@ -106,7 +106,7 @@ const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = 
   '/JobQueInformation':[
     { text: 'Home', href: '/' },
     {text: 'Job Queue', href:'/JobQueue'},
-    {text: 'Job Que Information', href:'/JobQueInformation'}
+    {text: 'Job Information', href:'/JobQueInformation'}
   ],
 
   '/UserAdministration':[

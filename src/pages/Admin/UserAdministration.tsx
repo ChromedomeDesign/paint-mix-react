@@ -131,7 +131,7 @@ const UserAdministration  : FC=()=>{
     const RestoreModalFooter = (
       <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
         <CustomTextButton onClick={handleCloseModal}>Cancel</CustomTextButton>
-        <CustomButton>Yes</CustomButton>
+        <CustomButton width="74px">Yes</CustomButton>
       </div>
     );
   //----------------------------------------------------------------------//

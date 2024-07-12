@@ -131,14 +131,9 @@ const inactiveRows = [
       
 //---------------------------------Page Footer--------------------------------------------//     
       const Pagefooter =(
-        <div style={{display:'flex', flexDirection:'row',gap:'5px'}}>
-            <div style={{ display: 'flex', flexDirection: 'row', width:'100px',  tabSize:'large' }}>
-                <CustomTextButton onClick={()=>{navigate('/')}}>Back</CustomTextButton>
-            </div>
-            <div style={{display: 'flex', flexDirection:'row', width:'Fixed (181px)', border:'2px',  tabSize:'large', borderColor:'border: 2px solid #1266F1', borderStyle:'outlined'}}>
+        <div style={{display:'flex', flexDirection:'row',gap:'15px'}}>
+                <CustomTextButton width="60px" onClick={()=>{navigate('/')}}>Back</CustomTextButton>
                 <CustomButton width="133px" onClick={()=>navigate('/AddnewStore')}>Add New Store</CustomButton>
-            </div>
-           
         </div>
       )
 //---------------------------------------------------------------------------------------------//

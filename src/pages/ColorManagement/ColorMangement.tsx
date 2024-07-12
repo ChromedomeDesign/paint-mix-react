@@ -17,6 +17,7 @@ import TableTextButton from "components/TableTextButton";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import { Card, CardContent, Grid, IconButton } from "@mui/material";
+import { MDBCol, MDBRow } from "mdb-react-ui-kit";
 
 
 
@@ -151,24 +152,24 @@ const ColorManagement: React.FC = () => {
 
   //----------------------------------------Info Button Data-----------------------------------------//
   const expandedRowContent = (
-    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginTop: '20px' }}>
-      <div>
-        <p style={{ fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Job Type:</p>
-        <p style={{ fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Reproduction</p>
-      </div>
-      <div>
-        <p style={{ fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Manufacturer:</p>
-        <p style={{ fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Valspar</p>
-      </div>
-      <div>
-        <p style={{ fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Color Name:</p>
-        <p style={{ fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Hunter Green</p>
-      </div>
-      <div>
-        <p style={{ fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Painter Supply #:</p>
-        <p style={{ fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>PS-123-XXXX</p>
-      </div>
-    </div>
+    <MDBRow container spacing={2}>
+      <MDBCol size="12" sm="3">
+        <p style={{margin:'0px',fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Job Type:</p>
+        <p style={{margin:'0px',fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Reproduction</p>
+      </MDBCol>
+      <MDBCol size="12" sm="3">
+        <p style={{margin:'0px',fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Manufacturer:</p>
+        <p style={{margin:'0px',fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Valspar</p>
+        </MDBCol>
+        <MDBCol size="12" sm="3">
+        <p style={{margin:'0px',fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Color Name:</p>
+        <p style={{margin:'0px',fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Hunter Green</p>
+        </MDBCol>
+        <MDBCol size="12" sm="3">
+        <p style={{margin:'0px',fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>Painter Supply #:</p>
+        <p style={{margin:'0px',fontWeight: 600, fontSize: '12px', lineHeight: '24px', color: '#424242', fontFamily: '"Open Sans", sans-serif' }}>PS-123-XXXX</p>
+      </MDBCol>
+      </MDBRow>
   )
 
   //-----------------------------------------------------------------------------------------------//
