@@ -194,7 +194,7 @@ const ColorManagement: React.FC = () => {
   //--------------------------------------------Upload File Modal----------------------------------------------//
 
   const Initialtitle = (
-    <p style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>File Uploader</p>
+    <p style={{margin:'0px',fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>File Uploader</p>
   )
 
   const Initialbody = (
@@ -256,7 +256,7 @@ const ColorManagement: React.FC = () => {
   //-------------------------------------Add new product modal-------------------------------------------//
 
   const secondModalTitle = (
-    <p style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>
+    <p style={{margin:'0px',fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>
       Add New Product
     </p>
   );

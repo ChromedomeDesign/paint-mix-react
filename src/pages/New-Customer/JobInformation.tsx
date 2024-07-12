@@ -15,9 +15,9 @@ import PickupDate from "components/PickupDate";
 import CustomSelect from "components/CustomSelect";
 import CustomSelectComponent from "components/CustomSelect";
 import CustomTextButton from "components/CustomTextButton";
-import { MDBInput, MDBTextArea } from "mdb-react-ui-kit";
+import { MDBCol, MDBInput, MDBRow, MDBTextArea } from "mdb-react-ui-kit";
 import CustomTextArea from "components/CustomTextArea";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Margin } from "@mui/icons-material";
 
 const JobInformation: FC = () => {
@@ -25,6 +25,8 @@ const JobInformation: FC = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [selectedValue, setSelectedValue] = useState<string>('option1');
   const navigate = useNavigate();
+  const location = useLocation();
+  const [edit, setEdit]=useState(location?.state?.val);
   const option = [
     { value: 'Fan Deck', label: 'Fan Deck' },
     { value: 'Custom', label: 'Custom' },
@@ -177,6 +179,62 @@ const JobInformation: FC = () => {
   //-------------------------------------------------------------------------//
 
   //--------------------------------//
+
+  const styles = {
+    modify: {
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#CFE0FC",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#0A47A9'
+    },
+    reprod: {
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#FFEBC2",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#453008'
+    },
+    custom: {
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#EBCDFE",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#262626'
+    },
+    fanDeck: {
+      borderRadius: "100px",
+      padding: "2px 5px",
+      gap: "3px",
+      backgroundColor: "#C7F5D9",
+      fontWeight: 600,
+      fontSize: "12px",
+      lineHeight: '13px',
+      color: '#0B4121'
+    }
+  };
+  
+  const getJobTypeStyle = (jobType: string) => {
+    switch (jobType) {
+      case "Modification":
+        return styles.modify;
+      case "Reproduction":
+        return styles.reprod;
+      case "Custom":
+        return styles.custom;
+      default:
+        return styles.fanDeck;
+    }
+  };
   const jobStyle: React.CSSProperties = {
     fontSize: '12px',
     fontWeight: 700,
@@ -188,7 +246,12 @@ const JobInformation: FC = () => {
   }
   
   const JobDetail: React.FC = () => (
-    <div style={{ display: 'flex', flexDirection: 'column'}}>
+    <div>
+      {
+          edit === true ?
+          <MDBRow style={{width:'100%',marginBottom:'26px',marginTop:'26px'}} >
+             <MDBCol size="12" sm="5" md="5" xl="5" lg="5">
+             <div style={{ display: 'flex', flexDirection: 'column'}}>
       <p style={jobStyle}>
         Wendy’s Paint Party
       </p>
@@ -205,6 +268,46 @@ const JobInformation: FC = () => {
         Account #123456789
       </p>
     </div>
+              </MDBCol>
+              <MDBCol size="12" sm="7" md="7" xl="7" lg="7">
+                <div style={{display:'flex',flexDirection:'row'}}>
+                <p style={jobStyle}>Job Type:</p>
+                <p style={getJobTypeStyle('Fan Deck')}>Fan Deck</p>
+                </div>
+                <div style={{display:'flex',flexDirection:'row'}}>
+                <p style={jobStyle}>
+                  Painter Supply #:
+                </p>
+                <p style={{margin:'0px',fontSize:'12px',fontWeight:400,color: '#424242'}}>123456</p>
+                </div>
+                <div style={{display:'flex',flexDirection:'row'}}>
+                <p style={jobStyle}>
+                Notes: 
+                </p>
+                </div>
+              </MDBCol>
+            </MDBRow>
+          :
+          <div style={{ display: 'flex', flexDirection: 'column'}}>
+      <p style={jobStyle}>
+        Wendy’s Paint Party
+      </p>
+      <p style={jobStyle}>
+        Wendy Win
+      </p>
+      <p style={jobStyle}>
+        234 W Arizona St
+      </p>
+      <p style={jobStyle}>
+        602-487-0087
+      </p>
+      <p style={jobStyle}>
+        Account #123456789
+      </p>
+    </div>
+      }
+    </div>
+
   );
   //-----------------------------------------------------------------------------//
 

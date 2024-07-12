@@ -28,8 +28,8 @@ const JobQueue: FC = () => {
 
   const getActions = (row: any) => (
     <div style={{ display: 'flex', flexDirection: 'row'}}>
-      <TableContainedButton width="65px" onClick={()=>navigate('/JobInformation')}>Start</TableContainedButton>
-      <TableTextButton width="37px" onClick={()=>navigate('/JobQueInformation')}>Edit</TableTextButton>
+      <TableContainedButton width="65px" onClick={()=>navigate('/JobQueInformation')}>Start</TableContainedButton>
+      <TableTextButton width="37px" onClick={()=>navigate('/JobInformation',{state:{val:true}})}>Edit</TableTextButton>
        <InfoButton Info={expandedRowIndex === rows.indexOf(row)} toggleInfo={() => handleInfoClick(row)} ></InfoButton>
     </div>
   );
@@ -145,7 +145,7 @@ const inprogresscolumns = [
   { name: 'Business Name', datan: 'BusinessName' },
   { name: 'Account Number', datan: 'AccountNumber'},
   { name: 'Job Type', datan:'Job Type', Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span> },
-  { name: 'Date', datan: 'date' },
+  // { name: 'Date', datan: 'date' },
   { name: 'Actions', datan: 'Actions', Call: (row: any) => inprogressgetActions(row), cellWidth: "205px" }
 ];
 const Inprogress = (
@@ -171,7 +171,7 @@ const completedcolumns = [
   { name: 'Business Name', datan: 'BusinessName' },
   { name: 'Account Number', datan: 'AccountNumber'},
   { name: 'Job Type', datan:'Job Type', Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span> },
-  { name: 'Date', datan: 'date' },
+  // { name: 'Date', datan: 'date' },
   { name: 'Actions', datan: 'Actions', Call: (row: any) => completedgetActions(row), cellWidth: "205px" }
 ];
 const Completed = (

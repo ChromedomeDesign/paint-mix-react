@@ -15,7 +15,7 @@ import BaseManagement from "./BaseManagement";
 
 const FormulaManagement: React.FC = () => {
     const [isEditable, setIsEditable] = useState(false);
-    const [modalStep, setModalStep] = useState(1);
+    const [modalStep, setModalStep] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -49,11 +49,11 @@ const FormulaManagement: React.FC = () => {
     
       const handleCloseModal = () => {
         setIsModalOpen(false);
-        setModalStep(1); 
+        setModalStep(0); 
       };
     
       const handleContinue = () => {
-        setModalStep(2); 
+        setModalStep(1); 
       };
 
 //---------------------------------------Formula Management Information----------------------------------//
@@ -168,15 +168,29 @@ const FormulaManagement: React.FC = () => {
      const secondFooter = (
         <div style={{ display: 'flex', flexDirection: 'row', gap: '2%' }}>
           <CustomTextButton children={"Cancel"} width="100px" onClick={handleCloseModal} />
-          <CustomOutLinedButton children={"Back"} onClick={()=>{setModalStep(1);}} width="100px" />
-          <CustomButton children={"Yes"} width="100px" onClick={handleContinue} />
+          <CustomOutLinedButton children={"Back"} onClick={()=>{setModalStep(0);}} width="100px" />
+          <CustomButton children={"Yes"} width="100px" onClick={()=>setModalStep(2)} />
         </div>
       );
 
 //------------------------------------------------------------------------------------------------------//
-    
-      const body = modalStep === 1 ? initialBody : secondBody;
-      const footer = modalStep === 1 ? initialFooter : secondFooter;
+const thirdBody = (
+  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', marginLeft: '10%', marginRight: '10%' }}>
+    <p> Are you sure you want to deprecate <span style={{fontWeight:700}}>Snow White</span>  and replace with <span style={{fontWeight:700}}>Snow White 2?</span></p>
+  </div>
+);
+
+const thirFooter = (
+  <div style={{ display: 'flex', flexDirection: 'row', gap: '2%' }}>
+    <CustomTextButton children={"Cancel"} width="100px" onClick={handleCloseModal} />
+    <CustomOutLinedButton children={"Back"} onClick={()=>{setModalStep(1);}} width="100px" />
+    <CustomButton children={"Yes"} width="100px" onClick={handleCloseModal} />
+  </div>
+);
+
+
+      const body = modalStep === 1 ? secondBody :modalStep === 2 ? thirdBody : initialBody;
+      const footer = modalStep === 1 ?  secondFooter :modalStep === 2 ? thirFooter: initialFooter;
     return (
         <div className="formulaManagement">
           { base === "BaseManagement" ? <BaseManagement/> 
