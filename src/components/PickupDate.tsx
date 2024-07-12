@@ -51,15 +51,15 @@ const CssTextField = styled(TextField)({
     height: '46px',
     backgroundColor: '#ffff',
     '& fieldset': {
-      borderColor: '#E0E3E7',
+      borderColor: '#BDBDBD',
       borderWidth: '1px',
     },
     '&:hover fieldset': {
-      borderColor: '#B2BAC2',
+      borderColor: '#BDBDBD',
       borderWidth: '1px',
     },
     '&.Mui-focused fieldset': {
-      borderColor: '#6F7E8C',
+      borderColor: '#BDBDBD',
       borderWidth: '1px',
     },
     '& input[type="date"]': {

@@ -289,7 +289,7 @@ const mixbody = (
 const mixfooter = (
   <div style={{ display: 'flex', flexDirection: 'row',gap:'15px'}}>
       <CustomTextButton children={"Cancel"} width="74px" onClick={mixhandleCloseModal}/>
-      <CustomOutLinedButton children={"Automatically"} width="125px" onClick={()=>setProduceModalOpen(true)}/>
+      <CustomOutLinedButton children={"Automatically"} width="125px" onClick={()=>{setmixModalOpen(false);setProduceModalOpen(true)}}/>
     <CustomButton children={"Manually"} onClick={()=>{setmixModalOpen(false);setManualModalOpen(true)}} width="125px" />
   </div>
 )
