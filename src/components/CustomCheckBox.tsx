@@ -37,7 +37,6 @@
 // };
 
 // export default CustomCheckBox;
-
 import React from 'react';
 import { MDBCheckbox } from 'mdb-react-ui-kit';
 
@@ -62,14 +61,14 @@ const CustomCheckBox: React.FC<CheckboxProps> = ({
   fontSize = '12px',
   lineHeight = '24px',
   fontWeight = 400,
-  labelPosition = 'right', // default to 'right'
+  labelPosition = 'right',
 }) => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.checked);
   };
 
   return (
-    <div className="form-check mb-0" style={{ display: 'flex', alignItems: 'center', textAlign: 'left' }}>
+    <div className="form-check mb-0" style={{ display: 'flex', alignItems: 'center', textAlign: 'left', height: '100%' }}>
       {labelPosition === 'left' && (
         <label
           className="form-check-label"
@@ -89,6 +88,7 @@ const CustomCheckBox: React.FC<CheckboxProps> = ({
         className="form-check-input"
         checked={checked}
         onChange={handleChange}
+        style={{ marginTop: 0, marginBottom: 0 }}
       />
       {labelPosition === 'right' && (
         <label

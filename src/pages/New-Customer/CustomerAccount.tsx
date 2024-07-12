@@ -98,8 +98,7 @@ const CustomerAccount: FC=()=>{
 
   const styles = {
     modify: {
-      width: "86px",
-      height: "20px",
+
       borderRadius: "100px",
       padding: "2px 5px",
       gap: "3px",
@@ -110,8 +109,6 @@ const CustomerAccount: FC=()=>{
       color: '#0A47A9'
     },
     reprod: {
-      width: "86px",
-      height: "20px",
       borderRadius: "100px",
       padding: "2px 5px",
       gap: "3px",
@@ -122,8 +119,6 @@ const CustomerAccount: FC=()=>{
       color: '#453008'
     },
     custom: {
-      width: "86px",
-      height: "20px",
       borderRadius: "100px",
       padding: "2px 5px",
       gap: "3px",
@@ -134,8 +129,6 @@ const CustomerAccount: FC=()=>{
       color: '#262626'
     },
     fanDeck: {
-      width: "86px",
-      height: "20px",
       borderRadius: "100px",
       padding: "2px 5px",
       gap: "3px",
@@ -199,7 +192,7 @@ const CustomerAccount: FC=()=>{
 
 
     const columns = [
-        { name: 'Job Name', datan:'JobName',Call:(row:any)=><p  style={{display:'flex',gap:2}}><span>{expandedRowIndex === rows.indexOf(row) ? <ErrorIcon sx={{color:'#FFA900'}}/>: null}</span>{row?.JobName}</p> },
+        { name: 'Job Name', datan:'JobName',Call:(row:any)=><p style={{display:'flex',fontSize:'12',color:'#424242',fontWeight:600,gap:2,margin:'0px'}}><span>{expandedRowIndex === rows.indexOf(row) ? <ErrorIcon sx={{color:'#FFA900'}}/>: null}</span>{row?.JobName}</p> },
         { name: 'Color Ref', datan: 'ColorRef' },
         { name: 'Job Type', datan: 'JobType',Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span>  },
         { name: 'Date', datan: 'date' },
@@ -229,7 +222,7 @@ const CustomerAccount: FC=()=>{
       const footer =(
         <div style={{display:'flex', flexDirection:'row',justifyContent:'flex-end'}}>
             <div style={{display:'flex',flexDirection:'row',gap:'15px'}}>
-                <CustomTextButton width="45px">Back</CustomTextButton>
+                <CustomTextButton width="45px" onClick={()=>navigate('/SearchExistingCustomer')}>Back</CustomTextButton>
                 <CustomOutLinedButton width="125px">New Fan Deck</CustomOutLinedButton>       
                 <CustomOutLinedButton width="117px" >New Custom</CustomOutLinedButton>        
                 <CustomButton width="117px" onClick={()=>navigate("/JobQueue")}> Job Queue</CustomButton>   

@@ -45,7 +45,7 @@ const JobInformation: FC = () => {
   };
 
   const title = (
-    <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px',margin:'0px'}}>Success!</p>
+    <p style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px',margin:'0px'}}>Success!</p>
   )
   const body = (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

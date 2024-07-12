@@ -156,6 +156,10 @@ const CustomTable: React.FC<Props> = ({ columns, data = [], width,extrarow, cell
                           width: bhdata.cellWidth || 'auto',
                       height: '60px',
                       alignContent: "center",
+                      fontSize:'12px',
+                      color:'#424242',
+                      fontWeight:400,
+                      lineHeight:'24px'
                         }}
                       >
                         <div className='d-flex align-items-center'>
@@ -166,7 +170,9 @@ const CustomTable: React.FC<Props> = ({ columns, data = [], width,extrarow, cell
                     ))}
                   </tr>
                   {expandedRowIndex === rowIndex && (
-                    <tr style={{ backgroundColor: '#f0f0f0' }}>
+                    <tr style={{
+                      backgroundColor: rowIndex % 2 === 0 ? '#E9E9E9' : '#FFFFFF'
+                    }}>
                       <td colSpan={columns.length}>{expandedRowContent}</td>
                     </tr>
                   )}

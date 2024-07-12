@@ -27,20 +27,20 @@ const StoreLocations: React.FC = () => {
 
 
   const RemoveModalTitle = (
-    <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Remove Store</p>
+    <p style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px',margin:'0px' }}>Remove Store</p>
   )
 
   
   const RemoveModalBody = (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-      <p>Are you sure you want to remove store?</p>
+      <p style={{ margin:'0px',fontSize: '12px',fontFamily:'Open Sans, sans-serif', fontWeight: 400, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Are you sure you want to remove store?</p>
     </div>
   );
 
   const RemoveModalFooter = (
     <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
-      <CustomTextButton onClick={handleCloseModal}>Cancel</CustomTextButton>
-      <CustomButton>Yes</CustomButton>
+      <CustomTextButton width="74px" onClick={handleCloseModal}>Cancel</CustomTextButton>
+      <CustomButton width="74px">Yes</CustomButton>
     </div>
   );
 //---------------------------------------------------------------------------------------//
@@ -53,20 +53,18 @@ const handleRestore = () => {
   };
 
   const RestoreModalTitle = (
-    <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Restore Store</p>
+    <p style={{margin:'0px',fontSize: '20px',fontFamily:'Open Sans, sans-serif', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px'}}>Restore Store</p>
   )
 
   
   const RestoreModalBody = (
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-      <p>Are you sure you want to restore store?</p>
-    </div>
+      <p style={{margin:'0px',fontSize: '12px',fontFamily:'Open Sans, sans-serif', fontWeight: 400, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Are you sure you want to restore store?</p>
   );
 
   const RestoreModalFooter = (
-    <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
-      <CustomTextButton onClick={handleCloseModal}>Cancel</CustomTextButton>
-      <CustomButton>Yes</CustomButton>
+    <div style={{ display: 'flex', flexDirection: 'row', gap: '15px' }}>
+      <CustomTextButton width="74px" onClick={handleCloseModal}>Cancel</CustomTextButton>
+      <CustomButton width="74px">Yes</CustomButton>
     </div>
   );
 //----------------------------------------------------------------------------------------//
@@ -89,7 +87,7 @@ const rows = [
 
       const actions = (rowIndex: number) => (
         <div>
-          <div style={{gap:'10px'}}>
+          <div style={{gap:'15px'}}>
             <TableTextButton children={"Remove"} onClick={handleOpenModal} width="59px"/>
             <TableTextButton children={"Edit"} width="37px" onClick={()=>navigate('/AddnewStore')}/>
           </div>

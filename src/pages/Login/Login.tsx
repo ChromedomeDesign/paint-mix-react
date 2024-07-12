@@ -28,7 +28,7 @@ const Login: FC = () => {
     };
 
     const title = (
-        <span style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Password Reset</span>
+        <p style={{ fontSize: '20px',margin:'0px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Password Reset</p>
     )
 
     const body = (
@@ -56,19 +56,19 @@ const Login: FC = () => {
         setIsChecked(isChecked);
     }
     const form = (
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center' }}>
-            <p style={{ fontSize: '32px', fontWeight: 600, color: '#1266F1' }}>LOGIN</p>
-            <div style={{ margin: '20px 0px 20px 0px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center'}}>
+            <p style={{ fontSize: '32px',margin:'0px', fontWeight: 600, color: '#1266F1' }}>LOGIN</p>
+            <div style={{ margin: '61px 0px 18px 0px' }}>
                 <CustomInputComponent width="282px" label="Email/Username:" />
             </div>
-            <div style={{ marginBottom: '5px' }}>
+            <div>
                 <CustomInputComponent width="282px" label="Password" />
             </div>
-            <div style={{ textAlign: 'right' }}>
-                <a style={{ color: '#424242', fontSize: '13px', fontWeight: 400 }} onClick={forgot}>Forgot password?</a>
+            <div style={{ textAlign: 'right',marginBottom:'16px' }}>
+                <a style={{ color: '#424242',lineHeight:'28px', fontSize: '13px',fontWeight: 400 }} onClick={forgot}>Forgot password?</a>
             </div>
             <CustomCheckBox label="Sign In to Production" onChange={onCheck} checked={isChecked} />
-            <div style={{ display: "flex", justifyContent: 'right' }}>
+            <div style={{ display: "flex", justifyContent: 'right',marginTop:'32px' }}>
                 <CustomButton width="85px" fontSize="13px" children={"Sign In"}  onClick={signIn} />
             </div>
         </div>

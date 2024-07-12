@@ -59,6 +59,7 @@ const CustomModal: React.FC<Props> = ({
             flexDirection: 'row',
             justifyContent: 'center',
             p: '21px 16px',
+            fontSize:'20px'
           }}
         >
           {title()}

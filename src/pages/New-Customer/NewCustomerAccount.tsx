@@ -42,7 +42,7 @@ const handleCloseModal = () => {
 };
 
 const title =(
-    <span style={{fontSize:'20',fontWeight:600,color:'#424242',textAlign:'center',lineHeight:'24px'}}>Confirm Customer Information</span>
+    <span style={{fontSize:'20px',fontWeight:600,color:'#424242',textAlign:'center',lineHeight:'24px'}}>Confirm Customer Information</span>
 )
 const body =(
      <div style={{display:'flex',flexDirection:'column',justifyContent:'center',textAlign:'center'}}>
@@ -135,7 +135,7 @@ const footer=(
       />
             <CardComponent  width="100%"  children={form} backgroundColor={"#fafcfc"} />
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',marginTop:'20px'}}>
-               <CustomTextButton children={"Back"} onClick={()=>{navigate('/')}} width="72px"/>
+               <CustomTextButton children={"Cancel"} onClick={()=>{navigate('/')}} width="72px"/>
                <CustomButton children={"Save"} width="79px" onClick={saving}/>
             </div>
         </div>

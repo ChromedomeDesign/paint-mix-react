@@ -222,7 +222,7 @@ const JobQueInformation: FC = () => {
   };
 
   const title = (
-    <p style={{ fontSize: '20', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Measurement Type</p>
+    <p style={{ fontSize: '20px', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Measurement Type</p>
   )
   const body = (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -249,7 +249,7 @@ const testhandleCloseModal = () => {
 };
 
 const testtitle = (
-  <p style={{ fontSize: '20', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>1 Pint Test</p>
+  <p style={{ fontSize: '20px', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>1 Pint Test</p>
 )
 const testbody = (
   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -278,7 +278,7 @@ const mixhandleCloseModal = () => {
 };
 
 const mixtitle = (
-  <p style={{ fontSize: '20', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Mix Mode</p>
+  <p style={{ fontSize: '20px', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Mix Mode</p>
 )
 const mixbody = (
   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -300,7 +300,7 @@ const ManualhandleCloseModal = () => {
 };
 
 const Manualtitle = (
-  <p style={{ fontSize: '20', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Manual Mix | Zero Scale</p>
+  <p style={{ fontSize: '20px', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Manual Mix | Zero Scale</p>
 )
 const Manualbody = (
   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -320,7 +320,7 @@ const AddBasehandleCloseModal = () => {
 };
 
 const AddBasetitle = (
-  <p style={{ fontSize: '20', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Manual Mix | Add Base</p>
+  <p style={{ fontSize: '20px', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Manual Mix | Add Base</p>
 )
 const AddBasebody = (
   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -341,7 +341,7 @@ const addColorhandleCloseModal = () => {
 };
 
 const addColortitle = (
-  <p style={{ fontSize: '20', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Manual Mix | Add Color</p>
+  <p style={{ fontSize: '20px', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Manual Mix | Add Color</p>
 )
 const addColorbody = (
   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center',textAlign:'center' }}>
@@ -363,7 +363,7 @@ const producehandleCloseModal = () => {
 };
 
 const producetitle = (
-  <p style={{ fontSize: '20', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Auto Mix | Produce Formula</p>
+  <p style={{ fontSize: '20px', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Auto Mix | Produce Formula</p>
 )
 const producebody = (
   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center',textAlign:'center' }}>
@@ -386,7 +386,7 @@ const AdditivehandleCloseModal = () => {
 };
 
 const Additivetitle = (
-  <p style={{ fontSize: '20', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Manual Mix | Add Additive</p>
+  <p style={{ fontSize: '20px', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Manual Mix | Add Additive</p>
 )
 const Additivebody = (
   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center',textAlign:'center' }}>
@@ -408,7 +408,7 @@ const formulahandleCloseModal = () => {
 };
 
 const formulatitle = (
-  <p style={{ fontSize: '20', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Manual Mix | Formula Complete</p>
+  <p style={{ fontSize: '20px', margin:'0px',fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Manual Mix | Formula Complete</p>
 )
 const formulabody = (
   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center',textAlign:'center' }}>

@@ -75,7 +75,7 @@ const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = 
   '/CREATE_NEW_CUSTOMER_ACCOUNT': [
     { text: 'Home', href: '/' },
     { text: 'Order', href: '/' },
-    { text: 'Create New Customer Account', href: '/CREATE_NEW_CUSTOMER_ACCOUNT' }
+    { text: 'Create New Customer', href: '/CREATE_NEW_CUSTOMER_ACCOUNT' }
   ],
   '/SearchExistingCustomer':[
     { text: 'Home', href: '/' },
@@ -167,7 +167,7 @@ const PrivateLayout = () => {
           <Header />
           <div style={{margin: '62px 27px 0px 27px',}}>
           <div style={{ margin: "0px 0px 0px 0px" }}>
-            <p style={{fontWeight:600,color:'#1266F1',fontSize:'32px',lineHeight:'38.4px'}}>{pageTitle}</p>
+            <p style={{fontWeight:600,color:'#1266F1',fontSize:'32px',lineHeight:'38.4px',textTransform:'uppercase'}}>{pageTitle}</p>
           </div>
           <div style={{ margin: "11px 0px 0px 0px" }}>
             <DynamicBreadcrumb breadcrumbs={breadcrumbData} />

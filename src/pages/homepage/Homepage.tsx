@@ -122,7 +122,7 @@ const Homepage: React.FC = () => {
   };
 
   const title = (
-    <span style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Password</span>
+    <span style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Change Password</span>
   )
 
   const inputsChange = (name: string, value: string) => {
@@ -187,7 +187,7 @@ const Homepage: React.FC = () => {
   };
 
   const ordertitle = (
-    <span style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px', fontFamily: '"Open Sans", sans-serif' }}>Create New Order</span>
+    <span style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px', fontFamily: '"Open Sans", sans-serif' }}>Create New Order</span>
   )
   const orderbody = (
     <MDBContainer className="d-flex justify-content-center align-items-center">
@@ -254,9 +254,7 @@ const Homepage: React.FC = () => {
           <CardButton children={JobQueue} onClick={() => PageNavigate('/JobQueue')} />
         </MDBCol>
       </MDBRow>
-      
       <div style={{ width: '100%', border: '1px solid #E0E0E0', marginTop: '40px', marginBottom: '20px' }}></div>
-      
       <div>
         <div>
           <p style={{ fontSize: '32px', fontWeight: 600, lineHeight: '38.4px', color: 'rgba(18, 102, 241, 1)', fontFamily: '"Open Sans", sans-serif' }}>ADMIN</p>

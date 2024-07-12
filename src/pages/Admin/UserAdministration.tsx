@@ -99,7 +99,7 @@ const UserAdministration  : FC=()=>{
       };
     
       const RemoveModaltitle = (
-        <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Remove User</p>
+        <p style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Remove User</p>
       )
       const RemoveModalbody = (
         <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -118,7 +118,7 @@ const UserAdministration  : FC=()=>{
 
 //-----------------------------------Restore Modal----------------------//
      const RestoreModalTitle = (
-      <p style={{ fontSize: '20', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Restore Store</p>
+      <p style={{ fontSize: '20px', fontWeight: 600, color: '#424242', textAlign: 'center', lineHeight: '24px' }}>Restore Store</p>
     )
 
     

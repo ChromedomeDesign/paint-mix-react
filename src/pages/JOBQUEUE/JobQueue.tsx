@@ -36,8 +36,6 @@ const JobQueue: FC = () => {
 
   const styles = {
     modify: {
-      width: "86px",
-      height: "20px",
       borderRadius: "100px",
       padding: "2px 5px",
       gap: "3px",
@@ -48,8 +46,6 @@ const JobQueue: FC = () => {
       color: '#0A47A9'
     },
     reprod: {
-      width: "92px",
-      height: "20px",
       borderRadius: "100px",
       padding: "2px 5px",
       gap: "3px",
@@ -60,8 +56,6 @@ const JobQueue: FC = () => {
       color: '#453008'
     },
     custom: {
-      width: "58px",
-      height: "20px",
       borderRadius: "100px",
       padding: "2px 5px",
       gap: "3px",
@@ -72,8 +66,6 @@ const JobQueue: FC = () => {
       color: '#262626'
     },
     fanDeck: {
-      width: "86px",
-      height: "20px",
       borderRadius: "100px",
       padding: "2px 5px",
       gap: "3px",
@@ -103,15 +95,15 @@ const JobQueue: FC = () => {
   { name: 'Business Name', datan: 'BusinessName' },
   { name: 'Account Number', datan: 'AccountNumber'},
   { name: 'Job Type', datan:'Job Type', Call: (row: any) => <span style={getJobTypeStyle(row?.JobType)}>{row?.JobType}</span> },
-  { name: 'Date', datan: 'date' },
+  // { name: 'Date', datan: 'date' },
   { name: 'Actions', datan: 'Actions', Call: (row: any) => getActions(row), cellWidth: "205px" }
 ];
 
 const rows = [
-  { CustomerName: 'Delivery Girl', BusinessName: 'purple',AccountNumber:"123456789", JobType: 'Modification', date: "01/02/2019" },
-  { CustomerName: 'Painter', BusinessName: 'voilet',AccountNumber:"123456789", JobType: 'Reproduce', date: "01/02/2019" },
-  { CustomerName: 'Engineer', BusinessName: 'blue',AccountNumber:"123456789", JobType: 'Modification', date: "01/02/2019" },
-  { CustomerName: 'Carpenter', BusinessName: 'Green',AccountNumber:"123456789", JobType: 'Custom', date: "01/02/2019" }
+  { CustomerName: 'Delivery Girl', BusinessName: 'purple',AccountNumber:"123456789", JobType: 'Fan Deck' },
+  { CustomerName: 'Painter', BusinessName: 'voilet',AccountNumber:"123456789", JobType: 'Reproduction' },
+  { CustomerName: 'Engineer', BusinessName: 'blue',AccountNumber:"123456789", JobType: 'Modification' },
+  { CustomerName: 'Carpenter', BusinessName: 'Green',AccountNumber:"123456789", JobType: 'Custom' }
 ];
 
 const handleInfoClick = (row: any) => {
