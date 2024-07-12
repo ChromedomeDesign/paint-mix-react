@@ -96,7 +96,7 @@ const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = 
     '/JobInformation': [
     { text: 'Home', href: '/' },
     { text: 'Order', href: '/' },
-    { text: 'Create New Customer Account', href: '/CREATE_NEW_CUSTOMER_ACCOUNT' },
+    { text: 'Create New Customer', href: '/CREATE_NEW_CUSTOMER_ACCOUNT' },
     { text: 'Job Information', href: '/JobInformation' }
   ],
   '/JobQueue':[
