@@ -187,8 +187,8 @@ const ColorManagement: React.FC = () => {
 
   const Pagefooter = (
     <div style={{ display: 'flex', flexDirection: 'row', gap: '15px' }}>
-      <CustomOutLinedButton onClick={handleAddNew} width="100px" >Add New</CustomOutLinedButton>
-      <CustomOutLinedButton onClick={handleOpenModal} width="100px" >Upload</CustomOutLinedButton>
+      <CustomOutLinedButton onClick={handleAddNew} width="100px">Add New</CustomOutLinedButton>
+      <CustomOutLinedButton onClick={handleOpenModal} width="100px">Upload</CustomOutLinedButton>
     </div>
   )
   //--------------------------------------------Upload File Modal----------------------------------------------//
@@ -271,7 +271,7 @@ const ColorManagement: React.FC = () => {
   const secondModalFooter = (
     <div style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}>
       <CustomTextButton onClick={handleCloseModal}>Cancel</CustomTextButton>
-      <CustomButton>Next</CustomButton>
+      <CustomButton onClick={()=>navigate('/NewAdditive')}>Next</CustomButton>
     </div>
   );
 

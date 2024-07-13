@@ -7,17 +7,17 @@ import CustomSelectComponent from "components/CustomSelect";
 import CustomTextButton from "components/CustomTextButton";
 import CustomButton from "components/CustomButton";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { Margin } from "@mui/icons-material";
+import '../../css/CREATE_NEW_CUSTOMER_ACCOUNT.css';
+import { useNavigate } from "react-router-dom";
 
 const NewAdditive: React.FC = () => {
   const [selectedValue, setSelectedValue] = useState<string>('');
   const [isChecked, setIsChecked] = useState<boolean>(false);
-
-
+  const navigate=useNavigate();
 
   const haedingBorder = {
     borderBottom: '1px solid rgba(224, 224, 224, 1)',
-    marginBottom: '15px',
-    paddingBottom: '15px',
     fontFamily: `"Open Sans", sans-serif`,
   };
 
@@ -27,8 +27,8 @@ const NewAdditive: React.FC = () => {
     color: '#1266F1',
     lineHeight: '19.2px',
     fontFamily: `"Open Sans", sans-serif`,
+    margin:'0px 0px 11px 7px'
   };
-
 
 //-----------------------Specific Gravity Dropdown Data--------------------------//
   const options = [
@@ -61,20 +61,21 @@ const options1 = [
 
 //--------------------------------------Input Fields-------------------------------------------------//
   const NewAdditive = (
-    <div style={{ display: 'flex', width: '100%', margin: '20px', flexDirection: 'column', justifyContent: 'center' }}>
+    <div  style={{ display: 'flex', width: '100%', padding:'13px 20px 30px 20px', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={haedingBorder}>
         <p style={headingStyle}>NEW ADDITIVE</p>
       </div>
-      <div className="createNew-inputDiv">
+      <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+      <div className="createNew-inputDiv" style={{margin:'20px 0px 23px 0px'}}>
         <CustomInputComponent label="Additive Name" name="Additive Name" />
         <CustomCheckBox width="200px" label="Replace Existing Additive" checked={isChecked} onChange={handleCheckboxChange} />
       </div>
       {isChecked && (
-        <div className="createNew-inputDiv">
+        <div className="createNew-inputDiv" style={{margin:'0px 0px 23px 0px'}}>
           <CustomInputComponent label="Existing Additive Name" name="Existing Additive Name"   width="80%"/>
         </div>
       )}
-      <div className="createNew-inputDiv">
+      <div className="createNew-inputDiv" style={{margin:'0px 0px 23px 0px'}}>
         <CustomInputComponent label="Type" name="Type" />
         <CustomInputComponent label="Brand" name="Brand" />
         <CustomSelectComponent
@@ -85,7 +86,7 @@ const options1 = [
           width="99%"
         />
       </div>
-      <div className="createNew-inputDiv">
+      <div className="createNew-inputDiv" style={{margin:'0px 0px 23px 0px'}}>
         <CustomInputComponent label="Cost" name="Cost" />
         <CustomInputComponent label="Quantity" name="Quantity" />
         <CustomSelectComponent
@@ -96,6 +97,7 @@ const options1 = [
           width="99%"
         />
       </div>
+      </div>
     </div>
   );
 
@@ -104,16 +106,11 @@ const options1 = [
 
   return (
     <div className="newAdditive">
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'left', alignItems: 'flex-start' }}>
-        <p style={{ font: 'Open Sans', fontSize: '32px', fontWeight: '600', color: '#1266F1', lineHeight: '38.4px' }}>COLOR MANAGEMENT</p>
-      </div>
-      <p>Home / Color Management / New Additive</p>
-
       <CardComponent width="100%" children={NewAdditive} backgroundColor={"#FBFBFB"} />
 
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginTop: '20px' }}>
         <CustomTextButton children={"Cancel"} width="80px" />
-        <CustomButton children={"Save"} width="80px" />
+        <CustomButton children={"Save"} width="80px" onClick={()=>navigate('/ColorManagement')}/>
       </div>
       <div><AddCircleIcon sx={{ color: '#1266F1', backgroundColor: 'white', borderRadius: '100%' }} /><span style={{ color: '#1266F1', fontWeight: 600, fontSize: '13px', lineHeight: '28px' }}>Colorant</span></div>
     </div>

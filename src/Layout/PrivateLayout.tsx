@@ -65,7 +65,9 @@ const routeTitles: { [key: string]: string } = {
   '/SearchResults':'Search Results',
   '/ColorManagement':'Color Management',
   '/FormulaManagement':'COLOR MANAGEMENT',
+  '/NewAdditive':'COLOR MANAGEMENT',
   '/StoreLocations' : 'Store Locations',
+  '/AddnewStore' : 'Store Locations',
   '/SearchExistingCustomer':'Search Existing Customer',
   '/EditCustomerAccount': 'Edit Customer Account',
   '/CustomerAccount':'CUSTOMER ACCOUNT'
@@ -134,6 +136,11 @@ const breadcrumbMappings: { [key: string]: { text: string, href: string }[] } = 
   '/ColorManagement':[
     { text: 'Home', href: '/' },
     {text: 'Color Management', href:'/ColorManagement'}
+  ],
+  '/NewAdditive':[
+    { text: 'Home', href: '/' },
+    {text: 'Color Management', href:'/ColorManagement'},
+    {text:'New Additive', href:'/NewAdditive'}
   ],
   '/FormulaManagement':[
     { text: 'Home', href: '/' },
