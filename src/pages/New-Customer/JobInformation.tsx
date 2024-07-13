@@ -333,7 +333,7 @@ const JobInformation: FC = () => {
 
         <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginTop: '22px',gap:3}}>
           <CustomTextButton children={"Abandon"} width="94px" />
-          <CustomButton children={"Create Job"} width="95px" onClick={saving} />
+          <CustomButton children={edit === true ? "Save Job":"Create Job"} width="95px" onClick={saving} />
         </div>
       </div>
     </div>
