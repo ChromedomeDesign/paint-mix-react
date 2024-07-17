@@ -7,7 +7,7 @@ const CoverPage: React.FC = () => {
     const navigate = useNavigate();
     useEffect(()=>{
         const timer = setTimeout(() => {
-            // navigate('/Login');
+            navigate('/Login');
         }, 1000);
 
         return () => clearTimeout(timer);

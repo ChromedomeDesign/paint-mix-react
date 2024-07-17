@@ -147,7 +147,7 @@ const inactiveRows = [
 
   return (
     <div className="StoreLocations">
-      <p style={{ margin:'0px', font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px',marginBottom:'14px' }}>
+      <p style={{ margin:'0px', font: 'Open Sans', fontSize: '18px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px',marginBottom:'14px' }}>
           ACTIVE
         </p>
           <CustomTable
@@ -155,7 +155,7 @@ const inactiveRows = [
                           data={rows}
             />
 
-       <p style={{ font: 'Open Sans', fontSize: '25px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px',margin:'48px 0px 14px 0px' }}>
+       <p style={{ font: 'Open Sans', fontSize: '18px', fontWeight: '400', color: '#1266F1', lineHeight: '38.4px',margin:'48px 0px 14px 0px' }}>
           INACTIVE
         </p>
         <CustomTable

@@ -11,10 +11,16 @@ import ViewJobCost from "./ViewJobCost";
 import TableTextButton from "components/TableTextButton";
 import { MDBCol, MDBRow } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { AppState } from "../../redux/rootReducer";
 
 const CostCalculator:FC=()=>{
   const [costView,setCostView]=useState(false);
   const navigate =useNavigate();
+   //-----------------Redux Calling-------------------------//
+   const isOverflow = useSelector((state: AppState) => state.overflow.isOverflow);
+   console.log("isOverflow", isOverflow);
+   //-------------------------------------------------------//
 
      //--------------------------costForm----------------------------------------//
      const costForm = (
@@ -68,7 +74,7 @@ const CostCalculator:FC=()=>{
 const Pagefooter =(
   <div style={{display:'flex', flexDirection:'row',gap:'15px'}}>
           <CustomTextButton width="60px" onClick={()=>{navigate('/')}}>Back</CustomTextButton>
-          <CustomButton width="100px" >Export</CustomButton>
+          <CustomTextButton width="100px" >Export</CustomTextButton>
 
   </div>
 )
@@ -84,12 +90,22 @@ const Pagefooter =(
             {costForm}
           </div>
           <CustomTable columns={jobListColumns} data={jobListdata} />
+                {isOverflow ?
+                <div style={{ width:'100%',display: 'flex', flexDirection: 'row',justifyContent:'flex-end',marginTop:'15px'}}>
+        {Pagefooter}
+      </div>
+      :
+<div style={{position:'fixed',bottom:'10px',width:'100%'}}>
+  <div style={{ width:'100%',display: 'flex', flexDirection: 'row',justifyContent:'flex-end',padding:'0px 40px'}}>
+        {Pagefooter}
+      </div>
+
+</div>
+}
           </>
             }
            
-           <div style={{display:'flex',justifyContent:'flex-end',position:'absolute',bottom:'15px',right:'27px'}}>
-                    {Pagefooter}
-                </div>
+     
         </div>
     )
 }
