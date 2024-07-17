@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import CustomOutLinedButton from 'components/CustomOutLinedButton'
 import CustomButton from "components/CustomButton";
 import CustomTable from "components/CustomTable";
@@ -9,6 +9,8 @@ import CustomerAccount from "@pages/New-Customer/NewCustomerAccount";
 import { useNavigate } from "react-router-dom";
 import CustomTextButton from "components/CustomTextButton";
 import TableTextButton from "components/TableTextButton";
+import { useSelector } from "react-redux";
+import { AppState } from "./../../redux/rootReducer";
 
 const SearchExistingCustomer: React.FC = () => {
 
@@ -16,6 +18,11 @@ const SearchExistingCustomer: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState('');
   const navigate = useNavigate();
+
+  const isOverflow = useSelector((state: AppState) => state.overflow.isOverflow);
+console.log("isOverflow", isOverflow);
+  
+  
 
   const modelTitle = (
     <p style={{ fontWeight: '600', margin: '0px', fontSize: '20px', color: '#424242' }}>Verify Customer Information</p>
@@ -92,6 +99,7 @@ const SearchExistingCustomer: React.FC = () => {
   )
   return (
     <div style={{ width: '100%' }}>
+   
       <CustomModal
         open={isModalOpen}
         onClose={handleCloseModal}
@@ -110,11 +118,20 @@ const SearchExistingCustomer: React.FC = () => {
       </div>
 
       <CustomTable columns={columns} data={rows} />
+      {
+  isOverflow ?
+  <div style={{ width:'100%',display: 'flex', flexDirection: 'row',justifyContent:'flex-end',marginTop:'15px'}}>
+        {footer}
+      </div>
+      :
+<div style={{position:'fixed',bottom:'10px',width:'100%'}}>
 
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end',position:'absolute',bottom:'25px',right:'26px' }}>
+  <div style={{ width:'100%',display: 'flex', flexDirection: 'row',justifyContent:'flex-end',padding:'0px 40px'}}>
         {footer}
       </div>
 
+</div>
+}
     </div>
   );
 };

@@ -13,6 +13,8 @@ import { MDBCol, MDBRow } from "mdb-react-ui-kit";
 import { Padding } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import CustomCheckBox from "components/CustomCheckBox";
+import { useSelector } from "react-redux";
+import { AppState } from "./../../redux/rootReducer";
 
 const JobQueInformation: FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -27,6 +29,8 @@ const JobQueInformation: FC = () => {
   const [mesurmentType, setMesurmentType] = useState('');
   const [bottomPosition, setBottomPosition] = useState<string>(''); // Initial position, adjust as needed
   const navigate = useNavigate();
+  const isOverflow = useSelector((state: AppState) => state.overflow.isOverflow);
+console.log("isOverflow", isOverflow);
   useEffect(() => {
     const handleResize = () => {
       const vh = window.innerHeight; // Calculate 90% of viewport height
@@ -427,7 +431,7 @@ const JobQueInformation: FC = () => {
 
 
   return (
-    <div>
+    <div style={{ width: '100%' }}>
       <CustomModal
         open={isModalOpen}
         onClose={handleCloseModal}
@@ -539,13 +543,29 @@ const JobQueInformation: FC = () => {
           <CustomButton children={"Mix"} onClick={mixChange} width="100px" />
         </div>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', position: 'fixed', right: 5, bottom: 0 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '15px' }}>
-          <CustomTextButton children={"Cancel"} width="80px" />
-          <CustomTextButton children={"Abandon"} width="80px" />
-          <CustomTextButton children={"Save for later"} width="180px" />
-        </div>
-      </div>
+      {/* {
+        isOverflow ?
+          <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginTop: '15px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: '15px' }}>
+              <CustomTextButton children={"Cancel"} width="80px" />
+              <CustomTextButton children={"Abandon"} width="80px" />
+              <CustomTextButton children={"Save for later"} width="180px" />
+            </div>
+          </div>
+
+          :
+          <div style={{ position: 'fixed', bottom: '10px', width: '100%' }}>
+
+            <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', padding: '0px 40px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', gap: '15px' }}>
+                <CustomTextButton children={"Cancel"} width="80px" />
+                <CustomTextButton children={"Abandon"} width="80px" />
+                <CustomTextButton children={"Save for later"} width="180px" />
+              </div>
+            </div>
+          </div>
+      } */}
+
     </div>
   );
 };

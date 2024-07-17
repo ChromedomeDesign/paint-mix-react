@@ -18,6 +18,8 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import { Card, CardContent, Grid, IconButton } from "@mui/material";
 import { MDBCol, MDBRow } from "mdb-react-ui-kit";
+import { useSelector } from "react-redux";
+import { AppState } from "./../../redux/rootReducer";
 
 
 
@@ -33,7 +35,8 @@ const ColorManagement: React.FC = () => {
   const [colorType, setcolorType] = useState('Type');
   const [additionFilter, setadditionFilterType] = useState('None');
   const navigate = useNavigate();
-
+  const isOverflow = useSelector((state: AppState) => state.overflow.isOverflow);
+  console.log("isOverkkkkkkkkkkkkkkkkflow", isOverflow);
 
 
 
@@ -187,6 +190,7 @@ const ColorManagement: React.FC = () => {
 
   const Pagefooter = (
     <div style={{ display: 'flex', flexDirection: 'row', gap: '15px' }}>
+      <CustomTextButton width="74px" onClick={()=>navigate('/')} children="Back"/>
       <CustomOutLinedButton onClick={handleAddNew} width="100px">Add New</CustomOutLinedButton>
       <CustomOutLinedButton onClick={handleOpenModal} width="100px">Upload</CustomOutLinedButton>
     </div>
@@ -307,7 +311,7 @@ const ColorManagement: React.FC = () => {
             <CustomSelectComponent label="Additional Filter" options={optionsData} selectedValue={additionFilter} customSelectChange={onAdditionFilterType} />
           </Grid>
 
-          <Grid item xs={12} xl={2} lg={2} md={2} sm={2}>
+          <Grid item xs={12} xl={2} lg={2} md={1.9} sm={1.9}>
             <CustomButton children={"Search"} />
           </Grid>
         </Grid>
@@ -322,9 +326,21 @@ const ColorManagement: React.FC = () => {
         />
 
       </div>
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', position: 'absolute', bottom: '15px', right: '27px' }}>
+      {
+        isOverflow ?
+        <div style={{ width:'100%',display: 'flex', flexDirection: 'row',justifyContent:'flex-end',marginTop:'15px'}}>
+
         {Pagefooter}
       </div>
+      :
+      <div style={{position:'fixed',bottom:'10px',width:'100%'}}>
+
+      <div style={{ width:'100%',display: 'flex', flexDirection: 'row',justifyContent:'flex-end',padding:'0px 40px'}}>
+        {Pagefooter}
+      </div>
+      </div>
+      }
+     
     </div>
   );
 };

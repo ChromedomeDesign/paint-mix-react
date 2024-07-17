@@ -203,15 +203,15 @@ const thirFooter = (
             {information}
         </div>
         <CustomTable columns={columns} data={data} />
-            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end',marginTop:'22px'}}>
                 {isEditable ? (
-                    <div style={{ display: 'flex', justifyContent: 'space-between', gap: '4px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', gap: '15px' }}>
                         <CustomTextButton children={"Cancel"} width="150px" />
                         <CustomButton children={"Save"} width="100px"  onClick={handleSave} />
                     </div>
                 ) : (
-                    <div style={{ display: 'flex', justifyContent: 'space-between', gap: '4px' }}>
-                        <CustomTextButton children={"Back"} width="100px" onClick={()=>navigate(-1)}/>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', gap: '15px' }}>
+                        <CustomTextButton children={"Back"} width="74px" onClick={()=>navigate(-1)}/>
                         <CustomOutLinedButton children={"Deprecate"} width="100px"  onClick={handleOpenModal}/>
                         <CustomButton children={"Edit"} width="100px"  onClick={handleEdit} />
                     </div>

@@ -7,6 +7,8 @@ import CustomModal from "components/CustomModal";
 import { useNavigate } from "react-router-dom";
 import { Call } from "@mui/icons-material";
 import TableTextButton from "components/TableTextButton";
+import { useSelector } from "react-redux";
+import { AppState } from "./../../redux/rootReducer";
 
 
 const StoreLocations: React.FC = () => {
@@ -17,6 +19,11 @@ const StoreLocations: React.FC = () => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
+  //-----------------Redux Calling-------------------------//
+  const isOverflow = useSelector((state: AppState) => state.overflow.isOverflow);
+  console.log("isOverflow", isOverflow);
+  //-------------------------------------------------------//
 
 
 //------------------------------------Remove Modal------------------------------------------//
@@ -156,9 +163,18 @@ const inactiveRows = [
                 data={inactiveRows}
             />
 
-                <div style={{display:'flex',justifyContent:'flex-end',position:'absolute',bottom:'15px',right:'27px'}}>
-                    {Pagefooter}
-                </div>
+{isOverflow ?
+                <div style={{ width:'100%',display: 'flex', flexDirection: 'row',justifyContent:'flex-end',marginTop:'15px'}}>
+        {Pagefooter}
+      </div>
+      :
+<div style={{position:'fixed',bottom:'10px',width:'100%'}}>
+  <div style={{ width:'100%',display: 'flex', flexDirection: 'row',justifyContent:'flex-end',padding:'0px 40px'}}>
+        {Pagefooter}
+      </div>
+
+</div>
+}
 
                 <CustomModal
                   open={isModalOpen}
