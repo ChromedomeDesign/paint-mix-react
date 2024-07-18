@@ -74,8 +74,8 @@ const FormulaManagement: React.FC = () => {
             <MDBCol size="12" sm="7">
              <div style={{display:'flex',flexDirection:'column'}}>
              <p style={{fontWeight:700,fontSize:'12px',lineHeight:'20px',margin:'0px'}}>History:</p>
-             <p style={informationdetail}>Edited: 11/14/22</p>
-             <p style={informationdetail}>Added: 11/02/22</p>
+             <p style={informationdetail}>Edited:&nbsp;&nbsp;&nbsp;11/14/22</p>
+             <p style={informationdetail}>Added:&nbsp;&nbsp;&nbsp;11/02/22</p>
              </div>
              </MDBCol>
              </MDBRow>
