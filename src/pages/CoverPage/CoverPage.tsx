@@ -7,7 +7,7 @@ const CoverPage: React.FC = () => {
     const navigate = useNavigate();
     useEffect(()=>{
         const timer = setTimeout(() => {
-            navigate('/Login');
+            // navigate('/Login');
         }, 1000);
 
         return () => clearTimeout(timer);
@@ -18,14 +18,14 @@ const CoverPage: React.FC = () => {
             <div style={{ display: 'flex', justifyContent: 'flex-end', alignContent: 'end' }}>
                 <img src={head1} alt="Top Right" className="top-right-image" />
             </div>
-            <div style={{ display: "flex", flexDirection: "column",top:"45%" }}>
+            <div style={{ display: "flex", flexDirection: "column",position:'fixed',top:'40%'}}>
                 <p style={{ fontSize: "16px",fontFamily:'Open Sans, sans-serif',lineHeight:"19.2px",color: "rgba(0, 0, 0, 0.45)", fontWeight: 600 }}>
                     Discovery Documentation Prepared for:
                 </p>
-                <p style={{ fontSize: "50px",lineHeight:'105px',fontFamily:'Open Sans, sans-serif',color: "#000000", fontWeight: 700 }}>
+                <p style={{ fontSize: "50px",lineHeight:'80px',fontFamily:'Open Sans, sans-serif',color: "#000000", fontWeight: 700 }}>
                     Painters Supply
                 </p>
-                <p style={{ fontSize: "30px",fontFamily:'Open Sans, sans-serif',lineHeight:'40px',color: "rgba(0, 0, 0, 1)", fontWeight: 300 }}>
+                <p style={{ fontSize: "30px",fontFamily:'Open Sans, sans-serif',lineHeight:'30px',color: "rgba(0, 0, 0, 1)", fontWeight: 300 }}>
                     Paint Mix Application Wireframes
                 </p>
             </div>
