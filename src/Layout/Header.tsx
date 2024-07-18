@@ -39,7 +39,7 @@ const Header = () => {
         <div style={{ padding: '10px 27px 0px 27px'}}>
             <CardComponent width="100%" radius="8px" height="60px" customIndex={99999} >
                 <div style={{display:'flex',width:"100%",flexDirection:'row',justifyContent:'space-between',padding:'10px',alignItems:'center',height: '100%',}}>
-                    <button style={{height:'44px',width:'100px',border:'1px solid #000000',backgroundColor:'transparent',borderRadius:'8px'}} onClick={()=>navigate('/')}>LOGO</button> 
+                    <button style={{height:'44px',width:'100px',border:'1px solid #262626',backgroundColor:'transparent',borderRadius:'8px',fontSize:'13px',fontWeight:700,lineHeight:'28px',fontFamily: 'Open Sans, sans-serif'}} onClick={()=>navigate('/')}>LOGO</button> 
                 <div style={{ display: 'flex',justifyContent: 'flex-end', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%' }}>
                     <SearchBar />
                     <button onClick={handleClick}  style={{padding:'0px',marginLeft:'10px',width:'42px',background:'none',border:'none'}}>
@@ -68,17 +68,17 @@ const Header = () => {
                 style={{ marginTop: '12px' }}
             >
                 <div style={{ padding: '8px' }}>
-                    <p style={{ color: '#1266F1', paddingLeft: '16px', fontWeight: '600px', fontFamily: 'sans-serif', fontSize: '16px' }}>USER</p>
+                    <p style={{ color: '#1266F1', paddingLeft: '16px', fontWeight: '600px', fontFamily: 'Open Sans, sans-serif', fontSize: '16px' }}>USER</p>
                     <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/')}>Order</MenuItem>
                     <MenuItem sx={{width:'100%'}} onClick={()=>handleClose('/JobQueue')}>Job Queue</MenuItem>
                 </div>
                 <div style={{ padding: '8px' }}>
-                    <p style={{ color: '#1266F1', paddingLeft: '16px', fontWeight: '600px', fontFamily: 'sans-serif', fontSize: '16px' }}>ADMIN</p>
-                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/ColorManagement')}>Color Management</MenuItem>
-                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/UserAdministration')}>User Administration</MenuItem>
-                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/CostCalculator')}>Cost Calculator</MenuItem>
-                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose('/StoreLocations')}>Store Location</MenuItem>
-                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0'}} onClick={()=>handleClose1()}>Change Password</MenuItem>
+                    <p style={{ color: '#1266F1', paddingLeft: '16px', fontWeight: '600px', fontFamily: 'Open Sans, sans-serif', fontSize: '16px' }}>ADMIN</p>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0',fontFamily: 'Open Sans, sans-serif'}} onClick={()=>handleClose('/ColorManagement')}>Color Management</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0',fontFamily: 'Open Sans, sans-serif'}} onClick={()=>handleClose('/UserAdministration')}>User Administration</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0',fontFamily: 'Open Sans, sans-serif'}} onClick={()=>handleClose('/CostCalculator')}>Cost Calculator</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0',fontFamily: 'Open Sans, sans-serif'}} onClick={()=>handleClose('/StoreLocations')}>Store Location</MenuItem>
+                    <MenuItem sx={{width:'100%',borderBottom:'1px solid #E0E0E0',fontFamily: 'Open Sans, sans-serif'}} onClick={()=>handleClose1()}>Change Password</MenuItem>
                     <MenuItem onClick={()=>handleClose('logout')}>Logout</MenuItem>
                 </div>
             </Menu>

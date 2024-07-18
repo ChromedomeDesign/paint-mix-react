@@ -141,7 +141,7 @@ const PrivateLayout: React.FC = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
       <div style={{ width: '100%', maxWidth: '1800px' }}>
-        <div style={{ position: 'sticky', top: '0px', backgroundColor: 'white', zIndex: 999, marginBottom: '32px' }}>
+        <div style={{ position: 'sticky', top: '0px', backgroundColor: 'white', zIndex: 999,paddingBottom:'25px',marginBottom:'7px'}}>
           <Header />
           {location.pathname === "/" ?
           ""

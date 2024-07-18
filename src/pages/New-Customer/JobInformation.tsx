@@ -249,7 +249,7 @@ const JobInformation: FC = () => {
     <div>
       {
           edit === true ?
-          <MDBRow style={{width:'100%',marginBottom:'26px',marginTop:'26px'}} >
+          <MDBRow style={{width:'100%',marginBottom:'26px'}} >
              <MDBCol size="12" sm="5" md="5" xl="5" lg="5">
              <div style={{ display: 'flex', flexDirection: 'column'}}>
       <p style={jobStyle}>

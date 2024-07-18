@@ -136,7 +136,7 @@ const handleOpenModal = () => {
       />
             <CardComponent  width="100%"  children={form} backgroundColor={"#fafcfc"} />
             <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',marginTop:'20px'}}>
-               <CustomTextButton children={"Back"}  width="72px"/>
+               <CustomTextButton onClick={()=>navigate('/')} children={"Back"}  width="72px"/>
                <CustomButton children={"Save"} width="79px" onClick={handleOpenModal}/>
             </div>
         </div>
