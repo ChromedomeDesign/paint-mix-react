@@ -239,10 +239,9 @@ const JobInformation: FC = () => {
     fontSize: '12px',
     fontWeight: 700,
     color: '#424242',
-
     lineHeight: '20px',
-    fontFamily: `"Open Sans", sans-serif`,
-    margin: 0, 
+    fontFamily: `Open Sans, sans-serif`,
+    margin: '0px 8px 0px 0px', 
   }
   
   const JobDetail: React.FC = () => (

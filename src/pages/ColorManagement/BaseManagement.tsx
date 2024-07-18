@@ -16,6 +16,7 @@ const BaseManagement: React.FC = () => {
      }
      const informationdetail ={
          fontSize:'12px',
+         paddingLeft:'8px',
          fontWeight:400,
          lineHeght:'20px',
          color:'#424242',

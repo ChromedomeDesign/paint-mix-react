@@ -29,20 +29,20 @@ const CostCalculator:FC=()=>{
             <p style={{fontWeight:600,color:"#1266F1",fontSize:'16px'}}>COMPLETED JOBS</p>
          </div>
          <Grid container gap={"15px"} sx={{display:'flex',borderTop:"1px solid #E0E0E0",padding:'24px 0px 29px 0px'}}>
-         <Grid  sm={2.4}>
-             <CustomInputComponent label="Customer Name" name="FirstName" width="155px"/>
+         <Grid  sm={2.43} xs={12}>
+             <CustomInputComponent label="Customer Name" name="FirstName" />
           </Grid>
-          <Grid  sm={2.4}>
-             <CustomInputComponent label="Business Name" name="BusinessName" width="155px"/>
+          <Grid  sm={2.43} xs={12}>
+             <CustomInputComponent label="Business Name" name="BusinessName" />
           </Grid>
-          <Grid  sm={2.4}>
-            <CustomInputComponent label="Job Name" name="JobName" width="155px"/>
+          <Grid  sm={2.43} xs={12}>
+            <CustomInputComponent label="Job Name" name="JobName" />
           </Grid>
-          <Grid sm={2.4}>
-            <PickupDate label="Date" width="155px"/>
+          <Grid sm={2.43} xs={12}>
+            <PickupDate label="Date" />
           </Grid>
-          <Grid  sm={1.3}>
-            <CustomButton children={"Filter"} width="90px"/>
+          <Grid  sm={1.2} xs={12}>
+            <CustomButton children={"Filter"} />
           </Grid>
           </Grid>
        

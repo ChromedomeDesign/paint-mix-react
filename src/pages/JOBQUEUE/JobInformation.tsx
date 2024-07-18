@@ -66,7 +66,7 @@ console.log("isOverflow", isOverflow);
     {
       name: "Add",
       datan: "add",
-      Call: (row: any) => <div style={{ color: '#1266F1', fontWeight: 600, fontSize: '13px' }}><AddCircleIcon sx={{ color: '#1266F1', backgroundColor: 'white', borderRadius: '100%' }} /> Amout</div>
+      Call: (row: any) => <div style={{ color: '#1266F1', fontWeight: 600, fontSize: '13px' }}><AddCircleIcon sx={{ color: '#1266F1', backgroundColor: 'white', borderRadius: '100%' }} /> Amount</div>
     }
   ];
 
@@ -172,6 +172,7 @@ console.log("isOverflow", isOverflow);
     margin: '0px'
   }
   const informationdetail = {
+    paddingLeft:'8px',
     fontSize: '12px',
     fontWeight: 400,
     lineHeght: '20px',
