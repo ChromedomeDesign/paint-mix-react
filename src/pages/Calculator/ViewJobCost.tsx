@@ -11,8 +11,12 @@ interface CardComponentProps {
 const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
 
     const head = {
-        fontWeight:700,fontSize:'12px',lineHeight:'20px',color:'#424242',margin:'0px'
+        fontWeight:700,fontSize:'12px',lineHeight:'20px',color:'#424242',margin:'0px',fontFamily:'Open Sans, sans-serif'
     }
+
+    const subtitle = {
+      fontWeight:400,fontSize:'12px',lineHeight:'20px',color:'#424242',margin:'0px',fontFamily:'Open Sans, sans-serif'
+  }
 
 //-------------------------------------Job Type Style-------------------------------------------//
     const styles = {
@@ -107,7 +111,7 @@ const ViewJobCost:FC<CardComponentProps> =({onClicks})=>{
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
                 <div>
                     <p style={head}>Job Notes: </p>
-                    <p> Customer would like the paint a few shades darker, add .02 black</p>
+                    <p style={subtitle}> Customer would like the paint a few shades darker, add .02 black</p>
                  </div>
 
                 </Grid>

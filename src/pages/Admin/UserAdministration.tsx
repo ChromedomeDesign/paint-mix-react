@@ -5,13 +5,18 @@ import CustomTable from "components/CustomTable";
 import CustomTextButton from "components/CustomTextButton";
 import TableTextButton from "components/TableTextButton";
 import { FC, useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { AppState } from "./../../redux/rootReducer";
 
 const UserAdministration  : FC=()=>{
     const [isModalOpen, setModalOpen] = useState(false);
     const [modalStep, setModalStep] = useState(1);
     const navigate = useNavigate();
-
+   //-----------------Redux Calling-------------------------//
+   const isOverflow = useSelector((state: AppState) => state.overflow.isOverflow);
+   console.log("isOverflow", isOverflow);
+   //-------------------------------------------------------//
 
     const handleRestore = () => {
       setModalStep(2);
@@ -163,12 +168,30 @@ const UserAdministration  : FC=()=>{
             <p style={{color:'#1266F1',marginBottom:'20px',fontWeight:600,fontSize:'16px',lineHeight:'19.2px'}}>Inactive</p>
             <CustomTable columns={InActiveColumns} data={InActivedata}/>
             </div>
-            <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',gap:'2px'}}>
-              <div>
+            {/* <div style={{display:'flex',flexDirection:'row',justifyContent:'flex-end',gap:'2px'}}> */}
+      
+
+              {isOverflow ?
+                <div style={{ width:'100%',display: 'flex', flexDirection: 'row',justifyContent:'flex-end',marginTop:'15px'}}>
+         <div>
                 <CustomTextButton children={"Back"} width="61px"/>
                 <CustomButton children={"Create New User"} width="148px" onClick={()=>navigate('/CreateNewUser')}/>
               </div>
-            </div>
+      </div>
+      :
+<div style={{position:'fixed',bottom:'10px',width:'100%'}}>
+  <div style={{ width:'100%',display: 'flex', flexDirection: 'row',justifyContent:'flex-end',padding:'0px 40px'}}>
+  <div>
+                <CustomTextButton children={"Back"} width="61px"/>
+                <CustomButton children={"Create New User"} width="148px" onClick={()=>navigate('/CreateNewUser')}/>
+              </div>
+      </div>
+
+</div>
+}
+
+
+            {/* </div> */}
             </div>
             </div>
     )
