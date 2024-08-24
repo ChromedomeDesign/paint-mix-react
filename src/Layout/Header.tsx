@@ -4,7 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchBar from "components/SearchBar";
-import { Button } from "@mui/material";
+import { Button, useMediaQuery } from "@mui/material";
 import CustomOutLinedButton from "components/CustomOutLinedButton";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +12,7 @@ const Header = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const [pp, setPp] = useState(false); // State to manage pp
-
+    const sm = useMediaQuery('(max-width: 370px)');
     const navigate = useNavigate();
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -40,12 +40,15 @@ const Header = () => {
             <CardComponent width="100%" radius="8px" height="60px" customIndex={99999} >
                 <div style={{display:'flex',width:"100%",flexDirection:'row',justifyContent:'space-between',padding:'10px',alignItems:'center',height: '100%',}}>
                     <button style={{height:'44px',width:'100px',border:'1px solid #262626',backgroundColor:'transparent',borderRadius:'8px',fontSize:'13px',fontWeight:700,lineHeight:'28px',fontFamily: 'Open Sans, sans-serif'}} onClick={()=>navigate('/')}>LOGO</button> 
-                <div style={{ display: 'flex',justifyContent: 'flex-end', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%' }}>
-                    <SearchBar />
+                    <div style={{ display: 'flex',justifyContent: 'flex-end', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%' }}>
+                    {sm ? <SearchBar />
+                    :
+                null}
                     <button onClick={handleClick}  style={{padding:'0px',marginLeft:'10px',width:'42px',background:'none',border:'none'}}>
                     <MenuIcon sx={{ fontSize:'42px', color: '#1266F1', cursor: 'pointer' }} />
                     </button>
                 </div>
+                
                 </div>
             </CardComponent>
             <Menu

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useMediaQuery } from "@mui/material";
 import CustomInputComponent from "components/CustomInputComponent";
 import CustomButton from "components/CustomButton";
 import CustomModal from "components/CustomModal";
@@ -22,7 +22,8 @@ const Homepage: React.FC = () => {
   const [password, setPassword] = useState({
     newPass: '',
     confirmPass: ''
-  })
+  });
+  const sm = useMediaQuery('(max-width: 400px)');
   const navigate = useNavigate();
   const [change, setChange] = useState(false);
   useEffect(() => {
@@ -226,7 +227,7 @@ const Homepage: React.FC = () => {
         body={() => body}
         footer={() => footer}
         animation={true}
-        size="medium"
+        size= {sm ? "small" :"medium"}
         centered={true}
       />
     {/* -------------------------------------------------------------- */}
@@ -238,7 +239,7 @@ const Homepage: React.FC = () => {
         body={() => orderbody}
         footer={() => orderfooter}
         animation={true}
-        size="medium"
+        size= {sm ? "small" :"medium"}
         centered={true}
       />
       {/* ----------------------------------------------------------------- */}
