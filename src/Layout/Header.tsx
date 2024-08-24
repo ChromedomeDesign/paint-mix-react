@@ -41,9 +41,9 @@ const Header = () => {
                 <div style={{display:'flex',width:"100%",flexDirection:'row',justifyContent:'space-between',padding:'10px',alignItems:'center',height: '100%',}}>
                     <button style={{height:'44px',width:'100px',border:'1px solid #262626',backgroundColor:'transparent',borderRadius:'8px',fontSize:'13px',fontWeight:700,lineHeight:'28px',fontFamily: 'Open Sans, sans-serif'}} onClick={()=>navigate('/')}>LOGO</button> 
                     <div style={{ display: 'flex',justifyContent: 'flex-end', justifyItems: 'center', alignItems: 'center', width: "100%", height: '100%' }}>
-                    {sm ? <SearchBar />
+                    {sm ? null
                     :
-                null}
+                    <SearchBar />}
                     <button onClick={handleClick}  style={{padding:'0px',marginLeft:'10px',width:'42px',background:'none',border:'none'}}>
                     <MenuIcon sx={{ fontSize:'42px', color: '#1266F1', cursor: 'pointer' }} />
                     </button>
