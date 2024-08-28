@@ -1,5 +1,5 @@
 import React from 'react';
-import Homepage from '../pages/homepage/Homepage';
+import Homepage from '@pages/homepage/homepage';
 import PrivateLayout from 'Layout/PrivateLayout';
 import CREATE_NEW_CUSTOMER_ACCOUNT from '@pages/New-Customer/NewCustomerAccount';
 import JobInformation from '@pages/New-Customer/JobInformation';
