@@ -115,7 +115,7 @@ This starter project will get you going with a basic setup to begin a React proj
 
 ### Prerequisites
 
-First you will need to download and install Node, if you don't already have it on your system.
+First you will need to download and install the latest version of Node, if you don't already have it on your system.
 * [Node Installers](https://nodejs.org/en/download)
 
 * npm
