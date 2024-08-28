@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto; /* Optional: Adjust optical sizing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: "Open Sans", sans-serif;
+  }
+  

@@ -1,21 +1,28 @@
 // This is your main application file.
-import React from 'react' // Importing the core React library
-import { Homepage } from '@pages/homepage/homepage';
-
-// This is a simple variable type definition. With Typescript, we should define our variables as strictly as we can so that the tooling can
-// detect type mismatches in real time. This will also provide us with verbose feedback at runtime if dynamic data is mismatched with the
-// expected data types
+import { createTheme, ThemeProvider } from '@mui/material';
+import React from 'react' 
+import { BrowserRouter, Route } from 'react-router-dom';
+import ThemeRoutes from './Router/index';
+import { Provider } from 'react-redux';
+import  Store  from './redux/store';
 type AppProps = {
     message: string;
 };
 
-// This is the function component that represnts the application scope
+
 const App = ({ message }: AppProps): JSX.Element => {
-    // The return statement below represents the TSX element that will render as HTML to the page.
+    const theme = createTheme({
+        typography: {
+          fontFamily: 'Open Sans, sans-serif',
+        },
+      });
     return (
-        <Homepage />
-    );
+      <Provider store={Store}>
+        <ThemeProvider theme={theme}>
+          <ThemeRoutes/>
+          </ThemeProvider>
+          </Provider>
+ );
 };
 
-// This export statement is required for the component to be imported elsewhere
 export default App;
