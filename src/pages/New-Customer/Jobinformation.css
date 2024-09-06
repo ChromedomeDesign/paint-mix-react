@@ -1,0 +1,8 @@
+.custom-text-area textarea {
+    resize: none; /* Remove the resize handle */
+  }
+  
+  .custom-text-area:focus {
+    border-color: #BDBDBD; /* Set the border color when focused */
+    box-shadow: none; /* Remove the default focus shadow */
+  }
